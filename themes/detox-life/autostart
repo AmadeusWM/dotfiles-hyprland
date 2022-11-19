@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# variables
+config=$HOME/.config/hypr/themes/detox-life
+scripts=$config/scripts
+
+$scripts/waybar/launch_waybar &
+$scripts/waybar/tools/dynamic &
+
+# wallpaper
+swaybg -c "#101419" & # just a dark color (obsidian color..)
+# swaybg -i $config/wallpapers/old/foolforyou.gif &
+# $scripts/wall $config/wallpapers/old/DivineTouch.png &

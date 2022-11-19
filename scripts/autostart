@@ -1,0 +1,33 @@
+#!/usr/bin/bash
+
+
+# variables
+config=$HOME/.config/hypr
+scripts=$config/scripts
+
+# notification daemon
+dunst &
+
+# screen locking when idle
+$scripts/default/idle_handler &
+
+# effects
+# $scripts/rgb &
+
+# other
+## start xp pen drawing software minimized
+killall pentablet & sleep 1
+/usr/lib/pentablet/pentablet.sh /mini &
+## make kde connect work  (source: https://www.reddit.com/r/kde/comments/l6t6qu/please_make_kdeconnectcli_work_in_headless_moded/)
+killall kdeconnectd & sleep 1
+/usr/lib/kdeconnectd -platform offscreen & 
+## Gnome authentication
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# ... this might not be necessary anymore ? idk
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+
+# launch portals after executing the above
+$scripts/default/launch_portals &
+
