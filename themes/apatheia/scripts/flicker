@@ -1,0 +1,16 @@
+#! /bin/bash
+#Active window border flickers periodically
+
+while pgrep Hyprland; do
+  delay=$(( RANDOM % 10 + 3 )) #Time between flickers
+  flicker=$(( RANDOM % 15 + 5 )) #Number of flickers
+  sleep $delay
+  while [ $flicker -gt 0 ]; do
+    hyprctl --batch "keyword decoration:col.shadow 0x55F51D00 ; keyword general:col.active_border 0x66FFF898"
+    sleep 0.02
+    hyprctl --batch "keyword decoration:col.shadow 0xFFF51D00 ; keyword general:col.active_border 0x99FFF898"
+    sleep 0.02
+    ((flicker=flicker-1))
+  done
+    hyprctl --batch "keyword decoration:col.shadow 0xFFF51D00 ; keyword general:col.active_border 0xFFFFF898"
+done

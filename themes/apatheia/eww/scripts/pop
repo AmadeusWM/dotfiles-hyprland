@@ -1,0 +1,12 @@
+#!/bin/bash
+EWW_BIN="/usr/bin/eww -c $HOME/.config/hypr/themes/apatheia/eww"
+WIDGET=$1
+
+# Open widgets
+if ${EWW_BIN} windows | grep ^$WIDGET$ ; then
+    ${EWW_BIN} close system audio_ctl calendar
+    ${EWW_BIN} open "$WIDGET"
+elif ${EWW_BIN} windows | grep ^\*$WIDGET$ ; then
+    ${EWW_BIN} close "$WIDGET"
+else exit
+fi

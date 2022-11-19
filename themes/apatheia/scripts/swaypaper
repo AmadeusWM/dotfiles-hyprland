@@ -1,0 +1,7 @@
+#!/bin/sh
+
+killall swaybg
+
+sleep 1
+
+swaybg -m fill -i /home/amadeusw/Pictures/wallpapers/widescreen/o8o22e7f45h91.webp &

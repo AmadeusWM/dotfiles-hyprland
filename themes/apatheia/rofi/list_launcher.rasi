@@ -1,0 +1,101 @@
+configuration {
+    modi:                           "drun";
+    display-drun:                   "Applications";
+    show-icons:                     true;
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					false;
+    matching:            "fuzzy";
+}
+
+* {
+    font: "Inter Nerd Font Semibold 11";
+    foreground:                 #f8f8f2;
+    foreground-alt:             #9c9c9c;
+    background-color:           #00000066;
+    selected-foreground:        #f48fb1;
+    selected-background:        #b2b2b250;
+    separatorcolor:             #7c7c7c;
+    bordercolor:                #ff79c6;
+    highlightcolor:             #8be9fd;
+    transparent:                #00000000;
+}
+
+#window {
+    background-color:               @background-color;
+    text-color:                     @foreground;
+	border:							0;
+	border-color:					@background-color;
+    border-radius:                  8;
+  height:             70%;
+	width:							400px;
+    location:                       southwest;
+    anchor:                         southwest;
+    x-offset:                       8;
+    y-offset:                       -60;
+}
+
+#prompt {
+	background-color: 				@transparent;
+	text-color: 					@foreground;
+}
+
+#button {
+	action:                         "ok";
+	str:                            " ";
+    font:                           "SauceCodePro Nerd Font Medium 12";
+	expand:                         false;
+	text-color:                     @foreground;
+	background-color:               @transparent;
+    vertical-align:                 0;
+}
+
+#entry {
+    background-color:               @transparent;
+    text-color:                     @foreground;
+    placeholder:                    "Search";
+    placeholder-color:              @foreground-alt;
+    expand:                         true;
+    vertical-align:                 0;
+}
+
+#inputbar {
+	children: 						[ button, entry ];
+    padding:                        10 10 10 15;
+	background-color: 				@transparent;
+    border:                         0px 0px 1px dash;
+    border-color:                   @separatorcolor;
+}
+
+#listview {
+    background-color:               @transparent;
+    padding:                        0px;
+    lines:                          12;
+    spacing:                        0px;
+    cycle:                          true;
+    dynamic:                        true;
+}
+
+#element {
+    background-color:               @transparent;
+    text-color:                     @foreground;
+    border-radius:                  8;
+    padding:                        10px;
+}
+
+#element-icon {
+    size:                           1.4em;
+    border:                         0px;
+}
+
+#element-text {
+    highlight:                      None #8be9fd; 
+}
+
+#element.selected {
+    background-color:               @selected-background;
+    text-color:                     @selected-foreground;
+	border:							0;
+    border-radius:                  8;
+}

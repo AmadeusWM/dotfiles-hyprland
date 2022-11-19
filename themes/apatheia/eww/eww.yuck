@@ -1,0 +1,520 @@
+;; Variables
+
+(include "sidebar.yuck")
+(include "notifications.yuck")
+
+(defpoll clock_time :interval "5s" "date '+\%l\%M \%p'")
+(defpoll clock_date :interval "1h" "date '+%b %d, %Y'")
+(defpoll calendar_day :interval "2h" "date '+%d'")
+(defpoll calendar_year :interval "2h" "date '+%Y'")
+(defpoll volume_percent :interval "1s"  "scripts/sbvol --get")
+(defpoll mic_percent :interval "3s" "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -n 1")
+(defpoll brightness_percent :interval "5s" "light")
+(defpoll COL_WLAN :interval "1m" "scripts/wifi --COL")
+(defpoll ESSID_WLAN :interval "1m" "scripts/wifi --ESSID")
+(defpoll WLAN_ICON :interval "1m" "scripts/wifi --ICON")
+(deflisten workspace "scripts/workspace")
+(deflisten appname "scripts/appname")
+
+(defvar vol_reveal false)
+(defvar br_reveal false)
+(defvar music_reveal false)
+(defvar control_reveal false)
+(defvar wifi_rev false)
+(defvar time_rev false)
+
+
+;; widgets
+
+(defwidget launcher []
+  (box
+    :class "launcher_module"
+    :orientation "h"
+    (button
+      :onclick "rofi -no-lazy-grab -show drun -theme ~/.config/hypr/themes/apatheia/rofi/launcher.rasi &"
+      (image
+        :class "launcher-icon"
+        :path "favicon.ico"
+      :image-width 28))
+    (button
+      :onclick "nautilus &"
+      :class "iconsearch" ""
+    )
+  ))
+
+(defwidget workspaces []
+  (literal
+    :content workspace
+  :valign "center"))
+
+(defwidget appnames []
+  (eventbox
+    :onhover "${EWW_CMD} update control_reveal=true"
+    :onhoverlost "${EWW_CMD} update control_reveal=false"
+    (box
+      :orientation "h"
+      :space-evenly "false"
+      :vexpand "false"
+      :hexpand "false"
+      (literal
+      :content appname)
+      (revealer
+        :transition "slideright"
+        :reveal control_reveal
+        :duration "350ms"
+        (box
+          :vexpand "false"
+          :hexpand "false"
+          :orientation "h"
+          :space-evenly "false"
+          (button
+            :class "app-button color-var1"
+          :onclick "hyprctl dispatch togglefloating 1" "")
+          (button
+            :class "app-button color-var2"
+          :onclick "hyprctl dispatch fullscreen 1" "")
+          (button
+            :class "app-button color-var3"
+          :onclick "hyprctl dispatch killactive 1" ""))))))
+
+(defwidget bright []
+  (eventbox
+    :onhover "${EWW_CMD} update br_reveal=true"
+    :onhoverlost "${EWW_CMD} update br_reveal=false"
+    (box
+      :class "module"
+      :space-evenly "false"
+      :orientation "h"
+      :spacing "3"
+      (revealer
+        :transition "slideright"
+        :reveal br_reveal
+        :duration "350ms"
+        (scale    :class "brightbar"
+          :value brightness_percent
+          :orientation "h"
+          :tooltip "${brightness_percent}%"
+          :max 100
+          :min 0
+        :onchange "light -S {}" ))
+      (label
+        :text ""
+        :class "bright_icon"
+      :tooltip "brightness"))))
+
+(defwidget volume []
+  (eventbox
+    :onhover "${EWW_CMD} update vol_reveal=true"
+    :onhoverlost "${EWW_CMD} update vol_reveal=false"
+    (box
+      :class "module-2"
+      :space-evenly "false"
+      :orientation "h"
+      :spacing "3"
+      (revealer
+        :transition "slideright"
+        :reveal vol_reveal
+        :duration "350ms"
+        (scale
+          :class "volbar"
+          :value volume_percent
+          :orientation "h"
+          :tooltip "${volume_percent}%"
+          :max 100
+          :min 0
+        :onchange "amixer -D pulse sset Master {}%" ))
+      (button
+        :onclick "scripts/pop audio_ctl"
+        :class "volume_icon"
+      "墳"))))
+
+(defwidget wifi []
+  (eventbox
+    :onhover "${EWW_CMD} update wifi_rev=true"
+    :onhoverlost "${EWW_CMD} update wifi_rev=false"
+    (box
+      :vexpand "false"
+      :hexpand "false"
+      :space-evenly "false"
+      (revealer
+        :transition "slideright"
+        :reveal wifi_rev
+        :duration "350ms"
+        (label
+          :class "module_essid"
+          :text ESSID_WLAN
+        ))
+      (button
+        :class "module-wif"
+        :onclick "networkmanager_dmenu"
+      WLAN_ICON))))
+
+(defwidget bat []
+  (box
+    :class "bat_module"
+    :vexpand "false"
+    :hexpand "false"
+    (circular-progress
+      :value {EWW_BATTERY["BAT0"].capacity}
+      :class "batbar"
+      :thickness 4
+      (button
+        :onclick "scripts/pop system"
+        :class "iconbat"
+        :tooltip "battery on ${EWW_BATTERY["BAT0"].capacity}%"
+      " "))))
+
+(defwidget mem []
+  (box
+    :class "mem_module"
+    :vexpand "false"
+    :hexpand "false"
+    (circular-progress
+      :value {EWW_RAM.used_mem_perc}
+      :class "membar"
+      :thickness 4
+      (button
+        :onclick "scripts/pop system"
+        :class "iconmem"
+        :tooltip "using ${EWW_RAM.used_mem_perc}% ram"
+      " "))))
+
+(defwidget clock_module []
+  (eventbox
+    :onhover "${EWW_CMD} update time_rev=true"
+    :onhoverlost "${EWW_CMD} update time_rev=false"
+    (box
+      :class "module"
+      :space-evenly "false"
+      :orientation "h"
+      :spacing "0"
+      (label
+        :text clock_time
+      :class "clock_time_class" )
+      (revealer :transition "slideleft"
+        :reveal time_rev
+        :duration "350ms"
+        (button
+          :class "clock_date_class"
+        :onclick "scripts/pop calendar" clock_date)))))
+
+(defwidget notif_button []
+  (box
+    :class "notif_button"
+    :space-evenly "false"
+    :orientation "h"
+    (button
+      :onclick "if ${EWW_CMD} state | grep 'rightside: false' ; then ${EWW_CMD} update rightside=true ; else ${EWW_CMD} update rightside=false ; fi"
+      (label
+      :text ""))))
+
+(defwidget sep []
+  (box
+    :class "module-2"
+    :vexpand "false"
+    :hexpand "false"
+    (label
+      :class "separ"
+      :text "|"
+    )))
+
+(defwidget gap []
+  (box
+    :orientation "h"
+    :hexpand "false"
+    :visible "true"
+  :width "150"))
+
+
+;;define widget groups
+(defwidget left []
+  (box
+    :orientation "h"
+    :space-evenly false
+    :halign "start"
+    :class "left_modules"
+    (launcher)
+    (sep)
+    (workspaces)))
+(defwidget center []
+  (box
+    :orientation "h"
+    :space-evenly false
+    :halign "center"
+    :class "center_modules"
+    (appnames)))
+(defwidget right []
+  (box
+    :orientation "h"
+    :space-evenly false
+    :halign "end"
+    :class "right_modules"
+    (bright)
+    (volume)
+    (wifi)
+    (sep)
+    (bat)
+    (mem)
+    (sep)
+    (clock_module)
+    ; (notif_button)
+  ))
+
+(defwidget bar_layout []
+  (centerbox
+    :class "bar_class"
+    :orientation "h"
+    (left)
+    (center)
+    (right)
+  ))
+;; bars for your 3 screens (one for each)
+(defwindow bar0
+  :monitor 0
+  :exclusive false
+  :geometry (geometry
+    :x "15px"
+    :y "0px"
+    :width "100%"
+    :height "45px"
+  :anchor "top center")
+  :stacking "fg"
+  :windowtype "dock"
+  (bar_layout))
+(defwindow bar1
+  :monitor 1
+  :exclusive false
+  :geometry (geometry
+    :x "15px"
+    :y "0px"
+    :width "100%"
+    :height "45px"
+  :anchor "top center")
+  :stacking "fg"
+  :windowtype "dock"
+  (bar_layout))
+(defwindow bar2
+  :monitor 2
+  :exclusive false
+  :geometry (geometry
+    :x "15px"
+    :y "0px"
+    :width "100%"
+    :height "45px"
+  :anchor "top center")
+  :stacking "fg"
+  :windowtype "dock"
+  (bar_layout))
+
+
+
+(defwidget audio []
+  (box
+    :class "audio-box"
+    :orientation "v"
+    :space-evenly "false"
+    :vexpand "false"
+    :hexpand "false"
+    (box
+      :halign "v"
+      :space-evenly "false"
+      :hexpand "false"
+      :vexpand "false"
+      (box
+        :class "speaker_icon"
+      :orientation "v")
+      (box
+        :orientation "v"
+        :halign "center"
+        :vexpand "false"
+        :hexpand "false"
+        (label
+          :class "speaker_text"
+          :text "speaker"
+          :valign "center"
+        :halign "left" )
+        (box
+          :class "speaker_bar"
+          :halign "center"
+          :vexpand "false"
+          :hexpand "false"
+          (scale
+            :value volume_percent
+            :orientation "h"
+            :onchange "amixer -D pulse sset Master {}%"
+            :tooltip "volume on ${volume_percent}%"
+            :max 100
+          :min 0))))
+    (label
+      :text "_____________________________________"
+      :class "audio_sep"
+    :halign "center")
+    (box
+      :halign "v"
+      :space-evenly "false"
+      :hexpand "false"
+      :vexpand "false"
+      (box
+        :class "mic_icon"
+      :orientation "v")
+      (box
+        :orientation "v"
+        :halign "center"
+        :vexpand "false"
+        :hexpand "false"
+        (label
+          :class "mic_text"
+          :text "mic"
+          :valign "center"
+        :halign "left" )
+        (box
+          :class "mic_bar"
+          :halign "center"
+          :vexpand "false"
+          :hexpand "false"
+          (scale
+            :value mic_percent
+            :orientation "h"
+            :tooltip "mic on ${mic_percent}%"
+            :onchange "amixer -D pulse sset Capture {}%"
+            :max 100
+          :min 0))))))
+(defwindow audio_ctl
+  :stacking "fg"
+  :focusable "false"
+  :screen 1
+  :monitor 0
+  :geometry (geometry
+    :x "20"
+    :y "7%"
+    :anchor "top right"
+    :width "280px"
+  :height "60px")
+  (audio))
+
+
+;;Define System widget
+(defwidget system []
+  (box
+    :class "sys_win"
+    :orientation "v"
+    :space-evenly "false"
+    :hexpand "false"
+    :vexpand "false"
+    :spacing 0
+    (box
+      :class "sys_bat_box"
+      :orientation "h"
+      :space-evenly "false"
+      (circular-progress
+        :value {EWW_BATTERY["BAT0"].capacity}
+        :class "sys_bat"
+        :thickness 9
+        (label :text ""
+          :class "sys_icon_bat"
+          :limit-width 2
+        :wrap false))
+      (box
+        :orientation "v"
+        :space-evenly "false"
+        :spacing 0
+        :hexpand "false"
+        :vexpand "false"
+        (label
+          :text "battery"
+          :halign "start"
+          :class "sys_text_bat"
+          :limit-width 9
+        :wrap false)
+        (label
+          :text "${EWW_BATTERY["BAT0"].capacity}%"
+          :halign "start"
+          :class "sys_text_bat_sub"
+          :limit-width 22
+        :wrap false)
+        (label :text "${EWW_BATTERY["BAT0"].status}"
+          :halign "start"
+          :class "sys_text_bat_sub"
+          :limit-width 22
+        :wrap false)))
+    (label
+      :text "____________________________________"
+      :class "sys_sep"
+    :halign "center")
+    (box
+      :class "sys_mem_box"
+      :orientation "h"
+      :space-evenly "false"
+      :halign "start"
+      (circular-progress
+        :value {EWW_RAM.used_mem_perc}
+        :class "sys_mem"
+        :thickness 9
+        (label
+          :text ""
+          :class "sys_icon_mem"
+          :limit-width 2
+          :wrap false
+        :angle 0.0))
+      (box
+        :orientation "v"
+        :space-evenly "false"
+        :spacing 0
+        :hexpand "false"
+        :vexpand "false"
+        (label
+          :text "memory"
+          :halign "start"
+          :class "sys_text_mem"
+          :limit-width 9
+        :wrap false)
+        (label
+          :text "${round((EWW_RAM.available_mem / 1024), 0)} | ${round((EWW_RAM.total_mem / 1024), 0)}mb "
+          :halign "start"
+          :class "sys_text_mem_sub"
+          :limit-width 22
+        :wrap false)
+        (label :text "${round((EWW_RAM.used_mem / 1024), 0)}mb free"
+          :halign "start"
+          :class "sys_text_mem_sub"
+          :limit-width 22
+        :wrap false)
+      ))))
+(defwindow system
+  :stacking "fg"
+  :focusable "false"
+  :screen 1
+  :monitor 0
+  :geometry
+  (geometry
+    :x "20"
+    :y "7%"
+    :anchor "top right"
+    :width "290px"
+  :height "120px")
+  (system))
+
+
+
+;;Calendar Widget
+(defwidget cal []
+  (box
+    :class "cal"
+    :orientation "v"
+    (box
+      :class "cal-in"
+      (calendar
+        :day calendar_day
+      :year calendar_year))))
+(defwindow calendar
+  :stacking "fg"
+  :focusable "false"
+  :screen 1
+  :monitor 0
+  :geometry (geometry
+    :x "20"
+    :y "7%"
+    :anchor "top right"
+    :width "270px"
+  :height "60px")
+  (cal))

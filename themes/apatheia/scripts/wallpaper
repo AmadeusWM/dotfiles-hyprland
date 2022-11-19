@@ -1,0 +1,71 @@
+#! /bin/bash
+
+#set -euo pipefail
+
+#Check that variables were provided, or exit
+if [[ -d $1 && -d $2 ]]; then
+    export stills="$1"
+    export videos="$2"
+elif [[ $1 == '-h' ]] || [[ $1 == '--help' ]]; then
+    printf "Valid format is:\n" 
+    printf "./wallpaper <StillDirectory> <VideoDirectory>"
+    exit
+else
+    printf "Invalid Directory. Valid format is:\n" 
+    printf "./wallpaper <StillDirectory> <VideoDirectory>"
+    exit
+fi
+
+#Check for previous wallpaper processes and kill
+pgrep wallpaper | grep -wv $$ | xargs kill -3 2&> /dev/null || true
+
+#Switches wallpaper based on charging status
+wptoggle () {
+    #Identify active monitors
+    monitors=($(hyprctl monitors | awk '{if ($1 ~ "Monitor") print $2}'))
+
+    #Run appropriate  command based on charging state.
+    if [[ "$1" == "Discharging" ]] && [[ "$1" != "$laststate" ]]; then
+      hyprctl keyword decoration:blur_new_optimizations 1
+      pgrep swaybg || (for monitor in "${monitors[@]}"; do hyprctl dispatch exec "swaybg -m fill -o '$monitor' -i '$(randstill)'"; done)
+      [[ $laststate != "start" ]] && (sleep 5 && pkill -3 mpvpaper)
+    elif [[ "$1" != "$laststate" ]]; then
+      hyprctl keyword decoration:blur_new_optimizations 0
+      pgrep mpvpaper || (for monitor in "${monitors[@]}"; do mpvpaper -spf -n 1200 -o '--ao=null --reset-on-next-file=loop --loop-playlist --shuffle --panscan=1 --hwdec=auto input-ipc-server=/tmp/mpv-socket' "$monitor" "$videos"; done)
+      [[ $laststate != "start" ]] && (sleep 5 && pkill -3 swaybg)
+    fi
+    
+    export wpid=($(pgrep mpvpaper || pgrep swaybg))
+
+    #Test for for active wallpaper process, or trigger re-launch on next execution
+    if [[ "${#wpid[@]}" == "${#monitors[@]}" ]]; then
+        export laststate=$1
+    else
+        cleanup
+        export laststate="start"
+    fi
+  }
+
+#Function to select a random file from $stills directory
+randstill() {
+    find "$stills" -maxdepth 1 -type f | shuf -n 1
+}
+
+#Kill forked wallpaper processes
+cleanup() {
+    for pid in "${wpid[@]}"; do
+        kill -3 "$pid"
+    done
+}
+
+#perform cleanup and exit
+trap 'cleanup && exit' exit 1 3 15
+
+laststate="start"
+bat=$(ls /sys/class/power_supply | grep -m 1 "BAT")
+wptoggle "$(cat /sys/class/power_supply/$bat/status)"
+sleep 5
+while pgrep Hyprland >> /dev/null; do
+    wptoggle "$(cat /sys/class/power_supply/$bat/status)"
+    sleep 5
+done

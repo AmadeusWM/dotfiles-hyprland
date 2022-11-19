@@ -1,0 +1,22 @@
+#!/bin/bash
+
+## Files and cmd
+EWW="eww -c $HOME/.config/hypr/themes/apatheia/eww/"
+focusmon=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .id')
+
+## Run eww daemon if not running already
+if [[ ! $(pidof eww) ]]; then
+	${EWW} daemon
+	sleep 1
+fi
+
+## Open widgets 
+NB_MONITORS=($(hyprctl monitors -j | jq -r '.[] | .id'))
+for id in "${NB_MONITORS[@]}"; do
+    bar="bar$id"
+    hyprctl dispatch focusmonitor "$id"
+    ${EWW} open "$bar" 
+    [[ $id == 0 ]] && ${EWW} open-many sidebar notifications
+done
+
+    hyprctl dispatch focusmonitor "$focusmon"

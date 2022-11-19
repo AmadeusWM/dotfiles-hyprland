@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-
 # variables
 config=$HOME/.config/hypr
 scripts=$config/scripts
@@ -16,10 +15,8 @@ $scripts/default/idle_handler &
 
 # other
 ## start xp pen drawing software minimized
-killall pentablet & sleep 1
 /usr/lib/pentablet/pentablet.sh /mini &
 ## make kde connect work  (source: https://www.reddit.com/r/kde/comments/l6t6qu/please_make_kdeconnectcli_work_in_headless_moded/)
-killall kdeconnectd & sleep 1
 /usr/lib/kdeconnectd -platform offscreen & 
 ## Gnome authentication
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
