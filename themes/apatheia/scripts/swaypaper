@@ -1,7 +1,11 @@
 #!/bin/sh
 
+WALLP1 = $HOME/.config/hypr/themes/apatheia/wallpapers/Planet.png
+WALLP2 = $HOME/.config/hypr/themes/apatheia/wallpapers/o8o22e7f45h91.webp
+
 killall swaybg
 
 sleep 1
 
-swaybg -m fill -i /home/amadeusw/Pictures/wallpapers/widescreen/o8o22e7f45h91.webp &
+# swaybg -m fill -i /home/amadeusw/Pictures/wallpapers/widescreen/o8o22e7f45h91.webp &
+swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/Planet.png &

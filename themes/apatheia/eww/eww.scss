@@ -87,7 +87,7 @@ tooltip label {
 }
 
 .batbar {
-    color: $purple;
+    color: $red;
     background-color: $widget-background;
     border-radius: 10px;
 }
@@ -98,26 +98,26 @@ tooltip label {
 }
 
 .volbar trough highlight {
-    background-image: linear-gradient(to right, #afcee0 30%, #92B6F4 50%, #77a5bf 100% *50);
+    background-image: linear-gradient(to right, $red 30%, $purple 50%, $red 100% *50);
     border-radius: 10px;
 }
 
 .volume_icon {
     font-size: 22;
-    color: $blue;
-    margin: 0px 10px 0px 10px;
+    color: $red;
+    margin: 0px 10px 0px 5px;
 }
 
 
 .module_essid {
     font-size: 18;
-    color: $blue;
-    margin: 0px 10px 0px 0px;
+    color: $green;
+    margin: 0px 0px 0px 10px;
 }
 
 .module-wif {
     font-size: 22;
-    color: $blue;
+    color: $green;
     margin: 0px 10px 0px 5px;
 }
 
@@ -230,7 +230,7 @@ tooltip label {
 .077,
 .088,
 .099 {
-    color: $purple;
+    color: $red;
 }
 
 
@@ -362,9 +362,9 @@ calendar:indeterminate {
 
 .app-button {
     color: $purple2;
-    font-size: 26px;
+    font-size: 20px;
     font-weight: bold;
-    margin: 0px 15px 0px 15px;
+    margin: 0px 12px 0px 12px;
 }
 
 .color-var1 {
@@ -377,10 +377,13 @@ calendar:indeterminate {
 
 .color-var3 {
     color: $red;
+    margin-left: 15px;
 }
 
 .launcher-icon {
-    margin: 5px -5px 10px 15px;
+    // margin: 5px -5px 10px 15px;
+    // padding: 2px -5px 2px 5px;
+    padding-bottom: 6px;
 }
 
 .audio-box {

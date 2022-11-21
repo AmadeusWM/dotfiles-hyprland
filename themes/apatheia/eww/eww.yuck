@@ -66,15 +66,16 @@
           :vexpand "false"
           :hexpand "false"
           :orientation "h"
-          :space-evenly "false"
+          :space-evenly "true"
           (button
-            :class "app-button color-var1"
+            :class "app-button"
           :onclick "hyprctl dispatch togglefloating 1" "")
           (button
-            :class "app-button color-var2"
+            :class "app-button"
           :onclick "hyprctl dispatch fullscreen 1" "")
-          (button
+          (button ; use "eventbox" with : ":cursor pointer" for poiner cursor
             :class "app-button color-var3"
+            :cursor "pointer"
           :onclick "hyprctl dispatch killactive 1" ""))))))
 
 (defwidget bright []
