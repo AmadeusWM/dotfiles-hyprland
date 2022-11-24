@@ -235,27 +235,32 @@
 	    :spacing "2"
 	    (button 
 	        :class "poweroff" 
-	        :halign "center"  
+	        :halign "center"
+			:valign "center"
 			:tooltip "Shut Down" 
 	        :onclick "kitty poweroff &" "⏻")
 	    (button 
 	        :class "reboot" 
-	        :halign "center"  
+	        :halign "center"
+			:valign "center"
 			:tooltip "Reboot" 
 	        :onclick "kitty reboot &" "")
 	    (button 
 	        :class "firmware" 
-	        :halign "center"  
+	        :halign "center"
+			:valign "center"
 			:tooltip "Reboot to EFI" 
 	        :onclick "kitty systemctl reboot --firmware &" "拉")
 	    (button 
 	        :class "exit" 
-	        :halign "center"  
+	        :halign "center"
+			:valign "center"
 			:tooltip "Quit Hyprland" 
 	        :onclick "hyprctl dispatch exit exit" "")
 	    (button 
 	        :class "restart" 
-	        :halign "center"  
+	        :halign "center"
+			:valign "center"
 			:tooltip "edit Config" 
 	        :onclick "footclient nvim ~/.config/hypr/hyprland.conf &" "")))
 
