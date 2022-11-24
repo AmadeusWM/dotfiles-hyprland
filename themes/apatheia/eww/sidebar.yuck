@@ -2,7 +2,7 @@
     :geometry (geometry :x "0px"
                         :y "0px"
                         :width "1px"
-                        :height "1024"
+                        :height "100%"
                         :anchor "bottom left")
     :stacking "fg"
     :monitor "0"
