@@ -186,6 +186,10 @@ tooltip label {
     background-color: rgba(00, 00, 00, 0.0);
 }
 
+.ws-btn{
+    margin: 0px 7px 0px 0px;
+}
+
 .0,
 .01,
 .02,
@@ -199,7 +203,6 @@ tooltip label {
 .044,
 .055,
 .066 {
-    margin: 0px 7px 0px 0px;
 }
 
 /* Unoccupied */
@@ -216,7 +219,8 @@ tooltip label {
 .06,
 .07,
 .08,
-.09 {
+.09, 
+.010 {
     color: $white;
 }
 
@@ -229,7 +233,8 @@ tooltip label {
 .066,
 .077,
 .088,
-.099 {
+.099,
+.01010 {
     color: $red;
 }
 
