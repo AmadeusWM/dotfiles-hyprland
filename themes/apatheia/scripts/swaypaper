@@ -7,5 +7,12 @@ killall swaybg
 
 sleep 1
 
-# swaybg -m fill -i /home/amadeusw/Pictures/wallpapers/widescreen/o8o22e7f45h91.webp &
-swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/Planet.png &
+### IMAGES ###
+# swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/Planet.png &
+# swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/PandaSamurai.webp &
+# swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/GreenGlass.webp &
+swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/tits.png &
+# swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/tits_inv.png &
+
+# ### COLORS ###
+# swaybg -c "#F22555" & # just a dark color (obsidian color..)
