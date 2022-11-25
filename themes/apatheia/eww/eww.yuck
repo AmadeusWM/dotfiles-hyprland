@@ -276,7 +276,6 @@
   :monitor 0
   :exclusive false
   :geometry (geometry
-    :x "0px"
     :y "0px"
     :width "100%"
     :height "45px"
@@ -288,7 +287,6 @@
   :monitor 1
   :exclusive false
   :geometry (geometry
-    :x "0px"
     :y "0px"
     :width "100%"
     :height "45px"
@@ -300,7 +298,6 @@
   :monitor 2
   :exclusive false
   :geometry (geometry
-    :x "0px"
     :y "0px"
     :width "100%"
     :height "45px"
