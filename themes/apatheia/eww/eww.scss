@@ -24,6 +24,7 @@ $white:   #eae9f0; // #FDFDFD;
 /** General **/
 .bar_class {
     background-color: $background;
+    border-radius: 0px 0px 16px 16px;
 }
 
 .module {
@@ -81,7 +82,7 @@ tooltip label {
 }
 
 .membar {
-    color: $orange;
+    color: $blue;
     background-color: $widget-background;
     border-radius: 10px;
 }
@@ -93,7 +94,7 @@ tooltip label {
 }
 
 .brightbar trough highlight {
-    background-image: linear-gradient(to right, $orange 30%, #f2cdcd 50%, $orange 100% *50);
+    background-image: linear-gradient(to right, $blue 30%, $white 50%, $blue 100% *50);
     border-radius: 10px;
 }
 
@@ -111,13 +112,13 @@ tooltip label {
 
 .module_essid {
     font-size: 18;
-    color: $green;
+    color: $teal;
     margin: 0px 0px 0px 10px;
 }
 
 .module-wif {
     font-size: 22;
-    color: $green;
+    color: $teal;
     margin: 0px 10px 0px 5px;
 }
 
@@ -149,7 +150,7 @@ tooltip label {
 
 .bright_icon {
     font-size: 22;
-    color: $orange;
+    color: $blue;
     margin: 0px 10px 0px 10px;
 }
 

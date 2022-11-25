@@ -1,0 +1,634 @@
+/* Main sass file that contains the theme */ /* Main sass file that contains the theme */
+:root {
+  --ap-radius-s: 4px;
+  --ap-radius-m: 8px;
+  --ap-radius-l: 10px;
+  --ap-radius-xl: 16px;
+  --ap-primary-h: 15.3846153846deg;
+  --ap-primary-s: 63.9344262295%;
+  --ap-primary-l: 88.0392156863%;
+  --ap-primary-d: 80%;
+  --ap-primary: #F4D7CD;
+  --ap-secondary-h: 157.0588235294deg;
+  --ap-secondary-s: 31.7757009346%;
+  --ap-secondary-l: 58.0392156863%;
+  --ap-secondary-d: 70%;
+  --ap-secondary: #72b69c;
+  --ap-base1-h: 250deg;
+  --ap-base1-s: 23.0769230769%;
+  --ap-base1-l: 8.0980392157%;
+  --ap-base1-d: 20%;
+  --ap-base0: #0B0A10;
+  --ap-base0-h: 250deg;
+  --ap-base0-s: 23.0769230769%;
+  --ap-base0-l: 5.0980392157%;
+  --ap-base0-d: 20%;
+  --ap-base1: #111019;
+  --ap-red: #E97193;
+  --ap-green: #AAC5A0;
+  --ap-blue: #A8C5E6;
+  --ap-purple: #DFA7E7;
+  --ap-aqua: #a8e5e6;
+  --ap-yellow: #ece0a8;
+  --ap-orange: #D1A999;
+  --ap-color-strong: #E97193;
+  --ap-color-quote: #E97193;
+  --ap-color-italic: #E97193;
+  --ap-color-tag-background: #2c2537;
+  --ap-color-tag-text: #EEEEEE;
+  --ap-code-gray-1: #5b5c5f;
+  --ap-code-gray-2: #45474c;
+  --ap-code-red: var(--ap-red);
+  --ap-code-green: var(--ap-green);
+  --ap-code-blue: var(--ap-blue);
+  --ap-code-purple: var(--ap-purple);
+  --ap-code-aqua: var(--ap-aqua);
+  --ap-code-yellow: var(--ap-yellow);
+  --ap-code-orange: var(--ap-orange);
+  --ap-color-dp0: #111019;
+  --ap-color-dp1: #0B0A10;
+  --ap-color-dp2: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 5%));
+  --ap-color-dp3: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 10%));
+  --ap-color-dp4: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 15%));
+  --ap-color-dp5: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 40%));
+  --ap-color-dp6: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 50%));
+  --ap-color-dp7: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 60%));
+  --ap-color-dp8: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 70%));
+  --ap-color-dp9: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 80%));
+  --ap-color-dp10: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 95%));
+  --ap-color-dp11: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 100%));
+  --ap-h1: var(--ap-red);
+  --ap-h2: var(--ap-purple);
+  --ap-h3: var(--ap-blue);
+  --ap-h4: var(--ap-green);
+  --ap-h5: var(--ap-orange);
+  --ap-h6: var(--ap-yellow);
+  --ap-h1-size: 2.5em;
+  --ap-h2-size: 1.9882em;
+  --ap-h3-size: 1.5811em;
+  --ap-h4-size: 1.2574em;
+  --ap-h5-size: 1em;
+  --ap-h6-size: 0.7953em;
+  --ap-size-text: 1em;
+  --ap-size-text-header: 1em;
+  --ap-size-text-item: 1em;
+  --ap-container-padding: 8px;
+  --ap-frame-left: 10px;
+}
+
+.theme-dark {
+  color-scheme: dark;
+  --highlight-mix-blend-mode: lighten;
+  --mono-rgb-0: 0, 0, 0;
+  --mono-rgb-100: 255, 255, 255,;
+  --color-red-rgb: 251, 70, 76,;
+  --color-red: #fb464c;
+  --color-green-rgb: 68, 207, 110,;
+  --color-green: #44cf6e;
+  --color-orange: #e9973f;
+  --color-yellow: #e0de71;
+  --color-cyan: #53dfdd;
+  --color-blue: #027aff;
+  --color-purple: #a882ff;
+  --color-pink: #fa99cd;
+  --color-base-00: var(--ap-color-dp1);
+  --color-base-10: var(--ap-color-dp2);
+  --color-base-20: var(--ap-color-dp0);
+  --color-base-25: var(--ap-color-dp0);
+  --color-base-30: var(--ap-color-dp0);
+  --color-base-35: var(--ap-color-dp4);
+  --color-base-40: var(--ap-color-dp0);
+  --color-base-50: var(--ap-color-dp6);
+  --color-base-60: var(--ap-color-dp7);
+  --color-base-70: var(--ap-color-dp10);
+  --color-base-100: var(--ap-color-dp11);
+  --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
+  --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --color-accent-1: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 3.8%));
+  --color-accent-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 3.8%));
+  --background-modifier-form-field: var(--color-base-25);
+  --background-secondary-alt: var(--color-base-30);
+  --background-modifier-hover: hsla(var(--interactive-accent-hsl), 0.5);
+  --interactive-normal: var(--color-base-30);
+  --interactive-hover: var(--color-base-35);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+  --background-modifier-cover: rgba(10, 10, 10, 0.4);
+  --text-highlight-bg: rgba(255, 208, 0, 0.4);
+  --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
+  --text-selection: hsla(var(--interactive-accent-hsl), 0.25);
+  --input-shadow: inset 0 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.09),0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 1px 1.5px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
+  --input-shadow-hover: inset 0 0.5px 1px 0.5px rgba(255, 255, 255, 0.16),0 2px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 1.5px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 0 0 transparent;
+  --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.121), 0px 3.4px 6.7px rgba(0, 0, 0, 0.179), 0px 15px 30px rgba(0, 0, 0, 0.3);
+  --shadow-l: 0px 1.8px 7.3px rgba(0, 0, 0, 0.071), 0px 6.3px 24.7px rgba(0, 0, 0, 0.112), 0px 30px 90px rgba(0, 0, 0, 0.2);
+  --tag-background: var(--ap-color-tag-background);
+  --tag-color: var(--ap-color-tag-text);
+  --text-muted: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 65%));
+  --text-faint: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 30%));
+  --text-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-d));
+  --text-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-d) + 12%));
+  --h1-color: var(--ap-h1);
+  --h2-color: var(--ap-h2);
+  --h3-color: var(--ap-h3);
+  --h4-color: var(--ap-h4);
+  --h5-color: var(--ap-h5);
+  --h6-color: var(--ap-h6);
+  --strong-color: var(--ap-color-strong);
+  --em-color: var(--ap-color-italic);
+  --quote-color: var(--ap-color-quote);
+  --tag-background-color-l: #bde1d3;
+  --tag-font-color-l: #1d694b;
+  --tag-background-color-d: #1d694b;
+  --tag-font-color-d: #ffffff;
+  --font-text-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --font-editor-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --font-monospace-theme: 'JetBrains Mono', 'Fira Code', Menlo, SFMono-Regular, Consolas, 'Roboto Mono', monospace;
+  --font-interface-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --font-editor: var(--font-editor-override), var(--font-text-override), var(--font-editor-theme);
+  --checkbox-radius: 30%;
+  --link-external-decoration: underline;
+  --link-decoration: underline;
+  --scrollbar-bg: hsla(var(--base-h), var(--base-s), calc(var(--base-l) + 15%), 1);
+  --scrollbar-thumb-bg: hsla(var(--base-h), var(--base-s), calc(var(--base-l) + 15%), 1);
+  --scrollbar-active-thumb-bg: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.4);
+  --base-h: var(--ap-base0-h);
+  --base-s: var(--ap-base0-s);
+  --base-l: var(--ap-base0-l);
+  --base-d: var(--ap-base0-d);
+  --accent-h: var(--ap-primary-h);
+  --accent-s: var(--ap-primary-s);
+  --accent-l: var(--ap-primary-l);
+  --accent-d: var(--ap-primary-d);
+  --blue: #2e80f2;
+  --pink: #ff82b2;
+  --green: #3eb4bf;
+  --yellow: #e5b567;
+  --orange: #e87d3e;
+  --red: #e83e3e;
+  --purple: #9e86c8;
+  --tab-divider-color: var(--color-base-10);
+  --tab-text-color: var(--color-base-70);
+  --radius-s: var(--ap-radius-s);
+  --radius-m: var(--ap-radius-m);
+  --radius-l: var(--ap-radius-l);
+  --radius-xl: var(--ap-radius-xl);
+}
+
+.theme-light {
+  color-scheme: dark;
+  --highlight-mix-blend-mode: lighten;
+  --mono-rgb-0: 0, 0, 0;
+  --mono-rgb-100: 255, 255, 255,;
+  --color-red-rgb: 251, 70, 76,;
+  --color-red: #fb464c;
+  --color-green-rgb: 68, 207, 110,;
+  --color-green: #44cf6e;
+  --color-orange: #e9973f;
+  --color-yellow: #e0de71;
+  --color-cyan: #53dfdd;
+  --color-blue: #027aff;
+  --color-purple: #a882ff;
+  --color-pink: #fa99cd;
+  --color-base-00: var(--ap-color-dp1);
+  --color-base-10: var(--ap-color-dp2);
+  --color-base-20: var(--ap-color-dp0);
+  --color-base-25: var(--ap-color-dp0);
+  --color-base-30: var(--ap-color-dp0);
+  --color-base-35: var(--ap-color-dp4);
+  --color-base-40: var(--ap-color-dp0);
+  --color-base-50: var(--ap-color-dp6);
+  --color-base-60: var(--ap-color-dp7);
+  --color-base-70: var(--ap-color-dp10);
+  --color-base-100: var(--ap-color-dp11);
+  --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
+  --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --color-accent-1: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 3.8%));
+  --color-accent-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 3.8%));
+  --background-modifier-form-field: var(--color-base-25);
+  --background-secondary-alt: var(--color-base-30);
+  --background-modifier-hover: hsla(var(--interactive-accent-hsl), 0.5);
+  --interactive-normal: var(--color-base-30);
+  --interactive-hover: var(--color-base-35);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+  --background-modifier-cover: rgba(10, 10, 10, 0.4);
+  --text-highlight-bg: rgba(255, 208, 0, 0.4);
+  --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
+  --text-selection: hsla(var(--interactive-accent-hsl), 0.25);
+  --input-shadow: inset 0 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.09),0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 1px 1.5px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
+  --input-shadow-hover: inset 0 0.5px 1px 0.5px rgba(255, 255, 255, 0.16),0 2px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 1.5px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 0 0 transparent;
+  --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.121), 0px 3.4px 6.7px rgba(0, 0, 0, 0.179), 0px 15px 30px rgba(0, 0, 0, 0.3);
+  --shadow-l: 0px 1.8px 7.3px rgba(0, 0, 0, 0.071), 0px 6.3px 24.7px rgba(0, 0, 0, 0.112), 0px 30px 90px rgba(0, 0, 0, 0.2);
+  --tag-background: var(--ap-color-tag-background);
+  --tag-color: var(--ap-color-tag-text);
+  --text-muted: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 65%));
+  --text-faint: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 30%));
+  --text-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-d));
+  --text-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-d) + 12%));
+  --h1-color: var(--ap-h1);
+  --h2-color: var(--ap-h2);
+  --h3-color: var(--ap-h3);
+  --h4-color: var(--ap-h4);
+  --h5-color: var(--ap-h5);
+  --h6-color: var(--ap-h6);
+  --strong-color: var(--ap-color-strong);
+  --em-color: var(--ap-color-italic);
+  --quote-color: var(--ap-color-quote);
+  --tag-background-color-l: #bde1d3;
+  --tag-font-color-l: #1d694b;
+  --tag-background-color-d: #1d694b;
+  --tag-font-color-d: #ffffff;
+  --font-text-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --font-editor-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --font-monospace-theme: 'JetBrains Mono', 'Fira Code', Menlo, SFMono-Regular, Consolas, 'Roboto Mono', monospace;
+  --font-interface-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --font-editor: var(--font-editor-override), var(--font-text-override), var(--font-editor-theme);
+  --checkbox-radius: 30%;
+  --link-external-decoration: underline;
+  --link-decoration: underline;
+  --scrollbar-bg: hsla(var(--base-h), var(--base-s), calc(var(--base-l) + 15%), 1);
+  --scrollbar-thumb-bg: hsla(var(--base-h), var(--base-s), calc(var(--base-l) + 15%), 1);
+  --scrollbar-active-thumb-bg: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.4);
+  --base-h: var(--ap-base0-h);
+  --base-s: var(--ap-base0-s);
+  --base-l: var(--ap-base0-l);
+  --base-d: var(--ap-base0-d);
+  --accent-h: var(--ap-primary-h);
+  --accent-s: var(--ap-primary-s);
+  --accent-l: var(--ap-primary-l);
+  --accent-d: var(--ap-primary-d);
+  --blue: #2e80f2;
+  --pink: #ff82b2;
+  --green: #3eb4bf;
+  --yellow: #e5b567;
+  --orange: #e87d3e;
+  --red: #e83e3e;
+  --purple: #9e86c8;
+  --tab-divider-color: var(--color-base-10);
+  --tab-text-color: var(--color-base-70);
+  --radius-s: var(--ap-radius-s);
+  --radius-m: var(--ap-radius-m);
+  --radius-l: var(--ap-radius-l);
+  --radius-xl: var(--ap-radius-xl);
+}
+
+/* H2 styling */
+h2,
+.HyperMD-header.HyperMD-header-2.cm-line {
+  border-bottom: 2px solid var(--background-modifier-border);
+  width: 100%;
+  padding-bottom: 2px;
+}
+
+/* Hashtags font */
+.markdown-source-view.mod-cm6.is-live-preview .cm-hashtag.cm-meta,
+.markdown-source-view.mod-cm5 .cm-hashtag.cm-meta {
+  font-family: var(--ap-font-hashtag);
+}
+
+/* Blockquote */
+body:not(.default-font-color) .markdown-preview-view blockquote,
+body:not(.default-font-color) span.cm-quote.cm-quote-1 {
+  font-style: italic;
+  color: var(--ap-color-quote);
+}
+
+/* Bold font */
+body:not(.default-font-color) strong,
+body:not(.default-font-color) .cm-strong {
+  color: var(--ap-color-strong);
+}
+
+/* Markdown formatting */
+.cm-formatting-strong,
+.cm-formatting-em,
+.cm-formatting.cm-formatting-quote {
+  color: var(--text-faint) !important;
+  font-weight: var(--normal-weight);
+  opacity: 0.8;
+  letter-spacing: -0.02em;
+}
+
+/* Completed checkboxes */
+.markdown-preview-view ul > li.task-list-item.is-checked,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=x],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=X] {
+  text-decoration: none;
+  color: var(--text-faint);
+}
+
+/* Image card */
+img {
+  border-radius: var(--ap-radius-l);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+/* ###########################################
+Code styling
+########################################### */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--ap-code-gray-1);
+}
+
+.token.punctuation,
+.cm-hmd-codeblock,
+.cm-bracket {
+  color: var(--ap-code-gray-2);
+}
+
+code[class*=language-],
+.token.selector,
+.token.tag,
+.token.parameter,
+.token.property-access,
+.cm-def,
+.cm-property,
+.cm-qualifier {
+  color: var(--ap-code-red);
+}
+
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.attr-name,
+.token.deleted,
+.cm-number,
+.cm-property.cm-string {
+  color: var(--ap-code-orange) !important;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.builtin,
+.token.inserted,
+.cm-hmd-codeblock.cm-string {
+  color: var(--ap-code-green);
+}
+
+.token.operator,
+.cm-operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--ap-code-aqua);
+}
+
+.token.atrule,
+.token.keyword,
+.cm-keyword {
+  color: var(--ap-code-purple);
+}
+
+.token.function,
+.token.macro.property,
+.cm-variable {
+  color: var(--ap-code-blue);
+}
+
+.token.class-name,
+.token.property,
+.cm-atom,
+code .cm-tag,
+.theme-dark .cm-variable-2,
+.cm-type {
+  color: var(--ap-code-yellow);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--ap-code-purple);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/*=======================================
+Container styling
+=========================================*/
+.nav-files-container.node-insert-event {
+  border-radius: var(--ap-radius-l);
+  padding: 0px;
+  margin: var(--ap-container-padding);
+  margin-bottom: 0px;
+}
+
+.mod-root,
+.nav-folder-title {
+  padding: var(--ap-container-padding);
+}
+
+.nav-header .nav-buttons-container {
+  border-radius: var(--ap-radius-l);
+  background-color: var(--color-base-00);
+  margin-top: none;
+  padding: var(--ap-container-padding);
+}
+
+.nav-files-container {
+  padding: var(--ap-container-padding);
+}
+
+.nav-folder {
+  border-radius: var(--ap-radius-l);
+  background-color: var(--color-base-00);
+}
+
+.backlink-pane,
+.outgoing-link-pane {
+  margin: var(--ap-container-padding);
+  background-color: var(--color-base-00);
+  border-radius: var(--ap-radius-l);
+}
+
+.workspace-ribbon.mod-left {
+  background-color: var(--color-base-00);
+  border-radius: var(--ap-radius-l);
+  margin: calc(var(--header-height) + var(--ap-container-padding)) var(--ap-container-padding) var(--ap-container-padding) var(--ap-container-padding);
+}
+
+.workspace-ribbon.mod-left:before {
+  width: calc(var(--ribbon-width) + var(--ap-container-padding) + var(--ap-container-padding));
+}
+
+.workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf {
+  margin: 0px;
+}
+
+.workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
+  border-radius: var(--ap-radius-l) !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf .view-header {
+  margin: 0px var(--ap-container-padding);
+}
+
+.workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf .view-content {
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+
+.workspace {
+  background-color: var(--color-base-20);
+}
+
+.workspace-tab-container {
+  display: flex;
+  padding-bottom: var(--ap-container-padding);
+}
+
+.workspace-split.mod-root .view-content {
+  background-color: var(--color-base-00);
+  border-radius: var(--ap-radius-l);
+  padding: var(--ap-container-padding);
+  margin-top: var(--ap-container-padding);
+  margin-bottom: var(--ap-container-padding);
+}
+
+.workspace-split.mod-root {
+  padding: 0;
+  border-radius: var(--ap-radius-l);
+}
+
+.workspace-fake-target-overlay:not(.is-in-sidebar) .workspace-tabs .workspace-leaf,
+.mod-root .workspace-tabs .workspace-leaf {
+  background-color: var(--color-base-20);
+  margin: var(--ap-container-padding);
+}
+
+.workspace-split.mod-root {
+  background-color: var(--color-base-20);
+}
+
+.workspace .mod-root .workspace-tab-header {
+  -webkit-app-region: no-drag;
+  flex: 1 1 0;
+  width: var(--tab-width);
+  min-width: 0;
+  max-width: var(--tab-max-width);
+  padding: 1px 3px 0px;
+  border-radius: var(--ap-radius-s);
+}
+
+.workspace-tab-header::before,
+.workspace-tab-header::after {
+  display: none;
+}
+
+.view-header {
+  display: flex;
+  border-radius: var(--ap-radius-l);
+  margin-bottom: var(--ap-container-padding);
+  padding: var(--ap-container-padding);
+  height: auto;
+}
+
+.view-header-nav-buttons {
+  --icon-size: var(--icon-s);
+  align-items: center;
+  display: inline-flex;
+  margin-right: var(--size-4-1);
+}
+
+.view-header-title-container {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  justify-content: var(--file-header-justify);
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
+}
+
+.cm-s-obsidian .cm-cursor {
+  transition: all 80ms;
+}
+
+/*=======================================
+Plugins
+=========================================*/
+#calendar-container {
+  padding: var(--ap-container-padding);
+  border-radius: var(--ap-radius-l);
+  background-color: var(--color-base-00);
+}
+
+.theme-dark,
+.excalidraw.theme--dark {
+  --interactive-normal: var(--bg3);
+  --interactive-accent-rgb: 66, 66, 66;
+  --active-line-bg: rgba(255, 255, 255, 0.04);
+  --background-modifier-cover: hsla(var(--ap-base1-h), var(--ap-base1-s), calc(var(--ap-base1-d) - 12%), 0.7);
+  --text-highlight-bg-active: rgba(255, 255, 255, 0.1);
+  /* Errors */
+  --background-modifier-error: rgba(255, 20, 20, 0.12);
+  --background-modifier-error-hover: rgba(255, 20, 20, 0.18);
+  /* Shadows */
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --btn-shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Excalidraw Plugin */
+body .excalidraw,
+body .excalidraw.theme--dark {
+  --color-primary-light:var(--text-selection);
+  --color-primary:var(--interactive-accent);
+  --color-primary-chubb:var(--interactive-accent-hover);
+  --color-primary-darker:var(--interactive-accent-hover);
+  --color-primary-darkest:var(--interactive-accent-hover);
+  --ui-font:var(--font-interface);
+  --island-bg-color:var(--background-secondary);
+  --button-gray-1:var(--background-tertiary);
+  --button-gray-2:var(--background-tertiary);
+  --focus-highlight-color:var(--background-modifier-border-focus);
+  --default-bg-color:var(--background-primary);
+  --input-border-color:var(--background-modifier-border);
+  --link-color:var(--text-accent);
+  --overlay-bg-color:rgba(255, 255, 255, 0.88);
+  --text-primary-color:var(--text-normal);
+}
+
+/*---------------------------------------
+            Style settings
+---------------------------------------*/
+/* @settings
+
+name: Apatheia 
+id: ap-theme
+settings:
+    - 
+        id: --ap-radius-l
+        title: border radius
+        type: variable-number-slider
+        level: 1
+    - 
+        id: accent
+        title: Accent Color
+        type: variable-color
+        format: hsl-split
+        default: '#007AFF'
+    - 
+        id: text
+        title: UI font
+        description: Font used for the user interface
+        type: variable-text
+        default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+
+*/

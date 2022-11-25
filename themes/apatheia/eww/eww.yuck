@@ -34,7 +34,7 @@
       :onclick "rofi -no-lazy-grab -show drun -theme ~/.config/hypr/themes/apatheia/rofi/launcher.rasi &"
       (image
         :class "launcher-icon"
-        :path "favicon.ico"
+        :path "favicon.png"
       :image-width 28))
     (button
       :onclick "nautilus &"
@@ -513,7 +513,7 @@
   :monitor 0
   :geometry (geometry
     :x "20"
-    :y "7%"
+    :y "65px"
     :anchor "top right"
     :width "270px"
   :height "60px")

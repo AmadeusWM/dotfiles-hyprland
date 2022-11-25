@@ -1,0 +1,5 @@
+/* make borders from inner content rounded */
+#tabbrowser-tabpanels browser[type="content"] {
+	color-scheme: env(-moz-content-preferred-color-scheme);
+	border-radius: 16px;
+}

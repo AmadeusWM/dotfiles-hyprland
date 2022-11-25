@@ -1,0 +1,406 @@
+/*
+Go to https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#favicon-of-tabs
+for some information on how to change these variables...
+*/
+/* Main sass file that contains the theme */
+:root {
+  --ap-radius-s: 4px;
+  --ap-radius-m: 8px;
+  --ap-radius-l: 10px;
+  --ap-radius-xl: 16px;
+  --ap-primary-h: 15.3846153846deg;
+  --ap-primary-s: 63.9344262295%;
+  --ap-primary-l: 88.0392156863%;
+  --ap-primary-d: 80%;
+  --ap-primary: #F4D7CD;
+  --ap-secondary-h: 157.0588235294deg;
+  --ap-secondary-s: 31.7757009346%;
+  --ap-secondary-l: 58.0392156863%;
+  --ap-secondary-d: 70%;
+  --ap-secondary: #72b69c;
+  --ap-base1-h: 250deg;
+  --ap-base1-s: 23.0769230769%;
+  --ap-base1-l: 8.0980392157%;
+  --ap-base1-d: 20%;
+  --ap-base0: #0B0A10;
+  --ap-base0-h: 250deg;
+  --ap-base0-s: 23.0769230769%;
+  --ap-base0-l: 5.0980392157%;
+  --ap-base0-d: 20%;
+  --ap-base1: #111019;
+  --ap-red: #E97193;
+  --ap-green: #AAC5A0;
+  --ap-blue: #A8C5E6;
+  --ap-purple: #DFA7E7;
+  --ap-aqua: #a8e5e6;
+  --ap-yellow: #ece0a8;
+  --ap-orange: #D1A999;
+  --ap-color-strong: #E97193;
+  --ap-color-quote: #E97193;
+  --ap-color-italic: #E97193;
+  --ap-color-tag-background: #2c2537;
+  --ap-color-tag-text: #EEEEEE;
+  --ap-code-gray-1: #5b5c5f;
+  --ap-code-gray-2: #45474c;
+  --ap-code-red: var(--ap-red);
+  --ap-code-green: var(--ap-green);
+  --ap-code-blue: var(--ap-blue);
+  --ap-code-purple: var(--ap-purple);
+  --ap-code-aqua: var(--ap-aqua);
+  --ap-code-yellow: var(--ap-yellow);
+  --ap-code-orange: var(--ap-orange);
+  --ap-color-dp0: #111019;
+  --ap-color-dp1: #0B0A10;
+  --ap-color-dp2: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 5%));
+  --ap-color-dp3: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 10%));
+  --ap-color-dp4: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 15%));
+  --ap-color-dp5: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 40%));
+  --ap-color-dp6: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 50%));
+  --ap-color-dp7: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 60%));
+  --ap-color-dp8: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 70%));
+  --ap-color-dp9: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 80%));
+  --ap-color-dp10: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 95%));
+  --ap-color-dp11: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 100%));
+  --ap-h1: var(--ap-red);
+  --ap-h2: var(--ap-purple);
+  --ap-h3: var(--ap-blue);
+  --ap-h4: var(--ap-green);
+  --ap-h5: var(--ap-orange);
+  --ap-h6: var(--ap-yellow);
+  --ap-h1-size: 2.5em;
+  --ap-h2-size: 1.9882em;
+  --ap-h3-size: 1.5811em;
+  --ap-h4-size: 1.2574em;
+  --ap-h5-size: 1em;
+  --ap-h6-size: 0.7953em;
+  --ap-size-text: 1em;
+  --ap-size-text-header: 1em;
+  --ap-size-text-item: 1em;
+  --ap-container-padding: 8px;
+  --ap-frame-left: 10px;
+}
+
+:root {
+  --dark-0: var(--ap-color-dp0);
+  --dark-base: var(--ap-color-dp0);
+  --dark-1: var(--ap-color-dp1);
+  --dark-2: var(--ap-color-dp1);
+  --dark-3: var(--ap-color-dp2);
+  --dark-4: var(--ap-color-dp3);
+  --light-0: var(--ap-color-dp11);
+  --light-base: var(--ap-color-dp10);
+  --light-1: var(--ap-color-dp9);
+  --light-2: var(--ap-color-dp8);
+  --light-3: var(--ap-color-dp6);
+  --light-4: var(--ap-color-dp5);
+  --accent: var(--ap-primary);
+  --yellow: var(--ap-yellow);
+  --green: var(--ap-green);
+  --red: var(--ap-red);
+  /* --extension-icon-mask: grayscale(85%) invert(21%) sepia(0%) saturate(1166%) hue-rotate(166deg) brightness(95%) contrast(80%); */
+}
+
+:root.incognito {
+  --dark-0: #1C0E34;
+  --dark-base: #20103c;
+  --dark-1: #2F1D4E;
+  --dark-2: #38225D;
+  --dark-3: #4A2D7B;
+  --dark-4: #53338A;
+  --light-0: #CC6B9C;
+  --light-base: #B9407C;
+  --light-1: #AB3B73;
+  --light-2: #9C3569;
+  --light-3: #8D305E;
+  --light-4: #7D2B54;
+  --accent: #e9207e;
+  --yellow: #C9B336;
+  --green: #36C987;
+  --red: #C9365D;
+  /* --extension-icon-mask: grayscale(85%) invert(13%) sepia(80%) saturate(3107%) hue-rotate(256deg) brightness(84%) contrast(93%); */
+}
+
+:root {
+  --tab-border-radius: 10px;
+  /* border radius of tabs */
+  --animation-duration: 200ms;
+  /* duration of different animations [0s: turn all animations off] */
+  --spacing: 10px;
+  /* spacing between tabs. [<15px: compact tabs] */
+  --distance-from-edge: 7px;
+  /* distance between tabs, and left-right edges of sidebar*/
+  --hover-text-spacing: 0.2;
+  /* should be left alone. with hover sidebar, if text is visible in collapsed status, increase this */
+  --ease-in: cubic-bezier(0.32, 0, 0.67, 0);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --collapsed-width: 60px;
+  --contextual-identity-color-blue: #63B3ED;
+  --contextual-identity-color-orange: #F6AD55;
+  --contextual-identity-color-green: #68D391;
+  --contextual-identity-color-pink: #F687B3;
+}
+
+/************UNCUSTOMIZED CSS************/
+#tabbar-container #tabbar {
+  margin-bottom: 15px !important;
+}
+
+:root,
+#background {
+  background: var(--dark-base) !important;
+}
+
+#all-tabs {
+  margin: 10px var(--distance-from-edge);
+}
+
+tab-item > * {
+  overflow: visible;
+}
+
+tab-item:not(.collapsed) {
+  /* margin-top: var(--spacing); */
+  /* border-radius: 0px var(--tab-border-radius) var(--tab-border-radius) 0px; */
+  border-radius: var(--tab-border-radius);
+  border: none !important;
+  height: 34px !important;
+  justify-content: center;
+}
+
+tab-item.collapsed {
+  height: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+tab-item:not([data-level="0"]):not(.pinned) {
+  border-left: solid 3px var(--light-4) !important;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 20px;
+  padding-left: 0px;
+  /* margin-top: calc(var(--spacing)/2); */
+}
+
+tab-item tab-favicon {
+  left: 0;
+  filter: var(--extension-icon-mask);
+  transition: transform calc(var(--animation-duration) * 2) var(--ease-out);
+}
+
+.highlighter {
+  display: none !important;
+}
+
+tab-item {
+  --tab-size: 34px !important;
+  margin: 4px;
+}
+
+tab-item tab-item-substance {
+  height: var(--tab-size);
+  padding: 4px 0px 4px 4px;
+}
+
+tab-item tab-item-substance .active {
+  height: var(--tab-size);
+}
+
+tab-item .label {
+  color: var(--light-1) !important;
+  padding-bottom: 2px;
+  padding-left: 8px;
+}
+
+/*The drop-down ">" button*/
+tab-item .twisty:before {
+  background: var(--light-1) !important;
+  transform: scale(150%);
+}
+
+tab-item.active .label {
+  color: var(--light-0) !important;
+}
+
+tab-item.active {
+  background: var(--dark-3) !important;
+}
+
+tab-item:not(.active).highlighted {
+  background: var(--dark-1) !important;
+}
+
+tab-item:not(active):hover {
+  background: var(--dark-1);
+}
+
+/* The close button */
+tab-item:hover tab-closebox {
+  right: 10px;
+}
+
+tab-item:not(pinned) tab-closebox {
+  position: absolute;
+  margin-top: 2px;
+  height: 20px;
+  width: 20px;
+  right: -30px;
+  border-radius: 50%;
+  padding-top: 2px;
+  padding-left: 2px;
+  opacity: 1;
+  /* background: var(--light-4); */
+  transition: all var(--animation-duration) var(--ease-out);
+}
+
+tab-closebox:hover {
+  transition: background var(--animation-duration) var(--ease-out);
+  background: var(--red);
+  transform: scale(110%) !important;
+}
+
+.sound-button:after {
+  background: var(--light-3) !important;
+  margin-right: 5px;
+}
+
+.counter {
+  color: var(--light-1) !important;
+  background: rgba(66, 66, 66, 0.2666666667) !important;
+  border-radius: 5px;
+  margin: 0px 4px;
+  padding: 2px 5px;
+  font-weight: bold;
+  /* padding-bottom: 2px; */
+  order: -1 !important;
+}
+
+.counter:before,
+.counter:after {
+  content: "";
+}
+
+/********LEFT CONTENT TAB(hover)*************/
+:root.left tab-item {
+  padding-left: 0px;
+}
+
+:root.left tab-item tab-favicon {
+  order: 10 !important;
+  margin-right: calc(var(--collapsed-width) * 0.25) !important;
+  transform: scale(120%) translateX(0px) !important;
+}
+
+:root.left tab-item .sound-button:after {
+  transform: translateX(0px) !important;
+  transition: all calc(var(--animation-duration) * 2.2) var(--ease-out) !important;
+}
+
+:root.left tab-item .label {
+  transform: translateX(0px);
+  margin-right: calc(var(--collapsed-width) * var(--hover-text-spacing)) !important;
+  transition: all var(--animation-duration) var(--ease-out);
+}
+
+:root.left tab-item:not(.pinned):hover tab-favicon {
+  transform: scale(120%) translateX(-20px) !important;
+}
+
+:root.left tab-item:not([data-child-ids]):hover .label {
+  transform: translateX(-15px);
+}
+
+:root.left tab-item:hover .sound-button:after {
+  transform: translateX(-25px);
+}
+
+:root.left tab-item[data-child-ids] .twisty {
+  margin-left: 5px;
+}
+
+/***********************************/
+.tab .favicon .favicon-default::before {
+  filter: var(--extension-icon-mask);
+  /* change for light theme */
+}
+
+.tab[data-current-favicon-uri=undefined] .favicon .favicon-default::before {
+  background: url("chrome://branding/content/identity-icons-brand.svg") no-repeat center !important;
+  mask: none !important;
+}
+
+/***********NEW TAB BUTTON**********/
+.newtab-button-box {
+  border: none !important;
+  margin: 0 50px;
+}
+
+.newtab-button {
+  border: none !important;
+  border-radius: 8px;
+  padding: 8px 0 !important;
+  margin: 0 5px;
+}
+
+.newtab-button::before {
+  background: var(--light-3) !important;
+}
+
+.newtab-action-selector-anchor {
+  border: none !important;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+.newtab-button:hover {
+  background: var(--dark-1);
+}
+
+/**********PINNED TAB***************/
+tab-item.pinned {
+  margin: 5px !important;
+  padding: 0px !important;
+  transition: all 0.1s var(--ease-out);
+}
+
+/**********CONTAINERS***************/
+.contextual-identity-marker {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+}
+
+tab-item.active .contextual-identity-marker {
+  display: none !important;
+}
+
+.contextual-identity-firefox-container-1:not(.active),
+.contextual-identity-firefox-container-2:not(.active),
+.contextual-identity-firefox-container-3:not(.active),
+.contextual-identity-firefox-container-4:not(.active) {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+tab-item.active.contextual-identity-firefox-container-1 {
+  background: linear-gradient(to right, #D53F8C, #9F7AEA) !important;
+}
+
+tab-item.active.contextual-identity-firefox-container-2 {
+  background: linear-gradient(to right, #DD6B20, #F56565) !important;
+}
+
+tab-item.active.contextual-identity-firefox-container-3 {
+  background: linear-gradient(to right, #38A169, #38B2AC) !important;
+}
+
+tab-item.active.contextual-identity-firefox-container-4 {
+  background: linear-gradient(to right, #3182CE, #0BC5EA) !important;
+}
+
+/***********************************/
+#all-tabs {
+  border: none !important;
+}

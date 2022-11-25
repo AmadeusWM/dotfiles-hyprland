@@ -1,0 +1,144 @@
+/* Main sass file that contains the theme */
+@import "icons/extension-icons.css";
+@import "window-controls/wc-without-tabline.css";
+@import "hide-tabline.css";
+@import "userChrome-hover.css";
+:root {
+  --ap-radius-s: 4px;
+  --ap-radius-m: 8px;
+  --ap-radius-l: 10px;
+  --ap-radius-xl: 16px;
+  --ap-primary-h: 15.3846153846deg;
+  --ap-primary-s: 63.9344262295%;
+  --ap-primary-l: 88.0392156863%;
+  --ap-primary-d: 80%;
+  --ap-primary: #F4D7CD;
+  --ap-secondary-h: 157.0588235294deg;
+  --ap-secondary-s: 31.7757009346%;
+  --ap-secondary-l: 58.0392156863%;
+  --ap-secondary-d: 70%;
+  --ap-secondary: #72b69c;
+  --ap-base1-h: 250deg;
+  --ap-base1-s: 23.0769230769%;
+  --ap-base1-l: 8.0980392157%;
+  --ap-base1-d: 20%;
+  --ap-base0: #0B0A10;
+  --ap-base0-h: 250deg;
+  --ap-base0-s: 23.0769230769%;
+  --ap-base0-l: 5.0980392157%;
+  --ap-base0-d: 20%;
+  --ap-base1: #111019;
+  --ap-red: #E97193;
+  --ap-green: #AAC5A0;
+  --ap-blue: #A8C5E6;
+  --ap-purple: #DFA7E7;
+  --ap-aqua: #a8e5e6;
+  --ap-yellow: #ece0a8;
+  --ap-orange: #D1A999;
+  --ap-color-strong: #E97193;
+  --ap-color-quote: #E97193;
+  --ap-color-italic: #E97193;
+  --ap-color-tag-background: #2c2537;
+  --ap-color-tag-text: #EEEEEE;
+  --ap-code-gray-1: #5b5c5f;
+  --ap-code-gray-2: #45474c;
+  --ap-code-red: var(--ap-red);
+  --ap-code-green: var(--ap-green);
+  --ap-code-blue: var(--ap-blue);
+  --ap-code-purple: var(--ap-purple);
+  --ap-code-aqua: var(--ap-aqua);
+  --ap-code-yellow: var(--ap-yellow);
+  --ap-code-orange: var(--ap-orange);
+  --ap-color-dp0: #111019;
+  --ap-color-dp1: #0B0A10;
+  --ap-color-dp2: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 5%));
+  --ap-color-dp3: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 10%));
+  --ap-color-dp4: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 15%));
+  --ap-color-dp5: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 40%));
+  --ap-color-dp6: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 50%));
+  --ap-color-dp7: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 60%));
+  --ap-color-dp8: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 70%));
+  --ap-color-dp9: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 80%));
+  --ap-color-dp10: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 95%));
+  --ap-color-dp11: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 100%));
+  --ap-h1: var(--ap-red);
+  --ap-h2: var(--ap-purple);
+  --ap-h3: var(--ap-blue);
+  --ap-h4: var(--ap-green);
+  --ap-h5: var(--ap-orange);
+  --ap-h6: var(--ap-yellow);
+  --ap-h1-size: 2.5em;
+  --ap-h2-size: 1.9882em;
+  --ap-h3-size: 1.5811em;
+  --ap-h4-size: 1.2574em;
+  --ap-h5-size: 1em;
+  --ap-h6-size: 0.7953em;
+  --ap-size-text: 1em;
+  --ap-size-text-header: 1em;
+  --ap-size-text-item: 1em;
+  --ap-container-padding: 8px;
+  --ap-frame-left: 10px;
+}
+
+/* order of these files is important and should not be changed */
+:root {
+  --dark-0: var(--ap-color-dp0);
+  --dark-base: var(--ap-color-dp0);
+  --dark-1: var(--ap-color-dp1);
+  --dark-2: var(--ap-color-dp1);
+  --dark-3: var(--ap-color-dp2);
+  --dark-4: var(--ap-color-dp3);
+  --light-0: var(--ap-color-dp11);
+  --light-base: var(--ap-color-dp11);
+  --light-1: var(--ap-color-dp10);
+  --light-2: var(--ap-color-dp9);
+  --light-3: var(--ap-color-dp8);
+  --light-4: var(--ap-color-dp7);
+  --accent: var(--ap-primary);
+  --yellow: var(--ap-yellow);
+  --green: var(--ap-green);
+  --red: var(--ap-red);
+  /* expanded width of the sidebar. 
+    used for userChrome-static, and hover */
+  --sidebar-width: 250px;
+  /* initial width of the sidebar. 
+    advised not to change since tst css relies on this value*/
+  --sidebar-collapsed-width: 60px;
+  --dividers: 2px;
+  --tl-animation-duration: 200ms;
+  /*--tl-tab-background-gradient: */
+  /* uncomment and add gradient value for selected tab gradient*/
+  /******WINDOW CONTROL PLACEMENT VARS******/
+  --wc-vertical-shift: 16px;
+  /* larger value moves window controls down,*/
+  /* can be negative(moves controls up) */
+  /* Experiemntal: 55px if tabline visible, -25px if tabline hidden */
+  --wc-left-space: 15px; /* add space to the left of window controls*/
+  --wc-right-space: 18px; /* add space to the right of window controls*/
+  /* left-space shifts window-controls */
+  /* if you want to shift window controls to the left: positive value */
+  /* if you want to shift them to the right: smaller or negative value */
+  /* right-space shifts rest of the navbar (forward,backward,urlbar,etc.) to the right */
+  /* if you want to increase/decrease space between window-controls and navbars: */
+  /* set positive/smaller or negative value for right-space*/
+}
+
+:root[privatebrowsingmode=temporary] {
+  --dark-0: #1C0E34;
+  --dark-base: #20103c;
+  --dark-1: #2F1D4E;
+  --dark-2: #38225D;
+  --dark-3: #4A2D7B;
+  --dark-4: #53338A;
+  --light-0: #CC6B9C;
+  --light-base: #B9407C;
+  --light-1: #AB3B73;
+  --light-2: #9C3569;
+  --light-3: #8D305E;
+  --light-4: #7D2B54;
+  --accent: #e9207e;
+  --yellow: #C9B336;
+  --green: #36C987;
+  --red: #C9365D;
+  --extension-icon-mask: grayscale(85%) invert(17%) sepia(42%) saturate(2474%) hue-rotate(241deg) brightness(94%) contrast(92%);
+}

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+volume=$(pamixer --get-volume)
+
+down() {
+pamixer -d 5
+dunstify -a "VOLUME" "Decreasing to $volume%" -h int:value:"$volume" -i audio-volume-low-panel -r 2593 -u normal
+canberra-gtk-play -i audio-volume-change -d "changevolume"
+}
+
+up() {
+pamixer -i 5
+dunstify -a "VOLUME" "Increasing to $volume%" -h int:value:"$volume" -i audio-volume-high-panel -r 2593 -u normal
+canberra-gtk-play -i audio-volume-change -d "changevolume"
+}
+
+mute() {
+DEFAULT_SINK=$(pactl info | grep "Default Sink" | cut -d " " -f3)
+pactl set-sink-mute "$DEFAULT_SINK" toggle
+dunstify -a "VOLUME" "MUTED" -h int:value:"$volume" -i audio-volume-muted-symbolic -r 2593 -u normal
+canberra-gtk-play -i audio-volume-change -d "changevolume"
+}
+
+case "$1" in
+  up) up;;
+  down) down;;
+  mute) mute;;
+esac
+
