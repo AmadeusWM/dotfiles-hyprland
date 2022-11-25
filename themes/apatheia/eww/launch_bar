@@ -14,9 +14,10 @@ fi
 NB_MONITORS=($(hyprctl monitors -j | jq -r '.[] | .id'))
 for id in "${NB_MONITORS[@]}"; do
     bar="bar$id"
+    sidebar="sidebar$id"
     hyprctl dispatch focusmonitor "$id"
     ${EWW} open "$bar" 
-    [[ $id == 0 ]] && ${EWW} open-many sidebar notifications
+    primary=($($HOME/.config/hypr/themes/apatheia/eww/scripts/get_primary));
+    [[ $id == $primary ]] && ${EWW} open-many $sidebar notifications
 done
-
     hyprctl dispatch focusmonitor "$focusmon"

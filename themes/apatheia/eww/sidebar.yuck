@@ -1,12 +1,37 @@
-(defwindow sidebar
+
+
+(defwindow sidebar0
     :geometry (geometry :x "0px"
                         :y "0px"
                         :width "1px"
                         :height "100%"
                         :anchor "bottom left")
     :stacking "fg"
-    :monitor "0"
+	:monitor 0
 (sidebar))
+
+	
+(defwindow sidebar1
+	:geometry (geometry :x "0px"
+						:y "0px"
+						:width "1px"
+						:height "100%"
+						:anchor "bottom left")
+	:stacking "fg"
+	:monitor 1
+(sidebar))
+
+
+(defwindow sidebar2
+	:geometry (geometry :x "0px"
+						:y "0px"
+						:width "1px"
+						:height "100%"
+						:anchor "bottom left")
+	:stacking "fg"
+	:monitor 2
+(sidebar))
+	
 
 (defwidget sidebar [] 
 	(eventbox 

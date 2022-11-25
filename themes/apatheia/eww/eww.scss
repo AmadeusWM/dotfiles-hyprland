@@ -14,7 +14,8 @@ $grey: rgba(105, 101, 124, 0.7);
 $black: #282A36;
 $red:     #E97193; // #F37F97;
 $green:   #AAC5A0; // #5ADECD;
-$orange:  #D1A999; // #F2A272;
+$yellow:  #f6d6b3; // #F2A272;
+$orange:  #f2c798; // #F2A272;
 $blue:    #A8C5E6; // #BAB4D9; //#8897F4;
 $purple:  #DFA7E7; // #C574DD;
 $purple2:  #ecdbee; // #C574DD;
@@ -82,44 +83,44 @@ tooltip label {
 }
 
 .membar {
-    color: $blue;
+    color: $red;
     background-color: $widget-background;
     border-radius: 10px;
 }
 
 .batbar {
-    color: $red;
+    color: $green;
     background-color: $widget-background;
     border-radius: 10px;
 }
 
 .brightbar trough highlight {
-    background-image: linear-gradient(to right, $blue 30%, $white 50%, $blue 100% *50);
+    background-image: linear-gradient(to right, $yellow 30%, $white 50%, $yellow 100% *50);
     border-radius: 10px;
 }
 
 .volbar trough highlight {
-    background-image: linear-gradient(to right, $red 30%, $purple 50%, $red 100% *50);
+    background-image: linear-gradient(to right, $teal 30%, $green 50%, $teal 100% *50);
     border-radius: 10px;
 }
 
 .volume_icon {
-    font-size: 22;
-    color: $red;
+    font-size: 24;
+    color: $teal;
     margin: 0px 10px 0px 5px;
 }
 
 
 .module_essid {
     font-size: 18;
-    color: $teal;
+    color: $purple;
     margin: 0px 0px 0px 10px;
 }
 
 .module-wif {
-    font-size: 22;
-    color: $teal;
-    margin: 0px 10px 0px 5px;
+    font-size: 24;
+    color: $purple;
+    margin: 0px 5px 0px 5px;
 }
 
 .icon-launcher {
@@ -135,23 +136,23 @@ tooltip label {
 }
 
 .iconmem {
-    color: $orange;
+    color: $red;
 }
 
 .iconbat {
-    color: $purple;
+    color: $green;
 }
 
 .iconbat,
 .iconmem {
-    font-size: 15;
-    margin: 15px;
+    font-size: 10;
+    margin: 10px;
 }
 
 .bright_icon {
-    font-size: 22;
-    color: $blue;
-    margin: 0px 10px 0px 10px;
+    font-size: 24;
+    color: $yellow;
+    margin: 0px 5px 0px 0px;
 }
 
 
@@ -175,7 +176,7 @@ tooltip label {
 .bat_module {
     background-color: rgba(00, 00, 00, 0.0);
     border-radius: 16px;
-    margin: 0px 10px 0px 10px;
+    margin: 0px 10px 0px 5px;
 }
 
 .works {
@@ -262,15 +263,15 @@ tooltip label {
 }
 
 calender {
-    color: $blue;
+    color: $red;
 }
 
 calendar:selected {
-    color: $blue;
+    color: $red;
 }
 
 calendar.header {
-    color: $blue;
+    color: $green;
     font-weight: bold;
 }
 
@@ -279,7 +280,7 @@ calendar.button {
 }
 
 calendar.highlight {
-    color: $blue;
+    color: $red;
     font-weight: bold;
 }
 
@@ -299,14 +300,14 @@ calendar:indeterminate {
 .sys_text_mem_sub {
     font-size: 16;
     color: $white;
-    margin: 5px 0px 0px 25px;
+    margin: 2px 0px 0px 25px;
 }
 
 .sys_text_bat,
 .sys_text_mem {
     font-size: 21;
     font-weight: bold;
-    margin: 14px 0px 0px 25px;
+    margin: 0px 0px 0px 25px;
 }
 
 .sys_icon_bat,
@@ -344,7 +345,7 @@ calendar:indeterminate {
 
 .sys_bat_box {
     border-radius: 16px;
-    margin: 15px 10px 10px 20px;
+    margin: 15px 10px 0px 20px;
 }
 
 .sys_mem_box {
@@ -369,19 +370,6 @@ calendar:indeterminate {
     font-size: 20px;
     font-weight: bold;
     margin: 0px 12px 0px 12px;
-}
-
-.color-var1 {
-    color: $green;
-}
-
-.color-var2 {
-    color: $purple;
-}
-
-.color-var3 {
-    color: $red;
-    margin-left: 15px;
 }
 
 .launcher-icon {
