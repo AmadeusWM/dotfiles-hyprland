@@ -130,7 +130,7 @@ tooltip label {
 .iconsearch {
     color: $white;
     font-size: 24px;
-    margin: 0px 10px 0px 20px;
+    // margin: 0px 10px 0px 20px;
 }
 
 .iconmem {
@@ -159,11 +159,9 @@ tooltip label {
     // font-weight: bold;
     font-size: 24px;
     margin: 0px 8px 0px 8px;
-    padding-bottom: 4px; // to fix misallignment
 }
 
 .launcher_module {
-    padding-top: 5px;
     background-color: rgba(00, 00, 00, 0.0);
 }
 
@@ -386,9 +384,7 @@ calendar:indeterminate {
 }
 
 .launcher-icon {
-    // margin: 5px -5px 10px 15px;
-    // padding: 2px -5px 2px 5px;
-    padding-bottom: 6px;
+    margin-left: 10px;
 }
 
 .audio-box {
