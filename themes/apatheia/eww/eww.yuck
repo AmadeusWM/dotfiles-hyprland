@@ -34,12 +34,8 @@
       :onclick "rofi -no-lazy-grab -show drun -theme ~/.config/hypr/themes/apatheia/rofi/launcher.rasi &"
       (image
         :class "launcher-icon"
-        :path "favicon.png"
+        :path "assets/blossom.png"
       :image-width 28))
-    (button
-      :onclick "nautilus &"
-      :class "iconsearch" ""
-    )
   ))
 
 (defwidget workspaces []
