@@ -1,3 +1,6 @@
 #!/bin/sh
 
-echo "0";
+# for display id run: 'hyprctl monitors'
+primary_monitor_id=1
+
+echo $primary_monitor_id;

@@ -1,5 +1,7 @@
 
+;; string literal widgets as variables are possible but not efficient
 
+;; seperate sidebar for each possible primary monitor
 (defwindow sidebar0
     :geometry (geometry :x "0px"
                         :y "0px"
@@ -10,7 +12,6 @@
 	:monitor 0
 (sidebar))
 
-	
 (defwindow sidebar1
 	:geometry (geometry :x "0px"
 						:y "0px"
@@ -20,7 +21,6 @@
 	:stacking "fg"
 	:monitor 1
 (sidebar))
-
 
 (defwindow sidebar2
 	:geometry (geometry :x "0px"

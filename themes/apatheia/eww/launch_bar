@@ -10,14 +10,19 @@ if [[ ! $(pidof eww) ]]; then
 	sleep 1
 fi
 
+# primary display id
+primary=($($HOME/.config/hypr/themes/apatheia/eww/scripts/get_primary));
+
 ## Open widgets 
 NB_MONITORS=($(hyprctl monitors -j | jq -r '.[] | .id'))
 for id in "${NB_MONITORS[@]}"; do
+    # make top bar for every display
     bar="bar$id"
-    sidebar="sidebar$id"
     hyprctl dispatch focusmonitor "$id"
     ${EWW} open "$bar" 
-    primary=($($HOME/.config/hypr/themes/apatheia/eww/scripts/get_primary));
-    [[ $id == $primary ]] && ${EWW} open-many $sidebar notifications
+    
+    # make sidebar and notifications popup only for primary display
+    [[ $id == $primary ]] && ${EWW} open-many "sidebar$id" notifications
 done
     hyprctl dispatch focusmonitor "$focusmon"
+    
