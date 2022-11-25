@@ -214,8 +214,10 @@
     :class "module-2"
     :vexpand "false"
     :hexpand "false"
+    :valign "center"
     (label
       :class "separ"
+      :valign "center"
       :text "|"
     )))
 
