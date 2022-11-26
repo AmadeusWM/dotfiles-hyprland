@@ -1,4 +1,16 @@
-(defwindow notifications
+
+;; notifications popup for every possible display
+(defwindow notifications0
+    :geometry (geometry :x "0px"
+                        :y "0px"
+                        :width "1px"
+                        :height "98%"
+                        :anchor "bottom right")
+    :stacking "fg"
+    :monitor "0"
+(notif-panel))
+
+(defwindow notifications1
     :geometry (geometry :x "0px"
                         :y "0px"
                         :width "1px"
@@ -6,6 +18,16 @@
                         :anchor "bottom right")
     :stacking "fg"
     :monitor "1"
+(notif-panel))
+
+(defwindow notifications2
+    :geometry (geometry :x "0px"
+                        :y "0px"
+                        :width "1px"
+                        :height "98%"
+                        :anchor "bottom right")
+    :stacking "fg"
+    :monitor "2"
 (notif-panel))
 
 (defwidget notif-panel [] 

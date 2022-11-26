@@ -10,19 +10,20 @@ if [[ ! $(pidof eww) ]]; then
 	sleep 1
 fi
 
-# primary display id
-primary=($($HOME/.config/hypr/themes/apatheia/eww/scripts/get_primary));
-
-## Open widgets 
+## Open standard widgets 
 NB_MONITORS=($(hyprctl monitors -j | jq -r '.[] | .id'))
 for id in "${NB_MONITORS[@]}"; do
     # make top bar for every display
     bar="bar$id"
     hyprctl dispatch focusmonitor "$id"
     ${EWW} open "$bar" 
-    
-    # make sidebar and notifications popup only for primary display
-    [[ $id == $primary ]] && ${EWW} open-many "sidebar$id" notifications
+
+    # set calendar widget
+    # cal="calendar$id"
+    # ${EWW} open "$cal" 
 done
     hyprctl dispatch focusmonitor "$focusmon"
-    
+
+# Open widgets for primary display
+primary=($($HOME/.config/hypr/themes/apatheia/eww/scripts/get_primary))
+${EWW} open-many "sidebar$primary" "notifications$primary"
