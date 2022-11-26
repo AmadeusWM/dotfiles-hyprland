@@ -27,15 +27,10 @@
 (defwidget apatheia []
   (box 
     :class "apatheia-container"
-    :orientation "h" 
-    :valign "start"
+    :orientation "v" 
     :space-evenly "false" 
-    :halign "center"
-    :width "100px"
-    :wrap true
       (label
+        ; :wrap true
         :class "apatheia-content"
         :text apatheia_quote
-        :width "100px"
-        :wrap true
       )))
