@@ -1,14 +1,14 @@
 #!/bin/bash
 EWW_BIN="/usr/bin/eww -c $HOME/.config/hypr/themes/apatheia/eww"
 
-# select widget for pirmary monitor
-primary=($($HOME/.config/hypr/scripts/primary_screen/primary));
+# select widget for focused monitor
+focusmon=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .id')
 WIDGET=$1
-WIDGET+=$primary
+WIDGET+=$focusmon
 
 # Open widgets
 if ${EWW_BIN} windows | grep ^$WIDGET$ ; then
-    ${EWW_BIN} close "system${primary}" "audio_ctl${primary}" "calendar${primary}"
+    ${EWW_BIN} close "system${focusmon}" "audio_ctl${focusmon}" "calendar${focusmon}"
     ${EWW_BIN} open "$WIDGET"
 elif ${EWW_BIN} windows | grep ^\*$WIDGET$ ; then
     ${EWW_BIN} close "$WIDGET"
