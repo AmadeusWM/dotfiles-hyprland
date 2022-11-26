@@ -221,7 +221,7 @@
 			(label 
 			    :tooltip "${gpu}%" 
 			    :class "stats-icon" 
-			    :text "")
+			    :text "ﴼ")
 			(scale 
 			    :min 0 
 			    :max 101 
