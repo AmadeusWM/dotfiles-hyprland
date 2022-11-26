@@ -102,7 +102,7 @@
           :min 0
         :onchange "light -S {}" ))
       (label
-        :text ""
+        :text ""
         :class "bright_icon"
       :tooltip "brightness"))))
 
