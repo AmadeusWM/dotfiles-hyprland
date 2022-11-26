@@ -3,13 +3,19 @@ EWW_BIN="/usr/bin/eww -c $HOME/.config/hypr/themes/apatheia/eww"
 
 # select widget for focused monitor
 focusmon=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .id')
-WIDGET=$1
-WIDGET+=$focusmon
+# console parameter + display id 
+WIDGET="$1${focusmon}"
+
+popable_widgets=( "system" "audio_ctl" "calendar" )
 
 # Open widgets
 if ${EWW_BIN} windows | grep ^$WIDGET$ ; then
-    ${EWW_BIN} close "system${focusmon}" "audio_ctl${focusmon}" "calendar${focusmon}"
+    for name in "${popable_widgets[@]}"
+    do
+        ${EWW_BIN} close "${name}${focusmon}"
+    done
     ${EWW_BIN} open "$WIDGET"
+
 elif ${EWW_BIN} windows | grep ^\*$WIDGET$ ; then
     ${EWW_BIN} close "$WIDGET"
 else exit
