@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo $1 > ~/.config/hypr/scripts/primary_screen/temp/primary_screen

@@ -2,7 +2,7 @@
 EWW_BIN="/usr/bin/eww -c $HOME/.config/hypr/themes/apatheia/eww"
 
 # select widget for pirmary monitor
-primary=($($HOME/.config/hypr/configs/primary));
+primary=($($HOME/.config/hypr/scripts/primary_screen/primary));
 WIDGET=$1
 WIDGET+=$primary
 
