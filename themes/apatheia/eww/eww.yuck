@@ -8,7 +8,8 @@
 (defpoll calendar_day :interval "2h" "date '+%d'")
 (defpoll calendar_year :interval "2h" "date '+%Y'")
 (defpoll volume_percent :interval "1s"  "scripts/sbvol --get")
-(defpoll mic_percent :interval "3s" "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -n 1")
+; (defpoll mic_percent :interval "3s" "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -n 1")
+(defpoll mic_percent :interval "3s" "amixer -D pulse sget Capture | grep 'Mono:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -n 1")
 (defpoll brightness_percent :interval "5s" "light")
 (defpoll COL_WLAN :interval "1m" "scripts/wifi --COL")
 (defpoll ESSID_WLAN :interval "1m" "scripts/wifi --ESSID")
@@ -311,8 +312,6 @@
   :windowtype "dock"
   (bar_layout))
 
-
-
 (defwidget audio []
   (box
     :class "audio-box"
@@ -514,12 +513,12 @@
           :limit-width 9
         :wrap false)
         (label
-          :text "${round((EWW_RAM.available_mem / 1024), 0)} | ${round((EWW_RAM.total_mem / 1024), 0)}mb "
+          :text "${round((EWW_RAM.available_mem/(1024*1024*1024)), 2)} | ${round((EWW_RAM.total_mem/(1024*1024*1024)), 2)}gb"
           :halign "start"
           :class "sys_text_mem_sub"
           :limit-width 22
         :wrap false)
-        (label :text "${round((EWW_RAM.used_mem / 1024), 0)}mb free"
+        (label :text "${round((EWW_RAM.used_mem/(1024*1024*1024)), 2)}gb free"
           :halign "start"
           :class "sys_text_mem_sub"
           :limit-width 22

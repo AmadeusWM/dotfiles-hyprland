@@ -7,8 +7,8 @@ Created by saimoom **/
 }
 
 $background: rgba(00, 00, 00, 0.7);
-$widget-background: rgba(30, 30, 30, 0.4);
-$shadow: rgba(30, 30, 30, 0.4);;
+$widget-background: rgba(11, 10, 16, 1);
+$shadow: rgba(30, 30, 30, 0.4);
 $grey: rgba(105, 101, 124, 0.7);
 
 $black: #282A36;
@@ -25,7 +25,7 @@ $white:   #eae9f0; // #FDFDFD;
 /** General **/
 .bar_class {
     background-color: $background;
-    border-radius: 0px 0px 16px 16px;
+    // border-radius: 0px 0px 16px 16px;
 }
 
 .module {
@@ -61,6 +61,7 @@ tooltip label {
 
 .clock_time_class,
 .clock_minute_class {
+	font-family: Comic Mono;
     font-size: 28;
 }
 
@@ -112,9 +113,11 @@ tooltip label {
 
 
 .module_essid {
+    font-family: JetBrainsMono Nerd Font;
     font-size: 18;
+    font-weight: bold;
     color: $purple;
-    margin: 0px 0px 0px 10px;
+    margin: 0px 0px 0px 5px;
 }
 
 .module-wif {
@@ -242,8 +245,8 @@ tooltip label {
 // Calendar
 .cal {
     background-color: $background;
-    font-family: mononoki Nerd Font;
-    font-size: 18px;
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 22px;
     font-weight: normal;
     border-radius: 25px;
 
@@ -271,12 +274,14 @@ calendar:selected {
 }
 
 calendar.header {
-    color: $green;
+    font-family: JetBrainsMono Nerd Font;
+    color: $purple;
     font-weight: bold;
 }
 
 calendar.button {
-    color: $green;
+    color: $purple;
+    font-weight: bold;
 }
 
 calendar.highlight {
