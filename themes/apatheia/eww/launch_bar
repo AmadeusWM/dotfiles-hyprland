@@ -11,7 +11,7 @@ if [[ ! $(pidof eww) ]]; then
 fi
 
 # primary display id
-primary=($($HOME/.config/hypr/themes/apatheia/eww/scripts/get_primary));
+primary=($($HOME/.config/hypr/configs/primary));
 
 ## Open widgets 
 NB_MONITORS=($(hyprctl monitors -j | jq -r '.[] | .id'))
