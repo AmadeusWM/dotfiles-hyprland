@@ -6,9 +6,10 @@ Created by saimoom **/
     font-family: mononoki Nerd Font;
 }
 
-$background: rgba(00, 00, 00, 0.7);
-$widget-background: rgba(11, 10, 16, 1);
-$shadow: rgba(30, 30, 30, 0.4);
+$background-bar: rgba(11, 10, 16, 0.8);
+$background: rgba(11, 10, 16, 0.9);
+$widget-background: rgba(17, 16, 25, 0.7);
+$shadow: rgba(0, 0, 0, 0.4);
 $grey: rgba(105, 101, 124, 0.7);
 
 $black: #282A36;
@@ -24,8 +25,8 @@ $white:   #eae9f0; // #FDFDFD;
 
 /** General **/
 .bar_class {
-    background-color: $background;
-    // border-radius: 0px 0px 16px 16px;
+    background-color: $background-bar;
+    border-radius: 0px 0px 16px 16px;
 }
 
 .module {
@@ -61,7 +62,6 @@ tooltip label {
 
 .clock_time_class,
 .clock_minute_class {
-	font-family: Comic Mono;
     font-size: 28;
 }
 
@@ -123,7 +123,7 @@ tooltip label {
 .module-wif {
     font-size: 24;
     color: $purple;
-    margin: 0px 5px 0px 5px;
+    margin: 0px 15px 0px 5px;
 }
 
 .icon-launcher {

@@ -80,6 +80,7 @@
 		:halign "center"
         :valign "start"
         :hexpand "true"
+		:hexpand "true"
         :width ""
 	    (box 	
 	        :class "album_art" 
