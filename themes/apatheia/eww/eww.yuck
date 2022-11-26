@@ -384,11 +384,39 @@
             :onchange "amixer -D pulse sset Capture {}%"
             :max 100
           :min 0))))))
-(defwindow audio_ctl
+
+;; seperate audio_ctl for each possible primary display
+
+; (defwindow audio_ctl
+;   :stacking "fg"
+;   :focusable "false"
+;   :screen 1
+;   :monitor 0
+;   :geometry (geometry
+;     :x "20"
+;     :y "7%"
+;     :anchor "top right"
+;     :width "280px"
+;   :height "60px")
+;   (audio))
+  (defwindow audio_ctl0
+    :stacking "fg"
+    :focusable "false"
+    :screen 1
+    :monitor 0
+    :geometry (geometry
+      :x "20"
+      :y "7%"
+      :anchor "top right"
+      :width "280px"
+    :height "60px")
+    (audio))
+
+(defwindow audio_ctl1
   :stacking "fg"
   :focusable "false"
   :screen 1
-  :monitor 0
+  :monitor 1
   :geometry (geometry
     :x "20"
     :y "7%"
@@ -396,7 +424,19 @@
     :width "280px"
   :height "60px")
   (audio))
-
+    
+(defwindow audio_ctl2
+  :stacking "fg"
+  :focusable "false"
+  :screen 1
+  :monitor 2
+  :geometry (geometry
+    :x "20"
+    :y "7%"
+    :anchor "top right"
+    :width "280px"
+  :height "60px")
+  (audio))
 
 ;;Define System widget
 (defwidget system []
@@ -485,7 +525,26 @@
           :limit-width 22
         :wrap false)
       ))))
-(defwindow system
+
+
+
+;; seperate system info for each possible primary monitor  
+
+; (defwindow system
+;   :stacking "fg"
+;   :focusable "false"
+;   :screen 1
+;   :monitor 0
+;   :geometry
+;   (geometry
+;     :x "20"
+;     :y "65px"
+;     :anchor "top right"
+;     :width "290px"
+;   :height "120px")
+;   (system))
+
+(defwindow system0
   :stacking "fg"
   :focusable "false"
   :screen 1
@@ -499,7 +558,33 @@
   :height "120px")
   (system))
 
+(defwindow system1
+  :stacking "fg"
+  :focusable "false"
+  :screen 1
+  :monitor 1
+  :geometry
+  (geometry
+    :x "20"
+    :y "65px"
+    :anchor "top right"
+    :width "290px"
+  :height "120px")
+  (system))
 
+(defwindow system2
+  :stacking "fg"
+  :focusable "false"
+  :screen 1
+  :monitor 2
+  :geometry
+  (geometry
+    :x "20"
+    :y "65px"
+    :anchor "top right"
+    :width "290px"
+  :height "120px")
+  (system))
 
 ;;Calendar Widget
 (defwidget cal []
@@ -512,18 +597,18 @@
         :day calendar_day
       :year calendar_year))))
 
-(defwindow calendar
-  :stacking "fg"
-  :focusable "false"
-  :screen 1
-  :monitor 0
-  :geometry (geometry
-    :x "20"
-    :y "65px"
-    :anchor "top right"
-    :width "270px"
-  :height "60px")
-  (cal))
+; (defwindow calendar
+;   :stacking "fg"
+;   :focusable "false"
+;   :screen 1
+;   :monitor 0
+;   :geometry (geometry
+;     :x "20"
+;     :y "65px"
+;     :anchor "top right"
+;     :width "270px"
+;   :height "60px")
+;   (cal))
 
 (defwindow calendar0
   :stacking "fg"

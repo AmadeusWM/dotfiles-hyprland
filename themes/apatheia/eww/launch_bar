@@ -18,10 +18,6 @@ for id in "${NB_MONITORS[@]}"; do
     bar="bar$id"
     hyprctl dispatch focusmonitor "$id"
     ${EWW} open "$bar"
-    
-    # set calendar widget
-    # cal="calendar$id"
-    # ${EWW} open "$cal"
 done
 hyprctl dispatch focusmonitor "$focusmon"
 
