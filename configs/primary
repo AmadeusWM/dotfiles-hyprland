@@ -1,6 +1,14 @@
 #!/bin/sh
 
 # for display id run: 'hyprctl monitors'
+# id of your primary screen: ()
 primary_monitor_id=1
 
-echo $primary_monitor_id;
+# all available monitors
+NB_MONITORS=($(hyprctl monitors -j | jq -r '.[] | .id'))
+# check if monitor is available
+if [[ ! " ${NB_MONITORS[*]} " =~ " ${primary_monitor_id} " ]]; then
+    primary_monitor_id=0
+fi
+
+echo $primary_monitor_id
