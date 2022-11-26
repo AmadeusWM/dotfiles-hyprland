@@ -166,7 +166,7 @@
         :onclick "scripts/pop system"
         :class "iconbat"
         :tooltip "battery on ${EWW_BATTERY["BAT0"].capacity}%"
-      ""))))
+      ""))))
 
 (defwidget mem []
   (box
@@ -183,7 +183,7 @@
         :tooltip "using ${EWW_RAM.used_mem_perc}% ram"
         :show_truncated false
         :wrap false
-      ""))))
+      ""))))
 
 (defwidget clock_module []
   (eventbox

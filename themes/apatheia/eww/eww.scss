@@ -148,7 +148,7 @@ tooltip label {
 
 .iconbat,
 .iconmem {
-    font-size: 10;
+    font-size: 15;
     margin: 10px;
 }
 
@@ -569,7 +569,7 @@ calendar:indeterminate {
 
 .stats-icon {
     font-size: 23px;
-    color: $blue;
+    color: $red;
     font-family: JetBrainsMono Nerd Font Mono;
 }
 
@@ -585,7 +585,7 @@ scale trough {
 }
 
 .scale highlight {
-    background-image: linear-gradient(to right, #afcee0 30%, #92B6F4 50%, #77a5bf 100% *50);
+    background-image: linear-gradient(to right, $red 30%, $purple 50%, $red 100% *50);
     border-radius: 15px;
 }
 
@@ -606,9 +606,10 @@ scale trough {
 .firmware,
 .exit,
 .restart {
-    margin: 0px 16px 0px 16px;
-    min-width: 40px;
-    min-height: 40px;
+    margin:  0px 16px 0px 16px;
+    padding-right: 5px;
+    min-width: 50px;
+    min-height: 50px;
     font-family: mononoki Nerd Font;
     border-radius: 25px;
     font-size: 24px;

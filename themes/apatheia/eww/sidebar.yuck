@@ -225,7 +225,7 @@
 			(label 
 			    :tooltip "${gpu}%" 
 			    :class "stats-icon" 
-			    :text "調")
+			    :text "")
 			(scale 
 			    :min 0 
 			    :max 101 
@@ -280,19 +280,19 @@
 	        :halign "center"
 			:valign "center"
 			:tooltip "Reboot to EFI" 
-	        :onclick "kitty systemctl reboot --firmware &" "拉")
+	        :onclick "kitty systemctl reboot --firmware &" "⏼")
 	    (button 
 	        :class "exit" 
 	        :halign "center"
 			:valign "center"
 			:tooltip "Quit Hyprland" 
-	        :onclick "hyprctl dispatch exit exit" "")
+	        :onclick "hyprctl dispatch exit exit" "")
 	    (button 
 	        :class "restart" 
 	        :halign "center"
 			:valign "center"
 			:tooltip "edit Config" 
-	        :onclick "footclient nvim ~/.config/hypr/hyprland.conf &" "")))
+	        :onclick "kitty vim ~/.config/hypr/hyprland.conf &" "﨣")))
 
 (defpoll uptime :interval "1m" "uptime -p | sed -e 's/up //;s/ hours,/h/;s/ minutes/m/'")
 (defpoll packages :interval "5m" `pacman -Q | wc -l`)
