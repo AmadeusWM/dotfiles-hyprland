@@ -275,6 +275,7 @@
     (center)
     (right)
   ))
+
 ;; bars for your 3 screens (one for each)
 (defwindow bar0
   :monitor 0
@@ -510,11 +511,51 @@
       (calendar
         :day calendar_day
       :year calendar_year))))
+
 (defwindow calendar
   :stacking "fg"
   :focusable "false"
   :screen 1
   :monitor 0
+  :geometry (geometry
+    :x "20"
+    :y "65px"
+    :anchor "top right"
+    :width "270px"
+  :height "60px")
+  (cal))
+
+(defwindow calendar0
+  :stacking "fg"
+  :focusable "false"
+  :screen 1
+  :monitor 0
+  :geometry (geometry
+    :x "20"
+    :y "65px"
+    :anchor "top right"
+    :width "270px"
+  :height "60px")
+  (cal))
+
+(defwindow calendar1
+  :stacking "fg"
+  :focusable "false"
+  :screen 1
+  :monitor 1
+  :geometry (geometry
+    :x "20"
+    :y "65px"
+    :anchor "top right"
+    :width "270px"
+  :height "60px")
+  (cal))
+    
+(defwindow calendar2
+  :stacking "fg"
+  :focusable "false"
+  :screen 1
+  :monitor 2
   :geometry (geometry
     :x "20"
     :y "65px"

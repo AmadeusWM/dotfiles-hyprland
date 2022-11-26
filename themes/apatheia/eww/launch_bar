@@ -6,23 +6,27 @@ focusmon=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .id')
 
 ## Run eww daemon if not running already
 if [[ ! $(pidof eww) ]]; then
-	${EWW} daemon
-	sleep 1
+    ${EWW} daemon
+    sleep 1
 fi
 
-# primary display id
-primary=($($HOME/.config/hypr/configs/primary));
-
-## Open widgets 
+## Open widgets
+## Open standard widgets
 NB_MONITORS=($(hyprctl monitors -j | jq -r '.[] | .id'))
 for id in "${NB_MONITORS[@]}"; do
     # make top bar for every display
     bar="bar$id"
     hyprctl dispatch focusmonitor "$id"
-    ${EWW} open "$bar" 
+    ${EWW} open "$bar"
     
-    # make sidebar and notifications popup only for primary display
-    [[ $id == $primary ]] && ${EWW} open-many "sidebar$id" notifications
+    # set calendar widget
+    # cal="calendar$id"
+    # ${EWW} open "$cal"
 done
-    hyprctl dispatch focusmonitor "$focusmon"
-    
+hyprctl dispatch focusmonitor "$focusmon"
+
+# primary display id
+primary=($($HOME/.config/hypr/configs/primary));
+
+# Open widgets for primary display
+${EWW} open-many "sidebar$primary" "notifications$primary"
