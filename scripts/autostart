@@ -14,6 +14,9 @@ $scripts/default/idle_handler &
 # $scripts/rgb &
 
 # other
+## persistent clipboard
+wl-clip-persist --clipboard regular &
+wl-paste --watch cliphist store &
 ## start xp pen drawing software minimized
 /usr/lib/pentablet/pentablet.sh /mini &
 ## make kde connect work  (source: https://www.reddit.com/r/kde/comments/l6t6qu/please_make_kdeconnectcli_work_in_headless_moded/)
