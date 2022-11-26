@@ -466,7 +466,6 @@ calendar:indeterminate {
 .music-player {
     all: unset;
     background-color: $widget-background;
-    padding: 0px 25px 0px 17px;
     border-radius: 12px;
     box-shadow: 0px 0px 6px 6px $shadow;
     min-width: 400px;
@@ -476,7 +475,7 @@ calendar:indeterminate {
     background-size: cover;
     background-position: center;
     border-radius: 12px;
-    margin: 2rem 1rem 1.5rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
     padding: 4rem;
 }
 
@@ -501,6 +500,9 @@ calendar:indeterminate {
     font-family: JetBrainsMono Nerd Font Mono;
     color: $purple;
     font-size: 25px;
+}
+.btn_next{
+    margin-left: 5px;
 }
 
 .metric-player scale trough highlight {
@@ -568,7 +570,7 @@ calendar:indeterminate {
 }
 
 .stats-icon {
-    font-size: 23px;
+    font-size: 28px;
     color: $red;
     font-family: JetBrainsMono Nerd Font Mono;
 }

@@ -75,7 +75,7 @@
 	 (box 	
 	    :class "music-player"
 		:orientation "h" 
-		:space-evenly "true"
+		:space-evenly "false"
 		:spacing 15   
 		:halign "center"
         :valign "start"
@@ -88,10 +88,12 @@
 		 	:space-evenly "false"
 		 	:valign "center"
 			:halign "center"
+			:hexpand "true"
 		 	:spacing 10 
  	        (label  
  	            :class "song"
 		 	    :text title
+				:limit-width "15"
 				:wrap true)
 	        (label  
 	            :class "artist"
