@@ -283,8 +283,8 @@
   :monitor 0
   :exclusive false
   :geometry (geometry
-    :y "0px"
-    :width "100%"
+    :y "5px"
+    :width "99%"
     :height "45px"
   :anchor "top center")
   :stacking "fg"
@@ -294,8 +294,8 @@
   :monitor 1
   :exclusive false
   :geometry (geometry
-    :y "0px"
-    :width "100%"
+    :y "5px"
+    :width "99%"
     :height "45px"
   :anchor "top center")
   :stacking "fg"
@@ -305,8 +305,8 @@
   :monitor 2
   :exclusive false
   :geometry (geometry
-    :y "0px"
-    :width "100%"
+    :y "5px"
+    :width "99%"
     :height "45px"
   :anchor "top center")
   :stacking "fg"

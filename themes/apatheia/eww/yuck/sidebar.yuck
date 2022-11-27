@@ -79,10 +79,11 @@
     :class "music-player"
     :orientation "h"
     :space-evenly "false"
-    :spacing 15
+    :spacing 10
     :halign "center"
-    :valign "start"
+    :valign "center"
     :hexpand "true"
+    :width "400"
     (box
       :class "album_art"
       :style "background-image: url('${art}');")
@@ -170,7 +171,7 @@
   (box
     :class "stats-box"
     :space-evenly "false"
-    :width "300px"
+    :width "400"
     :orientation "v"
     :valign "start"
     :halign "center"

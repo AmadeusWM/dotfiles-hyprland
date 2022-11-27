@@ -3,34 +3,37 @@
 
 ;; Apatheia Quote
 ; (defwidget apatheia []
-;   (box
-;     :class "apatheia-container"
-;     :orientation "h"
-;     :space-evenly "false"
-;     :halign "center"
-;     :spacing 0 
-;     (box 	
-;       :orientation "v" 
-;       :spacing 0 
-;       :space-evenly "false" 
-;       :width "50px"
-;       (label
-;         :class "apatheia-content"
-;         :wrap "true"
-;         :halign "center"
-;         :text apatheia_quote
-;       )
-;     )
-;   )
+  ;   (box
+    ;     :class "apatheia-container"
+    ;     :orientation "h"
+    ;     :space-evenly "false"
+    ;     :halign "center"
+    ;     :spacing 0
+    ;     (box
+      ;       :orientation "v"
+      ;       :spacing 0
+      ;       :space-evenly "false"
+      ;       :width "50px"
+      ;       (label
+        ;         :class "apatheia-content"
+        ;         :wrap "true"
+        ;         :halign "center"
+        ;         :text apatheia_quote
+      ;       )
+    ;     )
+  ;   )
 ; )
 
 (defwidget apatheia []
-  (box 
+  (box
     :class "apatheia-container"
-    :orientation "v" 
-    :space-evenly "false" 
-      (label
-        ; :wrap true
-        :class "apatheia-content"
-        :text apatheia_quote
-      )))
+    :orientation "v"
+    :space-evenly "false"
+    :hexpand "false"
+    :width "400"
+    (label
+      :hexpand "false"
+      :limit-width 200
+      :class "apatheia-content"
+      :text apatheia_quote
+    )))
