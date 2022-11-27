@@ -505,20 +505,19 @@ calendar:indeterminate {
     box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);
 }
 
-.stats-box {
-    all: unset;
-    background-color: $widget-background;
-    padding: 20px 25px 20px 25px;
-    border-radius: 12px;
-    // box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);
-}
+// .stats-box {
+//     all: unset;
+//     background-color: $widget-background;
+//     padding: 20px 25px 20px 25px;
+//     border-radius: 12px;
+//     // box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);
+// }
 
-.stats-icon {
-    font-size: 28px;
-    color: $red;
-    font-family: JetBrainsMono Nerd Font Mono;
-}
-
+// .stats-icon {
+//     font-size: 28px;
+//     color: $red;
+//     font-family: JetBrainsMono Nerd Font Mono;
+// }
 
 scale trough {
     all: unset;
