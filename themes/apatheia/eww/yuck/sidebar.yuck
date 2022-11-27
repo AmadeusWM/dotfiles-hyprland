@@ -4,7 +4,8 @@
 
 ;; seperate sidebar for each possible primary monitor
 (defwindow sidebar0
-  :geometry (geometry :x "0px"
+  :geometry (geometry 
+    :x "0px"
     :y "0px"
     :width "1px"
     :height "100%"
@@ -14,17 +15,19 @@
   (sidebar))
 
 (defwindow sidebar1
-  :geometry (geometry :x "0px"
-    :y "0px"
+  :geometry (geometry 
+    :x "0px"
+    :y "60px"
     :width "1px"
-    :height "100%"
-  :anchor "bottom left")
+    :height "93%"
+  :anchor "top left")
   :stacking "fg"
   :monitor 1
   (sidebar))
 
 (defwindow sidebar2
-  :geometry (geometry :x "0px"
+  :geometry (geometry 
+    :x "0px"
     :y "0px"
     :width "1px"
     :height "100%"

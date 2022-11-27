@@ -4,6 +4,8 @@ Created by saimoom **/
 .bar_class {
     background-color: $background-bar;
     border-radius: 12px;
+    margin: 10px 10px 0px 10px;
+    padding: 3px;
 }
 
 .module {
@@ -15,6 +17,8 @@ Created by saimoom **/
     background-color: $background;
     border-width: 0px;
     padding: 0px 30px 0px 30px;
+    border-radius: 16px;
+    margin-left: 15px;
 }
 
 .center_modules {
