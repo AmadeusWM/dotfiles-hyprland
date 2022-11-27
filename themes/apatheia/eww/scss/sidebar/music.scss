@@ -17,14 +17,14 @@
 .song {
 	font-size: 24px;
 	font-weight: bold;
-	color: #bfc9db;
+	color: $red;
 	margin: 10px 0px 0px 15px;
 }
 
 .song_artist {
 	font-size: 18px;
 	font-weight: bold;
-	color: #bfc9db;
+	color: $red;
 	margin: 0px 0px 0px 15px;
 }
 
@@ -34,14 +34,14 @@
 .song_btn_loop {
 	font-size: 20px;
 	font-weight: normal;
-	color: #bfc9db;
+	color: $red;
 	margin: 0px 20px 0px 18px;
 }
 
 .song_btn_play {
 	font-weight: normal;
 	font-size: 20px;
-	color: #bfc9db;
+	color: $red;
 	margin: 0px 20px 0px 18px;
 }
 
@@ -52,21 +52,32 @@
 }
 
 
-.song_prog highlight {
-	all: unset;
-	background-color: #bfc9db;
-	border-radius: 8px;
-	min-height: 1px;
+.song_prog {
+	margin: 8px 4px;
 }
 
-.song_prog scale trough  {
+.song_prog highlight {
 	all: unset;
-	background-color: #232232;
-    // box-shadow: 0 6px 5px 2px #06060b;
+	// background-color: $red;
+	background-image: linear-gradient(to right, $red 30%, $purple 50%, $red 100% *50);
 	border-radius: 8px;
-	min-height: 1px;
-	margin: 5px;
 }
+
+.song_prog trough {
+	min-height: 5px;
+	background-color: rgba($grey, 0.2);
+	box-shadow: none;
+    // box-shadow: 0 6px 5px 2px rgba($shadow, 0.2);
+}
+
+// .song_prog scale trough  {
+// 	all: unset;
+// 	background-color: #232232;
+//     // box-shadow: 0 6px 5px 2px #06060b;
+// 	border-radius: 8px;
+// 	min-height: 1px;
+// 	margin: 5px;
+// }
 
 .music_prog_bg {
 	background-color: $widget-background;

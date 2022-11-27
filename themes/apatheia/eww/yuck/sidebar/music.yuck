@@ -21,15 +21,15 @@
 (defwidget music []
   (box :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false"
     (box :orientation "v" :spacing 5 :space-evenly "false" :vexpand "false" :hexpand "false" :class "msc_bg"
-    (box
-      :class "album_art"
-      :style "background-image: url('${cover_art}');")
+      ; (box
+      ;   :class "album_art"
+      ;   :style "background-image: url('${cover_art}');")
       (label :halign "start" :class "song" :wrap "false" :limit-width 12 :text song)
       (label :halign "start" :class "song_artist" :wrap "true" :limit-width 15 :text song_artist)
     )))
-
-(defwidget music_ctl []
-  (box :orientation "v" :spacing 1 :halign "center" :space-evenly "true" :vexpand "false" :hexpand "false" :class "msc_ctl_bg"
+    
+    (defwidget music_ctl []
+      (box :orientation "v" :spacing 1 :halign "center" :space-evenly "true" :vexpand "false" :hexpand "false" :class "msc_ctl_bg"
     (button :class "song_btn_prev" :onclick "scripts/music previous" "")
     (button :class "song_btn_play" :onclick "scripts/music toggle" playpause)
     (button :class "song_btn_next" :onclick "scripts/music next" "")
@@ -38,8 +38,8 @@
 
 ; onchange: with playerctl (position [OFFSET][+/-]  Command the player to go to the position or seek forward/backward OFFSET in seconds)
 (defwidget music_prog []
-  (box :class "music_prog_bg"
-    (scale :active "false" :min 0 :max 101 :value song_perc :width 280 :vexpand "false" :class "song_prog")))
+    (box :class "music_prog_bg"
+        (scale :active "false" :min 0 :max 101 :value song_perc :width 280 :vexpand "false" :class "song_prog")))
 
 
 ; ;;  Music Widgets
