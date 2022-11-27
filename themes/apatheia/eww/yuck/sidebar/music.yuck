@@ -79,7 +79,6 @@
                           :min 0 
                           :max 101 
                           :value mic_percent 
-                          :active "false"
                           :onchange "amixer -D pulse sset Capture {}%")
                         (label  
                           :text "" 
