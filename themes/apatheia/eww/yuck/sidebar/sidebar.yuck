@@ -52,13 +52,13 @@
     :class "side"
     :orientation "v"
     :space-evenly "false"
-    :spacing "30"
-    :halign "start"
-    ; (fetch)
+    :spacing "15"
+    :vexpand "true"
     (top)
     (music-side)
     (system-side)
     ; (clipboard)
+    (fetch)
     (tray))
 )
 
@@ -200,9 +200,9 @@
   (box
     :class "buttons"
     :orientation "h"
-    :space-evenly "false"
-    :halign "center"
-    :valign "start"
+    :space-evenly "true"
+    :halign "fill"
+    :valign "end"
     :spacing "2"
     (button
       :class "poweroff"
@@ -247,7 +247,7 @@
     :class "fetch"
     :orientation "v"
     :space-evenly "false"
-    :halign "center"
+    :halign "fill"
     :valign "start"
     :spacing "10"
     (label
