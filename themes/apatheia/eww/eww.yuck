@@ -4,7 +4,7 @@
 (include "yuck/apatheia.yuck")
 
 ;; Variables
-(defpoll clock_time :interval "5s" "date '+\%l\%M \%p'")
+(defpoll clock_time :interval "5s" "date '+\%H\%M'")
 (defpoll clock_date :interval "1h" "date '+%b %d, %Y'")
 (defpoll calendar_day :interval "2h" "date '+%d'")
 (defpoll calendar_year :interval "2h" "date '+%Y'")
