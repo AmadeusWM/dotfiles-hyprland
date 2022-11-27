@@ -454,56 +454,6 @@ calendar:indeterminate {
     font-size: 18;
     margin: 0px 0px 0px 0px;
 }
-
-// Music
-.music-player {
-    all: unset;
-    background-color: $widget-background;
-    border-radius: 12px;
-    box-shadow: 0px 0px 6px 6px $shadow;
-    min-width: 400px;
-}
-
-.album_art {
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-    margin: 1rem 1rem 1rem 1rem;
-    padding: 4rem;
-}
-
-.song {
-    font-family: JetBrainsMono Nerd Font Mono;
-    font-weight: bold;
-    color: $white;
-    font-size: 1.2em;
-}
-
-.artist {
-    font-family: JetBrainsMono Nerd Font;
-    font-style: italic;
-    font-size: 1.1em;
-    color: $blue;
-    margin-top: -5px;
-}
-
-.btn_prev,
-.btn_play,
-.btn_next {
-    font-family: JetBrainsMono Nerd Font Mono;
-    color: $purple;
-    font-size: 25px;
-}
-.btn_next{
-    margin-left: 5px;
-}
-
-.metric-player scale trough highlight {
-    all: unset;
-    border-radius: 10px;
-    background-color: $blue;
-}
-
 // weather
 .weather {
     all: unset;
