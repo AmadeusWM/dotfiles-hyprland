@@ -96,7 +96,7 @@
 
 .sidebar_volume_bar scale trough highlight {
 	all: unset;
-    background-color: #bfc9db;
+    background-color: $red;
 	border-radius: 24px;
 }
 
@@ -106,7 +106,7 @@
 
 .sidebar_mic_bar scale trough highlight {
 	all: unset;
-    background-color: #bfc9db;
+    background-color: $red;
 	border-radius: 24px;
 }
 
@@ -116,5 +116,7 @@
 
 .sidebar_vol_icon, .sidebar_mic_icon {
     font-size: 20px;
-	color: #bfc9db;
+	margin: 4px;
+	margin-left: 10px;
+	color: $red;
 }

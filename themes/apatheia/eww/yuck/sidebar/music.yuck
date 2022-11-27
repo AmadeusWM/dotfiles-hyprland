@@ -15,7 +15,10 @@
       (music_prog)
     )
     (music_ctl)
-    (sidebar_audio)
+    (box
+      :class "right-music-container"
+      :space-evenly "false"
+      (sidebar_audio))
   )
 )
 
@@ -51,28 +54,35 @@
       (box 
         :class "sidebar_volume_bar" 
         :orientation "v" 
+        :space-evenly "false"
                         (scale 
                           :flipped "true" 
                           :orientation "v" 
+                          :vexpand true
                           :min 0 
                           :max 101 
                           :value volume_percent 
                           :onchange "amixer -D pulse sset Master {}%" )
                         (label  
                           :text "" 
-                          :class "sidebar_vol_icon"))
+                          :vexpand false
+                          :class "sidebar_vol_icon")
+                      )
       (box 
         :class "sidebar_mic_bar" 
         :orientation "v" 
+        :space-evenly "false"
                         (scale 
                           :flipped "true" 
                           :orientation "v" 
+                          :vexpand true
                           :min 0 
                           :max 101 
                           :value mic_percent 
                           :active "false")
                         (label  
                           :text "" 
+                          :vexpand false
                           :class "sidebar_mic_icon")))))
 
 ; ;;  Music Widgets
