@@ -1,4 +1,10 @@
-.music-side
+.music-side{
+
+}
+
+.left-music-container{
+	margin: 0px;
+}
 
 .msc_bg {
 	background-color: $widget-background;
@@ -28,14 +34,14 @@
 	font-size: 20px;
 	font-weight: normal;
 	color: #bfc9db;
-	margin: 4px 20px 0px 20px;
+	margin: 0px 20px 0px 18px;
 }
 
 .song_btn_play {
 	font-weight: normal;
 	font-size: 20px;
 	color: #bfc9db;
-	margin: 4px 20px 0px 20px;
+	margin: 0px 20px 0px 18px;
 }
 
 .msc_ctl_bg {

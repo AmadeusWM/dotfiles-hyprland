@@ -86,8 +86,9 @@ echo "$time"
 
 ########################## Length Seconds ##########################
 lengthS() {
-length=$(playerctl --player=$Control metadata)
+length=$(playerctl --player=$Control metadata  --format "{{ mpris:length }}")
 [ -z "$length" ] && length="0"
+length=$(($length/1000000))
 echo "$length"
 }
 
@@ -111,6 +112,14 @@ icon=""
 [ $(playerctl --player=$Control status) = "Playing" ] && icon=""
 [ $(playerctl --player=$Control status) = "Paused" ] && icon=""
 echo "$icon"
+}
+
+########################## Percent ##########################
+perc() {
+time_song="$(ctimeS)"
+len_song="$(lengthS)"
+divided=$(python -c "print(($time_song/$len_song)*100)")
+echo "$divided"
 }
 
 ########################## Lyrics ##########################
@@ -285,7 +294,7 @@ case $Control in
 		timeS)		ctimeS 					;;
 		length)		length 					;;
 		lengthS)	lengthS 					;;
-		percent)	echo "0"				;;
+		percent)	perc				;;
 		playlist)	playlist				;;
 		lyrics)		lyrics					;;
 		*)		doc					;;

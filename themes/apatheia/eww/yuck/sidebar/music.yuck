@@ -3,13 +3,14 @@
 ;;  Music
 (defwidget music-side []
   (box
-    :vexpand "false"
-    :hexpand "false"
     :halign "center"
     :class "music-side"
+    :space-evenly "false"
     (box
+      :class "left-music-container"
       :orientation "v"
       :valign "center"
+      :space-evenly "false"
       (music)
       (music_prog)
     )
@@ -37,7 +38,7 @@
 ; onchange: with playerctl (position [OFFSET][+/-]  Command the player to go to the position or seek forward/backward OFFSET in seconds)
 (defwidget music_prog []
   (box :class "music_prog_bg"
-    (scale :active "false" :min 0 :max 101 :value song_time :width 280 :vexpand "false" :class "song_prog")))
+    (scale :active "false" :min 0 :max 101 :value song_perc :width 280 :vexpand "false" :class "song_prog")))
 
 
 ; ;;  Music Widgets
