@@ -4,7 +4,7 @@
 ## Get data
 STATUS="$(mpc status)"
 COVER="/tmp/.music_cover.png"
-MUSIC_DIR="$HOME/Music/iTunes Media"
+MUSIC_DIR="$HOME/Music"
 
 ## Get status
 get_status() {
