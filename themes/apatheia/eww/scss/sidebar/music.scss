@@ -94,6 +94,11 @@
 	padding: 3rem;
 }
 
+.sidebar_volume_bar, .sidebar_mic_bar, .sidebar_spotify_bar {
+	margin-left: 7px;
+	margin-right: 7px;
+}
+
 .sidebar_volume_bar scale trough highlight {
 	all: unset;
     background-color: $red;
