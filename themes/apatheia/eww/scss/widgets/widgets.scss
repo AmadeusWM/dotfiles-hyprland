@@ -16,7 +16,7 @@ Created by saimoom **/
 .side {
     background-color: $background;
     border-width: 0px;
-    padding: 0px 30px 0px 30px;
+    padding: 0px 0px 0px 0px;
     border-radius: 16px;
     margin: 65px 0px 15px 15px;
 }
@@ -357,6 +357,18 @@ calendar:indeterminate {
     font-size: 20px;
     font-weight: bold;
     margin: 0px 12px 0px 12px;
+}
+
+.color-var1 {
+    color: $green;
+}
+
+.color-var2 {
+    color: $purple;
+}
+
+.color-var3 {
+    color: $red;
 }
 
 .launcher-icon {
