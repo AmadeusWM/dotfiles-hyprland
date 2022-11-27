@@ -82,7 +82,7 @@
                           :active "false"
                           :onchange "amixer -D pulse sset Capture {}%")
                         (label  
-                          :text "mic"
+                          :text "" 
                           :vexpand false
                           :class "sidebar_mic_icon")))))
 
