@@ -50,4 +50,4 @@ for i in range(len(arr)):
         
 
 print(out_str)
-print("- " + randomQuote.get("author"))
+print("~ " + randomQuote.get("author"))

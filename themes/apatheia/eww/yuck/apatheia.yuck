@@ -1,18 +1,23 @@
 ;; pull a new quote every hour
-(defpoll apatheia_quote :interval "1h" "python ~/.config/hypr/themes/apatheia/scripts/Apatheia/main.py")
+(defpoll apatheia_quote :interval "1h" "python ~/.config/hypr/themes/apatheia/scripts/Apatheia/main.py | head -1")
+(defpoll apatheia_author :interval "1h" "python ~/.config/hypr/themes/apatheia/scripts/Apatheia/main.py | tail -1")
 
 ;; Apatheia Quote
-
 (defwidget apatheia []
   (box
     :class "apatheia-container"
     :orientation "v"
     :space-evenly "false"
     :hexpand "false"
-    ; :width "100%"
     (label
       :hexpand "false"
       :limit-width 300
       :class "apatheia-content"
       :text apatheia_quote
+    )
+    (label
+      :hexpand "false"
+      :class "apatheia-author"
+      :halign "start"
+      :text apatheia_author
     )))
