@@ -33,7 +33,7 @@
     :width "400"
     (label
       :hexpand "false"
-      :limit-width 200
+      :limit-width 250
       :class "apatheia-content"
       :text apatheia_quote
     )))
