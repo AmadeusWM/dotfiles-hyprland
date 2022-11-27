@@ -1,6 +1,11 @@
+(defpoll curr_clips :interval "5s" "~/.config/hypr/themes/apatheia/eww/scripts/curr-clips")
+
 (defwidget clipboard []
     (box
+        :class "clipboard-container"
         (label
+            :text curr_clips
+            :limit-width 15
         )
     )
     )

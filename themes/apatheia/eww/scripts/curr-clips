@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# get 4 last clips (parsed)
+clips=$(cliphist list | head -4 | cut -d " " -f2-)
+
+arr=($parsed)
+
+ret="{"
+i=0;
+for el in "${arr[@]}"
+do
+    $ret += "$i:$el"
+    $i += 1
+done;
+$ret += "}"
+echo $ret
