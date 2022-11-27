@@ -40,12 +40,13 @@ arr = randomQuote.get("text").split(" ");
 out_str = "";
 char_count = 0;
 for i in range(len(arr)):
-    char_count += len(arr[i])
-    if char_count > 20:
-        out_str += "\\n" + arr[i] + " "
+    sub_str = arr[i] + " "
+    char_count += len(sub_str)
+    if char_count > 19:
+        out_str += "\\n" + sub_str
         char_count = 0
     else:
-        out_str += arr[i] + " "
+        out_str += sub_str
         
 
 print(out_str)
