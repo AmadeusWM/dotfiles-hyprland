@@ -22,9 +22,9 @@
 (defwidget music []
   (box :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false"
     (box :orientation "v" :spacing 5 :space-evenly "false" :vexpand "false" :hexpand "false" :class "msc_bg"
-      ; (box
-      ;   :class "album_art"
-      ;   :style "background-image: url('${cover_art}');")
+      (box
+        :class "album_art"
+        :style "background-image: url('${cover_art}');")
       (label :halign "start" :class "song" :wrap "false" :limit-width 12 :text song)
       (label :halign "start" :class "song_artist" :wrap "true" :limit-width 15 :text song_artist)
     )))
