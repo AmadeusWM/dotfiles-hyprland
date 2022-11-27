@@ -1,7 +1,8 @@
 ;; includes
-(include "yuck/sidebar.yuck")
+(include "yuck/variables.yuck")
 (include "yuck/notifications.yuck")
-(include "yuck/apatheia.yuck")
+(include "yuck/sidebar/sidebar.yuck")
+(include "yuck/sidebar/apatheia.yuck")
 
 ;; Variables
 (defpoll clock_time :interval "5s" "date '+\%H\%M'")

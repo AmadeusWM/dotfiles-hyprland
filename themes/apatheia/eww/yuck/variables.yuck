@@ -1,0 +1,7 @@
+
+;; Music Variables
+(defpoll art		:interval "5s"  "scripts/music coverloc")
+(defpoll title		:interval "5s"  "scripts/music title")
+(defpoll artist		:interval "5s"  "scripts/music artist")
+(defpoll playpause	:interval "5s"  "scripts/music statusicon")
+(defpoll songtime 	:interval "1s"  "scripts/getSongDuration")
