@@ -58,7 +58,7 @@
     (top)
     (music-side)
     (system-side)
-    (clipboard)
+    ; (clipboard)
     (tray))
 )
 
