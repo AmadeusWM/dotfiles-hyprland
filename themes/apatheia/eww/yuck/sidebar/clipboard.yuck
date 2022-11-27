@@ -1,0 +1,6 @@
+(defwidget clipboard []
+    (box
+        (label
+        )
+    )
+    )
