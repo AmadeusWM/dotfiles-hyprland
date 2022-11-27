@@ -65,7 +65,7 @@
                           :min 0 
                           :max 101 
                           :value volume_percent 
-                          :onchange "scripts" )
+                          :onchange "amixer -D pulse sset Master {}%" )
                         (label  
                           :text "墳" 
                           :vexpand false

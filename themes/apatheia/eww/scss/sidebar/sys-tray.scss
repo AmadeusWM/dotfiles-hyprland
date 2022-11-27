@@ -9,32 +9,32 @@
     margin: 20px 0px 0px 0px;
 }
 .side_sys_win {
-    background-color: #14141c;
+    background-color: $widget-background;
     border-radius: 18px;
 }
 .side_sys_cpu {
-  color: #bfc9db;
+  color: $blue;
     background-color: #0f0f17;
   border-radius: 10px;
 }
 .side_sys_bat {
-  color: #bfc9db;
+  color: $green;
     background-color: #0f0f17;
   border-radius: 10px;
 }
 .side_sys_mem {
-  color: #bfc9db;
+  color: $orange;
     background-color: #0f0f17;
   border-radius: 10px;
 }
 .side_sys_icon_bat {
-    color: #bfc9db;
+    color: $green;
 }
 .side_sys_icon_cpu {
-    color: #bfc9db;
+    color: $blue;
 }
 .side_sys_icon_mem {
-    color: #bfc9db;
+    color: $orange;
 }
 .side_sys_bat_box {
 	border-radius: 16px;
