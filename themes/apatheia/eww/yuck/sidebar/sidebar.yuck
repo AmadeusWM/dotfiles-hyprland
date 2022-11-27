@@ -122,7 +122,7 @@
   (box
     :class "stats-box"
     :space-evenly "false"
-    :width "400"
+    :width "500"
     :orientation "v"
     :valign "start"
     :halign "center"
