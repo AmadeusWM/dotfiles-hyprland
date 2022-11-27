@@ -57,7 +57,7 @@
     :space-evenly "false"
     :spacing "30"
     :halign "start"
-    (fetch)
+    ; (fetch)
     (top)
     (music-side)
     (system-side)
@@ -224,22 +224,6 @@
         :max 101
         :active false
         :value {(EWW_DISK["/"].used / EWW_DISK["/"].total) * 100}
-        :class "scale"
-      :width 280))
-    (box
-      :class "stats"
-      :hexpand "false"
-      :vexpand "false"
-      :space-evenly "false"
-      (label
-        :tooltip "${gpu}%"
-        :class "stats-icon"
-      :text "ﴼ")
-      (scale
-        :min 0
-        :max 101
-        :active false
-        :value gpu
         :class "scale"
       :width 280))
     (box
