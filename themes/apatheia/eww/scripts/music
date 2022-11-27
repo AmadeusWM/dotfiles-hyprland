@@ -122,6 +122,12 @@ divided=$(python -c "print(($time_song/$len_song)*100)")
 echo "$divided"
 }
 
+############### Set Position With Percentage ##########################
+set_position() {
+len_song="$(lengthS)"
+playerctl position $(python -c "print($1/100*$len_song)")
+}
+
 ########################## Lyrics ##########################
 lyrics() {
 Title=$(playerctl --player=$Control metadata --format {{title}})
@@ -241,10 +247,11 @@ Options:
   coverloc	saves cover and shows location to cover of current song
   showcover	opens cover using feh
   time		shows current time of song
-  timeS		shows current time of song
+  timeS		shows current time of song in seconds
   length	shows length of song
-  lengthS	shows length of song
+  lengthS	shows length of song in seconds
   percent	shows percent song
+  setposition	sets position in song
   playlist	shows playlist position of current song
   lyrics	shows lyrics"
 }
@@ -295,6 +302,7 @@ case $Control in
 		length)		length 					;;
 		lengthS)	lengthS 					;;
 		percent)	perc				;;
+		setposition)	set_position $2				;;
 		playlist)	playlist				;;
 		lyrics)		lyrics					;;
 		*)		doc					;;

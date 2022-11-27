@@ -44,7 +44,11 @@
 ; onchange: with playerctl (position [OFFSET][+/-]  Command the player to go to the position or seek forward/backward OFFSET in seconds)
 (defwidget music_prog []
     (box :class "music_prog_bg"
-        (scale :active "false" :min 0 :max 101 :value song_perc :width 280 :vexpand "false" :class "song_prog")))
+        (scale 
+        :min 0 :max 101 
+        :value song_perc 
+        :onchange "scripts/music setposition {}"
+        :width 280 :vexpand "false" :class "song_prog")))
 
 (defwidget sidebar_audio []
   (box
