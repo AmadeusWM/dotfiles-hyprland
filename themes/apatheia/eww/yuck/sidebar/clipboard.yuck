@@ -1,8 +1,6 @@
 (defwidget clipboard []
     (box
-        :class "clipboard-container"
         (label
-            :text "sdf"
         )
     )
     )
