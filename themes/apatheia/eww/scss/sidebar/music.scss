@@ -10,7 +10,7 @@
 	background-color: $widget-background;
 	// min-width: 140px;
 	margin: 0px 5px 5px 0px;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 	border-radius: 16px;
 }
 
@@ -31,35 +31,32 @@
 
 .song_btn_prev,
 .song_btn_next,
-.song_btn_loop {
-	font-size: 20px;
+.song_btn_play {
+	font-size: 28px;
 	font-weight: normal;
 	color: $red;
-	margin: 0px 20px 0px 18px;
+	margin: 0px 26px 0px 24px;
 }
 
 .song_btn_play {
-	font-weight: normal;
-	font-size: 20px;
-	color: $red;
-	margin: 0px 20px 0px 18px;
+	margin-left: 20px;
 }
 
 .msc_ctl_bg {
-	margin-left: 5px;
+	margin: 0px 5px;
 	background-color: $widget-background;
 	border-radius: 12px;
 }
 
 
 .song_prog {
-	margin: 8px 4px;
+	margin: 12px 5px;
 }
 
 .song_prog highlight {
 	all: unset;
-	// background-color: $red;
-	background-image: linear-gradient(to right, $red 30%, $purple 50%, $red 100% *50);
+	background-color: $red;
+	// background-image: linear-gradient(to right, $red 30%, $purple 50%, $red 100% *50);
 	border-radius: 8px;
 }
 
@@ -91,7 +88,7 @@
 	background-size: cover;
 	background-position: center;
 	border-radius: 16px 16px 0px 0px;
-	padding: 3rem;
+	padding: 2rem;
 }
 
 .sidebar_volume_bar, .sidebar_mic_bar, .sidebar_spotify_bar {
@@ -99,38 +96,29 @@
 	margin-right: 7px;
 }
 
-.sidebar_volume_bar scale trough highlight {
-	all: unset;
-    background-color: $red;
-	border-radius: 24px;
-}
-
-.sidebar_volume_bar trough {
-	min-width: 10px;
-}
-
-.sidebar_mic_bar scale trough highlight {
-	all: unset;
-    background-color: $red;
-	border-radius: 24px;
-}
-
-.sidebar_mic_bar trough {
-	min-width: 10px;
-}
-
+.sidebar_volume_bar scale trough highlight,
+.sidebar_mic_bar scale trough highlight,
 .sidebar_spotify_bar scale trough highlight {
 	all: unset;
     background-color: $red;
 	border-radius: 24px;
 }
 
-.sidebar_spotify_bar trough {
+.sidebar_spotify_bar trough, 
+.sidebar_mic_bar trough, 
+.sidebar_volume_bar trough {
 	min-width: 10px;
+	background-color: rgba($grey, 0.2);
+	box-shadow: none;
 }
 
 .sidebar_vol_icon, .sidebar_mic_icon, .sidebar_spotify_icon {
     font-size: 20px;
 	margin: 4px;
 	color: $red;
+}
+
+
+.sidebar_mic_icon{
+	margin-left: 8px;
 }

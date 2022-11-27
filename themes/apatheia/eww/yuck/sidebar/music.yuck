@@ -51,7 +51,6 @@
         :width 280 :vexpand "false" :class "song_prog")))
 
 (defwidget sidebar_audio []
-  (box
     (box 
       :orientation "h" 
       :halign "center"
@@ -103,7 +102,7 @@
                         (label  
                           :text "" 
                           :vexpand false
-                          :class "sidebar_spotify_icon")))))
+                          :class "sidebar_spotify_icon"))))
 
 ; ;;  Music Widgets
 ; (defwidget music []

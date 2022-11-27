@@ -16,9 +16,10 @@ Created by saimoom **/
 .side {
     background-color: $background;
     border-width: 0px;
-    padding: 0px 10px 10px 0px;
+    padding: 0px 15px 0px 15px;
     border-radius: 16px;
-    margin: 65px 0px 15px 15px;
+    margin: 65px 15px 15px 15px;
+    // box-shadow: 0 6px 5px 2px $shadow;
 }
 
 .center_modules {
@@ -509,7 +510,7 @@ calendar:indeterminate {
     background-color: $widget-background;
     padding: 20px 25px 20px 25px;
     border-radius: 12px;
-    box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);
+    // box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);
 }
 
 .stats-icon {
@@ -542,7 +543,7 @@ scale trough {
     padding: 15px 0px 15px 0px;
     font-family: JetBrainsMono Nerd Font Mono;
     margin-bottom: 30px;
-    box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);
+    // box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);
 }
 
 
@@ -579,12 +580,11 @@ scale trough {
 }
 
 .fetch {
-    margin-top: 35px;
     font-size: 15px;
     border-radius: 12px;
     background-color: $widget-background;
     padding: 30px 55px 30px 55px;
-    box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);
+    // box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);
 }
 
 .wm {
