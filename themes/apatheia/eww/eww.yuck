@@ -2,6 +2,7 @@
 (include "yuck/variables.yuck")
 (include "yuck/notifications.yuck")
 (include "yuck/sidebar/sidebar.yuck")
+(include "yuck/sidebar/music.yuck")
 (include "yuck/sidebar/apatheia.yuck")
 (include "yuck/sidebar/clipboard.yuck")
 

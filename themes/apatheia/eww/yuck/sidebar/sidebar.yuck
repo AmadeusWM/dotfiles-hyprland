@@ -75,51 +75,6 @@
   )
 )
 
-;;  Music Widgets
-(defwidget music []
-  (box
-    :class "music-player"
-    :orientation "h"
-    :space-evenly "false"
-    :spacing 10
-    :halign "center"
-    :valign "center"
-    :hexpand "true"
-    :width "400"
-    (box
-      :class "album_art"
-      :style "background-image: url('${art}');")
-    (box
-      :orientation "v"
-      :space-evenly "false"
-      :valign "center"
-      :halign "center"
-      :hexpand "true"
-      :spacing 10
-      (label
-        :class "song"
-        :text title
-        :limit-width "15"
-      :wrap true)
-      (label
-        :class "artist"
-        :text artist
-      :wrap true)
-      (box
-        :orientation "h"
-        :space-evenly "false"
-        :valign "center"
-        :halign "center"
-        :spacing 25
-        (button :class "btn_prev" :onclick "scripts/music previous" "玲")
-        (button :class "btn_play" :onclick "scripts/music toggle" playpause)
-        (button :class "btn_next" :onclick "scripts/music next" "怜")))
-    ; (box
-      ; 	:orientation "v"
-    ; 	lyrics)
-  ))
-; (defpoll lyrics	:interval "1s"  "scripts/music lyrics")
-
 ;; weather
 (defwidget weather []
   (box
@@ -315,46 +270,5 @@
       :class "kernal"
       :halign "start"
     :text " : ${kernal}")
-  )
-)
-
-
-
-
-;;  Music Widgets
-(defwidget music-side []
-  (box 	:class "music-player"
-    :orientation "v"
-    :space-evenly "false"
-    :halign "center"
-    (box 	:class "album_art"
-      :style "background-image: url('${art}');")
-    (box 	:orientation "v"
-      :space-evenly "false"
-      :halign "center"
-      :spacing 10
-      (label  :class "artist"
-        :limit-width 15
-      :text artist)
-      (label  :class "song"
-        :limit-width 20
-      :text title)
-      (box 	:orientation "h"
-        :space-evenly "false"
-        :halign "center"
-        :spacing 35
-        (button :class "btn_prev" :onclick "scripts/music previous" "玲")
-        (button :class "btn_play" :onclick "scripts/music toggle" playpause)
-        (button :class "btn_next" :onclick "scripts/music next" "怜"))
-      (box    :orientation "h"
-        :class "metric-player"
-        :space-evenly "false"
-        (scale  :min 0
-          :max 101
-          :active "false"
-          :value {songtime != "" ? "${songtime}" : "0"}
-        )
-      )
-    )
   )
 )
