@@ -6,9 +6,8 @@
 (defwindow sidebar0
   :geometry (geometry 
     :x "0px"
-    :y "65px"
     :width "1px"
-    :height "90%"
+    :height "100%"
   :anchor "top left")
   :stacking "fg"
   :monitor 0
@@ -17,9 +16,8 @@
 (defwindow sidebar1
   :geometry (geometry 
     :x "0px"
-    :y "65px"
     :width "1px"
-    :height "90%"
+    :height "100%"
   :anchor "top left")
   :stacking "fg"
   :monitor 1
@@ -28,9 +26,8 @@
 (defwindow sidebar2
   :geometry (geometry 
     :x "0px"
-    :y "65px"
     :width "1px"
-    :height "90%"
+    :height "100%"
   :anchor "top left")
   :stacking "fg"
   :monitor 2
