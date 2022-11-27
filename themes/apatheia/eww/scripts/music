@@ -122,6 +122,13 @@ divided=$(python -c "print(($time_song/$len_song)*100)")
 echo "$divided"
 }
 
+########################## Spotify Volume ######################
+sp_volume() {
+# value between 0 and 1 
+normalized=$(python -c "print($1/101)")
+$(playerctl volume $normalized)
+}
+
 ########################## Lyrics ##########################
 lyrics() {
 Title=$(playerctl --player=$Control metadata --format {{title}})
@@ -297,6 +304,7 @@ case $Control in
 		percent)	perc				;;
 		playlist)	playlist				;;
 		lyrics)		lyrics					;;
+		sp_volume) sp_volume $2 ;;
 		*)		doc					;;
 	esac
 esac 2>/dev/null

@@ -62,7 +62,7 @@
                           :min 0 
                           :max 101 
                           :value volume_percent 
-                          :onchange "amixer -D pulse sset Master {}%" )
+                          :onchange "scripts" )
                         (label  
                           :text "墳" 
                           :vexpand false
@@ -83,7 +83,22 @@
                         (label  
                           :text "" 
                           :vexpand false
-                          :class "sidebar_mic_icon")))))
+                          :class "sidebar_mic_icon"))
+        (box 
+        :class "sidebar_spotify_bar" 
+        :orientation "v" 
+        :space-evenly "false"
+                        (scale 
+                          :flipped "true" 
+                          :orientation "v" 
+                          :vexpand true
+                          :min 0 
+                          :max 101 
+                          :onchange "scripts/music sp_volume {}")
+                        (label  
+                          :text "" 
+                          :vexpand false
+                          :class "sidebar_spotify_icon")))))
 
 ; ;;  Music Widgets
 ; (defwidget music []
