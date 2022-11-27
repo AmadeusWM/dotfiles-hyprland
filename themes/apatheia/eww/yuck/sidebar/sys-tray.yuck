@@ -1,0 +1,50 @@
+(defpoll cpu :interval "5s" "scripts/cpu")
+
+(defwidget sys-tray []
+    (box :class "side_sys_win" :halign "fill" :orientation "h" :space-evenly "true" :hexpand "false" :vexpand "false" :spacing 13 
+        (box :class "side_sys_bat_box" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false"
+        (circular-progress :value {EWW_BATTERY["BAT0"].capacity}
+                  :class "side_sys_bat"
+                  :thickness 100
+              (label :text " "
+                  :class "side_cc_cc"
+                  :limit-width 2
+                  :show_truncated false
+                  :wrap false))
+              (label :text "BAT"
+                  :class "side_sys_icon_bat"
+                  :limit-width 4
+                  :show_truncated false
+                  :wrap false))
+        (box :class "side_sys_cpu_box" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false"
+        (circular-progress :value cpu
+                  :class "side_sys_cpu"
+                  :thickness 100
+              (label :text " "
+                  :class "side_cc_cc"
+                  :limit-width 2
+                  :show_truncated false
+                  :wrap false))
+              (label :text "CPU"
+                  :class "side_sys_icon_cpu"
+                  :limit-width 4
+                  :show_truncated false
+                  :wrap false))
+        (box :class "side_sys_mem_box" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false"
+        (circular-progress :value cpu
+                  :class "side_sys_mem"
+                  :thickness 100
+              (label :text " "
+                  :class "side_cc_cc"
+                  :limit-width 2
+                  :show_truncated false
+                  :wrap false
+                  :angle 0.0))
+              (label :text "MEM"
+                  :class "side_sys_icon_mem"
+                  :limit-width 4
+                  :show_truncated false
+                  :wrap false)
+          )
+    )
+  )

@@ -1,0 +1,50 @@
+
+.side_cc_cc {
+    font-size: 28;
+    margin: 32px;
+}
+
+.side_sys_icon_bat, .side_sys_icon_mem, .side_sys_icon_cpu{
+    font-size: 24;
+    margin: 20px 0px 0px 0px;
+}
+.side_sys_win {
+    background-color: #14141c;
+    border-radius: 18px;
+}
+.side_sys_cpu {
+  color: #bfc9db;
+    background-color: #0f0f17;
+  border-radius: 10px;
+}
+.side_sys_bat {
+  color: #bfc9db;
+    background-color: #0f0f17;
+  border-radius: 10px;
+}
+.side_sys_mem {
+  color: #bfc9db;
+    background-color: #0f0f17;
+  border-radius: 10px;
+}
+.side_sys_icon_bat {
+    color: #bfc9db;
+}
+.side_sys_icon_cpu {
+    color: #bfc9db;
+}
+.side_sys_icon_mem {
+    color: #bfc9db;
+}
+.side_sys_bat_box {
+	border-radius: 16px;
+    margin: 30px 0px 10px 50px;
+  }
+.side_sys_cpu_box {
+	border-radius: 16px;
+    margin: 30px 50px 10px 50px;
+  }
+.side_sys_mem_box {
+	border-radius: 16px;
+    margin: 30px 50px 15px 0px;
+  }
