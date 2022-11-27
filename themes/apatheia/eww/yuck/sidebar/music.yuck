@@ -1,83 +1,86 @@
 ;;  Music Widgets
+
+;;  Music
 (defwidget music-side []
-    (box 	:class "music-player"
+  (box
+    :vexpand "false"
+    :hexpand "false"
+    :halign "center"
+    :class "music-side"
+    (box
       :orientation "v"
-      :space-evenly "false"
-      :halign "center"
-      (box 	:class "album_art"
-        :style "background-image: url('${art}');")
-      (box 	:orientation "v"
-        :space-evenly "false"
-        :halign "center"
-        :spacing 10
-        (label  :class "artist"
-          :limit-width 15
-        :text artist)
-        (label  :class "song"
-          :limit-width 20
-        :text title)
-        (box 	:orientation "h"
-          :space-evenly "false"
-          :halign "center"
-          :spacing 35
-          (button :class "btn_prev" :onclick "~/.config/eww/dashboard/scripts/music previous" "ﭣ")
-          (button :class "btn_play" :onclick "~/.config/eww/dashboard/scripts/music toggle" playpause)
-          (button :class "btn_next" :onclick "~/.config/eww/dashboard/scripts/music next" "ﭡ"))
-        (box    :orientation "h"
-          :class "metric-player"
-          :space-evenly "false"
-          (scale  :min 0
-            :max 101
-            :active "false"
-            :value {songtime != "" ? "${songtime}" : "0"}
-          )
-        )
-      )
+      :valign "center"
+      (music)
+      (music_prog)
     )
+    (music_ctl)
   )
-  
-  ; ;;  Music Widgets
-  ; (defwidget music []
+)
+
+(defwidget music []
+  (box :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false"
+    (box :orientation "v" :spacing 5 :space-evenly "false" :vexpand "false" :hexpand "false" :class "msc_bg"
+      ; (box
+      ;   :class "album_art"
+      ;   :style "background-image: url('${cover_art}');")
+      (label :halign "start" :class "song" :wrap "false" :limit-width 12 :text song)
+      (label :halign "start" :class "song_artist" :wrap "true" :limit-width 15 :text song_artist))))
+
+(defwidget music_ctl []
+  (box :orientation "v" :spacing 1 :halign "center" :space-evenly "true" :vexpand "false" :hexpand "false" :class "msc_ctl_bg"
+    (button :class "song_btn_prev" :onclick "scripts/music previous" "")
+    (button :class "song_btn_play" :onclick "scripts/music toggle" playpause)
+    (button :class "song_btn_next" :onclick "scripts/music next" "")
+    ; (button :class "song_btn_loop" :onclick "~/.config/eww/leftbar/scripts/music_info --loop" loop_status)
+  ))
+
+; onchange: with playerctl (position [OFFSET][+/-]  Command the player to go to the position or seek forward/backward OFFSET in seconds)
+(defwidget music_prog []
+  (box :class "music_prog_bg"
+    (scale :active "false" :min 0 :max 101 :value song_time :width 280 :vexpand "false" :class "song_prog")))
+
+
+; ;;  Music Widgets
+; (defwidget music []
   ;   (box
-  ;     :class "music-player"
-  ;     :orientation "h"
-  ;     :space-evenly "false"
-  ;     :spacing 10
-  ;     :halign "center"
-  ;     :valign "center"
-  ;     :hexpand "true"
-  ;     :width "400"
-  ;     (box
-  ;       :class "album_art"
-  ;       :style "background-image: url('${art}');")
-  ;     (box
-  ;       :orientation "v"
-  ;       :space-evenly "false"
-  ;       :valign "center"
-  ;       :halign "center"
-  ;       :hexpand "true"
-  ;       :spacing 10
-  ;       (label
-  ;         :class "song"
-  ;         :text title
-  ;         :limit-width "15"
-  ;       :wrap true)
-  ;       (label
-  ;         :class "artist"
-  ;         :text artist
-  ;       :wrap true)
-  ;       (box
-  ;         :orientation "h"
-  ;         :space-evenly "false"
-  ;         :valign "center"
-  ;         :halign "center"
-  ;         :spacing 25
-  ;         (button :class "btn_prev" :onclick "scripts/music previous" "玲")
-  ;         (button :class "btn_play" :onclick "scripts/music toggle" playpause)
-  ;         (button :class "btn_next" :onclick "scripts/music next" "怜")))
-  ;     ; (box
-  ;       ; 	:orientation "v"
-  ;     ; 	lyrics)
+    ;     :class "music-player"
+    ;     :orientation "h"
+    ;     :space-evenly "fe"
+    ;     :spacing 10
+    ;     :halign "center"
+    ;     :valign "center"
+    ;     :hexpand "true"
+    ;     :width "400"
+    ;     (box
+      ;       :class "album_art"
+      ;       :style "background-image: url('${art}');")
+    ;     (box
+      ;       :orientation "v"
+      ;       :space-evenly "false"
+      ;       :valign "center"
+      ;       :halign "center"
+      ;       :hexpand "true"
+      ;       :spacing 10
+      ;       (label
+        ;         :class "song"
+        ;         :text title
+        ;         :limit-width "15"
+      ;       :wrap true)
+      ;       (label
+        ;         :class "artist"
+        ;         :text artist
+      ;       :wrap true)
+      ;       (box
+        ;         :orientation "h"
+        ;         :space-evenly "false"
+        ;         :valign "center"
+        ;         :halign "center"
+        ;         :spacing 25
+        ;         (button :class "btn_prev" :onclick "scripts/music previous" "玲")
+        ;         (button :class "btn_play" :onclick "scripts/music toggle" playpause)
+        ;         (button :class "btn_next" :onclick "scripts/music next" "怜")))
+    ;     ; (box
+      ;       ; 	:orientation "v"
+    ;     ; 	lyrics)
   ;   ))
-  ; ; (defpoll lyrics	:interval "1s"  "scripts/music lyrics")
-  
+; ; (defpoll lyrics	:interval "1s"  "scripts/music lyrics")

@@ -77,6 +77,20 @@ length=$(playerctl --player=$Control metadata --format "{{ duration(mpris:length
 echo "$length"
 }
 
+########################## Time Seconds ##########################
+ctimeS() {
+time=$(playerctl --player=$Control position)
+[ -z "$time" ] && time="0"
+echo "$time"
+}
+
+########################## Length Seconds ##########################
+lengthS() {
+length=$(playerctl --player=$Control metadata)
+[ -z "$length" ] && length="0"
+echo "$length"
+}
+
 ########################## trackNumber ##########################
 playlist() {
 playlist=$(playerctl --player=$Control metadata xesam:trackNumber)
@@ -218,7 +232,9 @@ Options:
   coverloc	saves cover and shows location to cover of current song
   showcover	opens cover using feh
   time		shows current time of song
+  timeS		shows current time of song
   length	shows length of song
+  lengthS	shows length of song
   percent	shows percent song
   playlist	shows playlist position of current song
   lyrics	shows lyrics"
@@ -243,7 +259,9 @@ case $Control in
 		coverloc)	mpccover		;;
 		showcover)	mpccover | xargs feh	;;
 		time)		mpctime			;;
+		timeS)		mpctime			;;
 		length)		mpclength		;;
+		lengthS)		mpclength		;;
 		percent)	mpcperc			;;
 		playlist)	mpcsongpos		;;
 		lyrics)		mpclyrics		;;
@@ -264,7 +282,9 @@ case $Control in
 		coverloc)	cover					;;
 		showcover)	cover | xargs feh 			;;
 		time)		ctime 					;;
+		timeS)		ctimeS 					;;
 		length)		length 					;;
+		lengthS)	lengthS 					;;
 		percent)	echo "0"				;;
 		playlist)	playlist				;;
 		lyrics)		lyrics					;;

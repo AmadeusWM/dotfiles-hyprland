@@ -1,9 +1,9 @@
 ;; includes
 (include "yuck/variables.yuck")
 (include "yuck/notifications.yuck")
-(include "yuck/sidebar/sidebar.yuck")
 (include "yuck/sidebar/music.yuck")
 (include "yuck/sidebar/apatheia.yuck")
+(include "yuck/sidebar/sidebar.yuck")
 
 ;; Variables
 (defpoll clock_time :interval "5s" "date '+\%H\%M'")
@@ -25,10 +25,10 @@
 ;   `hyprctl monitors -j | jq '.[] | select(.focused==true).id'`
 ;   )
 
+(defvar eww "eww -c $HOME/.config/hypr/themes/apatheia/eww/bar")
 
 (defvar vol_reveal false)
 (defvar br_reveal false)
-(defvar music_reveal false)
 (defvar control_reveal false)
 (defvar wifi_rev false)
 (defvar time_rev false)
