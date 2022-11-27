@@ -8,7 +8,7 @@
     :x "0px"
     :y "65px"
     :width "1px"
-    :height "94%"
+    :height "90%"
   :anchor "top left")
   :stacking "fg"
   :monitor 0
@@ -19,7 +19,7 @@
     :x "0px"
     :y "65px"
     :width "1px"
-    :height "94%"
+    :height "90%"
   :anchor "top left")
   :stacking "fg"
   :monitor 1
@@ -30,7 +30,7 @@
     :x "0px"
     :y "65px"
     :width "1px"
-    :height "94%"
+    :height "90%"
   :anchor "top left")
   :stacking "fg"
   :monitor 2
