@@ -6,6 +6,7 @@
 (defpoll song_perc		    :interval "1s"  "scripts/music percent")
 (defpoll cover_art		:interval "5s"  "scripts/music coverloc")
 (defpoll playpause	:interval "1s"  "scripts/music statusicon")
+(defpoll player_volume	:interval "5s"  'bc <<< "$(playerctl volume)*100"')
 ; (defpoll song_time      :interval "1s"  "scripts/music timeS")
 
 (defvar music_reveal false)

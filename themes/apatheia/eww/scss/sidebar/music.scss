@@ -114,7 +114,17 @@
 	min-width: 10px;
 }
 
-.sidebar_vol_icon, .sidebar_mic_icon {
+.sidebar_spotify_bar scale trough highlight {
+	all: unset;
+    background-color: $red;
+	border-radius: 24px;
+}
+
+.sidebar_spotify_bar trough {
+	min-width: 10px;
+}
+
+.sidebar_vol_icon, .sidebar_mic_icon, .sidebar_spotify_icon {
     font-size: 20px;
 	margin: 4px;
 	color: $red;

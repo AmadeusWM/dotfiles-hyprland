@@ -128,6 +128,13 @@ len_song="$(lengthS)"
 playerctl position $(python -c "print($1/100*$len_song)")
 }
 
+########################## Spotify Volume ######################
+sp_volume() {
+# value between 0 and 1 
+normalized=$(python -c "print($1/101)")
+$(playerctl volume $normalized)
+}
+
 ########################## Lyrics ##########################
 lyrics() {
 Title=$(playerctl --player=$Control metadata --format {{title}})
@@ -305,6 +312,7 @@ case $Control in
 		setposition)	set_position $2				;;
 		playlist)	playlist				;;
 		lyrics)		lyrics					;;
+		sp_volume) sp_volume $2 ;;
 		*)		doc					;;
 	esac
 esac 2>/dev/null
