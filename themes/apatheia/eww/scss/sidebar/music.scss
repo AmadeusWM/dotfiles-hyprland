@@ -10,6 +10,7 @@
 	background-color: $widget-background;
 	// min-width: 140px;
 	margin: 0px 5px 5px 0px;
+	padding-bottom: 20px;
 	border-radius: 16px;
 }
 
@@ -55,21 +56,22 @@
 	all: unset;
 	background-color: #bfc9db;
 	border-radius: 8px;
-	padding: 5px;
+	min-height: 1px;
 }
 
 .song_prog scale trough  {
 	all: unset;
 	background-color: #232232;
-    box-shadow: 0 6px 5px 2px #06060b;
+    // box-shadow: 0 6px 5px 2px #06060b;
 	border-radius: 8px;
+	min-height: 1px;
 	margin: 5px;
 }
 
 .music_prog_bg {
 	background-color: $widget-background;
 	border-radius: 12px;
-	padding: 0px;
+	padding: 5px;
 	
 	margin: 5px 5px 0px 0px;
 }
@@ -77,6 +79,6 @@
 .album_art {
 	background-size: cover;
 	background-position: center;
-	border-radius: 16px;
-	padding: 2rem;
+	border-radius: 16px 16px 0px 0px;
+	padding: 3rem;
 }
