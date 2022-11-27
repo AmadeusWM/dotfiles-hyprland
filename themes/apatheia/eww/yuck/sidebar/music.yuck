@@ -64,7 +64,7 @@
                           :value volume_percent 
                           :onchange "amixer -D pulse sset Master {}%" )
                         (label  
-                          :text "" 
+                          :text "墳" 
                           :vexpand false
                           :class "sidebar_vol_icon")
                       )
@@ -81,7 +81,7 @@
                           :value mic_percent 
                           :active "false")
                         (label  
-                          :text "" 
+                          :text "" 
                           :vexpand false
                           :class "sidebar_mic_icon")))))
 
