@@ -6,6 +6,7 @@ Created by saimoom **/
     border-radius: 12px;
     margin: 10px 15px 0px 15px;
     padding: 4px;
+    box-shadow: 0 6px 5px 2px $shadow;
 }
 
 .module {
@@ -19,7 +20,7 @@ Created by saimoom **/
     padding: 0px 15px 0px 15px;
     border-radius: 16px;
     margin: 65px 15px 15px 15px;
-    // box-shadow: 0 6px 5px 2px $shadow;
+    box-shadow: 0 6px 5px 2px $shadow;
 }
 
 .center_modules {
