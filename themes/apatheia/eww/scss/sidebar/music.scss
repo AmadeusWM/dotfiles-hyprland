@@ -99,19 +99,22 @@
     background-color: #bfc9db;
 	border-radius: 24px;
 }
+
+.sidebar_volume_bar trough {
+	min-width: 10px;
+}
+
 .sidebar_mic_bar scale trough highlight {
 	all: unset;
     background-color: #bfc9db;
 	border-radius: 24px;
 }
 
-.sidebar_vol_icon, .sidebar_mic_icon {
-    font-size: 20px;
-}
-.sidebar_vol_icon {
-    color: #bfc9db;
+.sidebar_mic_bar trough {
+	min-width: 10px;
 }
 
-.sidebar_mic_icon {
-    color: #bfc9db;
+.sidebar_vol_icon, .sidebar_mic_icon {
+    font-size: 20px;
+	color: #bfc9db;
 }
