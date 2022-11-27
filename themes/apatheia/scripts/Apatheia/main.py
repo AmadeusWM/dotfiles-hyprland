@@ -41,7 +41,7 @@ out_str = "";
 char_count = 0;
 for i in range(len(arr)):
     char_count += len(arr[i])
-    if char_count > 15:
+    if char_count > 20:
         out_str += "\\n" + arr[i] + " "
         char_count = 0
     else:
