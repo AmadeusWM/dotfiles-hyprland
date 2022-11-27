@@ -22,9 +22,9 @@
 (defwidget music []
   (box :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false"
     (box :orientation "v" :spacing 5 :space-evenly "false" :vexpand "false" :hexpand "false" :class "msc_bg"
-      (box
-        :class "album_art"
-        :style "background-image: url('${cover_art}');")
+      ; (box
+      ;   :class "album_art"
+      ;   :style "background-image: url('${cover_art}');")
       (label :halign "start" :class "song" :wrap "false" :limit-width 12 :text song)
       (label :halign "start" :class "song_artist" :wrap "true" :limit-width 15 :text song_artist)
     )))
@@ -44,12 +44,12 @@
 
 (defwidget sidebar_audio []
   (box 
-    (box :orientation "h" :halign "center" :valign "end" 
+    (box :orientation "h" :halign "center" 
       (box :class "sidebar_volume_bar" :orientation "v" 
-                        (scale :flipped "true" :orientation "v" :min 0 :max 101 :height 100 :value volume_percent :onchange "amixer -D pulse sset Master {}%" )
+                        (scale :flipped "true" :orientation "v" :min 0 :max 101 :value volume_percent :onchange "amixer -D pulse sset Master {}%" )
                         (label  :text "" :class "sidebar_vol_icon"))
       (box :class "sidebar_mic_bar" :orientation "v" 
-                        (scale :flipped "true" :orientation "v" :min 0 :max 101 :height 100 :value mic_percent :active "false")
+                        (scale :flipped "true" :orientation "v" :min 0 :max 101 :value mic_percent :active "false")
                         (label  :text "" :class "sidebar_mic_icon")))))
 
 ; ;;  Music Widgets
