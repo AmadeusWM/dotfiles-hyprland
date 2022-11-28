@@ -1,7 +1,7 @@
 (defpoll cpu :interval "5s" "scripts/cpu")
 
 (defwidget sys-tray []
-    (box :class "side_sys_win" :halign "fill" :orientation "h" :space-evenly "true" :hexpand "false" :vexpand "false" :spacing 13 
+    (box :class "side_sys_win" :halign "fill" :orientation "h" :space-evenly "true" :hexpand "false" :vexpand "false" :spacing 0 
         (box :class "side_sys_bat_box" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false"
         (circular-progress :value {EWW_BATTERY["BAT0"].capacity}
                   :class "side_sys_bat"

@@ -125,16 +125,21 @@ echo "$divided"
 ############### Set Position With Percentage ##########################
 set_position() {
 len_song="$(lengthS)"
-playerctl position $(python -c "print($1/100*$len_song)")
+playerctl position --player=$Control $(python -c "print($1/100*$len_song)")
 }
 
 ########################## Spotify Volume ######################
 sp_volume() {
 # value between 0 and 1 
 normalized=$(python -c "print($1/101)")
-$(playerctl volume $normalized)
+$(playerctl --player=$Control volume $normalized)
 }
 
+sp_get_volume() {
+# value between 0 and 1 
+normalized=$(python -c "print($1/101)")
+$(playerctl --player=$Control volume $normalized)
+}
 ########################## Lyrics ##########################
 lyrics() {
 Title=$(playerctl --player=$Control metadata --format {{title}})

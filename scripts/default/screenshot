@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
 # grim -g "$(slurp)" - | wl-copy
-grim -g "$(slurp)" - | swappy -f -
+grim -g "$(slurp)" - | swappy -f - -o ~/Pictures/Screenshots/screenshot$(date +%s).png

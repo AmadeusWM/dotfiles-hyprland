@@ -7,4 +7,6 @@
 example:
 ```bash
 ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu                                                                                                      ```
-
+```
+- [ ] Disable and Enable notifications
+    source: 

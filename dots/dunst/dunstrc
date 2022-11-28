@@ -31,7 +31,7 @@
     height = 200
 
     # Position the notification in the top right corner
-    origin = top-left
+    origin = top-right
 
     # Offset from the origin
     offset = 15x60
@@ -81,7 +81,7 @@
     padding = 12
 
     # Horizontal padding.
-    horizontal_padding = 16
+    horizontal_padding = 15
 
     # Padding between text and icon.
     text_icon_padding = 0
@@ -105,7 +105,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = "#ff0000"
 
     # Sort messages by urgency.
     sort = yes
@@ -119,7 +119,7 @@
 
     ### Text ###
 
-    font = Sofia Pro 16
+    font =  mononoki Nerd Font 16
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -220,7 +220,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = wofi --show dmenu -p dunst:
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/xdg-open
@@ -450,20 +450,18 @@
 #    appname = "some_volume_notifiers"
 #    set_stack_tag = "volume"
 #
-[redirect]
-summary = "*"
-script = "~/.config/hypr/scripts/default/tools/notif"
+# [redirect]
+# summary = "*"
+# script = "~/.config/hypr/scripts/default/tools/notif"
 
-[logger]
-summary = "*"
-script = "~/.config/hypr/scripts/default/tools/notif"
+# [logger]
+# summary = "*"
+# script = "~/.config/hypr/scripts/default/tools/notif"
 
 # [spotify]
 # summary = "*"
 # script = "~/.scripts/music-art"
 
-# [spotify-icon]
-# appname = "Spotify"
-# icon = "~/.cache/temp.png"
-#*/
-
+[spotify-icon]
+appname = "Spotify"
+icon = "~/.cache/temp.png"

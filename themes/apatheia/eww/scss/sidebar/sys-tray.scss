@@ -1,7 +1,7 @@
 
 .side_cc_cc {
     font-size: 28;
-    margin: 32px;
+    padding: 50px;
 }
 
 .side_sys_icon_bat, .side_sys_icon_mem, .side_sys_icon_cpu{
@@ -11,6 +11,7 @@
 .side_sys_win {
     background-color: $widget-background;
     border-radius: 18px;
+    padding: 20px;
 }
 .side_sys_cpu {
   color: $blue;
@@ -38,13 +39,13 @@
 }
 .side_sys_bat_box {
 	border-radius: 16px;
-    margin: 30px 0px 10px 50px;
+    // margin: 30px 0px 10px 50px;
   }
 .side_sys_cpu_box {
 	border-radius: 16px;
-    margin: 30px 50px 10px 50px;
+    // margin: 30px 50px 10px 50px;
   }
 .side_sys_mem_box {
 	border-radius: 16px;
-    margin: 30px 50px 15px 0px;
+    // margin: 30px 50px 15px 0px;
   }
