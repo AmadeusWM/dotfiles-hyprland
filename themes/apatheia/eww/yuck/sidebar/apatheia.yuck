@@ -8,16 +8,19 @@
     :class "apatheia-container"
     :orientation "v"
     :space-evenly "false"
-    :hexpand "false"
+    :hexpand "true"
+    :halign "fill"
     (label
-      :hexpand "false"
       :limit-width 300
       :class "apatheia-content"
+      :hexpand "true"
+      :halign "start"
       :text apatheia_quote
     )
     (label
       :hexpand "false"
       :class "apatheia-author"
       :halign "start"
+      :hexpand "true"
       :text apatheia_author
     )))

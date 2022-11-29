@@ -17,7 +17,7 @@ Created by saimoom **/
 .side {
     background-color: $background;
     border-width: 0px;
-    padding: 0px 15px 15px 15px;
+    padding: 15px 15px 15px 15px;
     border-radius: 16px;
     margin: 65px 15px 15px 15px;
     box-shadow: 0 6px 5px 2px $shadow;
@@ -540,7 +540,7 @@ scale trough {
     opacity: 1;
     background-color: $widget-background;
     border-radius: 12px;
-    padding: 20px;
+    padding: 15px;
     font-family: JetBrainsMono Nerd Font Mono;
     // margin-bottom: 30px;
     // box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);
@@ -553,24 +553,27 @@ scale trough {
 .exit,
 .restart {
     margin:  0px;
-    padding: 8px 16px;
-    padding-right: 24px;
+    padding: 8px 12px;
+    padding-right: 20px;
     font-family: mononoki Nerd Font;
-    font-size: 32px;
+    font-size: 28px;
     background-color: $primary;
 
     border-radius: 16px 8px;
 }
 
 .poweroff {
+    background-color: $red;
     color: $widget-background;
 }
 
 .reboot {
+    background-color: $green;
     color: $widget-background;
 }
 
 .exit {
+    background-color: $yellow;
     color: $widget-background;
 }
 
@@ -595,31 +598,31 @@ scale trough {
 .wm {
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    color: $red;
+    color: $primary;
 }
 
 .host {
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    color: $purple;
+    color: $primary;
 }
 
 .uptime {
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    color: $orange;
+    color: $primary;
 }
 
 .packages {
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    color: $blue;
+    color: $primary;
 }
 
 .kernal {
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    color: $green;
+    color: $primary;
 }
 
 .notification {
@@ -630,7 +633,7 @@ scale trough {
     border-radius: 12px;
     border-width: 2px;
     border-style: solid;
-    border-color: $red;
+    border-color: $primary;
 }
 
 .notification-header {
@@ -641,7 +644,7 @@ scale trough {
     border-radius: 12px;
     border-width: 2px;
     border-style: solid;
-    border-color: $green;
+    border-color: $primary;
 }
 
 .notification-icon {
