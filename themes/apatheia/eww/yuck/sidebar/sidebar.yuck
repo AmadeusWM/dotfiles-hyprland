@@ -65,8 +65,7 @@
   (box
     :orientation "h"
     :space-evenly "false"
-    :spacing "30"
-    :halign "center"
+    :halign "fill"
     :hexpand "true"
     (apatheia)
   )
