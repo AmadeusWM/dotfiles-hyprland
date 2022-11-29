@@ -1,0 +1,10 @@
+#!/bin/sh
+
+wallpaper="$(ls $HOME/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu)"
+
+killall swaybg
+
+sleep 1
+
+# echo "~/.config/hypr/themes/apatheia/wallpapers$wallpaper"
+swaybg -m fill -i "$HOME/.config/hypr/themes/apatheia/wallpapers/$wallpaper" &
