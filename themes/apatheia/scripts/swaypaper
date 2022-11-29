@@ -11,8 +11,11 @@ sleep 1
 # swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/Planet.png &
 # swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/PandaSamurai.webp &
 # swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/GreenGlass.webp &
-swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/tits.png &
+# swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/tits.png &
 # swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/tits_inv.png &
+swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/background1.png &
+# swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/background1inv.png &
+# swaybg -m fill -i $HOME/.config/hypr/themes/apatheia/wallpapers/tits2.png &
 
 # ### COLORS ###
 # swaybg -c "#F22555" & # just a dark color (obsidian color..)

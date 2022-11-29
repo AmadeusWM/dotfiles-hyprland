@@ -1,6 +1,4 @@
-
 # See dunst(5) for all configuration options
-
 [global]
     ### Display ###
 
@@ -18,14 +16,14 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = none
+    follow = mouse
 
     ### Geometry ###
 
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 500
+    width = 400
 
     # The maximum height of a single notification, excluding the frame.
     height = 200
@@ -56,10 +54,10 @@
     progress_bar_frame_width = 0
 
     # Set the minimum width for the progress bar
-    progress_bar_min_width = 150
+    progress_bar_min_width = 350
 
     # Set the maximum width for the progress bar
-    progress_bar_max_width = 300
+    progress_bar_max_width = 400
 
 
     # Show how many messages are currently hidden (because of
@@ -74,8 +72,8 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    # If gap_size is greater than 0, this setting will be ignored.
-    separator_height = 0
+    # If gapsize is greater than 0, this setting will be ignored.
+    separator_height = 2
 
     # Padding between text and separator.
     padding = 12
@@ -88,7 +86,7 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 0
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
     frame_color = "#0f0f0f"
@@ -97,7 +95,8 @@
     # If value is greater than 0, separator_height will be ignored and a border
     # of size frame_width will be drawn around each notification instead.
     # Click events on gaps do not currently propagate to applications below.
-    gap_size = 5
+    # WARNING: doesn't exist?
+    # gap_size = 5
 
     # Define a color for the separator.
     # possible values are:
@@ -105,7 +104,8 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = "#ff0000"
+    separator_color = auto 
+    # or: "#211E2F"
 
     # Sort messages by urgency.
     sort = yes
@@ -159,11 +159,12 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    # format = "<b>%s</b>\n%b" # (default)
+    format = "<b>%s</b>\n<span size="small">%b</span>"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    alignment = center
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
@@ -207,7 +208,7 @@
     icon_theme = "Papirus, Adwaita"
     enable_recursive_icon_lookup = true
 
-    always_run_scripts = true
+    # always_run_scripts = true
     ### History ###
 
     # Should a notification popped up from history be sticky or timeout
@@ -298,23 +299,24 @@
     # where there are multiple screens with very different dpi values.
     per_monitor_dpi = false
 
-
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = 	"#111019" # "#0f0f0f"
-    foreground = 	"#FFFFFF" # "#89b4fa"
+    foreground = 	"#F1F0F5" # "#89b4fa"
     frame_color = 	"#0B0A10" # "#89b4fa"
     timeout = 3
+    highlight = "#AAC5A0"
     # script = ~/.scripts/dunst/sound-normal.sh
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
     background = 	"#111019" # "#0f0f0f"
-    foreground = 	"#FFFFFF" # "#a6e3a1"
+    foreground = 	"#F1F0F5" # "#a6e3a1"
     frame_color = 	"#0B0A10" # "#a6e3a1"
     timeout = 5
+    highlight = "#A8C5E6"
     # script = ~/.scripts/dunst/sound-normal.sh
     # Icon for notifications with normal urgency, uncomment to enable
     # default_icon = /path/to/icon
@@ -324,6 +326,7 @@
     foreground = 	"#E97193" # "#f38ba8"
     frame_color = 	"#0B0A10" # "#f38ba8"
     timeout = 10
+    highlight = "#E97193"
     # script = ~/.scripts/dunst/sound-critical.sh
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
@@ -462,6 +465,9 @@
 # summary = "*"
 # script = "~/.scripts/music-art"
 
-[spotify-icon]
-appname = "Spotify"
-icon = "~/.cache/temp.png"
+# rounded corners forced ?
+# [Spotify]
+#     appname = "Spotify"
+#     script = "~/.config/dunst/scripts/round_image.sh"
+#     new_icon = "~/.config/dunst/assets/album_cover.png"
+# */
