@@ -2,10 +2,13 @@
 
 # use this script with `source path/to/this/script` to load the environment variables for use in your script 
 
-temp_folder=~/.config/hypr/scripts/variables/temp/primary_screen
+temp_folder=~/.config/hypr/scripts/variables/temp
 
 # sets the PRIMARY_MONITOR_ID environment variable
 function exportPrimary(){
+    if ! test -f "$temp_folder/primary_screen"; then
+        touch $temp_folder/primary_screen
+    fi
     # for display id run: 'hyprctl monitors'
     # id of your primary screen: ()
     primary_monitor_id=$(head -1 $temp_folder/primary_screen)
@@ -22,6 +25,9 @@ function exportPrimary(){
 
 # sets the BACKGROUND_IMAGE environment variable
 function exportBackground(){
+    if ! test -f "$temp_folder/background"; then
+        touch $temp_folder/background
+    fi
     # load the background variables
     background_image=$(head -1 $temp_folder/background)
 
