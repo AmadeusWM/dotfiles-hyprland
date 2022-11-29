@@ -17,14 +17,14 @@
 .song {
 	font-size: 24px;
 	font-weight: bold;
-	color: $red;
+	color: $primary;
 	margin: 10px 0px 0px 15px;
 }
 
 .song_artist {
 	font-size: 18px;
 	font-weight: bold;
-	color: $red;
+	color: $primary;
 	margin: 0px 0px 0px 15px;
 }
 
@@ -34,7 +34,7 @@
 .song_btn_play {
 	font-size: 28px;
 	font-weight: normal;
-	color: $red;
+	color: $primary;
 	margin: 0px 26px 0px 24px;
 }
 
@@ -55,7 +55,7 @@
 
 .song_prog highlight {
 	all: unset;
-	background-color: $red;
+	background-color: $primary;
 	// background-image: linear-gradient(to right, $red 30%, $purple 50%, $red 100% *50);
 	border-radius: 8px;
 }
@@ -96,12 +96,28 @@
 	margin-right: 7px;
 }
 
+.music_audio_container{
+	margin: 0px 10px;
+}
+
 .sidebar_volume_bar scale trough highlight,
 .sidebar_mic_bar scale trough highlight,
 .sidebar_spotify_bar scale trough highlight {
 	all: unset;
-    background-color: $red;
+    background-color: $primary;
 	border-radius: 24px;
+}
+
+.sidebar_volume_bar scale trough highlight{
+	background-color: $primary;
+}
+
+.sidebar_mic_bar scale trough highlight{
+	background-color: $primary;
+}
+
+.sidebar_spotify_bar scale trough highlight{
+	background-color: $green;
 }
 
 .sidebar_spotify_bar trough, 
@@ -115,7 +131,17 @@
 .sidebar_vol_icon, .sidebar_mic_icon, .sidebar_spotify_icon {
     font-size: 20px;
 	margin: 4px;
-	color: $red;
+}
+
+.sidebar_vol_icon{
+	color: $primary;
+}
+.sidebar_mic_icon{
+	color: $primary;
+	
+}
+.sidebar_spotify_icon{
+	color: $green;
 }
 
 

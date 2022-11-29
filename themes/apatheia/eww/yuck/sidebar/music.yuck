@@ -3,7 +3,7 @@
 ;;  Music
 (defwidget music-side []
   (box
-    :halign "center"
+    :halign "fill"
     :class "music-side"
     :space-evenly "false"
     (box
@@ -15,10 +15,7 @@
       (music_prog)
     )
     (music_ctl)
-    (box
-      :class "right-music-container"
-      :space-evenly "false"
-      (sidebar_audio))
+    (sidebar_audio)
   )
 )
 
@@ -52,8 +49,10 @@
 
 (defwidget sidebar_audio []
     (box 
+      :class "music_audio_container"
       :orientation "h" 
-      :halign "center"
+      :hexpand "true"
+      :halign "fill"
       (box 
         :class "sidebar_volume_bar" 
         :orientation "v" 

@@ -7,7 +7,7 @@
   :geometry (geometry
     :x "0px"
     :width "1px"
-    :height "100%"
+    ; :height "100%"
   :anchor "top left")
   :stacking "fg"
   :monitor 0
@@ -17,7 +17,7 @@
   :geometry (geometry
     :x "0px"
     :width "1px"
-    :height "100%"
+    ; :height "100%"
   :anchor "top left")
   :stacking "fg"
   :monitor 1
@@ -27,7 +27,7 @@
   :geometry (geometry
     :x "0px"
     :width "1px"
-    :height "100%"
+    ; :height "100%"
   :anchor "top left")
   :stacking "fg"
   :monitor 2
@@ -58,8 +58,7 @@
     (music-side)
     (sys-tray)
     ; (clipboard)
-    (fetch)
-    (tray))
+    (bottom))
 )
 
 (defwidget top []
@@ -70,140 +69,106 @@
     :halign "center"
     :hexpand "true"
     (apatheia)
-    ; (date)
-    ; (weather)
   )
 )
 
-;; weather
-(defwidget weather []
+(defwidget bottom []
   (box
-    :class "weather"
-    :orientation "v"
-    :spacing -2
+    :orientation "h"
     :space-evenly "false"
-    :vexpand "true"
-    :hexpand "false"
-    :valign "start"
-    :halign "center"
-    (label
-      :class "iconweather"
-      :halign "center"
-      :valign "center"
-    :style "color: ${HEX};" :text ICON)
-    (button
-      :onclick "scripts/weather --getdata && eww reload &"
-      :class "label_temp"
-      :valign "center"
-      :halign "center"
-    "${TEMP}")))
-
-(defwidget date []
-  (box :class "date" :orientation "v" :valign "start" :space-evenly "false" :halign "center"
-    (label
-    :text DAY)
-    (label
-    :text POO)
-    (label :class "foo"
-    :text FOO)))
-
-(defpoll FOO :interval "6h"  "date '+%d'")
-(defpoll DAY :interval "6h" "date '+%A'")
-(defpoll POO :interval "6h" "date '+%B'")
-
-
-;; Weather vars
-(defpoll ICON :interval "15m" `scripts/weather --icon`)
-(defpoll TEMP :interval "15m" `scripts/weather --temp`)
-(defpoll HEX :interval "15m" `scripts/weather --hex`)
+    :spacing "15"
+    (buttons)
+    (fetch)
+  )
+)
 
 ;; <-- System -->
 ; (defwidget system-side []
-;   (box
-;     :class "stats-box"
-;     :space-evenly "false"
-;     :width "500"
-;     :orientation "v"
-;     :valign "start"
-;     :halign "center"
-;     :spacing 12
-;     (box
-;       :class "stats"
-;       :hexpand "false"
-;       :vexpand "false"
-;       :space-evenly "false"
-;       (label
-;         :tooltip "${round(EWW_CPU.avg, 0)}%"
-;       :class "stats-icon" :text "")
-;       (scale
-;         :min 0
-;         :max 101
-;         :active false
-;         :value {EWW_CPU.avg}
-;         :class "scale"
-;       :width 280))
-;     (box
-;       :class "stats"
-;       :hexpand "false"
-;       :vexpand "false"
-;       :space-evenly "false"
-;       (label
-;         :tooltip "${round(EWW_RAM.used_mem_perc, 0)}%"
-;         :class "stats-icon"
-;       :text "﬙")
-;       (scale
-;         :min 0
-;         :max 101
-;         :active false
-;         :value {EWW_RAM.used_mem_perc}
-;         :class "scale"
-;       :width 280))
-;     (box
-;       :class "stats"
-;       :hexpand "false"
-;       :vexpand "false"
-;       :space-evenly "false"
-;       (label
-;         :tooltip "${round(EWW_DISK["/"].used_perc, 0)}%"
-;         :class "stats-icon"
-;       :text "")
-;       (scale
-;         :min 0
-;         :max 101
-;         :active false
-;         :value {(EWW_DISK["/"].used / EWW_DISK["/"].total) * 100}
-;         :class "scale"
-;       :width 280))
-;     (box
-;       :class "stats"
-;       :hexpand "false"
-;       :vexpand "false"
-;       :space-evenly "false"
-;       (button
-;         :tooltip "${volume_percent}%"
-;         :onclick "amixer set Master toggle"
-;         :onrightclick "alsamixer &"
-;       :class "stats-icon" "墳")
-;       (scale
-;         :min 0
-;         :max 101
-;         :active true
-;         :value volume_percent
-;         :class "scale"
-;         :width 280
-;       :onchange "amixer sset Master {}%")
-;     )))
+  ;   (box
+    ;     :class "stats-box"
+    ;     :space-evenly "false"
+    ;     :width "500"
+    ;     :orientation "v"
+    ;     :valign "start"
+    ;     :halign "center"
+    ;     :spacing 12
+    ;     (box
+      ;       :class "stats"
+      ;       :hexpand "false"
+      ;       :vexpand "false"
+      ;       :space-evenly "false"
+      ;       (label
+        ;         :tooltip "${round(EWW_CPU.avg, 0)}%"
+      ;       :class "stats-icon" :text "")
+      ;       (scale
+        ;         :min 0
+        ;         :max 101
+        ;         :active false
+        ;         :value {EWW_CPU.avg}
+        ;         :class "scale"
+      ;       :width 280))
+    ;     (box
+      ;       :class "stats"
+      ;       :hexpand "false"
+      ;       :vexpand "false"
+      ;       :space-evenly "false"
+      ;       (label
+        ;         :tooltip "${round(EWW_RAM.used_mem_perc, 0)}%"
+        ;         :class "stats-icon"
+      ;       :text "﬙")
+      ;       (scale
+        ;         :min 0
+        ;         :max 101
+        ;         :active false
+        ;         :value {EWW_RAM.used_mem_perc}
+        ;         :class "scale"
+      ;       :width 280))
+    ;     (box
+      ;       :class "stats"
+      ;       :hexpand "false"
+      ;       :vexpand "false"
+      ;       :space-evenly "false"
+      ;       (label
+        ;         :tooltip "${round(EWW_DISK["/"].used_perc, 0)}%"
+        ;         :class "stats-icon"
+      ;       :text "")
+      ;       (scale
+        ;         :min 0
+        ;         :max 101
+        ;         :active false
+        ;         :value {(EWW_DISK["/"].used / EWW_DISK["/"].total) * 100}
+        ;         :class "scale"
+      ;       :width 280))
+    ;     (box
+      ;       :class "stats"
+      ;       :hexpand "false"
+      ;       :vexpand "false"
+      ;       :space-evenly "false"
+      ;       (button
+        ;         :tooltip "${volume_percent}%"
+        ;         :onclick "amixer set Master toggle"
+        ;         :onrightclick "alsamixer &"
+      ;       :class "stats-icon" "墳")
+      ;       (scale
+        ;         :min 0
+        ;         :max 101
+        ;         :active true
+        ;         :value volume_percent
+        ;         :class "scale"
+        ;         :width 280
+      ;       :onchange "amixer sset Master {}%")
+    ;     )))
 
 ; (deflisten gpu "scripts/gpu")
 
-(defwidget tray []
+(defwidget buttons []
   (box
     :class "buttons"
-    :orientation "h"
+    :orientation "v"
     :space-evenly "true"
     :halign "fill"
-    :valign "end"
-    :spacing "2"
+    :valign "fill"
+    :spacing "10"
     (button
       :class "poweroff"
       :halign "center"
@@ -217,17 +182,17 @@
       :tooltip "Reboot"
     :onclick "kitty reboot &" "")
     (button
-      :class "firmware"
-      :halign "center"
-      :valign "center"
-      :tooltip "Reboot to EFI"
-    :onclick "kitty systemctl reboot --firmware &" "⏼")
-    (button
       :class "exit"
       :halign "center"
       :valign "center"
       :tooltip "Quit Hyprland"
     :onclick "hyprctl dispatch exit exit" "")
+    (button
+      :class "firmware"
+      :halign "center"
+      :valign "center"
+      :tooltip "Reboot to EFI"
+    :onclick "kitty systemctl reboot --firmware &" "⏼")
     (button
       :class "restart"
       :halign "center"
@@ -245,30 +210,43 @@
 (defwidget fetch []
   (box
     :class "fetch"
-    :orientation "v"
     :space-evenly "false"
     :halign "fill"
-    :valign "start"
+    :valign "fill"
+    :hexpand "true"
     :spacing "10"
-    (label
-      :class "host"
-      :halign "start"
-    :text " : ${name}@${host}")
-    (label
-      :class "wm"
-      :halign "start"
-    :text " : ${wm}")
-    (label
-      :class "uptime"
-      :halign "start"
-    :text " : ${uptime}")
-    (label
-      :class "packages"
-      :halign "start"
-    :text " : ${packages}")
-    (label
-      :class "kernal"
-      :halign "start"
-    :text " : ${kernal}")
+    (box
+      :orientation "v"
+      (label
+        :class "host"
+        :valign "center"
+        :halign "start"
+        :vexpand "true"
+      :text " : ${name}@${host}")
+      (label
+        :class "wm"
+        :valign "center"
+        :halign "start"
+        :vexpand "true"
+      :text " : ${wm}")
+      (label
+        :class "uptime"
+        :valign "center"
+        :halign "start"
+        :vexpand "true"
+      :text " : ${uptime}")
+      (label
+        :class "packages"
+        :valign "center"
+        :halign "start"
+        :vexpand "true"
+      :text " : ${packages}")
+      (label
+        :class "kernal"
+        :valign "center"
+        :halign "start"
+        :vexpand "true"
+      :text " : ${kernal}")
+    )
   )
 )

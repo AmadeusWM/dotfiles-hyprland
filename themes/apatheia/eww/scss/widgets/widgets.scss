@@ -17,7 +17,7 @@ Created by saimoom **/
 .side {
     background-color: $background;
     border-width: 0px;
-    padding: 0px 15px 0px 15px;
+    padding: 0px 15px 15px 15px;
     border-radius: 16px;
     margin: 65px 15px 15px 15px;
     box-shadow: 0 6px 5px 2px $shadow;
@@ -540,9 +540,9 @@ scale trough {
     opacity: 1;
     background-color: $widget-background;
     border-radius: 12px;
-    padding: 15px 0px 15px 0px;
+    padding: 20px;
     font-family: JetBrainsMono Nerd Font Mono;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
     // box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);
 }
 
@@ -552,35 +552,40 @@ scale trough {
 .firmware,
 .exit,
 .restart {
-    margin:  0px 16px 0px 16px;
-    padding-right: 5px;
+    margin:  0px;
+    padding: 8px 16px;
+    padding-right: 24px;
     font-family: mononoki Nerd Font;
     font-size: 32px;
-    // color: $black;
+    background-color: $primary;
+
+    border-radius: 16px 8px;
 }
 
 .poweroff {
-    color: $red;
+    color: $widget-background;
 }
 
 .reboot {
-    color: $green;
-}
-
-.firmware {
-    color: $orange;
+    color: $widget-background;
 }
 
 .exit {
-    color: $purple;
+    color: $widget-background;
+}
+
+.firmware {
+    color: $primary;
+    background-color: $background;
 }
 
 .restart {
-    color: $blue;
+    color: $primary;
+    background-color: $background;
 }
 
 .fetch {
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 12px;
     background-color: $widget-background;
     padding: 30px 55px 30px 55px;
