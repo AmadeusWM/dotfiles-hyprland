@@ -2,13 +2,11 @@
 
 function setPrimaryMonitor(){
     save_location=~/.config/hypr/scripts/variables/temp/primary_screen
-    touch $save_location
     echo $1 > $save_location
 }
 
 function setBackgroundImage(){
     save_location=~/.config/hypr/scripts/variables/temp/background
-    touch $save_location
     echo $1 > $save_location
 }
 
