@@ -1,11 +1,15 @@
 #!/bin/bash
 
 function setPrimaryMonitor(){
-    echo $1 > ~/.config/hypr/scripts/variables/temp/primary_screen
+    save_location=~/.config/hypr/scripts/variables/temp/primary_screen
+    touch $save_location
+    echo $1 > $save_location
 }
 
 function setBackgroundImage(){
-    echo $1 > ~/.config/hypr/scripts/variables/temp/background
+    save_location=~/.config/hypr/scripts/variables/temp/background
+    touch $save_location
+    echo $1 > $save_location
 }
 
 
@@ -20,7 +24,7 @@ doc() {
 
 case $1 in
     primary)		setPrimaryMonitor $2		;;
-    background)		setBackgroundImage $2		    ;;
+    background)		setBackgroundImage $2       ;;
     help)           doc                         ;;
     *)              doc                         ;;            
 esac
