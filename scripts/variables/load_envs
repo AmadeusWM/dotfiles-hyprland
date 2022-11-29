@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# use this script with `source path/to/this/script` to load the environment variables for use in your script 
+
+# sets the PRIMARY_MONITOR_ID environment variable
+function exportPrimary(){
+    # for display id run: 'hyprctl monitors'
+    # id of your primary screen: ()
+    primary_monitor_id=$(head -1 ~/.config/hypr/scripts/variables/temp/primary_screen)
+    
+    # all available monitors
+    NB_MONITORS=($(hyprctl monitors -j | jq -r '.[] | .id'))
+    # check if monitor is available
+    if [[ ! " ${NB_MONITORS[*]} " =~ " ${primary_monitor_id} " ]]; then
+        primary_monitor_id=0
+    fi
+    
+    export PRIMARY_MONITOR_ID=$primary_monitor_id
+}
+
+# sets the BACKGROUND_IMAGE environment variable
+function exportBackground(){
+    # load the background variables
+    background_image=$(head -1 ~/.config/hypr/scripts/variables/temp/background)
+
+    [ -z $background_image ] && background_image="~/.config/hypr/themes/apatheia/wallpapers/Planet.png"
+
+    export BACKGROUND_IMAGE=$background_image
+}
+
+exportPrimary
+exportBackground

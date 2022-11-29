@@ -1,0 +1,26 @@
+#!/bin/bash
+
+function setPrimaryMonitor(){
+    echo $1 > ~/.config/hypr/scripts/variables/temp/primary_screen
+}
+
+function setBackgroundImage(){
+    echo $1 > ~/.config/hypr/scripts/variables/temp/background
+}
+
+
+doc() {
+    echo "Usage:
+    set_env [Options]
+
+    Options:
+        primary     Sets the primary screen
+        background  Sets the image location of the active wallpaper"
+}
+
+case $1 in
+    primary)		setPrimaryMonitor $2		;;
+    background)		setBackgroundImage $2		    ;;
+    help)           doc                         ;;
+    *)              doc                         ;;            
+esac

@@ -22,7 +22,7 @@ done
 hyprctl dispatch focusmonitor "$focusmon"
 
 # primary display id
-primary=($($HOME/.config/hypr/scripts/primary_screen/primary));
+source $HOME/.config/hypr/scripts/variables/load_envs;
 
 # Open widgets for primary display
-${EWW} open-many "sidebar$primary" "notifications$primary"
+${EWW} open-many "sidebar$PRIMARY_MONITOR_ID" "notifications$PRIMARY_MONITOR_ID"
