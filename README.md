@@ -54,6 +54,7 @@ Assign the `source` parameter in the `hyprland.conf` to a different configuratio
 
 <details>
 <summary>
+instructions 
 </summary>
 
 ### Default
