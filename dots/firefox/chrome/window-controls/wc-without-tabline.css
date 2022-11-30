@@ -3,9 +3,10 @@
 :root:not([inFullscreen]) toolbar#nav-bar {
     z-index: 1 !important;
     position: relative !important;
+    /* shift toolbar to the right based on initial width */
     /* margin-left: calc(
         var(--wc-right-space) * 2 + 60px
-    ) !important; //shift toolbar to the right based on initial width */
+    ) !important;  */
     margin-left: 0px;
 }
 

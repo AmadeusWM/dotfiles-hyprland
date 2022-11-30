@@ -1,68 +1,69 @@
 window {
-  margin: 0px;
-  border: 5px solid #111019;
-  background-color: rgba(11, 10, 16, 0.9);
-  border-radius: 15px;
-}
+    margin: 0px;
+    border: 5px solid #111019;
+    background-color: rgba(11, 10, 16, 0.9);
+    border-radius: 15px;
+  }
+  
+  #input {
+    all: unset;
+    min-height: 36px;
+    padding: 4px 10px;
+    margin: 4px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: white;
+    background: linear-gradient(90deg, #E97193 0%, #f09db5 100%);
+    outline: none;
+    border-radius: 15px;
+    margin: 10px;
+    margin-bottom: 2px;
+    background-color: rgba(1, 1, 1, 0.9);
+  }
+  
+  #inner-box {
+    font-weight: bold;
+    border-radius: 15px;
+  }
+  
+  #outer-box {
+    margin: 0px;
+    padding: 3px;
+    border: none;
+    border-radius: 15px;
+    border: 5px solid #111019;
+  }
+  
+  #scroll {
+    margin-top: 5px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 5px;
+  }
+  
+  #text {
+    margin: 0px 0px;
+  }
 
-#input {
-  all: unset;
-  min-height: 36px;
-  padding: 4px 10px;
-  margin: 4px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  background-color: white;
-  background: linear-gradient(90deg, #E97193 0%, #f09db5 100%);
-  outline: none;
-  border-radius: 15px;
-  margin: 10px;
-  margin-bottom: 2px;
-  background-color: rgba(1, 1, 1, 0.9);
-}
-
-#inner-box {
-  font-weight: bold;
-  border-radius: 15px;
-}
-
-#outer-box {
-  margin: 0px;
-  padding: 3px;
-  border: none;
-  border-radius: 15px;
-  border: 5px solid #111019;
-}
-
-#scroll {
-  margin-top: 5px;
-  border: none;
-  border-radius: 15px;
-  margin-bottom: 5px;
-}
-
-#text {
-  margin: 0px 0px;
-}
-
-#text:selected {
-  color: white;
-  margin: 0px;
-  border: none;
-  border-radius: 15px;
-}
-
-#entry {
-  margin: 5px;
-  border: none;
-  border-radius: 10px;
-  background-color: transparent;
-}
-
-#entry:selected {
-  margin: 5px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #E97193 0%, #f09db5 100%);
-}
+  #text:selected {
+    color: white;
+    margin: 0px;
+    border: none;
+    border-radius: 15px;
+  }
+  
+  #entry {
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+  }
+  
+  #entry:selected {
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #E97193 0%, #f09db5 100%);
+  }
+  

@@ -59,8 +59,8 @@ for some information on how to change these variables...
   --ap-color-dp7: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 60%));
   --ap-color-dp8: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 70%));
   --ap-color-dp9: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 80%));
-  --ap-color-dp10: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 95%));
-  --ap-color-dp11: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 100%));
+  --ap-color-dp10: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 85%));
+  --ap-color-dp11: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 90%));
   --ap-h1: var(--ap-red);
   --ap-h2: var(--ap-purple);
   --ap-h3: var(--ap-blue);
@@ -121,7 +121,7 @@ for some information on how to change these variables...
 }
 
 :root {
-  --tab-border-radius: 10px;
+  --tab-border-radius: 8px;
   /* border radius of tabs */
   --animation-duration: 200ms;
   /* duration of different animations [0s: turn all animations off] */
@@ -164,7 +164,7 @@ tab-item:not(.collapsed) {
   /* border-radius: 0px var(--tab-border-radius) var(--tab-border-radius) 0px; */
   border-radius: var(--tab-border-radius);
   border: none !important;
-  height: 34px !important;
+  height: 40px !important;
   justify-content: center;
 }
 
@@ -195,12 +195,12 @@ tab-item tab-favicon {
 
 tab-item {
   --tab-size: 34px !important;
-  margin: 4px;
 }
 
 tab-item tab-item-substance {
   height: var(--tab-size);
   padding: 4px 0px 4px 4px;
+  margin: 4px;
 }
 
 tab-item tab-item-substance .active {
@@ -224,7 +224,7 @@ tab-item.active .label {
 }
 
 tab-item.active {
-  background: var(--dark-3) !important;
+  background: var(--dark-4) !important;
 }
 
 tab-item:not(.active).highlighted {
@@ -269,11 +269,11 @@ tab-closebox:hover {
   color: var(--light-1) !important;
   background: rgba(66, 66, 66, 0.2666666667) !important;
   border-radius: 5px;
-  margin: 0px 4px;
-  padding: 2px 5px;
+  margin: 0px 6px;
+  padding: 4px 5px;
   font-weight: bold;
   /* padding-bottom: 2px; */
-  order: -1 !important;
+  order: 0 !important;
 }
 
 .counter:before,

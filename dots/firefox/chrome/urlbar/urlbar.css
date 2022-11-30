@@ -530,6 +530,7 @@
 
 .urlbar-page-action{
     margin: 0px 4px !important;
+    align-self: center;
 }
 
 .urlbar-display {

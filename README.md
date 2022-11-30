@@ -11,7 +11,31 @@
 ## 📦 Required dependencies:
 Install these dependencies manually (Arch) 
 ```shell
-hyprland-git nerd-fonts-complete wofi rofi wifi4wofi dunst eww swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light papirus-icon-theme playerctl waybar-hyprland-git cava waybar-mpris-git kitty xdg-desktop-portal-wlr grim slurp pokemon-colorscripts-git wl-clipboard
+hyprland-git nerd-fonts-complete wofi rofi wifi4wofi dunst eww swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light papirus-icon-theme playerctl waybar-hyprland-git cava waybar-mpris-git kitty xdg-desktop-portal-wlr grim slurp wl-clipboard
+```
+
+## Setup Hyprland Config
+### Default Theme
+Copy all files from the repo to your hyprland config folder, and rename `_hyprland.conf` to `hyprland.conf` .
+```bash
+git clone git@github.com:AmadeusWM/dotfiles-hyprland.git
+cd dotfiles-hyprland
+cp -r ./* ~/.config/hypr
+# Rename config file
+mv ~/.config/hypr/_hyprland.conf ~/.config/hypr/hyprland.conf 
+```
+
+### Switching theme or config (Optional)
+Assign the `source` parameter in the `hyprland.conf` to a different configuration file.
+
+## Theming Other Applications
+The themes of other applications are saved in the `dots` folder.
+`wofi`, `rofi`, `kitty` and `dunst` can be themed by copying the folders into `~/.config`
+```bash
+cp  ./dots/dunst ~/.config
+cp  ./dots/wofi ~/.config
+cp  ./dots/rofi ~/.config
+cp  ./dots/kitty ~/.config
 ```
 
 # 🔨 TO-DO
@@ -19,7 +43,7 @@ hyprland-git nerd-fonts-complete wofi rofi wifi4wofi dunst eww swww swayidle swa
 - [x] Swappable wallpaper with wofi
 example:
 ```bash
-ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu                                                                                                      ```
+ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu
 ```
 - [ ] Disable and Enable notifications
 - [ ] Pull request Dunst: rounded icons

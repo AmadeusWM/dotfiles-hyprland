@@ -82,6 +82,13 @@
 
     /* background color when starting firefox, or when loading pages... */
     --tabpanel-background-color: var(--dark-0) !important;/* /#2B2A33; */
+
+    /* history popup bar left */
+    /* sidebar */
+    --lwt-sidebar-background-color: var(--dark-base) !important;
+
+    /* sidebar_text */
+    --lwt-sidebar-text-color: var(--light-base) !important;
 }
 
 /* light mode */
