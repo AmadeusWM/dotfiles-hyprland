@@ -7,8 +7,7 @@
 
 <br>
 
-# ⚙️ Usage
-## 👀 Install Hyprland (duh)
+# Usage
 
 ## 📦 Required dependencies:
 Install these dependencies manually (Arch) 
@@ -46,10 +45,10 @@ cp  ./dots/rofi ~/.config
 cp  ./dots/kitty ~/.config
 ```
 
-# Keybinds
+# ⌨️ Keybinds
 `SUPER+B`: Switch Wallpaper
 
-# Credits
+# 🙏 Credits
 - [Back777space](https://github.com/Back777space): for contributing🗿🗿🗿
 - [Taylor85345](https://github.com/taylor85345): an amazing
 - [flick0](https://github.com/flick0)
