@@ -38,7 +38,7 @@ mv ~/.config/hypr/_hyprland.conf ~/.config/hypr/hyprland.conf
 ### Switching Primary Screen
 Add this line to your config:
 ```conf
-exec=~/.config/hypr/scripts/variables/set_env primary 1
+exec=~/.config/hypr/scripts/variables/set_env primary [ID_OF_PRIMAR_SCREEN] #0, 1, 2, ...
 ```
 
 ### Switching theme or config (Optional)
@@ -55,13 +55,26 @@ cp  ./dots/kitty ~/.config
 ```
 
 # ⌨️ Keybinds
+`SUPER+Z`: Prev orkspace
+`SUPER+X`: Next orkspace
+`SUPER+CTRL+M`: Quit Hyprland
+`SUPER+1,...9,0`: Switch workspace
+`ALT+1,...9,0`: Move window to workspace
+`SUPER+ALT+1,...9,0`: Move window to workspace (silent)
 `SUPER+B`: Switch Wallpaper
+`SUPER+V`: Open clipboard history
+`SUPER+T` or `CTRl+ALT+T`: Kitty
+`SUPER+F` or `CTRL+ALT+F`: Firefox
+`SUPER+O`: Obsidian
+`SUPER+E`: Nautilus
+`SUPER+A`: VS-code
 
 # 🙏 Credits
 - [Back777space](https://github.com/Back777space): for contributing🗿🗿🗿
-- [Taylor85345](https://github.com/taylor85345): an amazing
-- [flick0](https://github.com/flick0)
-
+- [Zenneh](https://github.com/zenneh): the Obsidian theme📔
+- [Taylor85345](https://github.com/taylor85345): the well-organized dotfiles, and their top-bar🧔‍♀️
+- [flick0](https://github.com/flick0): inspiring hyprland-setup and useful scripts😍
+- []
 # 🔨 TO-DO
 - [x] Notifications (this maybe? https://www.reddit.com/r/unixporn/comments/sacxs3/oc_styled_notifications_using_dunst/)
 - [x] Swappable wallpaper with wofi
