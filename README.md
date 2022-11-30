@@ -4,6 +4,7 @@
 <br>
 
 # 📷 Screenshots
+![screen_1](/assets/screenshots/ImagesShowcase.png)
 
 <br>
 
@@ -46,26 +47,26 @@ cp  ./dots/kitty ~/.config
 ```
 
 # ⌨️ Keybinds
-`SUPER+Z`: Prev orkspace
-`SUPER+X`: Next orkspace
-`SUPER+CTRL+M`: Quit Hyprland
-`SUPER+1,...9,0`: Switch workspace
-`ALT+1,...9,0`: Move window to workspace
-`SUPER+ALT+1,...9,0`: Move window to workspace (silent)
-`SUPER+B`: Switch Wallpaper
-`SUPER+V`: Open clipboard history
-`SUPER+T` or `CTRl+ALT+T`: Kitty
-`SUPER+F` or `CTRL+ALT+F`: Firefox
-`SUPER+O`: Obsidian
-`SUPER+E`: Nautilus
-`SUPER+A`: VS-code
+- `SUPER+Z`: Prev orkspace
+- `SUPER+X`: Next orkspace
+- `SUPER+CTRL+M`: Quit Hyprland
+- `SUPER+1,...9,0`: Switch workspace
+- `ALT+1,...9,0`: Move window to workspace
+- `SUPER+ALT+1,...9,0`: Move window to workspace (silent)
+- `SUPER+B`: Switch Wallpaper
+- `SUPER+V`: Open clipboard history
+- `SUPER+T` or `CTRl+ALT+T`: Kitty
+- `SUPER+F` or `CTRL+ALT+F`: Firefox
+- `SUPER+O`: Obsidian
+- `SUPER+E`: Nautilus
+- `SUPER+A`: VS-code
 
 # 🙏 Credits
 - [Back777space](https://github.com/Back777space): for contributing🗿🗿🗿
 - [Zenneh](https://github.com/zenneh): the Obsidian theme📔
 - [Taylor85345](https://github.com/taylor85345): the well-organized dotfiles, and their top-bar🧔‍♀️
 - [flick0](https://github.com/flick0): inspiring hyprland-setup and useful scripts😍
-- []
+- [Vaxry](https://github.com/vaxerski): HYPRLAND 🤍
 # 🔨 TO-DO
 - [x] Notifications (this maybe? https://www.reddit.com/r/unixporn/comments/sacxs3/oc_styled_notifications_using_dunst/)
 - [x] Swappable wallpaper with wofi
