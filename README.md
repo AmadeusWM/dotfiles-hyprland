@@ -50,9 +50,10 @@ exec=~/.config/hypr/scripts/variables/set_env primary [ID_OF_PRIMAR_SCREEN] #0, 
 ### Switching theme or config (Optional)
 Assign the `source` parameter in the `hyprland.conf` to a different configuration file.
 
+## ✨ Theming Other Applications
+
 <details>
-<summary style="font-size: 20px; font-weight: bold;" >
- ✨ Theming Other Applications
+<summary>
 </summary>
 
 ### Default
@@ -142,6 +143,8 @@ Dependency: `eww-wayland`
 
 </details>
 
+---
+
 <br/>
 
 # ⌨️ Keybinds
@@ -165,6 +168,13 @@ Dependency: `eww-wayland`
 - [Taylor85345](https://github.com/taylor85345): the well-organized dotfiles, and top-bar🧔‍♀️
 - [flick0](https://github.com/flick0): inspiring hyprland-setup and useful scripts😍
 - [Vaxry](https://github.com/vaxerski): HYPRLAND 🤍
+
+
+---
+
+<br/>
+<br/>
+<br/>
 
 # 🔨 TO-DO
 - [x] Notifications (this maybe? https://www.reddit.com/r/unixporn/comments/sacxs3/oc_styled_notifications_using_dunst/)
