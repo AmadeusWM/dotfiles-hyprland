@@ -51,7 +51,7 @@ exec=~/.config/hypr/scripts/variables/set_env primary [ID_OF_PRIMAR_SCREEN] #0, 
 Assign the `source` parameter in the `hyprland.conf` to a different configuration file.
 
 <details>
-<summary style="font-size: 20px; font-weight: bold;" >
+<summary style="font-weight: bold;" >
  ✨ Theming Other Applications
 </summary>
 
