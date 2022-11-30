@@ -1,17 +1,17 @@
-# <center>🌸**Apatheia Dot Files**🌸 </center>
-<center align="center">
+<div style="center">
+
+# 🌸**Apatheia Dot Files**🌸
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/AmadeusWM/dotfiles-hyprland?style=for-the-badge&color=E08BCA) ![GitHub last commit](https://img.shields.io/github/last-commit/AmadeusWM/dotfiles-hyprland?style=for-the-badge&color=E08BCA) ![GitHub repo size](https://img.shields.io/github/repo-size/AmadeusWM/dotfiles-hyprland?style=for-the-badge&color=E08BCA)
 
-</center>
 
-<br>
+<br/>
 
 ![screen_1](/assets/screenshots/ImagesShowcase.png)
 
-<br>
+<br/>
 
-
+</div>
 # Details
 - **Compositor**: [Hyprland](https://github.com/hyprwm/Hyprland)
 - **Top- and sidebar**: [eww](https://github.com/elkowar/eww)
