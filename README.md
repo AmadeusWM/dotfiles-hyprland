@@ -3,18 +3,19 @@
 
 <br>
 
-# Screenshots
+# 📷 Screenshots
 
 <br>
 
 # Usage
+
 ## 📦 Required dependencies:
 Install these dependencies manually (Arch) 
 ```shell
 hyprland-git nerd-fonts-complete wofi rofi wifi4wofi dunst eww swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light papirus-icon-theme playerctl waybar-hyprland-git cava waybar-mpris-git kitty xdg-desktop-portal-wlr grim slurp wl-clipboard
 ```
 
-## Setup Hyprland Config
+## 🧙‍♂️ Setup Hyprland Config
 ### Default Theme
 Copy all files from the repo to your hyprland config folder, and rename `_hyprland.conf` to `hyprland.conf` .
 ```bash
@@ -34,7 +35,7 @@ exec=~/.config/hypr/scripts/variables/set_env primary [ID_OF_PRIMAR_SCREEN] #0, 
 ### Switching theme or config (Optional)
 Assign the `source` parameter in the `hyprland.conf` to a different configuration file.
 
-## Theming Other Applications
+## ✨ Theming Other Applications
 The themes of other applications are saved in the `dots` folder.
 `wofi`, `rofi`, `kitty` and `dunst` can be themed by copying the folders into `~/.config`
 ```bash
@@ -44,7 +45,7 @@ cp  ./dots/rofi ~/.config
 cp  ./dots/kitty ~/.config
 ```
 
-# Keybinds
+# ⌨️ Keybinds
 `SUPER+Z`: Prev orkspace
 `SUPER+X`: Next orkspace
 `SUPER+CTRL+M`: Quit Hyprland
@@ -59,7 +60,7 @@ cp  ./dots/kitty ~/.config
 `SUPER+E`: Nautilus
 `SUPER+A`: VS-code
 
-# Credits
+# 🙏 Credits
 - [Back777space](https://github.com/Back777space): for contributing🗿🗿🗿
 - [Zenneh](https://github.com/zenneh): the Obsidian theme📔
 - [Taylor85345](https://github.com/taylor85345): the well-organized dotfiles, and their top-bar🧔‍♀️
