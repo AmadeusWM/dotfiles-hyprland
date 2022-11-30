@@ -1,4 +1,4 @@
-<div style="center">
+<div align="center">
 
 # 🌸**Apatheia Dot Files**🌸
 
@@ -12,6 +12,7 @@
 <br/>
 
 </div>
+
 # Details
 - **Compositor**: [Hyprland](https://github.com/hyprwm/Hyprland)
 - **Top- and sidebar**: [eww](https://github.com/elkowar/eww)
