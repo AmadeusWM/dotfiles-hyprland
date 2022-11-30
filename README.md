@@ -67,7 +67,7 @@ cp  ./dots/kitty ~/.config
 
 ### Spotify (Spicetify)
 Install spicetify. (AUR: `spicetify-cli`)
-Copy `dots/spicetify` to `~/.config` (or wherever your spicetify configurations are stored)
+Copy `dots/spicetify/Dribbblish` to `~/.config/spicetify/Themes` (or wherever your spicetify themes are stored)
 Then:
 ```bash
 cd "$(dirname "$(spicetify -c)")/Themes/Dribbblish"
