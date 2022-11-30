@@ -1,0 +1,144 @@
+/**
+ * @name Ultra
+ * @version 1.0.6
+ * @author TheCommieAxolotl#0001
+ * @authorId 538487970408300544
+ * @description A Smooth, Black theme
+ * @source https://github.com/TheCommieAxolotl/BetterDiscord-Stuff/tree/main/Ultra
+ * @website https://thecommieaxolotl.netlify.app/
+ * @donate https://github.com/sponsors/thecommieaxolotl
+ * @invite g2KnUw7u7N
+*/
+/* Imports */
+@import url("https://discord-custom-covers.github.io/usrbg/dist/usrbg.css");
+@import url("https://thecommieaxolotl.github.io/BetterDiscord-Stuff/Imports/Touchup.css");
+@import url("https://thecommieaxolotl.github.io/BetterDiscord-Stuff/Imports/UserBadges.css");
+@import url("https://maendisease.github.io/BetterDiscordStuff/css/bettterInvites.css");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;200;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source Code Pro:wght@550&display=swap");
+/* Source */
+@import url("https://thecommieaxolotl.github.io/BetterDiscord-Stuff/Ultra/Clients/betterdiscord.css");
+/* Source: https://betterdiscord.app/theme/Ultra */
+/* Theme Colors Apatheia */
+/* Main sass file that contains the theme */
+:root {
+  --ap-radius-s: 4px;
+  --ap-radius-m: 8px;
+  --ap-radius-l: 10px;
+  --ap-radius-xl: 16px;
+  --ap-primary-h: 15.3846153846deg;
+  --ap-primary-s: 63.9344262295%;
+  --ap-primary-l: 88.0392156863%;
+  --ap-primary-d: 80%;
+  --ap-primary: #F4D7CD;
+  --ap-secondary-h: 157.0588235294deg;
+  --ap-secondary-s: 31.7757009346%;
+  --ap-secondary-l: 58.0392156863%;
+  --ap-secondary-d: 70%;
+  --ap-secondary: #72b69c;
+  --ap-base1-h: 250deg;
+  --ap-base1-s: 23.0769230769%;
+  --ap-base1-l: 8.0980392157%;
+  --ap-base1-d: 20%;
+  --ap-base0: #0B0A10;
+  --ap-base0-h: 250deg;
+  --ap-base0-s: 23.0769230769%;
+  --ap-base0-l: 5.0980392157%;
+  --ap-base0-d: 20%;
+  --ap-base1: #111019;
+  --ap-red: #E97193;
+  --ap-green: #AAC5A0;
+  --ap-blue: #A8C5E6;
+  --ap-purple: #DFA7E7;
+  --ap-aqua: #a8e5e6;
+  --ap-yellow: #ece0a8;
+  --ap-orange: #D1A999;
+  --ap-color-strong: #E97193;
+  --ap-color-quote: #E97193;
+  --ap-color-italic: #E97193;
+  --ap-color-tag-background: #2c2537;
+  --ap-color-tag-text: #EEEEEE;
+  --ap-code-gray-1: #5b5c5f;
+  --ap-code-gray-2: #45474c;
+  --ap-code-red: var(--ap-red);
+  --ap-code-green: var(--ap-green);
+  --ap-code-blue: var(--ap-blue);
+  --ap-code-purple: var(--ap-purple);
+  --ap-code-aqua: var(--ap-aqua);
+  --ap-code-yellow: var(--ap-yellow);
+  --ap-code-orange: var(--ap-orange);
+  --ap-color-dp0: #111019;
+  --ap-color-dp1: #0B0A10;
+  --ap-color-dp2: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 5%));
+  --ap-color-dp3: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 10%));
+  --ap-color-dp4: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 15%));
+  --ap-color-dp5: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 40%));
+  --ap-color-dp6: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 50%));
+  --ap-color-dp7: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 60%));
+  --ap-color-dp8: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 70%));
+  --ap-color-dp9: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 80%));
+  --ap-color-dp10: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 95%));
+  --ap-color-dp11: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 100%));
+  --ap-h1: var(--ap-red);
+  --ap-h2: var(--ap-purple);
+  --ap-h3: var(--ap-blue);
+  --ap-h4: var(--ap-green);
+  --ap-h5: var(--ap-orange);
+  --ap-h6: var(--ap-yellow);
+  --ap-h1-size: 2.5em;
+  --ap-h2-size: 1.9882em;
+  --ap-h3-size: 1.5811em;
+  --ap-h4-size: 1.2574em;
+  --ap-h5-size: 1em;
+  --ap-h6-size: 0.7953em;
+  --ap-size-text: 1em;
+  --ap-size-text-header: 1em;
+  --ap-size-text-item: 1em;
+  --ap-container-padding: 8px;
+  --ap-frame-left: 10px;
+}
+
+:root,
+.theme-dark {
+  --version1_0_6: none;
+  --text-normal: #dcddde;
+  --text-muted: var(--ap-color-dp8);
+  --text-link: #6e6af6;
+  --text-positive: #50dc7d;
+  --text-warning: #8d4949;
+  --text-danger: #8d4949;
+  --text-brand: #6e6af6;
+  --interactive-normal: #b9bbbe;
+  --interactive-hover: #dcddde;
+  --interactive-active: #c9ced0;
+  --interactive-muted: #4f545c;
+  --background-primary: var(--ap-color-dp0);
+  --background-secondary: var(--ap-color-dp1);
+  --background-secondary-alt: var(--ap-color-dp1);
+  --background-tertiary: var(--ap-color-dp0);
+  --background-accent: var(--ap-color-dp2);
+  --background-floating: var(--ap-color-dp1);
+  --channeltextarea-background: var(--ap-color-dp1);
+  --info-positive-text: #fff;
+  --info-warning-text: #fff;
+  --info-warning-foreground: #6e6af6;
+  --info-danger-text: #fff;
+  --info-help-text: #fff;
+  --status-warning-text: #000;
+  --background-mentioned: #6f6af62c;
+  --background-mentioned-hover: #6f6af615;
+  --background-message-hover: rgba(4, 4, 5, 0.1);
+  --scrollbar-auto-thumb: #6e6af6;
+  --brand-experiment: #6e6af6;
+  --brand-experiment-hover: #6f6af64d;
+  --brand-experiment-560: #6e6af6;
+  --channels-default: var(--ap-color-dp9);
+  --selected-indicator: var(--ap-red);
+  --hover-indicator: var(--ap-primary);
+  --font: "Lato";
+  --code-font: "Source Code Pro";
+  --boost-bar: none;
+}
+
+/* Made By The Commie Axolotl */
+

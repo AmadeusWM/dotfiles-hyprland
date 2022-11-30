@@ -65,11 +65,9 @@ cp  ./dots/rofi ~/.config
 cp  ./dots/kitty ~/.config
 ```
 
-
-
 ### Spotify (Spicetify)
 Install spicetify. (AUR: `spicetify-cli`)
-Copy `compiled-themes/spotify/Dribbblish` to `~/.config/spicetify/Themes` (or wherever your spicetify configurations are stored)
+Copy `dots/spicetify` to `~/.config` (or wherever your spicetify configurations are stored)
 Then:
 ```bash
 cd "$(dirname "$(spicetify -c)")/Themes/Dribbblish"
@@ -83,7 +81,9 @@ spicetify apply
 ### Discord (Better Discord)
 install from AUR: `betterdiscordctl`
 
-#### Discord Snap Install
+Copy `dots/BetterDiscord/Ultra.theme.css` to `~/snap/discord/145/.config/BetterDiscord/`
+
+#### For Discord Installed With Snap
 ```bash
 betterdiscordctl --d-install snap install 
 ```
@@ -92,7 +92,7 @@ betterdiscordctl --d-install snap install
 The Apatheia theme can be found on the marketplace. 
 Look up `Apatheia` from `Amadeus Wolf`
 
-#### Non-default
+#### If You Want To Change It
 You'll have to upload it to the vs-code marketplace.
 Follow the docs:
 1. Generate theme repository
@@ -104,39 +104,30 @@ Follow the docs:
 #### Firefox Theme
 1. in Firefox go to about:config. Change `toolkit.legacyUserProfileCustomizations.stylesheets` to "True"
 2. Find your profile folder (go to about:profiles)
-3. Copy the `chrome` folder from `compiled-themes/firefox` to the aforementioned profile folder.
+3. Copy the `chrome` folder from `dots/firefox` to the aforementioned profile folder.
 4. Restart firefox, you theme should be updated
 
 #### Tree Style Tabs
 1. Install the Tree Style Tabs extension from [here](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/)
 2. Visit `Preferences` with `ctrl+shift+a>Tree Style Tab>Preferences`
 3. Scroll to the bottom, and Press `Import` in `All Configs`
-4. Import the `config.json` from `compiled-themes/treestyletab/config.json`
+4. Import the `config.json` from `dots/firefox/treestyletab/config.json`
 5. Then go to `Advanced` and scroll down
 6. Choose `Load from file` and upload the following `Firefox Theming/treestyletab/treestyletab.css`
 
 #### Night Tab
 1. Install the nighttab extension from [here](https://addons.mozilla.org/en-US/firefox/addon/nighttab/)
 2. Go to night tab settings (top right), and then the data tab
-3. Import `compiled-themes/firefox/night-tab/night-tab.json`
+3. Import `dots/firefox/night-tab/night-tab.json`
 4. You'll have to change the colors yourself if you change the theme from the default
 
 ### GTK Theme
 For GTK: [Orchis-Theme](https://github.com/vinceliuice/Orchis-theme)
-Compile the theme in `compiled-themes/gtk/Orchis-Theme` with:
-```bash
-./install --tweaks black
-```
-or (when not working with nautilus)
-```bash
-./install --tweaks black -l
-```
-Then change in the following files:
+Edit the following files:
 - `~/.config/gtk-3.0/settings.ini`
 - `~/.config/gtk-4.0/settings.ini`
-the configuration to this:
+to:
 ```conf
-
 [Settings]
 gtk-application-prefer-dark-theme=1
 gtk-theme-name = Orchis-Dark
@@ -168,12 +159,13 @@ Dependency: `eww-wayland`
 - `SUPER+E`: Nautilus
 - `SUPER+A`: VS-code
 
-# 🙏 Credits
+# ⭐ Credits
 - [Back777space](https://github.com/Back777space): for contributing🗿🗿🗿
 - [Zenneh](https://github.com/zenneh): the Obsidian theme📔
-- [Taylor85345](https://github.com/taylor85345): the well-organized dotfiles, and their top-bar🧔‍♀️
+- [Taylor85345](https://github.com/taylor85345): the well-organized dotfiles, and top-bar🧔‍♀️
 - [flick0](https://github.com/flick0): inspiring hyprland-setup and useful scripts😍
 - [Vaxry](https://github.com/vaxerski): HYPRLAND 🤍
+
 # 🔨 TO-DO
 - [x] Notifications (this maybe? https://www.reddit.com/r/unixporn/comments/sacxs3/oc_styled_notifications_using_dunst/)
 - [x] Swappable wallpaper with wofi
