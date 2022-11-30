@@ -20,8 +20,8 @@
 - **Wallpaper**: `/themes/apatheia/wallapapers`
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
 - **Search menu**: [wofi](https://github.com/uncomfyhalomacro/wofi)
-- **Browser**: Firefox
 - **Fetch script**: `nitch`
+- **Browser**: Firefox
 - **Font**: [Nerd Font](https://www.nerdfonts.com/)
 
 # Usage
