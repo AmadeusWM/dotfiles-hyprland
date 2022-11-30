@@ -42,7 +42,7 @@ char_count = 0;
 for i in range(len(arr)):
     sub_str = arr[i] + " "
     char_count += len(sub_str)
-    if char_count > 32:
+    if char_count > 40:
         out_str += "\\n" + sub_str
         char_count = len(sub_str)
     else:
