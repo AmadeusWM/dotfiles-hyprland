@@ -3,18 +3,20 @@
 
 <br>
 
-# Screenshots
+# 📷 Screenshots
 
 <br>
 
-# Usage
+# ⚙️ Usage
+## 👀 Install Hyprland (duh)
+
 ## 📦 Required dependencies:
 Install these dependencies manually (Arch) 
 ```shell
 hyprland-git nerd-fonts-complete wofi rofi wifi4wofi dunst eww swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light papirus-icon-theme playerctl waybar-hyprland-git cava waybar-mpris-git kitty xdg-desktop-portal-wlr grim slurp wl-clipboard
 ```
 
-## Setup Hyprland Config
+## 🧙‍♂️ Setup Hyprland Config
 ### Default Theme
 Copy all files from the repo to your hyprland config folder, and rename `_hyprland.conf` to `hyprland.conf` .
 ```bash
@@ -28,7 +30,7 @@ mv ~/.config/hypr/_hyprland.conf ~/.config/hypr/hyprland.conf
 ### Switching theme or config (Optional)
 Assign the `source` parameter in the `hyprland.conf` to a different configuration file.
 
-## Theming Other Applications
+## ✨ Theming Other Applications
 The themes of other applications are saved in the `dots` folder.
 `wofi`, `rofi`, `kitty` and `dunst` can be themed by copying the folders into `~/.config`
 ```bash
