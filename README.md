@@ -3,7 +3,6 @@
 
 <br>
 
-# 📷 Screenshots
 ![screen_1](/assets/screenshots/ImagesShowcase.png)
 
 <br>
