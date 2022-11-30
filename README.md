@@ -27,6 +27,12 @@ cp -r ./* ~/.config/hypr
 mv ~/.config/hypr/_hyprland.conf ~/.config/hypr/hyprland.conf 
 ```
 
+### Switching Primary Screen
+Add this line to your config:
+```conf
+exec=~/.config/hypr/scripts/variables/set_env primary 1
+```
+
 ### Switching theme or config (Optional)
 Assign the `source` parameter in the `hyprland.conf` to a different configuration file.
 
@@ -39,6 +45,14 @@ cp  ./dots/wofi ~/.config
 cp  ./dots/rofi ~/.config
 cp  ./dots/kitty ~/.config
 ```
+
+# Keybinds
+`SUPER+B`: Switch Wallpaper
+
+# Credits
+- [Back777space](https://github.com/Back777space): for contributing🗿🗿🗿
+- [Taylor85345](https://github.com/taylor85345): an amazing
+- [flick0](https://github.com/flick0)
 
 # 🔨 TO-DO
 - [x] Notifications (this maybe? https://www.reddit.com/r/unixporn/comments/sacxs3/oc_styled_notifications_using_dunst/)
