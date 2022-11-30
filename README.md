@@ -52,7 +52,7 @@ Assign the `source` parameter in the `hyprland.conf` to a different configuratio
 
 <details>
 <summary style="font-weight: bold;" >
- ✨ Theming Other Applications
+## ✨ Theming Other Applications
 </summary>
 
 ### Default
