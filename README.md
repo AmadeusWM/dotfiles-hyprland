@@ -8,6 +8,15 @@
 
 <br>
 
+
+# Details
+- **Compositor**: [Hyprland](https://github.com/hyprwm/Hyprland)
+- **Top- and sidebar**: [eww](https://github.com/elkowar/eww)
+- **Notifications**: [dunst](https://github.com/dunst-project/dunst)
+- **Wallpaper**: [dotfiles](https://github.com/AmadeusWM/dotfiles-hyprland) `/themes/apatheia/wallapapers`
+- **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
+- **Search menu**: [wofi](https://github.com/uncomfyhalomacro/wofi)
+
 # Usage
 
 ## 📦 Required dependencies:
