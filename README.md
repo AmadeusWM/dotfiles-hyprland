@@ -29,7 +29,7 @@
 ## 📦 Required dependencies:
 Install these dependencies manually (Arch) 
 ```shell
-hyprland-git nerd-fonts-complete wofi wifi4wofi dunst jq eww-wayland swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light papirus-icon-theme playerctl cava kitty xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy
+hyprland-git nerd-fonts-complete wofi wifi4wofi dunst jq eww-wayland swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light-git papirus-icon-theme playerctl cava kitty xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy
 ```
 Follow the [Quick Start Instructions  Hyprland](https://wiki.hyprland.org/Getting-Started/Quick-start/)
 
