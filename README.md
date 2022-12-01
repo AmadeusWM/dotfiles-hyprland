@@ -9,11 +9,10 @@
 
 ![screen_1](/assets/screenshots/ImagesShowcase.png)
 
-<br/>
-
 </div>
 
 # Details
+- **OS**: Arch Linux
 - **Compositor**: [Hyprland](https://github.com/hyprwm/Hyprland)
 - **Top- and sidebar**: [eww](https://github.com/elkowar/eww)
 - **Notifications**: [dunst](https://github.com/dunst-project/dunst)
@@ -21,20 +20,23 @@
 - **Wallpaper**: `/themes/apatheia/wallapapers`
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
 - **Search menu**: [wofi](https://github.com/uncomfyhalomacro/wofi)
+- **Fetch script**: `nitch`
+- **Browser**: Firefox
+- **Font**: [Nerd Font](https://www.nerdfonts.com/)
 
 # Usage
 
 ## 📦 Required dependencies:
 Install these dependencies manually (Arch) 
 ```shell
-hyprland-git nerd-fonts-complete wofi rofi wifi4wofi dunst eww-wayland swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light papirus-icon-theme playerctl waybar-hyprland-git cava waybar-mpris-git kitty xdg-desktop-portal-wlr grim slurp wl-clipboard
+hyprland-git nerd-fonts-complete wofi wifi4wofi dunst jq eww-wayland swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light papirus-icon-theme playerctl cava kitty xdg-desktop-portal-wlr grim slurp wl-clipboard
 ```
 
 ## 🧙‍♂️ Setup Hyprland Config
 ### Default Theme
 Copy all files from the repo to your hyprland config folder, and rename `_hyprland.conf` to `hyprland.conf` .
 ```bash
-git clone git@github.com:AmadeusWM/dotfiles-hyprland.git
+git clone https://github.com/AmadeusWM/dotfiles-hyprland.git
 cd dotfiles-hyprland
 cp -r ./* ~/.config/hypr
 # Rename config file
@@ -69,7 +71,7 @@ cp  ./dots/kitty ~/.config
 
 ### Spotify (Spicetify)
 Install spicetify. (AUR: `spicetify-cli`)
-Copy `dots/spicetify` to `~/.config` (or wherever your spicetify configurations are stored)
+Copy `dots/spicetify/Dribbblish` to `~/.config/spicetify/Themes` (or wherever your spicetify themes are stored)
 Then:
 ```bash
 cd "$(dirname "$(spicetify -c)")/Themes/Dribbblish"
