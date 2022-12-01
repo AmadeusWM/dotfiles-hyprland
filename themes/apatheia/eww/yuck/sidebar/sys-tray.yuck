@@ -31,7 +31,7 @@
                   :show_truncated false
                   :wrap false))
         (box :class "side_sys_mem_box" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false"
-        (circular-progress :value cpu
+        (circular-progress :value {EWW_RAM.used_mem_perc}
                   :class "side_sys_mem"
                   :thickness 100
               (label :text " "
