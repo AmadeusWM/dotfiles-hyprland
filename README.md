@@ -191,4 +191,5 @@ ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu
 - [ ] Pull request Dunst: rounded icons
 - [ ] Answer issue eww primary screen (first, try the command man): https://github.com/elkowar/eww/issues/382#issuecomment-1281693594
 
-<a href="https://www.buymeacoffee.com/amadeusWM"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=kepano&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
+## 💖 Support
+<a href="https://www.buymeacoffee.com/amadeusWM"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=amadeusWM&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
