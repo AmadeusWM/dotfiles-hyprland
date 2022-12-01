@@ -15,7 +15,6 @@ function checkENVDir() {
     fi
 }
 
-
 doc() {
     echo "Usage:
     set_env [Options]
