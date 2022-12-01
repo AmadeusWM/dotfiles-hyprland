@@ -31,6 +31,7 @@ Install these dependencies manually (Arch)
 ```shell
 hyprland-git nerd-fonts-complete wofi wifi4wofi dunst jq eww-wayland swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light papirus-icon-theme playerctl cava kitty xdg-desktop-portal-wlr grim slurp wl-clipboard socat
 ```
+Follow the [Quick Start Instructions  Hyprland](https://wiki.hyprland.org/Getting-Started/Quick-start/)
 
 ## 🧙‍♂️ Setup Hyprland Config
 ### Default Theme
@@ -46,7 +47,7 @@ mv ~/.config/hypr/_hyprland.conf ~/.config/hypr/hyprland.conf
 ### Switching Primary Screen
 Add this line to your config:
 ```conf
-exec=~/.config/hypr/scripts/variables/set_env primary [ID_OF_PRIMAR_SCREEN] #0, 1, 2, ...
+exec=~/.config/hypr/scripts/variables/set_env primary [ID_OF_PRIMAR_SCREEN] # 0, 1, 2, ...
 ```
 
 ### Switching theme or config (Optional)
