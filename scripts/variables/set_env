@@ -1,15 +1,19 @@
 #!/bin/bash
+save_location=~/.config/hypr/scripts/variables/temp
 
-function setPrimaryMonitor(){
-    save_location=~/.config/hypr/scripts/variables/temp/primary_screen
-    echo $1 > $save_location
+function setVar(){
+    checkENVDir $2
+    echo $1 > "$save_location/$2"
 }
 
-function setBackgroundImage(){
-    save_location=~/.config/hypr/scripts/variables/temp/background
-    echo $1 > $save_location
+function checkENVDir() {
+    if ! test -d "$save_location"; then
+        mkdir $save_location
+    fi
+    if ! test -f "$save_location/$1"; then
+        touch $save_location/$1
+    fi
 }
-
 
 doc() {
     echo "Usage:
@@ -20,9 +24,9 @@ doc() {
         background  Sets the image location of the active wallpaper"
 }
 
-case $1 in
-    primary)		setPrimaryMonitor $2		;;
-    background)		setBackgroundImage $2       ;;
+case $1 in          #function #file param #file name
+    primary)		setVar $2 primary_screen	;;
+    background)		setVar $2 background        ;;
     help)           doc                         ;;
     *)              doc                         ;;            
 esac
