@@ -29,7 +29,7 @@
 ## 📦 Required dependencies:
 Install these dependencies manually (Arch) 
 ```shell
-hyprland-git nerd-fonts-complete wofi wifi4wofi dunst jq eww-wayland swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light-git papirus-icon-theme playerctl cava kitty xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy cliphist wl-cl wl-clipboard
+hyprland-git nerd-fonts-complete wofi wifi4wofi dunst jq eww-wayland swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light-git papirus-icon-theme playerctl cava kitty xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy cliphist wl-cl wl-clipboard hyprpicker
 ```
 Follow the [Quick Start Instructions from Hyprland](https://wiki.hyprland.org/Getting-Started/Quick-start/)
 
@@ -212,6 +212,8 @@ Dependency: `eww-wayland`
 - `SUPER+O`: Obsidian
 - `SUPER+E`: Nautilus
 - `SUPER+A`: VS-code
+- `SUPER+C`: Color Picker (`hyprpicker`)
+- `SUPER+SHIFT+B`: Reset Top Bar (e.g. when connecting new screen)
 
 # ⭐ Credits
 - [Back777space](https://github.com/Back777space): for contributing🗿🗿🗿
