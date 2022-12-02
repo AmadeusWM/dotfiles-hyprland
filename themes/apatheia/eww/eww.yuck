@@ -291,7 +291,7 @@
     :height "50px"
   :anchor "top center")
   :stacking "bg"
-  :windowtype "bar"
+  :windowtype "dock"
   (bar_layout))
 (defwindow bar1
   :monitor 1
