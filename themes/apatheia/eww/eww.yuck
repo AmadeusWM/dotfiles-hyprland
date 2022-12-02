@@ -43,7 +43,7 @@
     :class "launcher_module"
     :orientation "h"
     (button
-      :onclick "rofi -no-lazy-grab -show drun -theme ~/.config/hypr/themes/apatheia/rofi/launcher.rasi &"
+      :onclick "~/.config/hypr/scripts/exec_wofi application_launcher"
       (image
         :class "launcher-icon"
         :path "assets/blossom.png"
@@ -155,7 +155,7 @@
         ))
       (button
         :class "module-wif"
-        :onclick "wifi4wofi &"
+        :onclick "~/.config/hypr/scripts/exec_wofi wifi"
       WLAN_ICON))))
 
 (defwidget bat []
