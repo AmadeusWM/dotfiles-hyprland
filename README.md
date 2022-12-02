@@ -29,7 +29,7 @@
 ## 📦 Required dependencies:
 Install these dependencies manually (Arch) 
 ```shell
-hyprland-git nerd-fonts-complete wofi wifi4wofi dunst jq eww-wayland swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light-git papirus-icon-theme playerctl cava kitty xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy
+hyprland-git nerd-fonts-complete wofi wifi4wofi dunst jq eww-wayland swww swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git pamixer light-git papirus-icon-theme playerctl cava kitty xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy cliphist wl-cl wl-clipboard hyprpicker
 ```
 Follow the [Quick Start Instructions from Hyprland](https://wiki.hyprland.org/Getting-Started/Quick-start/)
 
@@ -112,6 +112,53 @@ Follow the docs:
 3. Copy the `chrome` folder from `dots/firefox` to the aforementioned profile folder.
 4. Restart firefox, you theme should be updated
 
+<details>
+<summary>
+MacOS Fix overlapping controlsQ
+</summary>
+
+1. Open this file in your editor: `dotfiles-hyprland/dots/firefox/chrome/window-controls/wc-without-tabline.css`
+2. Uncomment the following: (in `:root:not([inFullscreen]) toolbar#nav-bar`
+```css
+margin-left: calc(
+        var(--wc-right-space) * 2 + 60px
+    ) !important; 
+```
+3. Comment in this line:
+```css
+margin-left: 0px;
+```
+4. Your file should look like this
+```css
+@import "window-controls.css";
+
+:root:not([inFullscreen]) toolbar#nav-bar {
+    z-index: 1 !important;
+    position: relative !important;
+    /* shift toolbar to the right based on initial width */
+    margin-left: calc(
+        var(--wc-right-space) * 2 + 60px
+    ) !important; 
+    /* margin-left: 0px; */
+}
+
+#TabsToolbar .toolbar-items {
+    display: none !important;
+}
+
+.titlebar-buttonbox {
+    flex-direction: row-reverse;
+}
+
+#TabsToolbar.browser-toolbar {
+    display: inline-block !important;
+    position: absolute;
+    top: var(--wc-vertical-shift) !important;
+    left: var(--wc-left-space) !important;
+}
+```
+</details>
+    
 #### Tree Style Tabs
 1. Install the Tree Style Tabs extension from [here](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/)
 2. Visit `Preferences` with `ctrl+shift+a>Tree Style Tab>Preferences`
@@ -152,6 +199,7 @@ Dependency: `eww-wayland`
 <br/>
 
 # ⌨️ Keybinds
+- `SUPER+SPACE`: Application Launcher (wofi)
 - `SUPER+Z`: Prev orkspace
 - `SUPER+X`: Next orkspace
 - `SUPER+CTRL+M`: Quit Hyprland
@@ -165,6 +213,8 @@ Dependency: `eww-wayland`
 - `SUPER+O`: Obsidian
 - `SUPER+E`: Nautilus
 - `SUPER+A`: VS-code
+- `SUPER+C`: Color Picker (`hyprpicker`)
+- `SUPER+SHIFT+B`: Reset Top Bar (e.g. when connecting new screen)
 
 # ⭐ Credits
 - [Back777space](https://github.com/Back777space): for contributing🗿🗿🗿
@@ -190,3 +240,6 @@ ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu
 - [ ] Disable and Enable notifications
 - [ ] Pull request Dunst: rounded icons
 - [ ] Answer issue eww primary screen (first, try the command man): https://github.com/elkowar/eww/issues/382#issuecomment-1281693594
+
+## 💖 Support
+<a href="https://www.buymeacoffee.com/amadeusWM"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=amadeusWM&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
