@@ -111,6 +111,47 @@ Follow the docs:
 2. Find your profile folder (go to about:profiles)
 3. Copy the `chrome` folder from `dots/firefox` to the aforementioned profile folder.
 4. Restart firefox, you theme should be updated
+##### MacOS Fix overlapping controls
+1. Open this file in your editor: `dotfiles-hyprland/dots/firefox/chrome/window-controls/wc-without-tabline.css`
+2. Uncomment the following: (in `:root:not([inFullscreen]) toolbar#nav-bar`
+```css
+margin-left: calc(
+        var(--wc-right-space) * 2 + 60px
+    ) !important; 
+```
+3. Comment in this line:
+```css
+margin-left: 0px;
+```
+4. Your file should look like this
+```css
+@import "window-controls.css";
+
+:root:not([inFullscreen]) toolbar#nav-bar {
+    z-index: 1 !important;
+    position: relative !important;
+    /* shift toolbar to the right based on initial width */
+    margin-left: calc(
+        var(--wc-right-space) * 2 + 60px
+    ) !important; 
+    /* margin-left: 0px; */
+}
+
+#TabsToolbar .toolbar-items {
+    display: none !important;
+}
+
+.titlebar-buttonbox {
+    flex-direction: row-reverse;
+}
+
+#TabsToolbar.browser-toolbar {
+    display: inline-block !important;
+    position: absolute;
+    top: var(--wc-vertical-shift) !important;
+    left: var(--wc-left-space) !important;
+}
+```
 
 #### Tree Style Tabs
 1. Install the Tree Style Tabs extension from [here](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/)
