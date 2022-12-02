@@ -108,7 +108,7 @@ Follow the docs:
 ### Firefox
 #### Firefox Theme
 1. in Firefox go to about:config. Change `toolkit.legacyUserProfileCustomizations.stylesheets` to "True"
-2. Find your profile folder (go to about:profiles)
+2. Find your profile folder (go to the url `about:profiles` in firefox, and open the folder of your active profile)
 3. Copy the `chrome` folder from `dots/firefox` to the aforementioned profile folder.
 4. Restart firefox, you theme should be updated
 
@@ -165,7 +165,7 @@ margin-left: 0px;
 3. Scroll to the bottom, and Press `Import` in `All Configs`
 4. Import the `config.json` from `dots/firefox/treestyletab/config.json`
 5. Then go to `Advanced` and scroll down
-6. Choose `Load from file` and upload the following `Firefox Theming/treestyletab/treestyletab.css`
+6. Choose `Load from file` and upload the following `dots/firefox/treestyletab/treestyletab.css` (*optional*: if the theme of TST doesn't match the new firefox theme for some reason)
 
 #### Night Tab
 1. Install the nighttab extension from [here](https://addons.mozilla.org/en-US/firefox/addon/nighttab/)
