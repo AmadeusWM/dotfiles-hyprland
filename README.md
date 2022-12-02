@@ -199,6 +199,7 @@ Dependency: `eww-wayland`
 <br/>
 
 # ⌨️ Keybinds
+- `SUPER+SPACE`: Application Launcher (wofi)
 - `SUPER+Z`: Prev orkspace
 - `SUPER+X`: Next orkspace
 - `SUPER+CTRL+M`: Quit Hyprland
