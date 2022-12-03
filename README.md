@@ -106,6 +106,7 @@ Follow the docs:
     - https://code.visualstudio.com/api/working-with-extensions/publishing-extension#next-steps
 
 ### Firefox
+First and foremost, go to about:addons in your firefox. And enable the `Dark` theme.
 #### Firefox Theme
 1. in Firefox go to about:config. Change `toolkit.legacyUserProfileCustomizations.stylesheets` to "True"
 2. Find your profile folder (go to the url `about:profiles` in firefox, and open the folder of your active profile)
