@@ -23,9 +23,6 @@
 (deflisten appname "scripts/appname")
 
 ; https://github.com/elkowar/eww/issues/382#issuecomment-1281693594
-; (deflisten curr_mon :initial 
-;   `hyprctl monitors -j | jq '.[] | select(.focused==true).id'`
-;   )
 
 (defvar eww "eww -c $HOME/.config/hypr/themes/apatheia/eww/bar")
 
@@ -386,20 +383,6 @@
             :max 100
           :min 0))))))
 
-;; seperate audio_ctl for each possible primary display
-
-; (defwindow audio_ctl
-;   :stacking "fg"
-;   :focusable "false"
-;   :screen 1
-;   :monitor 0
-;   :geometry (geometry
-;     :x "20"
-;     :y "7%"
-;     :anchor "top right"
-;     :width "280px"
-;   :height "60px")
-;   (audio))
   (defwindow audio_ctl0
     :stacking "fg"
     :focusable "false"
@@ -527,24 +510,6 @@
         :wrap false)
       ))))
 
-
-
-;; seperate system info for each possible primary monitor  
-
-; (defwindow system
-;   :stacking "fg"
-;   :focusable "false"
-;   :screen 1
-;   :monitor 0
-;   :geometry
-;   (geometry
-;     :x "20"
-;     :y "65px"
-;     :anchor "top right"
-;     :width "290px"
-;   :height "120px")
-;   (system))
-
 (defwindow system0
   :stacking "fg"
   :focusable "false"
@@ -597,19 +562,6 @@
       (calendar
         :day calendar_day
       :year calendar_year))))
-
-; (defwindow calendar
-;   :stacking "fg"
-;   :focusable "false"
-;   :screen 1
-;   :monitor 0
-;   :geometry (geometry
-;     :x "20"
-;     :y "65px"
-;     :anchor "top right"
-;     :width "270px"
-;   :height "60px")
-;   (cal))
 
 (defwindow calendar0
   :stacking "fg"
