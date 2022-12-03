@@ -7,6 +7,9 @@ scripts=$config/scripts
 # notification daemon
 dunst &
 
+# battery notification
+$scripts/default/battery_notif &
+
 # screen locking when idle
 $scripts/default/idle_handler &
 
@@ -30,4 +33,3 @@ systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 
 # launch portals after executing the above
 $scripts/default/launch_portals &
-
