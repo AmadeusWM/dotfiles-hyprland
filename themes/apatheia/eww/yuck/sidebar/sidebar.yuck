@@ -1,5 +1,3 @@
-
-
 ;; string literal widgets as variables are possible but not efficient
 
 ;; seperate sidebar for each possible primary monitor

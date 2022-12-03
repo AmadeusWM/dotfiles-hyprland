@@ -10,17 +10,3 @@
 ; (defpoll song_time      :interval "1s"  "scripts/music timeS")
 
 (defvar music_reveal false)
-
-; (defpoll playpause	:interval "5s"  "scripts/music statusicon")
-; ;; Music Variables
-; (defpoll song :interval "2s"  "scripts/music_info --song")
-; (defpoll song_artist :interval "2s"  "scripts/music_info --artist")
-; (defpoll current_status :interval "1s"  "scripts/music_info --time")
-; (defpoll song_status :interval "2s"  "scripts/music_info --status")
-; (defpoll cover_art :interval "2s"  "scripts/music_info --cover")
-
-; (defpoll art		:interval "5s"  "scripts/music coverloc")
-; (defpoll title		:interval "5s"  "scripts/music title")
-; (defpoll artist		:interval "5s"  "scripts/music artist")
-; (defpoll playpause	:interval "5s"  "scripts/music statusicon")
-; (defpoll songtime 	:interval "1s"  "scripts/getSongDuration")
