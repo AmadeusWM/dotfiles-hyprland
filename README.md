@@ -198,7 +198,8 @@ Dependency: `eww-wayland`
 
 <br/>
 
-# ⌨️ Keybinds
+# ⌨️ Keybinds 
+All keybinds can be found in the `keybinds` folder
 - `SUPER+SPACE`: Application Launcher (wofi)
 - `SUPER+Z`: Prev orkspace
 - `SUPER+X`: Next orkspace
@@ -214,6 +215,8 @@ Dependency: `eww-wayland`
 - `SUPER+E`: Nautilus
 - `SUPER+A`: VS-code
 - `SUPER+C`: Color Picker (`hyprpicker`)
+- `PRINT`: Screenshot a part of your screen
+- `SUPER+PRINT`: Record a part of your screen
 - `SUPER+SHIFT+B`: Reset Top Bar (e.g. when connecting new screen)
 
 # ⭐ Credits
