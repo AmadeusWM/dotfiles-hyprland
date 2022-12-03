@@ -81,85 +81,6 @@
   )
 )
 
-;; <-- System -->
-; (defwidget system-side []
-  ;   (box
-    ;     :class "stats-box"
-    ;     :space-evenly "false"
-    ;     :width "500"
-    ;     :orientation "v"
-    ;     :valign "start"
-    ;     :halign "center"
-    ;     :spacing 12
-    ;     (box
-      ;       :class "stats"
-      ;       :hexpand "false"
-      ;       :vexpand "false"
-      ;       :space-evenly "false"
-      ;       (label
-        ;         :tooltip "${round(EWW_CPU.avg, 0)}%"
-      ;       :class "stats-icon" :text "")
-      ;       (scale
-        ;         :min 0
-        ;         :max 101
-        ;         :active false
-        ;         :value {EWW_CPU.avg}
-        ;         :class "scale"
-      ;       :width 280))
-    ;     (box
-      ;       :class "stats"
-      ;       :hexpand "false"
-      ;       :vexpand "false"
-      ;       :space-evenly "false"
-      ;       (label
-        ;         :tooltip "${round(EWW_RAM.used_mem_perc, 0)}%"
-        ;         :class "stats-icon"
-      ;       :text "﬙")
-      ;       (scale
-        ;         :min 0
-        ;         :max 101
-        ;         :active false
-        ;         :value {EWW_RAM.used_mem_perc}
-        ;         :class "scale"
-      ;       :width 280))
-    ;     (box
-      ;       :class "stats"
-      ;       :hexpand "false"
-      ;       :vexpand "false"
-      ;       :space-evenly "false"
-      ;       (label
-        ;         :tooltip "${round(EWW_DISK["/"].used_perc, 0)}%"
-        ;         :class "stats-icon"
-      ;       :text "")
-      ;       (scale
-        ;         :min 0
-        ;         :max 101
-        ;         :active false
-        ;         :value {(EWW_DISK["/"].used / EWW_DISK["/"].total) * 100}
-        ;         :class "scale"
-      ;       :width 280))
-    ;     (box
-      ;       :class "stats"
-      ;       :hexpand "false"
-      ;       :vexpand "false"
-      ;       :space-evenly "false"
-      ;       (button
-        ;         :tooltip "${volume_percent}%"
-        ;         :onclick "amixer set Master toggle"
-        ;         :onrightclick "alsamixer &"
-      ;       :class "stats-icon" "墳")
-      ;       (scale
-        ;         :min 0
-        ;         :max 101
-        ;         :active true
-        ;         :value volume_percent
-        ;         :class "scale"
-        ;         :width 280
-      ;       :onchange "amixer sset Master {}%")
-    ;     )))
-
-; (deflisten gpu "scripts/gpu")
-
 (defwidget buttons []
   (box
     :class "buttons"
@@ -217,6 +138,7 @@
     (box
       :orientation "v"
       (label
+        :limit-width 20
         :class "host"
         :valign "center"
         :halign "start"
