@@ -8,26 +8,26 @@ for some information on how to change these variables...
   --ap-radius-m: 8px;
   --ap-radius-l: 10px;
   --ap-radius-xl: 16px;
-  --ap-primary-h: 15.3846153846deg;
-  --ap-primary-s: 63.9344262295%;
-  --ap-primary-l: 88.0392156863%;
+  --ap-primary-h: 15;
+  --ap-primary-s: 64%;
+  --ap-primary-l: 88%;
   --ap-primary-d: 80%;
-  --ap-primary: #F4D7CD;
-  --ap-secondary-h: 157.0588235294deg;
-  --ap-secondary-s: 31.7757009346%;
-  --ap-secondary-l: 58.0392156863%;
+  --ap-primary: hsl(var(--ap-primary-h), var(--ap-primary-s), var(--ap-primary-l));
+  --ap-secondary-h: 157;
+  --ap-secondary-s: 32%;
+  --ap-secondary-l: 58%;
   --ap-secondary-d: 70%;
-  --ap-secondary: #72b69c;
-  --ap-base1-h: 250deg;
-  --ap-base1-s: 23.0769230769%;
-  --ap-base1-l: 8.0980392157%;
-  --ap-base1-d: 20%;
-  --ap-base0: #0B0A10;
-  --ap-base0-h: 250deg;
-  --ap-base0-s: 23.0769230769%;
-  --ap-base0-l: 5.0980392157%;
-  --ap-base0-d: 20%;
-  --ap-base1: #111019;
+  --ap-secondary: hsl(var(--ap-secondary-h), var(--ap-secondary-s), var(--ap-secondary-l));
+  --ap-base1-h: 249;
+  --ap-base1-s: 33%;
+  --ap-base1-l: 8%;
+  --ap-base1-d: 10%;
+  --ap-base0: hsl(var(--ap-base0-h), var(--ap-base0-s), var(--ap-base0-l));
+  --ap-base0-h: 250;
+  --ap-base0-s: 23%;
+  --ap-base0-l: 5%;
+  --ap-base0-d: 13%;
+  --ap-base1: hsl(var(--ap-base1-h), var(--ap-base1-s), var(--ap-base1-l));
   --ap-red: #E97193;
   --ap-green: #AAC5A0;
   --ap-blue: #A8C5E6;
@@ -49,8 +49,8 @@ for some information on how to change these variables...
   --ap-code-aqua: var(--ap-aqua);
   --ap-code-yellow: var(--ap-yellow);
   --ap-code-orange: var(--ap-orange);
-  --ap-color-dp0: #111019;
-  --ap-color-dp1: #0B0A10;
+  --ap-color-dp0: hsl(var(--ap-base1-h), var(--ap-base1-s), var(--ap-base1-l));
+  --ap-color-dp1: hsl(var(--ap-base0-h), var(--ap-base0-s), var(--ap-base0-l));
   --ap-color-dp2: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 5%));
   --ap-color-dp3: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 10%));
   --ap-color-dp4: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 15%));
@@ -78,6 +78,12 @@ for some information on how to change these variables...
   --ap-size-text-item: 1em;
   --ap-container-padding: 8px;
   --ap-frame-left: 10px;
+  --ap-font-text: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-interface: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-monospace: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-title: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-header: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-hashtag: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
 }
 
 :root {
@@ -185,7 +191,7 @@ tab-item:not([data-level="0"]):not(.pinned) {
 
 tab-item tab-favicon {
   left: 0;
-  filter: var(--extension-icon-mask);
+  /* filter: var(--extension-icon-mask); */
   transition: transform calc(var(--animation-duration) * 2) var(--ease-out);
 }
 
@@ -211,6 +217,7 @@ tab-item .label {
   color: var(--light-1) !important;
   padding-bottom: 2px;
   padding-left: 8px;
+  margin-top: 4px;
 }
 
 /*The drop-down ">" button*/
