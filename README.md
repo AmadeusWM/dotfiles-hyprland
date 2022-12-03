@@ -115,7 +115,7 @@ First and foremost, go to about:addons in your firefox. And enable the `Dark` th
 
 <details>
 <summary>
-MacOS Fix overlapping controlsQ
+MacOS Fix overlapping controls
 </summary>
 
 1. Open this file in your editor: `dotfiles-hyprland/dots/firefox/chrome/window-controls/wc-without-tabline.css`
