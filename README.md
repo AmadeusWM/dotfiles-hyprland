@@ -79,7 +79,7 @@ cd "$(dirname "$(spicetify -c)")/Themes/Dribbblish"
 mkdir -p ../../Extensions
 cp dribbblish.js ../../Extensions/.
 spicetify config extensions dribbblish.js
-spicetify config current_theme Dribbblish color_scheme base
+spicetify config current_theme Dribbblish color_scheme apatheia
 spicetify config inject_css 1 replace_colors 1 overwrite_assets 1
 spicetify apply
 ```
@@ -106,6 +106,7 @@ Follow the docs:
     - https://code.visualstudio.com/api/working-with-extensions/publishing-extension#next-steps
 
 ### Firefox
+First and foremost, go to about:addons in your firefox. And enable the `Dark` theme.
 #### Firefox Theme
 1. in Firefox go to about:config. Change `toolkit.legacyUserProfileCustomizations.stylesheets` to "True"
 2. Find your profile folder (go to the url `about:profiles` in firefox, and open the folder of your active profile)
@@ -114,7 +115,7 @@ Follow the docs:
 
 <details>
 <summary>
-MacOS Fix overlapping controlsQ
+MacOS Fix overlapping controls
 </summary>
 
 1. Open this file in your editor: `dotfiles-hyprland/dots/firefox/chrome/window-controls/wc-without-tabline.css`
@@ -198,7 +199,8 @@ Dependency: `eww-wayland`
 
 <br/>
 
-# ⌨️ Keybinds
+# ⌨️ Keybinds 
+All keybinds can be found in the `keybinds` folder
 - `SUPER+SPACE`: Application Launcher (wofi)
 - `SUPER+Z`: Prev orkspace
 - `SUPER+X`: Next orkspace
@@ -214,6 +216,8 @@ Dependency: `eww-wayland`
 - `SUPER+E`: Nautilus
 - `SUPER+A`: VS-code
 - `SUPER+C`: Color Picker (`hyprpicker`)
+- `PRINT`: Screenshot a part of your screen
+- `SUPER+PRINT`: Record a part of your screen
 - `SUPER+SHIFT+B`: Reset Top Bar (e.g. when connecting new screen)
 
 # ⭐ Credits
