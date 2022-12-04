@@ -1,29 +1,63 @@
-/* Main sass file that contains the theme */ /* Main sass file that contains the theme */
+@charset "UTF-8";
+/* Main sass file that contains the theme */
+/*---------------------------------------
+            Style settings
+---------------------------------------*/
+/*---------------------------------------
+            Themes            
+--------------------------------------*/
+/*
+This is a simple function library to generate Obsidian Style settings with scss.
+@author @Zenneh
+
+For reference, check the Obsidian style settings repo
+- https://github.com/mgmeyers/obsidian-style-settings
+*/
+/* ----------------------------
+        Style Functions
+---------------------------- */
+/* ----------------------------
+        Private Functions
+---------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Anybody:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Assistant:wght@200;300;400;500;600;700;800&family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Baloo+2:wght@400;500;600;700;800&family=Besley:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cairo+Play:wght@200;300;400;500;600;700;800;900;1000&family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Cinzel:wght@400;500;600;700;800;900&family=Comfortaa:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Domine:wght@400;500;600;700&family=Dosis:wght@200;300;400;500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Figtree:wght@300;400;500;600;700;800;900&family=Finlandica:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Fira+Code:wght@300;400;500;600;700&family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jura:wght@300;400;500;600;700&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Exa:wght@100;200;300;400;500;600;700;800;900&family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=M+PLUS+1+Code:wght@100;200;300;400;500;600;700&family=M+PLUS+1:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Maven+Pro:wght@400;500;600;700;800;900&family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nabla&family=Noto+Sans+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@200;300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Overpass+Mono:wght@300;400;500;600;700&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Podkova:wght@400;500;600;700;800&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Readex+Pro:wght@200;300;400;500;600;700&family=Recursive:wght@300;400;500;600;700;800;900;1000&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Red+Rose:wght@300;400;500;600;700&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Signika+Negative:wght@300;400;500;600;700&family=Signika:wght@300;400;500;600;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yanone+Kaffeesatz:wght@200;300;400;500;600;700&display=swap"); /*
+This is a simple function library to generate Obsidian Style settings with scss.
+@author @Zenneh
+
+For reference, check the Obsidian style settings repo
+- https://github.com/mgmeyers/obsidian-style-settings
+*/
+/* ----------------------------
+        Style Functions
+---------------------------- */
+/* ----------------------------
+        Private Functions
+---------------------------- */
+/* Main sass file that contains the theme */
 :root {
   --ap-radius-s: 4px;
   --ap-radius-m: 8px;
   --ap-radius-l: 10px;
   --ap-radius-xl: 16px;
-  --ap-primary-h: 15.3846153846deg;
-  --ap-primary-s: 63.9344262295%;
-  --ap-primary-l: 88.0392156863%;
+  --ap-primary-h: 15;
+  --ap-primary-s: 64%;
+  --ap-primary-l: 88%;
   --ap-primary-d: 80%;
-  --ap-primary: #F4D7CD;
-  --ap-secondary-h: 157.0588235294deg;
-  --ap-secondary-s: 31.7757009346%;
-  --ap-secondary-l: 58.0392156863%;
+  --ap-primary: hsl(var(--ap-primary-h), var(--ap-primary-s), var(--ap-primary-l));
+  --ap-secondary-h: 157;
+  --ap-secondary-s: 32%;
+  --ap-secondary-l: 58%;
   --ap-secondary-d: 70%;
-  --ap-secondary: #72b69c;
-  --ap-base1-h: 250deg;
-  --ap-base1-s: 23.0769230769%;
-  --ap-base1-l: 8.0980392157%;
-  --ap-base1-d: 20%;
-  --ap-base0: #0B0A10;
-  --ap-base0-h: 250deg;
-  --ap-base0-s: 23.0769230769%;
-  --ap-base0-l: 5.0980392157%;
-  --ap-base0-d: 20%;
-  --ap-base1: #111019;
+  --ap-secondary: hsl(var(--ap-secondary-h), var(--ap-secondary-s), var(--ap-secondary-l));
+  --ap-base1-h: 249;
+  --ap-base1-s: 33%;
+  --ap-base1-l: 8%;
+  --ap-base1-d: 10%;
+  --ap-base0: hsl(var(--ap-base0-h), var(--ap-base0-s), var(--ap-base0-l));
+  --ap-base0-h: 250;
+  --ap-base0-s: 23%;
+  --ap-base0-l: 5%;
+  --ap-base0-d: 13%;
+  --ap-base1: hsl(var(--ap-base1-h), var(--ap-base1-s), var(--ap-base1-l));
   --ap-red: #E97193;
   --ap-green: #AAC5A0;
   --ap-blue: #A8C5E6;
@@ -45,8 +79,8 @@
   --ap-code-aqua: var(--ap-aqua);
   --ap-code-yellow: var(--ap-yellow);
   --ap-code-orange: var(--ap-orange);
-  --ap-color-dp0: #111019;
-  --ap-color-dp1: #0B0A10;
+  --ap-color-dp0: hsl(var(--ap-base1-h), var(--ap-base1-s), var(--ap-base1-l));
+  --ap-color-dp1: hsl(var(--ap-base0-h), var(--ap-base0-s), var(--ap-base0-l));
   --ap-color-dp2: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 5%));
   --ap-color-dp3: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 10%));
   --ap-color-dp4: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 15%));
@@ -74,9 +108,74 @@
   --ap-size-text-item: 1em;
   --ap-container-padding: 8px;
   --ap-frame-left: 10px;
+  --ap-font-text: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-interface: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-monospace: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-title: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-header: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-hashtag: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
 }
 
-.theme-dark {
+.theme-dark.a-theme-purple {
+  --ap-primary-h: 15;
+  --ap-primary-s: 64%;
+  --ap-primary-l: 88%;
+  --ap-primary-d: 80%;
+  --ap-primary: #EEEEEE;
+  --ap-secondary-h: 157;
+  --ap-secondary-s: 32%;
+  --ap-secondary-l: 58%;
+  --ap-secondary-d: 70%;
+  --ap-secondary: #03071e;
+  --ap-base1-h: 249;
+  --ap-base1-s: 33%;
+  --ap-base1-l: 8%;
+  --ap-base1-d: 10%;
+  --ap-base0: #03071e;
+  --ap-base0-h: 250;
+  --ap-base0-s: 23%;
+  --ap-base0-l: 5%;
+  --ap-base0-d: 13%;
+  --ap-base1: #370617;
+  --ap-red: #E97193;
+  --ap-green: #AAC5A0;
+  --ap-blue: #A8C5E6;
+  --ap-purple: #DFA7E7;
+  --ap-aqua: #a8e5e6;
+  --ap-yellow: #ece0a8;
+  --ap-orange: #D1A999;
+  --ap-color-strong: #E97193;
+  --ap-color-quote: #E97193;
+  --ap-color-italic: #E97193;
+  --ap-color-tag-background: #2c2537;
+  --ap-color-tag-text: #EEEEEE;
+  --ap-code-gray-1: #5b5c5f;
+  --ap-code-gray-2: #45474c;
+  --ap-code-red: var(--ap-red);
+  --ap-code-green: var(--ap-green);
+  --ap-code-blue: var(--ap-blue);
+  --ap-code-purple: var(--ap-purple);
+  --ap-code-aqua: var(--ap-aqua);
+  --ap-code-yellow: var(--ap-yellow);
+  --ap-code-orange: var(--ap-orange);
+  --ap-color-dp0: #10002b;
+  --ap-color-dp1: #240046;
+  --ap-color-dp2: #3c096c;
+  --ap-color-dp3: #5a189a;
+  --ap-color-dp4: #7b2cbf;
+  --ap-color-dp5: #03071e;
+  --ap-color-dp6: #03071e;
+  --ap-color-dp7: #03071e;
+  --ap-color-dp8: #03071e;
+  --ap-color-dp9: #03071e;
+  --ap-color-dp10: #03071e;
+  --ap-color-dp11: #e0aaff;
+  --ap-h1: #ffba08;
+  --ap-h2: var(--ap-purple);
+  --ap-h3: var(--ap-blue);
+  --ap-h4: var(--ap-green);
+  --ap-h5: var(--ap-orange);
+  --ap-h6: var(--ap-yellow);
   color-scheme: dark;
   --highlight-mix-blend-mode: lighten;
   --mono-rgb-0: 0, 0, 0;
@@ -138,13 +237,12 @@
   --quote-color: var(--ap-color-quote);
   --tag-background-color-l: #bde1d3;
   --tag-font-color-l: #1d694b;
-  --tag-background-color-d: #1d694b;
+  --tag-background-color-d: #b3e1bd;
   --tag-font-color-d: #ffffff;
-  --font-text-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
-  --font-editor-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
-  --font-monospace-theme: 'JetBrains Mono', 'Fira Code', Menlo, SFMono-Regular, Consolas, 'Roboto Mono', monospace;
-  --font-interface-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
-  --font-editor: var(--font-editor-override), var(--font-text-override), var(--font-editor-theme);
+  --font-text-theme: var(--ap-font-text);
+  --font-editor-theme: var(--ap-font-text);
+  --font-monospace-theme: var(--ap-font-monospace);
+  --font-interface-theme: var(--ap-font-interface);
   --checkbox-radius: 30%;
   --link-external-decoration: underline;
   --link-decoration: underline;
@@ -172,9 +270,90 @@
   --radius-m: var(--ap-radius-m);
   --radius-l: var(--ap-radius-l);
   --radius-xl: var(--ap-radius-xl);
+  --graph-controls-width: 240px;
+  --graph-text: var(--text-normal);
+  --graph-line: var(--color-base-35, var(--background-modifier-border-focus));
+  --graph-node: var(--text-muted);
+  --graph-node-unresolved: var(--text-faint);
+  --graph-node-focused: var(--text-accent);
+  --graph-node-tag: var(--ap-secondary);
+  --graph-node-attachment: var(--color-yellow);
 }
 
-.theme-light {
+/*
+This is a simple function library to generate Obsidian Style settings with scss.
+@author @Zenneh
+
+For reference, check the Obsidian style settings repo
+- https://github.com/mgmeyers/obsidian-style-settings
+*/
+/* ----------------------------
+        Style Functions
+---------------------------- */
+/* ----------------------------
+        Private Functions
+---------------------------- */
+.theme-dark.a-catpuccin-mocha {
+  --ap-primary-h: 15.3846153846deg;
+  --ap-primary-s: 63.9344262295%;
+  --ap-primary-l: 88.0392156863%;
+  --ap-primary-d: 80%;
+  --ap-primary: #F4D7CD;
+  --ap-secondary-h: 157.0588235294deg;
+  --ap-secondary-s: 31.7757009346%;
+  --ap-secondary-l: 58.0392156863%;
+  --ap-secondary-d: 70%;
+  --ap-secondary: #72b69c;
+  --ap-base0-h: 240deg;
+  --ap-base0-s: 21.0526315789%;
+  --ap-base0-l: 14.9019607843%;
+  --ap-base0-d: 20%;
+  --ap-base0: #1e1e2e;
+  --ap-base1-h: 240deg;
+  --ap-base1-s: 21.0526315789%;
+  --ap-base1-l: 17.9019607843%;
+  --ap-base1-d: 20%;
+  --ap-base1: #242437;
+  --ap-red: #f38ba8;
+  --ap-green: #a6e3a1;
+  --ap-blue: #89b4fa;
+  --ap-purple: #cba6f7;
+  --ap-aqua: #94e2d5;
+  --ap-yellow: #f9e2af;
+  --ap-orange: #fab387;
+  --ap-pink: #f5c2e7;
+  --ap-color-strong: #f5c2e7;
+  --ap-color-quote: #f5c2e7;
+  --ap-color-italic: #f5c2e7;
+  --ap-color-tag-background: #2c2537;
+  --ap-color-tag-text: #EEEEEE;
+  --ap-code-gray-1: #5b5c5f;
+  --ap-code-gray-2: #45474c;
+  --ap-code-red: var(--ap-red);
+  --ap-code-green: var(--ap-green);
+  --ap-code-blue: var(--ap-blue);
+  --ap-code-purple: var(--ap-purple);
+  --ap-code-aqua: var(--ap-aqua);
+  --ap-code-yellow: var(--ap-yellow);
+  --ap-code-orange: var(--ap-orange);
+  --ap-color-dp0: #242437;
+  --ap-color-dp1: #1e1e2e;
+  --ap-color-dp2: hsl(240deg, 21.0526315789%, 19.9019607843%);
+  --ap-color-dp3: hsl(240deg, 21.0526315789%, 24.9019607843%);
+  --ap-color-dp4: hsl(240deg, 21.0526315789%, 29.9019607843%);
+  --ap-color-dp5: hsl(240deg, 21.0526315789%, 54.9019607843%);
+  --ap-color-dp6: hsl(240deg, 21.0526315789%, 64.9019607843%);
+  --ap-color-dp7: hsl(240deg, 21.0526315789%, 74.9019607843%);
+  --ap-color-dp8: hsl(240deg, 21.0526315789%, 84.9019607843%);
+  --ap-color-dp9: hsl(240deg, 21.0526315789%, 94.9019607843%);
+  --ap-color-dp10: hsl(240deg, 21.0526315789%, 99.9019607843%);
+  --ap-color-dp11: hsl(240deg, 21.0526315789%, 100%);
+  --ap-h1: var(--ap-pink);
+  --ap-h2: var(--ap-purple);
+  --ap-h3: var(--ap-blue);
+  --ap-h4: var(--ap-green);
+  --ap-h5: var(--ap-orange);
+  --ap-h6: var(--ap-yellow);
   color-scheme: dark;
   --highlight-mix-blend-mode: lighten;
   --mono-rgb-0: 0, 0, 0;
@@ -236,13 +415,12 @@
   --quote-color: var(--ap-color-quote);
   --tag-background-color-l: #bde1d3;
   --tag-font-color-l: #1d694b;
-  --tag-background-color-d: #1d694b;
+  --tag-background-color-d: #b3e1bd;
   --tag-font-color-d: #ffffff;
-  --font-text-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
-  --font-editor-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
-  --font-monospace-theme: 'JetBrains Mono', 'Fira Code', Menlo, SFMono-Regular, Consolas, 'Roboto Mono', monospace;
-  --font-interface-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
-  --font-editor: var(--font-editor-override), var(--font-text-override), var(--font-editor-theme);
+  --font-text-theme: var(--ap-font-text);
+  --font-editor-theme: var(--ap-font-text);
+  --font-monospace-theme: var(--ap-font-monospace);
+  --font-interface-theme: var(--ap-font-interface);
   --checkbox-radius: 30%;
   --link-external-decoration: underline;
   --link-decoration: underline;
@@ -270,6 +448,323 @@
   --radius-m: var(--ap-radius-m);
   --radius-l: var(--ap-radius-l);
   --radius-xl: var(--ap-radius-xl);
+  --graph-controls-width: 240px;
+  --graph-text: var(--text-normal);
+  --graph-line: var(--color-base-35, var(--background-modifier-border-focus));
+  --graph-node: var(--text-muted);
+  --graph-node-unresolved: var(--text-faint);
+  --graph-node-focused: var(--text-accent);
+  --graph-node-tag: var(--ap-secondary);
+  --graph-node-attachment: var(--color-yellow);
+}
+
+/*
+This is a simple function library to generate Obsidian Style settings with scss.
+@author @Zenneh
+
+For reference, check the Obsidian style settings repo
+- https://github.com/mgmeyers/obsidian-style-settings
+*/
+/* ----------------------------
+        Style Functions
+---------------------------- */
+/* ----------------------------
+        Private Functions
+---------------------------- */
+.theme-dark.a-catpuccin-espresso {
+  --ap-primary-h: 15.3846153846deg;
+  --ap-primary-s: 63.9344262295%;
+  --ap-primary-l: 88.0392156863%;
+  --ap-primary-d: 80%;
+  --ap-primary: #F4D7CD;
+  --ap-secondary-h: 157.0588235294deg;
+  --ap-secondary-s: 31.7757009346%;
+  --ap-secondary-l: 58.0392156863%;
+  --ap-secondary-d: 70%;
+  --ap-secondary: #72b69c;
+  --ap-base0-h: 249.2307692308deg;
+  --ap-base0-s: 33.3333333333%;
+  --ap-base0-l: 7.6470588235%;
+  --ap-base0-d: 20%;
+  --ap-base0: #0F0D1A;
+  --ap-base1-h: 250deg;
+  --ap-base1-s: 23.0769230769%;
+  --ap-base1-l: 5.0980392157%;
+  --ap-base1-d: 20%;
+  --ap-base1: #0B0A10;
+  --ap-red: #f38ba8;
+  --ap-green: #a6e3a1;
+  --ap-blue: #89b4fa;
+  --ap-purple: #cba6f7;
+  --ap-aqua: #94e2d5;
+  --ap-yellow: #f9e2af;
+  --ap-orange: #fab387;
+  --ap-pink: #f5c2e7;
+  --ap-color-strong: #f5c2e7;
+  --ap-color-quote: #f5c2e7;
+  --ap-color-italic: #f5c2e7;
+  --ap-color-tag-background: #2c2537;
+  --ap-color-tag-text: #EEEEEE;
+  --ap-code-gray-1: #5b5c5f;
+  --ap-code-gray-2: #45474c;
+  --ap-code-red: var(--ap-red);
+  --ap-code-green: var(--ap-green);
+  --ap-code-blue: var(--ap-blue);
+  --ap-code-purple: var(--ap-purple);
+  --ap-code-aqua: var(--ap-aqua);
+  --ap-code-yellow: var(--ap-yellow);
+  --ap-code-orange: var(--ap-orange);
+  --ap-color-dp0: #0B0A10;
+  --ap-color-dp1: #0F0D1A;
+  --ap-color-dp2: hsl(249.2307692308deg, 33.3333333333%, 12.6470588235%);
+  --ap-color-dp3: hsl(249.2307692308deg, 33.3333333333%, 17.6470588235%);
+  --ap-color-dp4: hsl(249.2307692308deg, 33.3333333333%, 22.6470588235%);
+  --ap-color-dp5: hsl(249.2307692308deg, 33.3333333333%, 47.6470588235%);
+  --ap-color-dp6: hsl(249.2307692308deg, 33.3333333333%, 57.6470588235%);
+  --ap-color-dp7: hsl(249.2307692308deg, 33.3333333333%, 67.6470588235%);
+  --ap-color-dp8: hsl(249.2307692308deg, 33.3333333333%, 77.6470588235%);
+  --ap-color-dp9: hsl(249.2307692308deg, 33.3333333333%, 87.6470588235%);
+  --ap-color-dp10: hsl(249.2307692308deg, 33.3333333333%, 92.6470588235%);
+  --ap-color-dp11: hsl(249.2307692308deg, 33.3333333333%, 97.6470588235%);
+  --ap-h1: var(--ap-pink);
+  --ap-h2: var(--ap-purple);
+  --ap-h3: var(--ap-blue);
+  --ap-h4: var(--ap-green);
+  --ap-h5: var(--ap-orange);
+  --ap-h6: var(--ap-yellow);
+  color-scheme: dark;
+  --highlight-mix-blend-mode: lighten;
+  --mono-rgb-0: 0, 0, 0;
+  --mono-rgb-100: 255, 255, 255,;
+  --color-red-rgb: 251, 70, 76,;
+  --color-red: #fb464c;
+  --color-green-rgb: 68, 207, 110,;
+  --color-green: #44cf6e;
+  --color-orange: #e9973f;
+  --color-yellow: #e0de71;
+  --color-cyan: #53dfdd;
+  --color-blue: #027aff;
+  --color-purple: #a882ff;
+  --color-pink: #fa99cd;
+  --color-base-00: var(--ap-color-dp1);
+  --color-base-10: var(--ap-color-dp2);
+  --color-base-20: var(--ap-color-dp0);
+  --color-base-25: var(--ap-color-dp0);
+  --color-base-30: var(--ap-color-dp0);
+  --color-base-35: var(--ap-color-dp4);
+  --color-base-40: var(--ap-color-dp0);
+  --color-base-50: var(--ap-color-dp6);
+  --color-base-60: var(--ap-color-dp7);
+  --color-base-70: var(--ap-color-dp10);
+  --color-base-100: var(--ap-color-dp11);
+  --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
+  --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --color-accent-1: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 3.8%));
+  --color-accent-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 3.8%));
+  --background-modifier-form-field: var(--color-base-25);
+  --background-secondary-alt: var(--color-base-30);
+  --background-modifier-hover: hsla(var(--interactive-accent-hsl), 0.5);
+  --interactive-normal: var(--color-base-30);
+  --interactive-hover: var(--color-base-35);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+  --background-modifier-cover: rgba(10, 10, 10, 0.4);
+  --text-highlight-bg: rgba(255, 208, 0, 0.4);
+  --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
+  --text-selection: hsla(var(--interactive-accent-hsl), 0.25);
+  --input-shadow: inset 0 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.09),0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 1px 1.5px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
+  --input-shadow-hover: inset 0 0.5px 1px 0.5px rgba(255, 255, 255, 0.16),0 2px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 1.5px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 0 0 transparent;
+  --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.121), 0px 3.4px 6.7px rgba(0, 0, 0, 0.179), 0px 15px 30px rgba(0, 0, 0, 0.3);
+  --shadow-l: 0px 1.8px 7.3px rgba(0, 0, 0, 0.071), 0px 6.3px 24.7px rgba(0, 0, 0, 0.112), 0px 30px 90px rgba(0, 0, 0, 0.2);
+  --tag-background: var(--ap-color-tag-background);
+  --tag-color: var(--ap-color-tag-text);
+  --icon-color-focused: var(--color-accent);
+  --text-muted: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 65%));
+  --text-faint: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 30%));
+  --text-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-d));
+  --text-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-d) + 12%));
+  --h1-color: var(--ap-h1);
+  --h2-color: var(--ap-h2);
+  --h3-color: var(--ap-h3);
+  --h4-color: var(--ap-h4);
+  --h5-color: var(--ap-h5);
+  --h6-color: var(--ap-h6);
+  --strong-color: var(--ap-color-strong);
+  --em-color: var(--ap-color-italic);
+  --quote-color: var(--ap-color-quote);
+  --tag-background-color-l: #bde1d3;
+  --tag-font-color-l: #1d694b;
+  --tag-background-color-d: #b3e1bd;
+  --tag-font-color-d: #ffffff;
+  --font-text-theme: var(--ap-font-text);
+  --font-editor-theme: var(--ap-font-text);
+  --font-monospace-theme: var(--ap-font-monospace);
+  --font-interface-theme: var(--ap-font-interface);
+  --checkbox-radius: 30%;
+  --link-external-decoration: underline;
+  --link-decoration: underline;
+  --scrollbar-bg: hsla(var(--base-h), var(--base-s), calc(var(--base-l) + 15%), 1);
+  --scrollbar-thumb-bg: hsla(var(--base-h), var(--base-s), calc(var(--base-l) + 15%), 1);
+  --scrollbar-active-thumb-bg: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.4);
+  --base-h: var(--ap-base0-h);
+  --base-s: var(--ap-base0-s);
+  --base-l: var(--ap-base0-l);
+  --base-d: var(--ap-base0-d);
+  --accent-h: var(--ap-primary-h);
+  --accent-s: var(--ap-primary-s);
+  --accent-l: var(--ap-primary-l);
+  --accent-d: var(--ap-primary-d);
+  --blue: #2e80f2;
+  --pink: #ff82b2;
+  --green: #3eb4bf;
+  --yellow: #e5b567;
+  --orange: #e87d3e;
+  --red: #e83e3e;
+  --purple: #9e86c8;
+  --tab-divider-color: var(--color-base-10);
+  --tab-text-color: var(--color-base-70);
+  --radius-s: var(--ap-radius-s);
+  --radius-m: var(--ap-radius-m);
+  --radius-l: var(--ap-radius-l);
+  --radius-xl: var(--ap-radius-xl);
+  --graph-controls-width: 240px;
+  --graph-text: var(--text-normal);
+  --graph-line: var(--color-base-35, var(--background-modifier-border-focus));
+  --graph-node: var(--text-muted);
+  --graph-node-unresolved: var(--text-faint);
+  --graph-node-focused: var(--text-accent);
+  --graph-node-tag: var(--ap-secondary);
+  --graph-node-attachment: var(--color-yellow);
+}
+
+/*---------------------------------------
+            Effects            
+--------------------------------------*/
+/*
+This is a simple function library to generate Obsidian Style settings with scss.
+@author @Zenneh
+
+For reference, check the Obsidian style settings repo
+- https://github.com/mgmeyers/obsidian-style-settings
+*/
+/* ----------------------------
+        Style Functions
+---------------------------- */
+/* ----------------------------
+        Private Functions
+---------------------------- */
+.glassMorphism #calendar-container,
+.glassMorphism .view-header,
+.glassMorphism .nav-folder.mod-root,
+.glassMorphism .nav-header .nav-buttons-container,
+.glassMorphism .workspace-split.mod-root .view-content {
+  background: linear-gradient(120deg, var(--ap-color-dp1), var(--ap-color-dp2), 70%, var(--ap-color-dp1));
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+}
+
+.glassMorphism .nav-file-title,
+.nav-folder-title,
+.nav-folder {
+  background: transparent;
+  backdrop-filter: blur(15px);
+}
+
+/*
+This is a simple function library to generate Obsidian Style settings with scss.
+@author @Zenneh
+
+For reference, check the Obsidian style settings repo
+- https://github.com/mgmeyers/obsidian-style-settings
+*/
+/* ----------------------------
+        Style Functions
+---------------------------- */
+/* ----------------------------
+        Private Functions
+---------------------------- */
+/* Smooth Live Headers by Luke242#8485 */
+@keyframes indent {
+  from {
+    transform: translateX(calc(-1 * var(--header-offset)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes outdent {
+  from {
+    transform: translateX(var(--header-offset));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.smoothIndent .is-live-preview .cm-widgetBuffer + .cm-header {
+  animation: outdent 275ms ease-out;
+  display: inline-block;
+}
+
+.smoothIndent .is-live-preview .cm-widgetBuffer + .cm-header.cm-formatting {
+  animation: opac 275ms ease-in;
+}
+
+.smoothIndent .is-live-preview .cm-active .cm-header + .cm-header {
+  animation: indent 275ms ease-out;
+  display: inline-block;
+}
+
+.cm-header-1 {
+  --header-offset: 2rem;
+}
+
+.cm-header-2 {
+  --header-offset: 3rem;
+}
+
+.cm-header-3 {
+  --header-offset: 3rem;
+}
+
+.cm-header-4 {
+  --header-offset: 3rem;
+}
+
+.cm-header-5 {
+  --header-offset: 3rem;
+}
+
+.cm-header-6 {
+  --header-offset: 3rem;
+}
+
+.Fade.modal,
+.Fade.snw-ref-title-popover,
+.Fade.menu,
+.Fade.popover,
+.Fade.prompt,
+.Fade.workspace-split.mod-vertical.mod-root .workspace-tabs:not(.mod-stacked) .view-content {
+  animation: 0.2s fade cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.Hover * {
+  transition: background-color 0.1s ease-in;
 }
 
 /* H2 styling */
@@ -284,6 +779,33 @@ h2,
 .markdown-source-view.mod-cm6.is-live-preview .cm-hashtag.cm-meta,
 .markdown-source-view.mod-cm5 .cm-hashtag.cm-meta {
   font-family: var(--ap-font-hashtag);
+}
+
+h1,
+.markdown-rendered h1,
+.HyperMD-header-1,
+.HyperMD-list-line .cm-header-1,
+h2,
+.markdown-rendered h2,
+.HyperMD-header-2,
+.HyperMD-list-line .cm-header-2,
+h3,
+.markdown-rendered h3,
+.HyperMD-header-3,
+.HyperMD-list-line .cm-header-3,
+h4,
+.markdown-rendered h4,
+.HyperMD-header-4,
+.HyperMD-list-line .cm-header-4,
+h5,
+.markdown-rendered h5,
+.HyperMD-header-5,
+.HyperMD-list-line .cm-header-5,
+h6,
+.markdown-rendered h6,
+.HyperMD-header-6,
+.HyperMD-list-line .cm-header-6 {
+  font-family: var(--ap-font-header);
 }
 
 /* Blockquote */
@@ -417,6 +939,10 @@ code .cm-tag,
 
 .token.entity {
   cursor: help;
+}
+
+iframe {
+  border-radius: var(--ap-radius-l) !important;
 }
 
 /*=======================================
@@ -578,34 +1104,235 @@ Plugins
   --theme-filter: invert(98%) hue-rotate(180deg);
 }
 
+.custom-frames-view {
+  padding: 0px var(--ap-container-padding) !important;
+}
+
+.custom-frames-frame {
+  padding: 0px !important;
+  background-color: rgba(255, 255, 255, 0) !important;
+  border-radius: var(--ap-radius-l) !important;
+  overflow: hidden !important;
+}
+
+.theme-dark,
+.theme-dark.a-theme-apatheia {
+  color-scheme: dark;
+  --highlight-mix-blend-mode: lighten;
+  --mono-rgb-0: 0, 0, 0;
+  --mono-rgb-100: 255, 255, 255,;
+  --color-red-rgb: 251, 70, 76,;
+  --color-red: #fb464c;
+  --color-green-rgb: 68, 207, 110,;
+  --color-green: #44cf6e;
+  --color-orange: #e9973f;
+  --color-yellow: #e0de71;
+  --color-cyan: #53dfdd;
+  --color-blue: #027aff;
+  --color-purple: #a882ff;
+  --color-pink: #fa99cd;
+  --color-base-00: var(--ap-color-dp1);
+  --color-base-10: var(--ap-color-dp2);
+  --color-base-20: var(--ap-color-dp0);
+  --color-base-25: var(--ap-color-dp0);
+  --color-base-30: var(--ap-color-dp0);
+  --color-base-35: var(--ap-color-dp4);
+  --color-base-40: var(--ap-color-dp0);
+  --color-base-50: var(--ap-color-dp6);
+  --color-base-60: var(--ap-color-dp7);
+  --color-base-70: var(--ap-color-dp10);
+  --color-base-100: var(--ap-color-dp11);
+  --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
+  --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --color-accent-1: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 3.8%));
+  --color-accent-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 3.8%));
+  --background-modifier-form-field: var(--color-base-25);
+  --background-secondary-alt: var(--color-base-30);
+  --background-modifier-hover: hsla(var(--interactive-accent-hsl), 0.5);
+  --interactive-normal: var(--color-base-30);
+  --interactive-hover: var(--color-base-35);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+  --background-modifier-cover: rgba(10, 10, 10, 0.4);
+  --text-highlight-bg: rgba(255, 208, 0, 0.4);
+  --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
+  --text-selection: hsla(var(--interactive-accent-hsl), 0.25);
+  --input-shadow: inset 0 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.09),0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 1px 1.5px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
+  --input-shadow-hover: inset 0 0.5px 1px 0.5px rgba(255, 255, 255, 0.16),0 2px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 1.5px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 0 0 transparent;
+  --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.121), 0px 3.4px 6.7px rgba(0, 0, 0, 0.179), 0px 15px 30px rgba(0, 0, 0, 0.3);
+  --shadow-l: 0px 1.8px 7.3px rgba(0, 0, 0, 0.071), 0px 6.3px 24.7px rgba(0, 0, 0, 0.112), 0px 30px 90px rgba(0, 0, 0, 0.2);
+  --tag-background: var(--ap-color-tag-background);
+  --tag-color: var(--ap-color-tag-text);
+  --icon-color-focused: var(--color-accent);
+  --text-muted: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 65%));
+  --text-faint: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 30%));
+  --text-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-d));
+  --text-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-d) + 12%));
+  --h1-color: var(--ap-h1);
+  --h2-color: var(--ap-h2);
+  --h3-color: var(--ap-h3);
+  --h4-color: var(--ap-h4);
+  --h5-color: var(--ap-h5);
+  --h6-color: var(--ap-h6);
+  --strong-color: var(--ap-color-strong);
+  --em-color: var(--ap-color-italic);
+  --quote-color: var(--ap-color-quote);
+  --tag-background-color-l: #bde1d3;
+  --tag-font-color-l: #1d694b;
+  --tag-background-color-d: #b3e1bd;
+  --tag-font-color-d: #ffffff;
+  --font-text-theme: var(--ap-font-text);
+  --font-editor-theme: var(--ap-font-text);
+  --font-monospace-theme: var(--ap-font-monospace);
+  --font-interface-theme: var(--ap-font-interface);
+  --checkbox-radius: 30%;
+  --link-external-decoration: underline;
+  --link-decoration: underline;
+  --scrollbar-bg: hsla(var(--base-h), var(--base-s), calc(var(--base-l) + 15%), 1);
+  --scrollbar-thumb-bg: hsla(var(--base-h), var(--base-s), calc(var(--base-l) + 15%), 1);
+  --scrollbar-active-thumb-bg: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.4);
+  --base-h: var(--ap-base0-h);
+  --base-s: var(--ap-base0-s);
+  --base-l: var(--ap-base0-l);
+  --base-d: var(--ap-base0-d);
+  --accent-h: var(--ap-primary-h);
+  --accent-s: var(--ap-primary-s);
+  --accent-l: var(--ap-primary-l);
+  --accent-d: var(--ap-primary-d);
+  --blue: #2e80f2;
+  --pink: #ff82b2;
+  --green: #3eb4bf;
+  --yellow: #e5b567;
+  --orange: #e87d3e;
+  --red: #e83e3e;
+  --purple: #9e86c8;
+  --tab-divider-color: var(--color-base-10);
+  --tab-text-color: var(--color-base-70);
+  --radius-s: var(--ap-radius-s);
+  --radius-m: var(--ap-radius-m);
+  --radius-l: var(--ap-radius-l);
+  --radius-xl: var(--ap-radius-xl);
+  --graph-controls-width: 240px;
+  --graph-text: var(--text-normal);
+  --graph-line: var(--color-base-35, var(--background-modifier-border-focus));
+  --graph-node: var(--text-muted);
+  --graph-node-unresolved: var(--text-faint);
+  --graph-node-focused: var(--text-accent);
+  --graph-node-tag: var(--ap-secondary);
+  --graph-node-attachment: var(--color-yellow);
+}
+
 /*---------------------------------------
-            Effects            
+            Fonts            
 --------------------------------------*/
-.glassMorphism #calendar-container,
-.glassMorphism .view-header,
-.glassMorphism .nav-folder.mod-root,
-.glassMorphism .nav-header .nav-buttons-container,
-.glassMorphism .workspace-split.mod-root .view-content {
-  background: linear-gradient(120deg, var(--ap-color-dp1), var(--ap-color-dp2), 70%, var(--ap-color-dp1));
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(15px);
+.theme-light {
+  color-scheme: dark;
+  --highlight-mix-blend-mode: lighten;
+  --mono-rgb-0: 0, 0, 0;
+  --mono-rgb-100: 255, 255, 255,;
+  --color-red-rgb: 251, 70, 76,;
+  --color-red: #fb464c;
+  --color-green-rgb: 68, 207, 110,;
+  --color-green: #44cf6e;
+  --color-orange: #e9973f;
+  --color-yellow: #e0de71;
+  --color-cyan: #53dfdd;
+  --color-blue: #027aff;
+  --color-purple: #a882ff;
+  --color-pink: #fa99cd;
+  --color-base-00: var(--ap-color-dp1);
+  --color-base-10: var(--ap-color-dp2);
+  --color-base-20: var(--ap-color-dp0);
+  --color-base-25: var(--ap-color-dp0);
+  --color-base-30: var(--ap-color-dp0);
+  --color-base-35: var(--ap-color-dp4);
+  --color-base-40: var(--ap-color-dp0);
+  --color-base-50: var(--ap-color-dp6);
+  --color-base-60: var(--ap-color-dp7);
+  --color-base-70: var(--ap-color-dp10);
+  --color-base-100: var(--ap-color-dp11);
+  --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
+  --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --color-accent-1: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 3.8%));
+  --color-accent-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 3.8%));
+  --background-modifier-form-field: var(--color-base-25);
+  --background-secondary-alt: var(--color-base-30);
+  --background-modifier-hover: hsla(var(--interactive-accent-hsl), 0.5);
+  --interactive-normal: var(--color-base-30);
+  --interactive-hover: var(--color-base-35);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+  --background-modifier-cover: rgba(10, 10, 10, 0.4);
+  --text-highlight-bg: rgba(255, 208, 0, 0.4);
+  --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
+  --text-selection: hsla(var(--interactive-accent-hsl), 0.25);
+  --input-shadow: inset 0 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.09),0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 1px 1.5px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
+  --input-shadow-hover: inset 0 0.5px 1px 0.5px rgba(255, 255, 255, 0.16),0 2px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 1.5px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 0 0 transparent;
+  --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.121), 0px 3.4px 6.7px rgba(0, 0, 0, 0.179), 0px 15px 30px rgba(0, 0, 0, 0.3);
+  --shadow-l: 0px 1.8px 7.3px rgba(0, 0, 0, 0.071), 0px 6.3px 24.7px rgba(0, 0, 0, 0.112), 0px 30px 90px rgba(0, 0, 0, 0.2);
+  --tag-background: var(--ap-color-tag-background);
+  --tag-color: var(--ap-color-tag-text);
+  --icon-color-focused: var(--color-accent);
+  --text-muted: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 65%));
+  --text-faint: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 30%));
+  --text-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-d));
+  --text-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-d) + 12%));
+  --h1-color: var(--ap-h1);
+  --h2-color: var(--ap-h2);
+  --h3-color: var(--ap-h3);
+  --h4-color: var(--ap-h4);
+  --h5-color: var(--ap-h5);
+  --h6-color: var(--ap-h6);
+  --strong-color: var(--ap-color-strong);
+  --em-color: var(--ap-color-italic);
+  --quote-color: var(--ap-color-quote);
+  --tag-background-color-l: #bde1d3;
+  --tag-font-color-l: #1d694b;
+  --tag-background-color-d: #b3e1bd;
+  --tag-font-color-d: #ffffff;
+  --font-text-theme: var(--ap-font-text);
+  --font-editor-theme: var(--ap-font-text);
+  --font-monospace-theme: var(--ap-font-monospace);
+  --font-interface-theme: var(--ap-font-interface);
+  --checkbox-radius: 30%;
+  --link-external-decoration: underline;
+  --link-decoration: underline;
+  --scrollbar-bg: hsla(var(--base-h), var(--base-s), calc(var(--base-l) + 15%), 1);
+  --scrollbar-thumb-bg: hsla(var(--base-h), var(--base-s), calc(var(--base-l) + 15%), 1);
+  --scrollbar-active-thumb-bg: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.4);
+  --base-h: var(--ap-base0-h);
+  --base-s: var(--ap-base0-s);
+  --base-l: var(--ap-base0-l);
+  --base-d: var(--ap-base0-d);
+  --accent-h: var(--ap-primary-h);
+  --accent-s: var(--ap-primary-s);
+  --accent-l: var(--ap-primary-l);
+  --accent-d: var(--ap-primary-d);
+  --blue: #2e80f2;
+  --pink: #ff82b2;
+  --green: #3eb4bf;
+  --yellow: #e5b567;
+  --orange: #e87d3e;
+  --red: #e83e3e;
+  --purple: #9e86c8;
+  --tab-divider-color: var(--color-base-10);
+  --tab-text-color: var(--color-base-70);
+  --radius-s: var(--ap-radius-s);
+  --radius-m: var(--ap-radius-m);
+  --radius-l: var(--ap-radius-l);
+  --radius-xl: var(--ap-radius-xl);
+  --graph-controls-width: 240px;
+  --graph-text: var(--text-normal);
+  --graph-line: var(--color-base-35, var(--background-modifier-border-focus));
+  --graph-node: var(--text-muted);
+  --graph-node-unresolved: var(--text-faint);
+  --graph-node-focused: var(--text-accent);
+  --graph-node-tag: var(--ap-secondary);
+  --graph-node-attachment: var(--color-yellow);
 }
 
-.glassMorphism .nav-file-title,
-.nav-folder-title,
-.nav-folder {
-  background: transparent;
-  backdrop-filter: blur(15px);
-}
-
-/*---------------------------------------
-            Style settings
----------------------------------------*/
 /* @settings
 
 name: Apatheia
 id: ap-theme
 settings:
-		-				id: a-theme 				title: Theme variant 				type: class-select 				default: apatheia 				options:						-								label: Dark theme								value: a-theme-dark						-								label: Dracula theme								value: a-theme-dracula		-				id: ap-radius-s 				title: Border radius S 				type: variable-number-slider 				default: 4 				format: px 		-				id: ap-radius-m 				title: Border radius M 				type: variable-number-slider 				default: 8 				format: px 		-				id: ap-radius-l 				title: Border radius L 				type: variable-number-slider 				default: 10 				format: px 		-				id: glassMorphism 				title: glassmorphism 				type: class-toggle 				default: test 
+		-				id: ap-radius-s 				title: Border radius S 				description: variable-number-slider 				type: variable-number-slider 				default: 4 				min: 0 				max: 20 				step: px 				format: px 		-				id: ap-radius-m 				title: Border radius M 				description: variable-number-slider 				type: variable-number-slider 				default: 8 				min: 0 				max: 20 				step: px 				format: px 		-				id: ap-radius-l 				title: Border radius L 				description: variable-number-slider 				type: variable-number-slider 				default: 10 				min: 0 				max: 20 				step: px 				format: px 		-				id: a-theme-settings 				title: Theme settings 				description: Change theme appearance here 				type: heading 				level: 1 				collapsed: true 		-				id: theme-dark 				title: Theme variant 				description: Select theme variant 				type: class-select 				default: a-theme-apatheia 				allowEmpty: false 				options:						-								label: 🗿 Apatheia								value: a-theme-apatheia						-								label: 👾 Purple								value: a-theme-purple						-								label: 🌿 Catpuccin Mocha								value: a-catpuccin-mocha						-								label: ☕ Catpuccin Espresso								value: a-catpuccin-espresso		-				id: a-theme-purple-settings 				title: Test theme settings 				description: Settings for the test theme 				type: heading 				level: 2 				collapsed: true 		-				id: a-theme-purple-test 				title: Toggle test 				description: toggle to test 				type: class-toggle 		-				id: a-effect-settings 				title: Effects 				description: Add effects 				type: heading 				level: 1 				collapsed: true 		-				id: glassMorphism 				title: Glassmorphism 				description: Add glassmorphism to your theme 				type: class-toggle 		-				id: smoothIndent 				title: Smooth indent 				description: Smooth Indent headers. Vim users may experience weird glitches 				type: class-toggle 		-				id: Fade 				title: Fade 				description: Fade 				type: class-toggle 		-				id: Hover 				title: Hover effect 				description: On hover transition on components 				type: class-toggle 		-				id: a-font-settings 				title: Fonts 				description: Select fonts 				type: heading 				level: 1 				collapsed: true 		-				id: inline-title-font 				title: Title font 				description: Change title font 				type: variable-select 				default: Open Sans 				options:						- Alegreya						- Anybody						- Archivo						- Archivo Narrow						- Asap						- Assistant						- Azeret Mono						- Baloo 2						- Besley						- Bitter						- Bodoni Moda						- Cabin						- Cairo						- Cairo Play						- Catamaran						- Cinzel						- Comfortaa						- Crimson Pro						- Domine						- Dosis						- EB Garamond						- Encode Sans						- Epilogue						- Exo 2						- Figtree						- Finlandica						- Heebo						- Inconsolata						- Inter						- Josefin Sans						- Jost						- Jura						- Karla						- Lexend						- Lexend Deca						- Lexend Exa						- Libre Franklin						- Lora						- M PLUS 1						- Manrope						- Maven Pro						- Merriweather Sans						- Montserrat						- Mulish						- MuseoModerno						- Noto Sans Display						- Nunito						- Open Sans						- Oswald						- Outfit						- Overpass						- Podkova						- Public Sans						- Quicksand						- Raleway						- Readex Pro						- Recursive						- Red Hat Display						- Red Hat Text						- Red Rose						- Rosario						- Rubik						- STIX Two Text						- Saira						- Signika						- Signika Negative						- Space Grotesk						- Syne						- Vollkorn						- Work Sans						- Yanone Kaffeesatz		-				id: font-interface 				title: Interface font 				description: Change interface font 				type: variable-select 				default: Open Sans 				options:						- Alegreya						- Anybody						- Archivo						- Archivo Narrow						- Asap						- Assistant						- Azeret Mono						- Baloo 2						- Besley						- Bitter						- Bodoni Moda						- Cabin						- Cairo						- Cairo Play						- Catamaran						- Cinzel						- Comfortaa						- Crimson Pro						- Domine						- Dosis						- EB Garamond						- Encode Sans						- Epilogue						- Exo 2						- Figtree						- Finlandica						- Heebo						- Inconsolata						- Inter						- Josefin Sans						- Jost						- Jura						- Karla						- Lexend						- Lexend Deca						- Lexend Exa						- Libre Franklin						- Lora						- M PLUS 1						- Manrope						- Maven Pro						- Merriweather Sans						- Montserrat						- Mulish						- MuseoModerno						- Noto Sans Display						- Nunito						- Open Sans						- Oswald						- Outfit						- Overpass						- Podkova						- Public Sans						- Quicksand						- Raleway						- Readex Pro						- Recursive						- Red Hat Display						- Red Hat Text						- Red Rose						- Rosario						- Rubik						- STIX Two Text						- Saira						- Signika						- Signika Negative						- Space Grotesk						- Syne						- Vollkorn						- Work Sans						- Yanone Kaffeesatz		-				id: font-text 				title: Text font 				description: Change text font 				type: variable-select 				default: Open Sans 				options:						- Alegreya						- Anybody						- Archivo						- Archivo Narrow						- Asap						- Assistant						- Azeret Mono						- Baloo 2						- Besley						- Bitter						- Bodoni Moda						- Cabin						- Cairo						- Cairo Play						- Catamaran						- Cinzel						- Comfortaa						- Crimson Pro						- Domine						- Dosis						- EB Garamond						- Encode Sans						- Epilogue						- Exo 2						- Figtree						- Finlandica						- Heebo						- Inconsolata						- Inter						- Josefin Sans						- Jost						- Jura						- Karla						- Lexend						- Lexend Deca						- Lexend Exa						- Libre Franklin						- Lora						- M PLUS 1						- Manrope						- Maven Pro						- Merriweather Sans						- Montserrat						- Mulish						- MuseoModerno						- Noto Sans Display						- Nunito						- Open Sans						- Oswald						- Outfit						- Overpass						- Podkova						- Public Sans						- Quicksand						- Raleway						- Readex Pro						- Recursive						- Red Hat Display						- Red Hat Text						- Red Rose						- Rosario						- Rubik						- STIX Two Text						- Saira						- Signika						- Signika Negative						- Space Grotesk						- Syne						- Vollkorn						- Work Sans						- Yanone Kaffeesatz		-				id: font-monospace 				title: Monospace font 				description: Change the monospace font 				type: variable-select 				default: Source code pro 				options:						- Alegreya						- Anybody						- Archivo						- Archivo Narrow						- Asap						- Assistant						- Azeret Mono						- Baloo 2						- Besley						- Bitter						- Bodoni Moda						- Cabin						- Cairo						- Cairo Play						- Catamaran						- Cinzel						- Comfortaa						- Crimson Pro						- Domine						- Dosis						- EB Garamond						- Encode Sans						- Epilogue						- Exo 2						- Figtree						- Finlandica						- Heebo						- Inconsolata						- Inter						- Josefin Sans						- Jost						- Jura						- Karla						- Lexend						- Lexend Deca						- Lexend Exa						- Libre Franklin						- Lora						- M PLUS 1						- Manrope						- Maven Pro						- Merriweather Sans						- Montserrat						- Mulish						- MuseoModerno						- Noto Sans Display						- Nunito						- Open Sans						- Oswald						- Outfit						- Overpass						- Podkova						- Public Sans						- Quicksand						- Raleway						- Readex Pro						- Recursive						- Red Hat Display						- Red Hat Text						- Red Rose						- Rosario						- Rubik						- STIX Two Text						- Saira						- Signika						- Signika Negative						- Space Grotesk						- Syne						- Vollkorn						- Work Sans						- Yanone Kaffeesatz
 */
