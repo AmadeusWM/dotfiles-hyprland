@@ -9,6 +9,10 @@
     box-shadow: none !important;
 }
 
+#sidebar-box {
+    width: var(--sidebar-width) !important;
+}
+
 /* hide sidebar header for tree style tabs sidebar */
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
     display: none;
