@@ -12,6 +12,6 @@ do
     elif [[ $curr_bat -le 10 && $prev_bat -gt 10 ]]; then
         notify-send --urgency=CRITICAL "Battery Low" "Level: ${curr_bat}%"
     fi
-    prev_bat=curr_bat
+    prev_bat=$curr_bat
     sleep 60
 done
