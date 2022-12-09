@@ -60,7 +60,7 @@ Assign the `source` parameter in the `hyprland.conf` to a different configuratio
 instructions 
 </summary>
 
-### Default
+### Default Applications
 The themes of other applications are saved in the `dots` folder.
 `wofi`, `rofi`, `kitty` and `dunst` can be themed by copying the folders into `~/.config`
 ```bash
@@ -92,6 +92,8 @@ Copy `dots/BetterDiscord/Ultra.theme.css` to `~/snap/discord/145/.config/BetterD
 ```bash
 betterdiscordctl --d-install snap install 
 ```
+### Obsidian
+The Obsidian theme can be found in the community theme store, just look up `Apatheia`. Install the theme which is developed by @AmadeusWM, @Zenneh. 
 
 ### VS-code
 The Apatheia theme can be found on the marketplace. 
