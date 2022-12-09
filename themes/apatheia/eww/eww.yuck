@@ -498,12 +498,12 @@
           :limit-width 9
         :wrap false)
         (label
-          :text "${round((EWW_RAM.available_mem/(1024*1024*1024)), 2)} | ${round((EWW_RAM.total_mem/(1024*1024*1024)), 2)}gb"
+          :text "${round((EWW_RAM.used_mem/(1024*1024*1024)), 2)} | ${round((EWW_RAM.total_mem/(1024*1024*1024)), 2)}gb"
           :halign "start"
           :class "sys_text_mem_sub"
           :limit-width 22
         :wrap false)
-        (label :text "${round((EWW_RAM.used_mem/(1024*1024*1024)), 2)}gb free"
+        (label :text "${round((EWW_RAM.available_mem/(1024*1024*1024)), 2)}gb free"
           :halign "start"
           :class "sys_text_mem_sub"
           :limit-width 22
