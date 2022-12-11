@@ -24,8 +24,12 @@
 - **Browser**: Firefox
 - **Font**: [Nerd Font](https://www.nerdfonts.com/)
 
-# Usage
+# Theme Variants
+These theme variants can be added to the `themes` folder.
+## Winter Theme
+[❄ Winter Theme](https://github.com/AmadeusWM/hyprland-winter)
 
+# Usage
 ## 📦 Required dependencies:
 Install these dependencies manually (Arch) 
 ```shell
