@@ -1,0 +1,4 @@
+#!/bin/sh
+
+input="$(wofi --show dmenu)"
+dict $input | wofi --show dmenu --width 1000 --heigh 500
