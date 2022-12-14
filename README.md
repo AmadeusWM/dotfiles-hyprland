@@ -123,7 +123,6 @@ First and foremost, go to about:addons in your firefox. And enable the `Dark` th
 <summary>
 MacOS Fix overlapping controls
 </summary>
-
 1. Open this file in your editor: `dotfiles-hyprland/dots/firefox/chrome/window-controls/wc-without-tabline.css`
 2. Uncomment the following: (in `:root:not([inFullscreen]) toolbar#nav-bar`
 ```css
@@ -166,6 +165,37 @@ margin-left: 0px;
 ```
 </details>
     
+<details>
+<summary>
+Windows: Window Control Buttons At the Right Side
+<summary>
+The solution is to add replace this line: (in `chrome/config.css`)
+```css
+@import "window-controls/wc-without-tabline.css";
+```
+with the following:
+```css
+@import "window-controls/wc-without-tabline-r.css";
+```
+Afterwards your buttons will probably be visible, but they will be squared. You can solve that by going to `chrome/windowj-controls/window-controls.css`. And adding this line to the `.titlebar-button` class:
+```css
+border-radius: 20px;
+```
+Resulting in something like this:
+```css
+.titlebar-button {
+    transition: all 0.1s ease !important;
+    padding: 0px 8px !important;
+    background: none !important;
+    -moz-context-properties: fill, fill-opacity !important;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px !important;
+    border-radius: 20px;
+}
+```
+</details>
+
 #### Tree Style Tabs
 1. Install the Tree Style Tabs extension from [here](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/)
 2. Visit `Preferences` with `ctrl+shift+a>Tree Style Tab>Preferences`
