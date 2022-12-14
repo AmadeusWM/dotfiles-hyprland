@@ -296,14 +296,14 @@ panelview .toolbarbutton-1,
 .widget-overflow-list .toolbarbutton-1,
 .panel-banner-item {
     min-height: 32px !important;
-    padding: 0 16px !important;
+    /* padding: 0 16px !important; */
 }
 
 .subviewbutton .toolbarbutton-icon,
 .panel-banner-item .toolbarbutton-icon {
-    margin-inline-end: 16px !important;
-    width: 24px !important;
-    height: 24px !important;
+    /* margin-inline-end: 16px !important; */
+    width: 18px !important;
+    height: 18px !important;
     padding: 4px !important;
 }
 
