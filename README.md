@@ -171,7 +171,7 @@ margin-left: 0px;
 Windows: Window Control Buttons At the Right Side
 </summary>
 
-The solution is to add replace this line: (in `chrome/config.css`)
+The solution is to replace this line: (in `chrome/config.css`)
 ```css
 @import "window-controls/wc-without-tabline.css";
 ```
