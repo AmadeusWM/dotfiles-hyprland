@@ -123,6 +123,7 @@ First and foremost, go to about:addons in your firefox. And enable the `Dark` th
 <summary>
 MacOS Fix overlapping controls
 </summary>
+
 1. Open this file in your editor: `dotfiles-hyprland/dots/firefox/chrome/window-controls/wc-without-tabline.css`
 2. Uncomment the following: (in `:root:not([inFullscreen]) toolbar#nav-bar`
 ```css
@@ -169,6 +170,7 @@ margin-left: 0px;
 <summary>
 Windows: Window Control Buttons At the Right Side
 </summary>
+
 The solution is to add replace this line: (in `chrome/config.css`)
 ```css
 @import "window-controls/wc-without-tabline.css";
