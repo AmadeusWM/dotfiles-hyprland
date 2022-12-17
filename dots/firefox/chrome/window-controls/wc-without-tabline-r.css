@@ -8,7 +8,7 @@
 
 :root:not([inFullscreen]) toolbar#nav-bar {
     margin-left: 0 !important;
-    margin-right: calc(var(--wc-left-space) * 2 + 60px) !important;
+    margin-right: calc(var(--wc-left-space) * 2 + 65px) !important;
 }
 
 .titlebar-buttonbox {

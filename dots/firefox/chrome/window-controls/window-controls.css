@@ -18,6 +18,7 @@
     width: 16px;
     height: 16px;
     margin-left: 10px !important;
+    border-radius: 20px !important;
 }
 
 .titlebar-buttonbox {
