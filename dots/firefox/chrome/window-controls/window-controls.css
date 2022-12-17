@@ -1,5 +1,5 @@
 /*-min max close size*/
-.titlebar-button > .toolbarbutton-icon {
+.titlebar-button>.toolbarbutton-icon {
     height: 14px !important;
     min-height: 14px !important;
     width: 14px !important;
@@ -84,4 +84,8 @@
 .titlebar-restore:hover {
     opacity: 1 !important;
     transform: scale(110%);
+}
+
+#private-browsing-indicator-with-label {
+    display: none !important;
 }

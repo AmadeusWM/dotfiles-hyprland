@@ -1,6 +1,7 @@
 /* Main sass file that contains the theme */
 @import "icons/extension-icons.css";
 @import "window-controls/wc-without-tabline.css";
+/* @import "window-controls/wc-without-tabline-r.css"; */
 @import "hide-tabline.css";
 @import "userChrome-hover.css";
 :root {
