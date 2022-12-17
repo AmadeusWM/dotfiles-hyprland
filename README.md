@@ -179,23 +179,7 @@ with the following:
 ```css
 @import "window-controls/wc-without-tabline-r.css";
 ```
-Afterwards your buttons will probably be visible, but they will be squared. You can solve that by going to `chrome/windowj-controls/window-controls.css`. And adding this line to the `.titlebar-button` class:
-```css
-border-radius: 20px;
-```
-Resulting in something like this:
-```css
-.titlebar-button {
-    transition: all 0.1s ease !important;
-    padding: 0px 8px !important;
-    background: none !important;
-    -moz-context-properties: fill, fill-opacity !important;
-    width: 16px;
-    height: 16px;
-    margin-left: 10px !important;
-    border-radius: 20px;
-}
-```
+Afterwards your buttons should be visible.
 </details>
 
 #### Tree Style Tabs
