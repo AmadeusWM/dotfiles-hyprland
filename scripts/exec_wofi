@@ -6,7 +6,7 @@ function app_launcher(){
 
 
 function wifi_menu(){
-    wifi4wofi &
+    nm-connection-editor &
 }
 
 doc() {
