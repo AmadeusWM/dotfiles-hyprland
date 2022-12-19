@@ -17,7 +17,7 @@
 - **Top- and sidebar**: [eww](https://github.com/elkowar/eww)
 - **Notifications**: [dunst](https://github.com/dunst-project/dunst)
 - **Wallpaper Loader**: [swww](https://github.com/Horus645/swww)
-- **Wallpaper**: `/themes/apatheia/wallapapers`
+- **Wallpaper**: `/themes/apatheia/wallpapers`
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
 - **Search menu**: [wofi](https://github.com/uncomfyhalomacro/wofi)
 - **Fetch script**: `nitch`
