@@ -92,10 +92,15 @@ install from AUR: `betterdiscordctl`
 
 Copy `dots/BetterDiscord/Ultra.theme.css` to `~/snap/discord/145/.config/BetterDiscord/`
 
-#### For Discord Installed With Snap
+#### For Discord (Installed With Snap)
 ```bash
 betterdiscordctl --d-install snap install 
 ```
+#### Webcord
+```bash
+webcord --add-css-theme /home/amadeusw/Projects/theming/Apatheia/compiled-themes/discord/Apatheia.theme.css
+```
+
 ### Obsidian
 The Obsidian theme can be found in the community theme store, just look up `Apatheia`. Install the theme which is developed by @AmadeusWM, @Zenneh. 
 
