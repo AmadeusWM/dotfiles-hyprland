@@ -1,5 +1,5 @@
 /**
- * @name Ultra
+ * @name Apatheia
  * @version 1.0.6
  * @author TheCommieAxolotl#0001
  * @authorId 538487970408300544
@@ -26,36 +26,36 @@
   --ap-radius-m: 8px;
   --ap-radius-l: 10px;
   --ap-radius-xl: 16px;
-  --ap-primary-h: 15.3846153846deg;
-  --ap-primary-s: 63.9344262295%;
-  --ap-primary-l: 88.0392156863%;
+  --ap-primary-h: 211.3636363636deg;
+  --ap-primary-s: 100%;
+  --ap-primary-l: 91.3725490196%;
   --ap-primary-d: 80%;
-  --ap-primary: #F4D7CD;
-  --ap-secondary-h: 157.0588235294deg;
-  --ap-secondary-s: 31.7757009346%;
-  --ap-secondary-l: 58.0392156863%;
+  --ap-primary: #d3e8ff;
+  --ap-secondary-h: 312.1621621622deg;
+  --ap-secondary-s: 72.5490196078%;
+  --ap-secondary-l: 80%;
   --ap-secondary-d: 70%;
-  --ap-secondary: #72b69c;
-  --ap-base1-h: 250deg;
-  --ap-base1-s: 23.0769230769%;
-  --ap-base1-l: 8.0980392157%;
+  --ap-secondary: #f1a7e2;
+  --ap-base1-h: 249.2307692308deg;
+  --ap-base1-s: 31.7073170732%;
+  --ap-base1-l: 8.0392156863%;
   --ap-base1-d: 20%;
   --ap-base0: #0B0A10;
   --ap-base0-h: 250deg;
   --ap-base0-s: 23.0769230769%;
   --ap-base0-l: 5.0980392157%;
   --ap-base0-d: 20%;
-  --ap-base1: #111019;
-  --ap-red: #E97193;
-  --ap-green: #AAC5A0;
-  --ap-blue: #A8C5E6;
-  --ap-purple: #DFA7E7;
-  --ap-aqua: #a8e5e6;
-  --ap-yellow: #ece0a8;
-  --ap-orange: #D1A999;
-  --ap-color-strong: #E97193;
-  --ap-color-quote: #E97193;
-  --ap-color-italic: #E97193;
+  --ap-base1: #100E1B;
+  --ap-red: #f38ba8;
+  --ap-green: #a6e3a1;
+  --ap-blue: #d3e8ff;
+  --ap-purple: #f1a7e2;
+  --ap-aqua: #94e2d5;
+  --ap-yellow: #f9e2af;
+  --ap-orange: #fab387;
+  --ap-color-strong: #f5c2e7;
+  --ap-color-quote: #f5c2e7;
+  --ap-color-italic: #f5c2e7;
   --ap-color-tag-background: #2c2537;
   --ap-color-tag-text: #EEEEEE;
   --ap-code-gray-1: #5b5c5f;
@@ -67,7 +67,7 @@
   --ap-code-aqua: var(--ap-aqua);
   --ap-code-yellow: var(--ap-yellow);
   --ap-code-orange: var(--ap-orange);
-  --ap-color-dp0: #111019;
+  --ap-color-dp0: #100E1B;
   --ap-color-dp1: #0B0A10;
   --ap-color-dp2: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 5%));
   --ap-color-dp3: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 10%));
@@ -77,8 +77,8 @@
   --ap-color-dp7: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 60%));
   --ap-color-dp8: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 70%));
   --ap-color-dp9: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 80%));
-  --ap-color-dp10: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 95%));
-  --ap-color-dp11: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 100%));
+  --ap-color-dp10: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 85%));
+  --ap-color-dp11: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 90%));
   --ap-h1: var(--ap-red);
   --ap-h2: var(--ap-purple);
   --ap-h3: var(--ap-blue);
@@ -96,6 +96,12 @@
   --ap-size-text-item: 1em;
   --ap-container-padding: 8px;
   --ap-frame-left: 10px;
+  --ap-font-text: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-interface: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-monospace: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-title: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-header: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-hashtag: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
 }
 
 :root,
@@ -141,4 +147,6 @@
 }
 
 /* Made By The Commie Axolotl */
-
+.container-ZMc96U {
+  background: var(--ap-color-dp0) !important;
+}
