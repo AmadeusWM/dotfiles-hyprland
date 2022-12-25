@@ -1,8 +1,0 @@
-#!/usr/bin/bash
-killall -q waybar
-
-# Wait until the processes have been shut down
-while pgrep -x waybar >/dev/null; do sleep 1; done
-
-# launch waybar
-waybar -c $HOME/.config/hypr/themes/detox-life/component/waybar/config -s $HOME/.config/hypr/themes/detox-life/component/waybar/style.css &

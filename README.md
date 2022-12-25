@@ -90,7 +90,7 @@ spicetify apply
 ### Discord (Better Discord)
 install from AUR: `betterdiscordctl`
 
-Copy `dots/BetterDiscord/Ultra.theme.css` to `~/snap/discord/145/.config/BetterDiscord/`
+Copy `dots/BetterDiscord/Apatheia.theme.css` to `~/snap/discord/145/.config/BetterDiscord/`
 
 #### For Discord (Installed With Snap)
 ```bash
@@ -98,7 +98,7 @@ betterdiscordctl --d-install snap install
 ```
 #### Webcord
 ```bash
-webcord --add-css-theme /home/amadeusw/Projects/theming/Apatheia/compiled-themes/discord/Apatheia.theme.css
+webcord --add-css-theme ~/.config/hypr/dots/BetterDiscord/Apatheia.theme.css
 ```
 
 ### Obsidian
