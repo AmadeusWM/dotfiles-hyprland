@@ -1,0 +1,4 @@
+ln -sf ${PWD}/dots/dunst ~/.config
+ln -sf ${PWD}/dots/wofi ~/.config
+ln -sf ${PWD}/dots/rofi ~/.config
+ln -sf ${PWD}/dots/kitty ~/.config
