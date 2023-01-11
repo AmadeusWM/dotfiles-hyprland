@@ -229,8 +229,8 @@ Dependency: `eww-wayland`
 # ⌨️ Keybinds 
 All keybinds can be found in the `keybinds` folder
 - `SUPER+SPACE`: Application Launcher (wofi)
-- `SUPER+Z`: Prev orkspace
-- `SUPER+X`: Next orkspace
+- `SUPER+Z`: Prev workspace
+- `SUPER+X`: Next workspace
 - `SUPER+CTRL+M`: Quit Hyprland
 - `SUPER+1,...9,0`: Switch workspace
 - `ALT+1,...9,0`: Move window to workspace
