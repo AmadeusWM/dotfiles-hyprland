@@ -1,4 +1,19 @@
+#!bin/bash
+# some dotfiles
 ln -sf ${PWD}/dots/dunst ~/.config
 ln -sf ${PWD}/dots/wofi ~/.config
 ln -sf ${PWD}/dots/rofi ~/.config
 ln -sf ${PWD}/dots/kitty ~/.config
+# spotify theme
+mkdir -p "$(dirname "$(spicetify -c)")/Themes/Dribbblish"
+cd "$(dirname "$(spicetify -c)")/Themes/Dribbblish" && mkdir -p ../../Extensions
+cd -
+ln -sf ${PWD}/dots/spicetify/Dribbblish/dribbblish.js ~/.config/spicetify/Extensions
+spicetify config extensions dribbblish.js
+spicetify config current_theme Dribbblish color_scheme apatheia
+spicetify config inject_css 1 replace_colors 1 overwrite_assets 1
+spicetify apply
+spicetify backup apply
+#Discord
+betterdiscordctl install
+cp ./dots/BetterDiscord/Apatheia.theme.css ~/.config/BetterDiscord/
