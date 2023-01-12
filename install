@@ -16,4 +16,5 @@ spicetify apply
 spicetify backup apply
 #Discord
 betterdiscordctl install
-cp ./dots/BetterDiscord/Apatheia.theme.css ~/.config/BetterDiscord/
+mkdir -p ~/.config/BetterDiscord/themes/
+cp ./dots/BetterDiscord/Apatheia.theme.css ~/.config/BetterDiscord/themes/
