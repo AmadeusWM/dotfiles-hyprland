@@ -264,6 +264,7 @@ All keybinds can be found in the `keybinds` folder
 # 🔨 TO-DO
 - [x] Notifications (this maybe? https://www.reddit.com/r/unixporn/comments/sacxs3/oc_styled_notifications_using_dunst/)
 - [x] Swappable wallpaper with wofi
+- [x] fix colorpick win+c keybinds
 example:
 ```bash
 ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu
