@@ -277,6 +277,7 @@ ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu
 > https://github.com/Horus645/swww/blob/main/example_scripts/swww_init_according_to_time_of_day.sh
 - [ ] Fix nerfonts
 - [ ] Youtube scrapper to random list of video wallpaper on start
+- [ ] Kitty can't kill dingtalk wtf no
 
 
 
