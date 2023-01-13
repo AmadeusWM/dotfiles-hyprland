@@ -264,11 +264,19 @@ All keybinds can be found in the `keybinds` folder
 # 🔨 TO-DO
 - [x] Notifications (this maybe? https://www.reddit.com/r/unixporn/comments/sacxs3/oc_styled_notifications_using_dunst/)
 - [x] Swappable wallpaper with wofi
-- [x] fix colorpick win+c keybinds
 example:
 ```bash
 ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu
 ```
+- [ ] Fix colorpick win+c keybinds
+- [ ] Clipboard select and enter directly paste
+- [ ] Nnn rice and configure
+- [ ] vim startpage
+- [ ] Swww if not display : swaybg
+- [ ] Youtube scrapper to random list of video wallpaper on start
+
+
+
 - [ ] Disable and Enable notifications
 - [ ] Pull request Dunst: rounded icons
 - [ ] Answer issue eww primary screen (first, try the command man): https://github.com/elkowar/eww/issues/382#issuecomment-1281693594
