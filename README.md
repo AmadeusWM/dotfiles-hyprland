@@ -271,8 +271,11 @@ ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu
 - [ ] Fix colorpick win+c keybinds
 - [ ] Clipboard select and enter directly paste
 - [ ] Nnn rice and configure
-- [ ] vim startpage
+- [ ] Vim startpage
 - [ ] Swww if not display : swaybg
+- [ ] Swww script : see swww_init_according_to_time_of_day.sh
+> https://github.com/Horus645/swww/blob/main/example_scripts/swww_init_according_to_time_of_day.sh
+- [ ] Fix nerfonts
 - [ ] Youtube scrapper to random list of video wallpaper on start
 
 
