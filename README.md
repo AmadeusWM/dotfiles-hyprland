@@ -278,6 +278,7 @@ ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu
 - [ ] Fix nerfonts
 - [ ] Youtube scrapper to random list of video wallpaper on start
 - [ ] Kitty can't kill dingtalk wtf no
+- [ ] Kitty can't kitten tmux alternative
 
 
 
