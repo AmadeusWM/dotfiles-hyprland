@@ -233,7 +233,7 @@ All keybinds can be found in the `keybinds` folder
 - `SUPER+X`: Next workspace
 - `SUPER+CTRL+M`: Quit Hyprland
 - `SUPER+1,...9,0`: Switch workspace
-- `ALT+1,...9,0`: Move window to workspace
+- `SUPER+SHIFT+1,...9,0`: Move window to workspace
 - `SUPER+ALT+1,...9,0`: Move window to workspace (silent)
 - `SUPER+B`: Switch Wallpaper
 - `SUPER+V`: Open clipboard history
@@ -241,10 +241,10 @@ All keybinds can be found in the `keybinds` folder
 - `SUPER+F` or `CTRL+ALT+F`: Firefox
 - `SUPER+O`: Obsidian
 - `SUPER+E`: Nautilus
-- `SUPER+A`: VS-code
 - `SUPER+C`: Color Picker (`hyprpicker`)
 - `PRINT`: Screenshot a part of your screen
 - `SUPER+PRINT`: Record a part of your screen
+- `SUPER+CTRL+PRINT`: Record a part of your screen in gif format
 - `SUPER+SHIFT+B`: Reset Top Bar (e.g. when connecting new screen)
 
 # ⭐ Credits
@@ -279,7 +279,10 @@ ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu
 - [ ] Youtube scrapper to random list of video wallpaper on start
 - [ ] Kitty can't kill dingtalk wtf no
 - [ ] Kitty can't kitten tmux alternative
-
+- [ ] A better bar maybe 
+https://github.com/flick0/dotfiles/tree/aurora
+- [ ] Dict transfer to anki script
+- [ ] A better dictionary source
 
 
 - [ ] Disable and Enable notifications
