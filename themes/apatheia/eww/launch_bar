@@ -26,4 +26,6 @@ for id in "${NB_MONITORS[@]}"; do
     bar="bar$id"
     hyprctl dispatch focusmonitor "$id"
     ${EWW} open "$bar"
+    # todo delete this ugly piece of 
+    ${EWW} open bar0
 done
