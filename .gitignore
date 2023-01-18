@@ -10,3 +10,4 @@ themes/minimal
 themes/detox
 *.gif
 /themes/apatheia/wallpapers
+scripts/variables/temp/*
