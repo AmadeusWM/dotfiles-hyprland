@@ -1,5 +1,6 @@
 @import ".config/wofi/style.css";
+	/* font-family: "FiraCode Nerd Font Mono"; */
 window {
-	font-family: "FiraCode Nerd Font Mono";
+	font-family: "FantasqueSansMono";
 	font-size: 13px;
 }

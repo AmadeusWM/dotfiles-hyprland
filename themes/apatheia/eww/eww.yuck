@@ -13,8 +13,8 @@
 (defpoll calendar_day :interval "2h" "date '+%d'")
 (defpoll calendar_year :interval "2h" "date '+%Y'")
 (defpoll volume_percent :interval "1s"  "scripts/sbvol --get")
-; (defpoll mic_percent :interval "3s" "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -n 1")
-(defpoll mic_percent :interval "3s" "amixer -D pulse sget Capture | grep 'Mono:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -n 1")
+; (defpoll mic_percent :interval "3s" "pamixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -n 1")
+(defpoll mic_percent :interval "3s" "pamixer -D pulse sget Capture | grep 'Mono:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -n 1")
 (defpoll brightness_percent :interval "5s" "light")
 (defpoll COL_WLAN :interval "1m" "scripts/wifi --COL")
 (defpoll ESSID_WLAN :interval "1m" "scripts/wifi --ESSID")
@@ -128,7 +128,7 @@
           :tooltip "${volume_percent}%"
           :max 100
           :min 0
-        :onchange "amixer -D pulse sset Master {}%" ))
+        :onchange "pamixer -D pulse sset Master {}%" ))
       (button
         :onclick "scripts/pop audio_ctl"
         :class "volume_icon"
@@ -344,7 +344,7 @@
           (scale
             :value volume_percent
             :orientation "h"
-            :onchange "amixer -D pulse sset Master {}%"
+            :onchange "pamixer -D pulse sset Master {}%"
             :tooltip "volume on ${volume_percent}%"
             :max 100
           :min 0))))
@@ -379,7 +379,7 @@
             :value mic_percent
             :orientation "h"
             :tooltip "mic on ${mic_percent}%"
-            :onchange "amixer -D pulse sset Capture {}%"
+            :onchange "pamixer -D pulse sset Capture {}%"
             :max 100
           :min 0))))))
 

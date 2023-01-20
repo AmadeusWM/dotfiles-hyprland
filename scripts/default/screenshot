@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
 grim -g "$(slurp)" - | wl-copy
+notify-send "Screenshot copied to clipboard" -a "ss"
 # grim -g "$(slurp)" - | swappy -f - -o ~/Pictures/Screenshots/screenshot$(date +%s).png
 # grim -g "0,0 2048x1280" - | swappy -f - -o ~/Pictures/Screenshots/screenshot$(date +%s).png
