@@ -285,6 +285,7 @@ https://github.com/flick0/dotfiles/tree/aurora
 - [ ] A better dictionary source
 - [ ] TODO a desktop widget integrate todoist CLI template
     reference : https://github.com/joshpetit/dotfiles
+- [ ] TODO a desktop ddl widget 
 
 
 

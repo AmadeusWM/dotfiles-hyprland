@@ -25,7 +25,7 @@ for id in "${NB_MONITORS[@]}"; do
     # make top bar for every display
     bar="bar$id"
     hyprctl dispatch focusmonitor "$id"
-    ${EWW} open "$bar"
-    # todo delete this ugly piece of 
+    # ${EWW} open "$bar"
+    #  eww & hyprctl do not recogonize monitors by the same ID
     ${EWW} open bar0
 done

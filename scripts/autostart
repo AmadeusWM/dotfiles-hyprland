@@ -14,7 +14,7 @@ $scripts/default/battery_notif &
 $scripts/default/idle_handler &
 
 # effects
-$scripts/rgb &
+# $scripts/rgb &
 
 # other
 ## persistent clipboard

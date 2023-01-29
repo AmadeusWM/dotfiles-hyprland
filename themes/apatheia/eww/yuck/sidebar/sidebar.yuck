@@ -3,30 +3,30 @@
 ;; seperate sidebar for each possible primary monitor
 (defwindow sidebar0
   :geometry (geometry
-    :x "0px"
-    :width "1px"
+             :x "0px"
+             :width "1px"
     ; :height "100%"
-  :anchor "top left")
+             :anchor "top left")
   :stacking "fg"
   :monitor 0
   (sidebar))
 
 (defwindow sidebar1
   :geometry (geometry
-    :x "0px"
-    :width "1px"
+             :x "0px"
+             :width "1px"
     ; :height "100%"
-  :anchor "top left")
+             :anchor "top left")
   :stacking "fg"
   :monitor 1
   (sidebar))
 
 (defwindow sidebar2
   :geometry (geometry
-    :x "0px"
-    :width "1px"
+             :x "0px"
+             :width "1px"
     ; :height "100%"
-  :anchor "top left")
+             :anchor "top left")
   :stacking "fg"
   :monitor 2
   (sidebar))
@@ -56,8 +56,8 @@
     (music-side)
     (sys-tray)
     ; (clipboard)
-    (bottom))
-)
+    (bottom)))
+
 
 (defwidget top []
   (box
@@ -65,9 +65,9 @@
     :space-evenly "false"
     :halign "fill"
     :hexpand "true"
-    (apatheia)
-  )
-)
+    (apatheia)))
+  
+
 
 (defwidget bottom []
   (box
@@ -75,9 +75,9 @@
     :space-evenly "false"
     :spacing "15"
     (buttons)
-    (fetch)
-  )
-)
+    (fetch)))
+  
+
 
 (defwidget buttons []
   (box
@@ -92,31 +92,31 @@
       :halign "center"
       :valign "center"
       :tooltip "Shut Down"
-    :onclick "kitty poweroff &" "⏻")
+     :onclick "kitty poweroff &" "⏻")
     (button
       :class "reboot"
       :halign "center"
       :valign "center"
       :tooltip "Reboot"
-    :onclick "kitty reboot &" "")
+     :onclick "kitty reboot &" "")
     (button
       :class "exit"
       :halign "center"
       :valign "center"
       :tooltip "Quit Hyprland"
-    :onclick "hyprctl dispatch exit exit" "")
+     :onclick "hyprctl dispatch exit exit" "")
     (button
       :class "firmware"
       :halign "center"
       :valign "center"
       :tooltip "Reboot to EFI"
-    :onclick "kitty systemctl reboot --firmware &" "⏼")
+     :onclick "kitty systemctl reboot --firmware &" "⏼")
     (button
       :class "restart"
       :halign "center"
       :valign "center"
       :tooltip "edit Config"
-    :onclick "kitty vim ~/.config/hypr/hyprland.conf &" "﨣")))
+     :onclick "kitty nvim ~/.config/hypr/themes/apatheia/eww/eww.yuck &" "﨣")))
 
 (defpoll uptime :interval "1m" "uptime -p | sed -e 's/up //;s/ hours,/h/;s/ minutes/m/'")
 (defpoll packages :interval "5m" `pacman -Q | wc -l`)
@@ -141,31 +141,31 @@
         :valign "center"
         :halign "start"
         :vexpand "true"
-      :text " : ${name}@${host}")
+       :text " : ${name}@${host}")
       (label
         :class "wm"
         :valign "center"
         :halign "start"
         :vexpand "true"
-      :text " : ${wm}")
+       :text " : ${wm}")
       (label
         :class "uptime"
         :valign "center"
         :halign "start"
         :vexpand "true"
-      :text " : ${uptime}")
+       :text " : ${uptime}")
       (label
         :class "packages"
         :valign "center"
         :halign "start"
         :vexpand "true"
-      :text " : ${packages}")
+       :text " : ${packages}")
       (label
         :class "kernal"
         :valign "center"
         :halign "start"
         :vexpand "true"
-      :text " : ${kernal}")
-    )
-  )
-)
+       :text " : ${kernal}"))))
+    
+  
+

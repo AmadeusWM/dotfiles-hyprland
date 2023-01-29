@@ -31,6 +31,7 @@ function exportBackground(){
     # load the background variables
     background_image=$(head -1 $temp_folder/background)
 
+    # -z is empty
     [ -z $background_image ] && background_image="~/.config/hypr/themes/apatheia/wallpapers/Planet.png"
 
     export BACKGROUND_IMAGE=$background_image
