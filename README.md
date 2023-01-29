@@ -283,6 +283,8 @@ ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu
 https://github.com/flick0/dotfiles/tree/aurora
 - [ ] Dict transfer to anki script
 - [ ] A better dictionary source
+- [ ] TODO a desktop widget integrate todoist CLI template
+    reference : https://github.com/joshpetit/dotfiles
 
 
 
