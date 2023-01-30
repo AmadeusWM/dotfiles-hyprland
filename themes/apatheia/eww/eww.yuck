@@ -15,7 +15,11 @@
 (defpoll calendar_day :interval "2h" "date '+%d'")
 (defpoll calendar_year :interval "2h" "date '+%Y'")
 (defpoll volume_percent :interval "1s"  "scripts/sbvol --get")
-
+;; todo incluing ddl py script
+(defpoll ddl_days :interval "2h" "exec ~/.config/hypr/themes/apatheia/eww/scripts/countdown.py 7/7/2023 JLPT N1 | awk 'NR==1'")
+(defpoll ddl_weeks :interval "2h" "exec ~/.config/hypr/themes/apatheia/eww/scripts/countdown.py 7/7/2023 JLPT N1 | awk 'NR==2'")
+; (defpoll ddl_weeks :interval "2h" "ddl_days + 1")
+(defpoll ddl_event :interval "2h" "exec ~/.config/hypr/themes/apatheia/eww/scripts/countdown.py 7/7/2023 JLPT N1 | awk 'NR==3'")
 
 
 
@@ -607,3 +611,23 @@
              :width "270px"
              :height "60px")
   (cal))
+
+
+(defwindow ddl
+  :stacking "bg"
+  :monitor 0
+  :focusable false
+  :anchor "bottom right"
+  :geometry (geometry
+              :x "2%"
+              :y "2%"
+              :width "10%"
+              :height "1%")
+  (box
+    ; :orientation "h"
+    :class "ddl_kanban"
+    (label :text ddl_days)
+    (label :text "DAYS")
+    (label :text ddl_weeks)
+    (label :text "WEEKS")
+    (label :text ddl_event)))
