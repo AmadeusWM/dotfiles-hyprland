@@ -14,6 +14,7 @@ TmpPalettePath=$TmpPathPrefix'-palette.png'
 OnExit() {
 	[[ -f $TmpRecordPath ]] && rm -f "$TmpRecordPath"
 	[[ -f $TmpPalettePath ]] && rm -f "$TmpPalettePath"
+    notify-send "Saved ${DefaultSaveDir}.gif"
 }
 trap OnExit EXIT
 
