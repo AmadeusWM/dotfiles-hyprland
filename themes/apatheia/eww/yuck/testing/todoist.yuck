@@ -1,0 +1,80 @@
+;; This scipt is configured for wayland
+(defpoll todos 
+  :interval "10s"
+  :initial "todoist-cli sync"
+  `todoist-cli --indent list --filter 'today|overdue'|cut -d' ' -f6-`)
+(defpoll time 
+  :interval "5s"
+  :initial `date +'{"hour":"%H","min":"%M"}'`
+  `date +'{"hour":"%H","min":"%M"}'`)
+
+(defpoll net :interval "100s"
+  :initial `N/A`
+  `nmcli -t -f SIGNAL,ACTIVE device wifi \
+    | awk -F':' '{if($2=="yes")print$1}'`)
+(defwindow todowindow
+  :monitor 0
+  :stacking "bg"
+  :anchor "bottom right"
+  :geometry (geometry
+              :width "20%"
+              :height "10%"
+              :x "79%"
+              :y "1%")
+  :focusable false
+  :exclusive false
+  (label
+    :text todos))
+(defwindow testing
+  :monitor 0
+  :stacking "fg"
+  :anchor "center"
+  ; :geometry (geometry
+  ;             :x "20%"
+  ;             :y "40%"
+  ;             :width "20%")
+  (box
+    :valign "start"
+    (label :text {EWW_NET.wlan0.NET_DOWN / 1024 / 1024} :limit-width 4)
+    (label :text {EWW_NET.wlan0.NET_UP / 1024 / 1024} :limit-width 4)
+    (Testing_sundial)
+     (_buttons :shutdown "poweroff" :reboot "reboot"
+                :logout "loginctl kill-session self"
+                :shutdown_icon "" :reboot_icon "" :logout_icon ""))
+)
+
+
+(defwidget Testing_sundial []
+  (label :class "sundial-lbl" :halign "end" :hexpand true
+         :text {time.hour >= 2 && time.hour <= 4 ? "Early Morning" :
+               time.hour <= 5 ? "Dawn" :
+               time.hour >= 6 &&
+                (time.hour <= 8 &&
+                  time.min <= 59) ? "Morning" :
+               time.hour >= 9 &&
+                (time.hour <= 11 && time.min <= 59)
+                ? "Late Morning" :
+               time.hour == 12 && time.min <= 29 ? "Midday" :
+               time.hour >= 12 && time.hour <= 16 ? "Afternoon" :
+               time.hour > 16 && time.hour <= 17 ?
+                "Late Afternoon" :
+               (time.hour >= 17 && time.min <= 1)
+                || (time.hour <= 18 && time.min <= 20) ?
+                  "Early Evening" :
+               time.hour >= 18 && time.hour <= 19 ? "Dusk" :
+               time.hour > 19 && time.hour <= 21 ? "Late Evening" :
+               time.hour > 21 ? "Night" : "Midnight"}))
+
+(defwidget _buttons [shutdown shutdown_icon reboot
+                    reboot_icon logout logout_icon]
+  (box :class "btns-box" :spacing 5
+       :vexpand true :hexpand true
+       :valign "end" :halign "end"
+       :space-evenly false
+    (button :onclick shutdown shutdown_icon)
+    (button :onclick reboot reboot_icon)
+    (button :onclick logout logout_icon)))
+; (defwidget wallpaper [x y wallpaper_dir]
+;   (button :onclick ))
+
+; ls | grep .gif | shuf -n 1
