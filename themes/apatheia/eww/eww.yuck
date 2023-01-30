@@ -44,13 +44,13 @@
       (image
         :class "launcher-icon"
         :path "assets/blossom.png"
-      :image-width 28))
-  ))
+       :image-width 28))))
+  
 
 (defwidget workspaces []
   (literal
     :content workspace
-  :valign "center"))
+   :valign "center"))
 
 (defwidget appnames []
   (eventbox
@@ -62,7 +62,7 @@
       :vexpand "false"
       :hexpand "false"
       (literal
-      :content appname)
+       :content appname)
       (revealer
         :transition "slideright"
         :reveal control_reveal
@@ -74,14 +74,14 @@
           :space-evenly "true"
           (button
             :class "app-button"
-          :onclick "hyprctl dispatch togglefloating 1" "")
+           :onclick "hyprctl dispatch togglefloating 1" "")
           (button
             :class "app-button"
-          :onclick "hyprctl dispatch fullscreen 1" "")
+           :onclick "hyprctl dispatch fullscreen 1" "")
           (button ; use "eventbox" with : ":cursor pointer" for poiner cursor
             :class "app-button color-var3"
             :cursor "pointer"
-          :onclick "hyprctl dispatch killactive 1" ""))))))
+           :onclick "hyprctl dispatch killactive 1" ""))))))
 
 (defwidget bright []
   (eventbox
@@ -102,11 +102,11 @@
           :tooltip "${brightness_percent}%"
           :max 100
           :min 0
-        :onchange "light -S {}" ))
+         :onchange "light -S {}"))
       (label
         :text ""
         :class "bright_icon"
-      :tooltip "brightness"))))
+       :tooltip "brightness"))))
 
 (defwidget volume []
   (eventbox
@@ -128,11 +128,11 @@
           :tooltip "${volume_percent}%"
           :max 100
           :min 0
-        :onchange "pamixer -D pulse sset Master {}%" ))
+         :onchange "pamixer -D pulse sset Master {}%"))
       (button
         :onclick "scripts/pop audio_ctl"
         :class "volume_icon"
-      "墳"))))
+       "墳"))))
 
 (defwidget wifi []
   (eventbox
@@ -148,12 +148,12 @@
         :duration "350ms"
         (label
           :class "module_essid"
-          :text ESSID_WLAN
-        ))
+          :text ESSID_WLAN))
+        
       (button
         :class "module-wif"
         :onclick "~/.config/hypr/scripts/exec_wofi wifi"
-      WLAN_ICON))))
+       WLAN_ICON))))
 
 (defwidget bat []
   (box
@@ -168,7 +168,7 @@
         :onclick "scripts/pop system"
         :class "iconbat"
         :tooltip "battery on ${EWW_BATTERY["BAT0"].capacity}%"
-      ""))))
+       ""))))
 
 (defwidget mem []
   (box
@@ -185,7 +185,7 @@
         :tooltip "using ${EWW_RAM.used_mem_perc}% ram"
         :show_truncated false
         :wrap false
-      ""))))
+       ""))))
 
 (defwidget clock_module []
   (eventbox
@@ -198,13 +198,13 @@
       :spacing "0"
       (label
         :text clock_time
-      :class "clock_time_class" )
+       :class "clock_time_class")
       (revealer :transition "slideleft"
         :reveal time_rev
         :duration "350ms"
         (button
           :class "clock_date_class"
-        :onclick "scripts/pop calendar" clock_date)))))
+         :onclick "scripts/pop calendar" clock_date)))))
 
 (defwidget notif_button []
   (box
@@ -214,7 +214,7 @@
     (button
       :onclick "if ${EWW_CMD} state | grep 'rightside: false' ; then ${EWW_CMD} update rightside=true ; else ${EWW_CMD} update rightside=false ; fi"
       (label
-      :text ""))))
+       :text ""))))
 
 (defwidget sep []
   (box
@@ -225,15 +225,15 @@
     (label
       :class "separ"
       :valign "center"
-      :text "|"
-    )))
+      :text "|")))
+    
 
 (defwidget gap []
   (box
     :orientation "h"
     :hexpand "false"
     :visible "true"
-  :width "150"))
+   :width "150"))
 
 
 ;;define widget groups
@@ -266,9 +266,9 @@
     (bat)
     (mem)
     (sep)
-    (clock_module)
+    (clock_module)))
     ; (notif_button)
-  ))
+  
 
 (defwidget bar_layout []
   (centerbox
@@ -276,17 +276,17 @@
     :orientation "h"
     (left)
     (center)
-    (right)
-  ))
+    (right)))
+  
 
 ;; bars for your 3 screens (one for each)
 (defwindow bar0
   :monitor 0
   :exclusive false
   :geometry (geometry
-    :width "100%"
-    :height "50px"
-  :anchor "top center")
+             :width "58%"
+             :height "50px"
+             :anchor "top center")
   :stacking "fg"
   :windowtype "dock"
   (bar_layout))
@@ -294,9 +294,9 @@
   :monitor 1
   :exclusive false
   :geometry (geometry
-    :width "100%"
-    :height "50px"
-  :anchor "top center")
+             :width "100%"
+             :height "50px"
+             :anchor "top center")
   :stacking "fg"
   :windowtype "dock"
   (bar_layout))
@@ -304,9 +304,9 @@
   :monitor 2
   :exclusive false
   :geometry (geometry
-    :width "100%"
-    :height "50px"
-  :anchor "top center")
+             :width "100%"
+             :height "50px"
+             :anchor "top center")
   :stacking "fg"
   :windowtype "dock"
   (bar_layout))
@@ -325,7 +325,7 @@
       :vexpand "false"
       (box
         :class "speaker_icon"
-      :orientation "v")
+       :orientation "v")
       (box
         :orientation "v"
         :halign "center"
@@ -335,7 +335,7 @@
           :class "speaker_text"
           :text "speaker"
           :valign "center"
-        :halign "left" )
+         :halign "left")
         (box
           :class "speaker_bar"
           :halign "center"
@@ -347,11 +347,11 @@
             :onchange "pamixer -D pulse sset Master {}%"
             :tooltip "volume on ${volume_percent}%"
             :max 100
-          :min 0))))
+           :min 0))))
     (label
       :text "_____________________________________"
       :class "audio_sep"
-    :halign "center")
+     :halign "center")
     (box
       :halign "v"
       :space-evenly "false"
@@ -359,7 +359,7 @@
       :vexpand "false"
       (box
         :class "mic_icon"
-      :orientation "v")
+       :orientation "v")
       (box
         :orientation "v"
         :halign "center"
@@ -369,7 +369,7 @@
           :class "mic_text"
           :text "mic"
           :valign "center"
-        :halign "left" )
+         :halign "left")
         (box
           :class "mic_bar"
           :halign "center"
@@ -381,20 +381,20 @@
             :tooltip "mic on ${mic_percent}%"
             :onchange "pamixer -D pulse sset Capture {}%"
             :max 100
-          :min 0))))))
+           :min 0))))))
 
-  (defwindow audio_ctl0
-    :stacking "fg"
-    :focusable "false"
-    :screen 1
-    :monitor 0
-    :geometry (geometry
-      :x "20"
-      :y "7%"
-      :anchor "top right"
-      :width "280px"
-    :height "60px")
-    (audio))
+(defwindow audio_ctl0
+  :stacking "fg"
+  :focusable "false"
+  :screen 1
+  :monitor 0
+  :geometry (geometry
+             :x "20"
+             :y "7%"
+             :anchor "top right"
+             :width "280px"
+             :height "60px")
+  (audio))
 
 (defwindow audio_ctl1
   :stacking "fg"
@@ -402,11 +402,11 @@
   :screen 1
   :monitor 1
   :geometry (geometry
-    :x "20"
-    :y "7%"
-    :anchor "top right"
-    :width "280px"
-  :height "60px")
+             :x "20"
+             :y "7%"
+             :anchor "top right"
+             :width "280px"
+             :height "60px")
   (audio))
     
 (defwindow audio_ctl2
@@ -415,11 +415,11 @@
   :screen 1
   :monitor 2
   :geometry (geometry
-    :x "20"
-    :y "7%"
-    :anchor "top right"
-    :width "280px"
-  :height "60px")
+             :x "20"
+             :y "7%"
+             :anchor "top right"
+             :width "280px"
+             :height "60px")
   (audio))
 
 ;;Define System widget
@@ -442,7 +442,7 @@
         (label :text ""
           :class "sys_icon_bat"
           :limit-width 2
-        :wrap false))
+         :wrap false))
       (box
         :orientation "v"
         :space-evenly "false"
@@ -454,22 +454,22 @@
           :halign "start"
           :class "sys_text_bat"
           :limit-width 9
-        :wrap false)
+         :wrap false)
         (label
           :text "${EWW_BATTERY["BAT0"].capacity}%"
           :halign "start"
           :class "sys_text_bat_sub"
           :limit-width 22
-        :wrap false)
+         :wrap false)
         (label :text "${EWW_BATTERY["BAT0"].status}"
           :halign "start"
           :class "sys_text_bat_sub"
           :limit-width 22
-        :wrap false)))
+         :wrap false)))
     (label
       :text "____________________________________"
       :class "sys_sep"
-    :halign "center")
+     :halign "center")
     (box
       :class "sys_mem_box"
       :orientation "h"
@@ -484,7 +484,7 @@
           :class "sys_icon_mem"
           :limit-width 2
           :wrap false
-        :angle 0.0))
+         :angle 0.0))
       (box
         :orientation "v"
         :space-evenly "false"
@@ -496,19 +496,19 @@
           :halign "start"
           :class "sys_text_mem"
           :limit-width 9
-        :wrap false)
+         :wrap false)
         (label
           :text "${round((EWW_RAM.used_mem/(1024*1024*1024)), 2)} | ${round((EWW_RAM.total_mem/(1024*1024*1024)), 2)}gb"
           :halign "start"
           :class "sys_text_mem_sub"
           :limit-width 22
-        :wrap false)
+         :wrap false)
         (label :text "${round((EWW_RAM.available_mem/(1024*1024*1024)), 2)}gb free"
           :halign "start"
           :class "sys_text_mem_sub"
           :limit-width 22
-        :wrap false)
-      ))))
+         :wrap false)))))
+      
 
 (defwindow system0
   :stacking "fg"
@@ -521,7 +521,7 @@
     :y "65px"
     :anchor "top right"
     :width "290px"
-  :height "120px")
+   :height "120px")
   (system))
 
 (defwindow system1
@@ -535,7 +535,7 @@
     :y "65px"
     :anchor "top right"
     :width "290px"
-  :height "120px")
+   :height "120px")
   (system))
 
 (defwindow system2
@@ -549,7 +549,7 @@
     :y "65px"
     :anchor "top right"
     :width "290px"
-  :height "120px")
+   :height "120px")
   (system))
 
 ;;Calendar Widget
@@ -561,7 +561,7 @@
       :class "cal-in"
       (calendar
         :day calendar_day
-      :year calendar_year))))
+       :year calendar_year))))
 
 (defwindow calendar0
   :stacking "fg"
@@ -569,11 +569,11 @@
   :screen 1
   :monitor 0
   :geometry (geometry
-    :x "20"
-    :y "65px"
-    :anchor "top right"
-    :width "270px"
-  :height "60px")
+             :x "20"
+             :y "65px"
+             :anchor "top right"
+             :width "270px"
+             :height "60px")
   (cal))
 
 (defwindow calendar1
@@ -582,11 +582,11 @@
   :screen 1
   :monitor 1
   :geometry (geometry
-    :x "20"
-    :y "65px"
-    :anchor "top right"
-    :width "270px"
-  :height "60px")
+             :x "20"
+             :y "65px"
+             :anchor "top right"
+             :width "270px"
+             :height "60px")
   (cal))
     
 (defwindow calendar2
@@ -595,9 +595,9 @@
   :screen 1
   :monitor 2
   :geometry (geometry
-    :x "20"
-    :y "65px"
-    :anchor "top right"
-    :width "270px"
-  :height "60px")
+             :x "20"
+             :y "65px"
+             :anchor "top right"
+             :width "270px"
+             :height "60px")
   (cal))
