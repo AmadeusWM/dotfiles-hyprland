@@ -28,4 +28,5 @@ for id in "${NB_MONITORS[@]}"; do
     # ${EWW} open "$bar"
     #  eww & hyprctl do not recogonize monitors by the same ID
     ${EWW} open bar0
+    ${EWW} open todowindow
 done
