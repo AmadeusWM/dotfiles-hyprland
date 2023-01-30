@@ -6,6 +6,8 @@
 (include "yuck/sidebar/sys-tray.yuck")
 (include "yuck/sidebar/clipboard.yuck")
 (include "yuck/sidebar/sidebar.yuck")
+;; todo include testing
+(include "yuck/testing/todoist.yuck")
 
 ;; Variables
 (defpoll clock_time :interval "5s" "date '+\%H\%M'")
@@ -15,10 +17,6 @@
 (defpoll volume_percent :interval "1s"  "scripts/sbvol --get")
 
 
-(defpoll todos 
-  :interval "10s"
-  :initial "todoist-cli sync"
-  `todoist-cli --indent list --filter 'today|overdue'|cut -d' ' -f6-`)
 
 
 ; (defpoll mic_percent :interval "3s" "pamixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -n 1")
@@ -609,16 +607,3 @@
              :width "270px"
              :height "60px")
   (cal))
-(defwindow todowindow
-  :monitor 0
-  :stacking "bg"
-  :anchor "bottom right"
-  :geometry (geometry
-              :width "20%"
-              :height "10%"
-              :x "79%"
-              :y "1%")
-  :focusable false
-  :exclusive false
-  (label
-    :text todos))
