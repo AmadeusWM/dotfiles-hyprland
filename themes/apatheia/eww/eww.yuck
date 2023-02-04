@@ -16,9 +16,12 @@
 ; (defpoll mic_percent :interval "3s" "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -n 1")
 (defpoll mic_percent :interval "3s" "amixer -D pulse sget Capture | grep 'Mono:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -n 1")
 (defpoll brightness_percent :interval "5s" "light")
-(defpoll COL_WLAN :interval "1m" "scripts/wifi --COL")
-(defpoll ESSID_WLAN :interval "1m" "scripts/wifi --ESSID")
-(defpoll WLAN_ICON :interval "1m" "scripts/wifi --ICON")
+; (defpoll COL_WLAN :interval "1m" "scripts/wifi --COL")
+; (defpoll ESSID_WLAN :interval "1m" "scripts/wifi --ESSID")
+(defpoll ESSID_WLAN :interval "100s" "nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2")
+; (defpoll WLAN_ICON :interval "1m" "scripts/wifi --ICON")
+(defpoll WLAN_ICON :interval "100s" `nmcli -t -f SIGNAL,ACTIVE device wifi \
+    | awk -F':' '{if($2=="yes")print$1}'`)
 (deflisten workspace "scripts/workspace")
 (deflisten appname "scripts/appname")
 
@@ -153,7 +156,18 @@
       (button
         :class "module-wif"
         :onclick "~/.config/hypr/scripts/exec_wofi wifi"
-      WLAN_ICON))))
+       ; WLAN_ICON
+       (_network :strength WLAN_ICON :offline "󰤮" :excellent "󰤨" :good "󰤥" :okay "󰤢" :slow "󰤟"
+)))))
+
+(defwidget _network [strength offline excellent good okay slow]
+  (box :class "net-box"
+       :space-evenly false
+       :spacing 8
+    (label :text {strength == "" ? offline :
+      strength < 26 ? slow :
+        strength < 51 ? okay :
+          strength < 76 ? good : excellent})))
 
 (defwidget bat []
   (box
