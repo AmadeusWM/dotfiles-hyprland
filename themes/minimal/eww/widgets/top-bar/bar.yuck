@@ -1,0 +1,107 @@
+(deflisten workspace "scripts/workspace")
+
+(deflisten appname "scripts/appname")
+
+(defvar control_reveal false)
+
+(defwidget workspaces []
+  (literal
+    :content workspace
+  :valign "center"))
+
+;;define widget groups
+(defwidget left []
+  (box
+    :halign "start"
+    :class "left_modules"
+    ; (launcher)
+    ; (sep)
+    (workspaces)))
+(defwidget center []
+  (box
+    :orientation "h"
+    :space-evenly false
+    :halign "center"
+    :class "center_modules"
+    (appnames)))
+(defwidget right []
+  (box
+    :orientation "h"
+    :space-evenly false
+    :halign "end"
+    :class "right_modules"
+    ; (notif_button)
+  ))
+
+(defwidget bar_layout []
+  (centerbox
+    :class "bar_class"
+    :orientation "h"
+    (left)
+    (center)
+    (right)
+  ))
+
+;; bars for your 3 screens (one for each)
+(defwindow bar0
+  :monitor 0
+  :exclusive true
+  :geometry (geometry
+    :width "100%"
+    :height "50px"
+  :anchor "top center")
+  :stacking "fg"
+  :windowtype "dock"
+  (bar_layout))
+(defwindow bar1
+  :monitor 1
+  :exclusive true
+  :geometry (geometry
+    :width "100%"
+    :height "50px"
+  :anchor "top center")
+  :stacking "fg"
+  :windowtype "dock"
+  (bar_layout))
+(defwindow bar2
+  :monitor 2
+  :exclusive true
+  :geometry (geometry
+    :width "100%"
+    :height "50px"
+  :anchor "top center")
+  :stacking "fg"
+  :windowtype "dock"
+  (bar_layout))
+
+
+(defwidget appnames []
+  (eventbox
+    :onhover "${EWW_CMD} update control_reveal=true"
+    :onhoverlost "${EWW_CMD} update control_reveal=false"
+    (box
+      :orientation "h"
+      :space-evenly "false"
+      :vexpand "false"
+      :hexpand "false"
+      (literal
+      :content appname)
+      (revealer
+        :transition "slideright"
+        :reveal control_reveal
+        :duration "350ms"
+        (box
+          :vexpand "false"
+          :hexpand "false"
+          :orientation "h"
+          :space-evenly "true"
+          (button
+            :class "app-button"
+          :onclick "hyprctl dispatch togglefloating 1" "")
+          (button
+            :class "app-button"
+          :onclick "hyprctl dispatch fullscreen 1" "")
+          (button ; use "eventbox" with : ":cursor pointer" for poiner cursor
+            :class "app-button color-var3"
+            :cursor "pointer"
+          :onclick "hyprctl dispatch killactive 1" ""))))))

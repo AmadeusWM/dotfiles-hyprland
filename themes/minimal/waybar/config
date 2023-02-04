@@ -1,0 +1,138 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 55,
+    "modules-left": [
+        "wlr/workspaces"
+    ],
+    "modules-center": [
+        "custom/spotify"
+    ],
+    "modules-right": [
+        "custom/terminal",
+        "backlight",
+        "pulseaudio",
+        "network",
+        "battery",
+        "clock"
+    ],
+    "custom/launcher": {
+        "format": "",
+        "on-click": "wofi --show drun -o DP-3",
+        "on-click-right": "killall wofi"
+    },
+    "custom/apatheia": {
+        "format": "{}",
+        "exec": "python ~/.config/hypr/themes/minimal/waybar/modules/Apatheia/main.py"
+    },
+    "wlr/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true,
+        "on-click": "activate"
+    },
+    "wlr/window": {
+        "max-length": 80,
+        "tooltip": false
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%a %d %b - %H:%M:%S}",
+        "on-click": "morgen"
+    },
+    "battery": {
+        "format": "{icon}",
+        "format-alt": "{time} {icon} ",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "format-charging": "",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip-format": "At {capacity}%"
+    },
+    "network": {
+        "format": "{icon}",
+        "format-alt": "{bandwidthDownBytes} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "wifi": [
+                "",
+                "",
+                ""
+            ],
+            "ethernet": [
+                ""
+            ],
+            "disconnected": [
+                "睊"
+            ]
+        },
+        "on-click": "nm-connection-editor",
+        "tooltip-format": "{ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "婢",
+        "format-icons": {
+            "phone": [
+                " ",
+                " ",
+                " "
+            ],
+            "default": [
+                "奄",
+                "奔",
+                "墳"
+            ]
+        },
+        "scroll-step": 10,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "tooltip-format": "At {volume}%"
+    },
+    "custom/spotify": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/hypr/themes/minimal/waybar/modules/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true
+    },
+    "custom/storage": {
+        "format": "{} ",
+        "format-alt": "{percentage}% ",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/hypr/themes/minimal/waybar/modules/storage.sh"
+    },
+    "custom/terminal": {
+        "format": "",
+        "on-click": "kitty --title=\"kitty-qalculate\" --hold qalc"
+    }
+    ,
+    "backlight": {
+        "format": "{icon}",
+        "format-alt": "{percent}% {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": [
+            ""
+        ],
+        "on-scroll-down": "light -U 10",
+        "on-scroll-up": "light -A 10"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    }
+}

@@ -1,0 +1,214 @@
+$dark: true;
+$fg0: #eae9f0;
+$bg0: #11111b;
+$red: #E97193;
+$green: #AAC5A0;
+$yellow: #f6d6b3;
+$orange: #f2c798;
+$blue: #A8C5E6;
+$purple: #DFA7E7;
+$purple2: #ecdbee;
+$teal: #72B69C;
+
+@if $dark == true {
+    $fg0: #eae9f0;
+    $bg0: #11111b;
+    $red: #E97193;
+    $green: #AAC5A0;
+    $yellow: #f6d6b3;
+    $orange: #f2c798;
+    $blue: #A8C5E6;
+    $purple: #DFA7E7;
+    $purple2: #ecdbee;
+    $teal: #72B69C;
+}
+
+@mixin button-box {
+    padding: 5px 10px;
+    margin: 5px 5px 0px 0px;
+    border: 2px solid $fg0;
+    box-shadow: $fg0 0px 0px 0px 0px;
+    transition: 0.1s all ease;
+
+    border-radius: 10px;
+    color: $fg0;
+}
+
+@mixin button-box-high {
+    @include button-box;
+    border: 2px solid $fg0;
+    box-shadow: $fg0 0px 5px 0px 0px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    transition: 0.1s all ease;
+    color: $fg0;
+
+    opacity: 1;
+}
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: JetbrainsMono Nerd Font, Sans;
+    font-size: 18px;
+    box-shadow: none;
+    text-shadow: none;
+    transition-duration: 0s;
+}
+
+window {
+    color: rgba(35, 31, 32, 0.85);
+    background: rgba(35, 31, 32, 0.00);
+}
+
+window#waybar.solo {
+    background: rgba(217, 216, 216, 1);
+    color: rgba(32, 31, 35, 0.85);
+    padding: 10px;
+}
+
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
+.modules-right {
+    @include button-box-high;
+    margin: 10px;
+    margin-bottom: 5px;
+    padding: 0px;
+}
+
+/* 
+CSS provided by Flick0
+more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
+*/
+#workspaces {
+    min-height: 45px;
+    font-size: 16px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    transition: none;
+    color: $fg0;
+    margin-bottom: 0px;
+}
+
+#workspaces button {
+    @include button-box;
+    opacity: 0.7;
+}
+
+#workspaces button:hover {
+    box-shadow: $fg0 0px 5px 0px 0px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+#workspaces button.active {
+    @include button-box-high;
+}
+
+#workspaces button.active:hover {
+    transition: 0.04s all ease;
+    margin-top: 2px;
+    margin-bottom: 3px;
+    box-shadow: $fg0 0px 3px 0px 0px;
+}
+
+
+/* #workspaces button.occupied {
+	transition: none;
+	color: #F28FAD;
+	background: transparent;
+	font-size: 4px;
+}
+
+#workspaces button.focused {
+	color: #ABE9B3;
+    border-top: 2px solid #ABE9B3;
+    border-bottom: 2px solid #ABE9B3;
+}
+
+#workspaces button:hover {
+	transition: none;
+	box-shadow: inherit;
+	text-shadow: inherit;
+	color: #FAE3B0;
+    border-color: #E8A2AF;
+    color: #E8A2AF;
+}
+
+#workspaces button.focused:hover {
+    color: #E8A2AF;
+} */
+
+#mode,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#idle_inhibitor,
+#backlight,
+#custom-storage,
+#custom-terminal,
+#custom-spotify,
+#custom-weather,
+#custom-mail {
+    margin: 5px 6px 0px 10px;
+    padding-bottom: 3px;
+}
+
+#clock {
+    margin: 0px 16px 0px 10px;
+    font-weight: bold;
+}
+
+#network {
+    padding-right: 5px;
+}
+
+#battery {}
+
+#battery.warning {
+    color: $fg0;
+}
+
+#battery.critical {
+    color: $fg0;
+}
+
+#battery.charging {
+    color: $fg0;
+}
+
+#custom-storage.warning {
+    color: $fg0;
+}
+
+#custom-storage.critical {
+    color: $fg0;
+}
+
+#apatheia {
+    color: $fg0;
+}
+
+#backlight {
+    padding-right: 5px;
+}
+
+#custom-spotify {
+    @include button-box-high;
+    padding-right: 15px;
+}
+
+#tray {
+    padding: 0px 10px;
+    padding-right: 15px;
+    border-radius: 5px 0px 0px 5px;
+    background-color: $fg0;
+}

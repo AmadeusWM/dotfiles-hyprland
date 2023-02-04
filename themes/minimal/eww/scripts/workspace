@@ -1,0 +1,75 @@
+#! /bin/bash
+
+#define icons for workspaces 1-9
+# ic=(0     輸  " " " " )
+# ic=(0 1 2 3 4 5 6 7 8 9)
+ic=(0 一 二 三 四 五 六 七 八 九 〇)
+
+#initial check for occupied workspaces
+for num in $(hyprctl workspaces | grep ID | awk '{print $3}'); do 
+  export o"$num"="$num"
+done
+ 
+#initial check for focused workspace
+for num in $(hyprctl monitors | grep -B 4 "focused: yes" | awk 'NR==1{print $3}'); do 
+  export f"$num"="$num"
+  export fnum=f"$num"
+  export mon=$(hyprctl monitors | grep -B 2 "\($num\)" | awk 'NR==1{print $2}')
+done
+
+workspaces() {
+if [[ ${1:0:9} == "workspace" ]] && [[ ${1:11} != "special" ]]; then #set focused workspace
+  unset -v "$fnum" 
+  num=${1:11}
+  export f"$num"="$num"
+  export fnum=f"$num"
+
+elif [[ ${1:0:10} == "focusedmon" ]]; then #set focused workspace following monitor focus change
+  unset -v "$fnum"
+  string=${1:12}
+  num=${string##*,}
+  export mon=${string/,*/}
+  export f"$num"="$num"
+  export fnum=f"$num"
+
+elif [[ ${1:0:13} == "moveworkspace" ]] && [[ ${1##*,} == "$mon" ]]; then #Set focused workspace following swapactiveworkspace
+  unset -v "$fnum"
+  string=${1:15}
+  num=${string/,*/}
+  export f"$num"="$num"
+  export fnum=f"$num"
+
+elif [[ ${1:0:15} == "createworkspace" ]]; then #set Occupied workspace
+  num=${1:17}
+  export o"$num"="$num"
+  export onum=o"$num"
+
+elif [[ ${1:0:16} == "destroyworkspace" ]]; then #unset unoccupied workspace
+  num=${1:18}
+  unset -v o"$num"
+fi
+}
+module() {
+#output eww widget
+echo 	"(eventbox :onscroll \"echo {} | sed -e 's/up/-1/g' -e 's/down/+1/g' | xargs hyprctl dispatch workspace\" \
+          (box	:class \"works\"	:orientation \"h\" :spacing 5 :space-evenly \"false\" :valign \"center\"	\
+              (eventbox :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 1\'\" :onrightclick \"hyprctl dispatch workspace 1 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\"   :class \"ws-btn\" (label :class \"ws-icon ws0$o1$f1\" :text \"${ic[1]}\")) \
+              (eventbox :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 2\'\" :onrightclick \"hyprctl dispatch workspace 2 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\"   :class \"ws-btn\" (label :class \"ws-icon ws0$o2$f2\" :text \"${ic[2]}\")) \
+              (eventbox :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 3\'\" :onrightclick \"hyprctl dispatch workspace 3 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\"   :class \"ws-btn\" (label :class \"ws-icon ws0$o3$f3\" :text \"${ic[3]}\")) \
+              (eventbox :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 4\'\" :onrightclick \"hyprctl dispatch workspace 4 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\"   :class \"ws-btn\" (label :class \"ws-icon ws0$o4$f4\" :text \"${ic[4]}\")) \
+              (eventbox :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 5\'\" :onrightclick \"hyprctl dispatch workspace 5 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\"   :class \"ws-btn\" (label :class \"ws-icon ws0$o5$f5\" :text \"${ic[5]}\")) \
+              (eventbox :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 6\'\" :onrightclick \"hyprctl dispatch workspace 6 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\"   :class \"ws-btn\" (label :class \"ws-icon ws0$o6$f6\" :text \"${ic[6]}\")) \
+              (eventbox :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 7\'\" :onrightclick \"hyprctl dispatch workspace 7 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\"   :class \"ws-btn\" (label :class \"ws-icon ws0$o7$f7\" :text \"${ic[7]}\")) \
+              (eventbox :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 8\'\" :onrightclick \"hyprctl dispatch workspace 8 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\"   :class \"ws-btn\" (label :class \"ws-icon ws0$o8$f8\" :text \"${ic[8]}\")) \
+              (eventbox :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 9\'\" :onrightclick \"hyprctl dispatch workspace 9 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\"   :class \"ws-btn\" (label :class \"ws-icon ws0$o9$f9\" :text \"${ic[9]}\")) \
+              (eventbox :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 10\'\" :onrightclick \"hyprctl dispatch workspace 10 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\" :class \"ws-btn\" (label :class \"ws-icon ws0$o10$f10\" :text \"${ic[10]}\")) \
+          )\
+        )"
+}
+
+module
+
+socat -u UNIX-CONNECT:/tmp/hypr/"$HYPRLAND_INSTANCE_SIGNATURE"/.socket2.sock - | while read -r event; do 
+workspaces "$event"
+module
+done

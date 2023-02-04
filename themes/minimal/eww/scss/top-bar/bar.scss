@@ -1,0 +1,123 @@
+.bar_class {
+    padding: 10px;
+}
+
+
+.left_modules {
+    min-height: 50px;
+}
+
+.ws-btn {
+    .ws-icon {
+        padding: 7px 10px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+
+        color: $fg0;
+        border: 2px solid $fg0;
+        box-shadow: $fg0 0px 0px 0px 0px;
+        opacity: 0.5;
+
+        border-radius: 10px;
+        transition: 0.1s all ease;
+    }
+}
+
+.ws-btn:hover {
+    .ws-icon {
+        transition: 0.1s all ease;
+    }
+}
+
+
+.ws-btn {
+    .ws0,
+    .ws01,
+    .ws02,
+    .ws03,
+    .ws04,
+    .ws05,
+    .ws06,
+    .ws011,
+    .ws022,
+    .ws033,
+    .ws044,
+    .ws055,
+    .ws066 {
+    }
+
+    /* Unoccupied */
+    .ws0 {
+    }
+
+    /* Occupied */
+    .ws01,
+    .ws02,
+    .ws03,
+    .ws04,
+    .ws05,
+    .ws06,
+    .ws07,
+    .ws08,
+    .ws09,
+    .ws010 {
+    }
+
+    /* Focused */
+    .ws011,
+    .ws022,
+    .ws033,
+    .ws044,
+    .ws055,
+    .ws066,
+    .ws077,
+    .ws088,
+    .ws099,
+    .ws01010 {
+        border: 2px solid $fg0/*light*/;
+        box-shadow: $fg0/*light*/ 0px 5px 0px 0px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        color: $fg0/*light*/;
+    
+        opacity: 1;
+    }
+}
+
+.ws-btn:hover {
+    /* Unoccupied */
+    .ws0 {
+        box-shadow: $fg0/*light*/ 0px 5px 0px 0px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+
+    /* Occupied */
+    .ws01,
+    .ws02,
+    .ws03,
+    .ws04,
+    .ws05,
+    .ws06,
+    .ws07,
+    .ws08,
+    .ws09,
+    .ws010 {
+    }
+
+    /* Focused */
+    .ws011,
+    .ws022,
+    .ws033,
+    .ws044,
+    .ws055,
+    .ws066,
+    .ws077,
+    .ws088,
+    .ws099,
+    .ws01010 {
+        margin-top: 5px;
+        margin-bottom: 0px;
+        box-shadow: $fg0/*light*/ 0px 0px 0px 0px;
+    }
+}

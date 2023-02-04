@@ -1,0 +1,30 @@
+$dark: true;
+$fg0: #eae9f0;
+$bg0: #11111b;
+$red: #E97193;
+$green: #AAC5A0;
+$yellow: #f6d6b3;
+$orange: #f2c798;
+$blue: #A8C5E6;
+$purple: #DFA7E7;
+$purple2: #ecdbee;
+$teal: #72B69C;
+
+@if $dark == true {
+    $fg0: #eae9f0;
+    $bg0: #11111b;
+    $red: #E97193;
+    $green: #AAC5A0;
+    $yellow: #f6d6b3;
+    $orange: #f2c798;
+    $blue: #A8C5E6;
+    $purple: #DFA7E7;
+    $purple2: #ecdbee;
+    $teal: #72B69C;
+}
+
+* {
+    all: unset;
+    font-family: feather;
+    font-family: mononoki Nerd Font;
+}

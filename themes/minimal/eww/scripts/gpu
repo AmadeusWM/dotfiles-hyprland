@@ -1,0 +1,3 @@
+#!/bin/sh
+
+nvidia-smi dmon -s u | awk 'NR>2 {print $2; fflush()}'

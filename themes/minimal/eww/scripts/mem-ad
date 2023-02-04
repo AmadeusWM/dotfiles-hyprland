@@ -1,0 +1,13 @@
+#!/bin/sh
+
+
+total="$(free -m | grep Mem: | awk '{ print $2 }')"
+used="$(free -m | grep Mem: | awk '{ print $3 }')"
+
+free=$(expr $total - $used)
+
+case $1 in
+	total) echo $total;;
+	used) echo $used;;
+	free) echo $free;;
+esac
