@@ -154,20 +154,17 @@
           :text ESSID_WLAN
         ))
       (button
-        :class "module-wif"
         :onclick "~/.config/hypr/scripts/exec_wofi wifi"
-       ; WLAN_ICON
        (_network :strength WLAN_ICON :offline "󰤮" :excellent "󰤨" :good "󰤥" :okay "󰤢" :slow "󰤟"
 )))))
 
 (defwidget _network [strength offline excellent good okay slow]
-  (box :class "net-box"
-       :space-evenly false
-       :spacing 8
-    (label :text {strength == "" ? offline :
+    (label 
+      :class "module-wif"
+      :text {strength == "" ? offline :
       strength < 26 ? slow :
         strength < 51 ? okay :
-          strength < 76 ? good : excellent})))
+          strength < 76 ? good : excellent}))
 
 (defwidget bat []
   (box
