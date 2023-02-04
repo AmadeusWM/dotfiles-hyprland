@@ -3,6 +3,7 @@ hyprland.conf
 themes/apatheia/scripts/swaypaper
 hyprland.conf
 scripts/variables/temp/primary_screen
+scripts/extra/storage/dict_searches.txt
 store/latest_notif
 scripts/variables/temp/background
 themes/winter

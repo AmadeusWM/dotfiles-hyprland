@@ -1,4 +1,21 @@
 #!/bin/sh
 
-input="$(wofi --show dmenu)"
-dict $input | wofi --show dmenu --width 1000 --heigh 500
+STORAGE="$HOME/.config/hypr/scripts/extra/storage";
+
+input="$(cat $STORAGE/dict_searches.txt | wofi --show dmenu)";
+
+# == translate and show ==
+if [ ! -z "$input" ]; then
+    dict $input | wofi --show dmenu --width 1000 --heigh 500;
+fi
+
+# == create file if not present ==
+if ! test -f "$STORAGE/dict_searches.txt"; then
+    touch "$STORAGE/dict_searches.txt";
+fi
+
+# == store input ==
+output="$(dict $input)"; # not shown in dmenu properly if done with variable
+if [ ! -z "$output" ]; then
+    echo "$input" | cat - "$STORAGE/dict_searches.txt" > temp && mv temp "$STORAGE/dict_searches.txt";
+fi
