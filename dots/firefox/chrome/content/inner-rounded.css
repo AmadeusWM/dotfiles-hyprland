@@ -1,7 +1,9 @@
 /* make borders from inner content rounded */
-#tabbrowser-tabpanels browser[type="content"] {
-	color-scheme: env(-moz-content-preferred-color-scheme);
-	border-top-left-radius: 16px;
+@media all and (display-mode: browser) {
+	#tabbrowser-tabpanels browser[type="content"] {
+		color-scheme: env(-moz-content-preferred-color-scheme);
+		border-top-left-radius: 16px;
+	}
 }
 
 /* comment this out for padding around the content */
