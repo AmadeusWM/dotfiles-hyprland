@@ -202,5 +202,5 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
   padding: 0px 10px;
   padding-right: 15px;
   border-radius: 5px 0px 0px 5px;
-  background-color: #eae9f0;
+  background-color: rgba(17, 17, 27, 0);
 }

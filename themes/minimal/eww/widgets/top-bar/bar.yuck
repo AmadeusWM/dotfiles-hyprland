@@ -17,6 +17,7 @@
     ; (launcher)
     ; (sep)
     (workspaces)))
+
 (defwidget center []
   (box
     :orientation "h"
@@ -24,6 +25,8 @@
     :halign "center"
     :class "center_modules"
     (appnames)))
+
+
 (defwidget right []
   (box
     :orientation "h"

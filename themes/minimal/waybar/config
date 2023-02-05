@@ -9,6 +9,7 @@
         "custom/spotify"
     ],
     "modules-right": [
+        "tray",
         "custom/terminal",
         "backlight",
         "pulseaudio",
