@@ -139,7 +139,7 @@
         "width": "500",
         "format": "{}",
         "interval": "once",
-        "signal": 987,
+        "signal": 9,
         "exec": "hyprctl activewindow | sed -n '7,8 p' | cut -c -80 | cut -f 2- -d ' ' | tr '\n' ' '"
     }
     ,
