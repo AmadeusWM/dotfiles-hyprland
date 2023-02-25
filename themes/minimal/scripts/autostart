@@ -4,7 +4,7 @@
 config=$HOME/.config/hypr/themes/minimal
 scripts=$config/scripts
 
-$config/waybar/waybar.sh &
+$config/waybar/waybar.sh
 # $scripts/waybar/tools/dynamic &
 
 # wallpaper

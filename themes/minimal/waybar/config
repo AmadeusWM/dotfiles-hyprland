@@ -6,7 +6,7 @@
         "wlr/workspaces"
     ],
     "modules-center": [
-        "custom/spotify"
+        "custom/appname"
     ],
     "modules-right": [
         "tray",
@@ -27,9 +27,22 @@
         "exec": "python ~/.config/hypr/themes/minimal/waybar/modules/Apatheia/main.py"
     },
     "wlr/workspaces": {
-        "format": "{name}",
-        "disable-scroll": true,
-        "on-click": "activate"
+        "format": "{icon}",
+        "on-click": "activate",
+        "sort-by-number": true,
+        "format-icons": {
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "6": "VI",
+            "7": "VII",
+            "8": "VIII",
+            "9": "IX",
+            "10": "X",
+            "urgent": ""
+        }
     },
     "wlr/window": {
         "max-length": 80,
@@ -120,6 +133,14 @@
     "custom/terminal": {
         "format": "",
         "on-click": "kitty --title=\"kitty-qalculate\" --hold qalc"
+    }
+    ,
+    "custom/appname": {
+        "width": "500",
+        "format": "{}",
+        "interval": "once",
+        "signal": 987,
+        "exec": "hyprctl activewindow | sed -n '7,8 p' | cut -c -80 | cut -f 2- -d ' ' | tr '\n' ' '"
     }
     ,
     "backlight": {

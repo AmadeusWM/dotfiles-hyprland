@@ -206,6 +206,10 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
     padding-right: 15px;
 }
 
+#custom-appname {
+    @include button-box-high;
+}
+
 #tray {
     padding: 0px 10px;
     padding-right: 15px;

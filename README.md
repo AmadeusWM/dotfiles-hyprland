@@ -193,7 +193,7 @@ Afterwards your buttons should be visible.
 3. Scroll to the bottom, and Press `Import` in `All Configs`
 4. Import the `config.json` from `dots/firefox/treestyletab/config.json`
 5. Then go to `Advanced` and scroll down
-6. Choose `Load from file` and upload the following `dots/firefox/treestyletab/treestyletab.css` (*optional*: if the theme of TST doesn't match the new firefox theme for some reason)
+6. Choose `Load from file` and upload the following `dots/firefox/treestyletab/treestyletab.css` (*optional*: if the theme of TST doesn't match the new firefox theme)
 
 #### Night Tab
 1. Install the nighttab extension from [here](https://addons.mozilla.org/en-US/firefox/addon/nighttab/)

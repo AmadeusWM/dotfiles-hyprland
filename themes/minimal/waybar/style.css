@@ -198,6 +198,23 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
   padding-right: 15px;
 }
 
+#custom-appname {
+  padding: 5px 10px;
+  margin: 5px 5px 0px 0px;
+  border: 2px solid #eae9f0;
+  box-shadow: #eae9f0 0px 0px 0px 0px;
+  transition: 0.1s all ease;
+  border-radius: 10px;
+  color: #eae9f0;
+  border: 2px solid #eae9f0;
+  box-shadow: #eae9f0 0px 5px 0px 0px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  transition: 0.1s all ease;
+  color: #eae9f0;
+  opacity: 1;
+}
+
 #tray {
   padding: 0px 10px;
   padding-right: 15px;
