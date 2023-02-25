@@ -249,10 +249,10 @@ All keybinds can be found in the `keybinds` folder
 
 # ⭐ Credits
 - [Back777space](https://github.com/Back777space): for contributing🗿🗿🗿
-- [Zenneh](https://github.com/zenneh): the Obsidian theme📔
-- [Taylor85345](https://github.com/taylor85345): the well-organized dotfiles, and top-bar🧔‍
-- [flick0](https://github.com/flick0): inspiring hyprland-setup and useful scripts😍
-- [Vaxry](https://github.com/vaxerski): HYPRLAND 🤍
+- [Zenneh](https://github.com/zenneh): the Obsidian theme
+- [Taylor85345](https://github.com/taylor85345): the well-organized dotfiles, and top-bar
+- [flick0](https://github.com/flick0): inspiring hyprland-setup and useful scripts
+- [Vaxry](https://github.com/vaxerski): hyprland
 
 
 ---
