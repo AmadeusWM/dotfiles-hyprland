@@ -13,6 +13,7 @@
         "custom/terminal",
         "backlight",
         "pulseaudio",
+        "bluetooth",
         "network",
         "battery",
         "clock"
@@ -93,8 +94,17 @@
                 "睊"
             ]
         },
-        "on-click": "nm-connection-editor",
+        "on-click": "hyprctl dispatch exec '[float; size 600 600;move 100%-620 70] gnome-control-center wifi'",
         "tooltip-format": "{ipaddr}/{cidr}"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "",
+        "format-connected": "",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueberry"
     },
     "pulseaudio": {
         "format": "{icon}",
@@ -112,7 +122,7 @@
             ]
         },
         "scroll-step": 10,
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click": "myxer",
         "tooltip-format": "At {volume}%"
     },
     "custom/spotify": {
@@ -154,7 +164,7 @@
         "on-scroll-up": "light -A 10"
     },
     "tray": {
-        "icon-size": 21,
+        "icon-size": 18,
         "spacing": 10
     }
 }
