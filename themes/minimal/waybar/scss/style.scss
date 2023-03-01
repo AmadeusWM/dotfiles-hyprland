@@ -150,6 +150,7 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
 #mode,
 #battery,
 #cpu,
+#bluetooth
 #memory,
 #network,
 #pulseaudio,
@@ -171,6 +172,12 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
 
 #network {
     padding-right: 5px;
+}
+
+#bluetooth{
+    padding-right: 3px;
+    padding-left: 5px;
+    margin-top: 2px;
 }
 
 #battery {}
@@ -208,9 +215,14 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
     padding-right: 15px;
 }
 
+#custom-appname {
+    @include button-box-high;
+}
+
 #tray {
+    font-size: 5px;
     padding: 0px 10px;
-    padding-right: 15px;
+    padding-right: 5px;
     border-radius: 5px 0px 0px 5px;
     background-color: $bg0;
 }

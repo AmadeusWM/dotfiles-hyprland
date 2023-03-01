@@ -33,8 +33,10 @@ These theme variants can be added to the `themes` folder.
 ## 📦 Required dependencies:
 Install these dependencies manually (Arch) 
 ```shell
-hyprland-git nerd-fonts-complete wofi dunst jq eww-wayland swww-git swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git bc pamixer light-git papirus-icon-theme playerctl cava kitty xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy cliphist hyprpicker nm-connection-editor dictd wl-clip-persist-git
+hyprland-git nerd-fonts-complete wofi dunst jq eww-wayland swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git bc pamixer light-git papirus-icon-theme playerctl cava kitty xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy cliphist hyprpicker nm-connection-editor dictd wl-clip-persist-git blueberry
 ```
+Background utility:
+either `swww-git` or `azote`;
 Follow the [Quick Start Instructions from Hyprland](https://wiki.hyprland.org/Getting-Started/Quick-start/)
 
 ## 🧙‍♂️ Setup Hyprland Config
@@ -193,7 +195,7 @@ Afterwards your buttons should be visible.
 3. Scroll to the bottom, and Press `Import` in `All Configs`
 4. Import the `config.json` from `dots/firefox/treestyletab/config.json`
 5. Then go to `Advanced` and scroll down
-6. Choose `Load from file` and upload the following `dots/firefox/treestyletab/treestyletab.css` (*optional*: if the theme of TST doesn't match the new firefox theme for some reason)
+6. Choose `Load from file` and upload the following `dots/firefox/treestyletab/treestyletab.css` (*optional*: if the theme of TST doesn't match the new firefox theme)
 
 #### Night Tab
 1. Install the nighttab extension from [here](https://addons.mozilla.org/en-US/firefox/addon/nighttab/)
@@ -249,10 +251,10 @@ All keybinds can be found in the `keybinds` folder
 
 # ⭐ Credits
 - [Back777space](https://github.com/Back777space): for contributing🗿🗿🗿
-- [Zenneh](https://github.com/zenneh): the Obsidian theme📔
-- [Taylor85345](https://github.com/taylor85345): the well-organized dotfiles, and top-bar🧔‍
-- [flick0](https://github.com/flick0): inspiring hyprland-setup and useful scripts😍
-- [Vaxry](https://github.com/vaxerski): HYPRLAND 🤍
+- [Zenneh](https://github.com/zenneh): the Obsidian theme
+- [Taylor85345](https://github.com/taylor85345): the well-organized dotfiles, and top-bar
+- [flick0](https://github.com/flick0): inspiring hyprland-setup and useful scripts
+- [Vaxry](https://github.com/vaxerski): hyprland
 
 
 ---

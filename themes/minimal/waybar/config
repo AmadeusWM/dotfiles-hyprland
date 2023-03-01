@@ -6,13 +6,14 @@
         "wlr/workspaces"
     ],
     "modules-center": [
-        "custom/spotify"
+        "custom/appname"
     ],
     "modules-right": [
         "tray",
         "custom/terminal",
         "backlight",
         "pulseaudio",
+        "bluetooth",
         "network",
         "battery",
         "clock"
@@ -27,9 +28,22 @@
         "exec": "python ~/.config/hypr/themes/minimal/waybar/modules/Apatheia/main.py"
     },
     "wlr/workspaces": {
-        "format": "{name}",
-        "disable-scroll": true,
-        "on-click": "activate"
+        "format": "{icon}",
+        "on-click": "activate",
+        "sort-by-number": true,
+        "format-icons": {
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "6": "VI",
+            "7": "VII",
+            "8": "VIII",
+            "9": "IX",
+            "10": "X",
+            "urgent": ""
+        }
     },
     "wlr/window": {
         "max-length": 80,
@@ -80,8 +94,17 @@
                 "睊"
             ]
         },
-        "on-click": "nm-connection-editor",
+        "on-click": "hyprctl dispatch exec '[float; size 600 600;move 100%-620 70] gnome-control-center wifi'",
         "tooltip-format": "{ipaddr}/{cidr}"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "",
+        "format-connected": "",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueberry"
     },
     "pulseaudio": {
         "format": "{icon}",
@@ -99,7 +122,7 @@
             ]
         },
         "scroll-step": 10,
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click": "myxer",
         "tooltip-format": "At {volume}%"
     },
     "custom/spotify": {
@@ -122,6 +145,14 @@
         "on-click": "kitty --title=\"kitty-qalculate\" --hold qalc"
     }
     ,
+    "custom/appname": {
+        "width": "500",
+        "format": "{}",
+        "interval": "once",
+        "signal": 9,
+        "exec": "hyprctl activewindow | sed -n '7,8 p' | cut -c -80 | cut -f 2- -d ' ' | tr '\n' ' '"
+    }
+    ,
     "backlight": {
         "format": "{icon}",
         "format-alt": "{percent}% {icon}",
@@ -133,7 +164,7 @@
         "on-scroll-up": "light -A 10"
     },
     "tray": {
-        "icon-size": 21,
+        "icon-size": 18,
         "spacing": 10
     }
 }
