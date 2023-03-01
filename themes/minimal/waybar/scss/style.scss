@@ -32,6 +32,8 @@ $teal: #72B69C;
 
     border-radius: 10px;
     color: $fg0;
+
+    background-color: unset; 
 }
 
 @mixin button-box-high {

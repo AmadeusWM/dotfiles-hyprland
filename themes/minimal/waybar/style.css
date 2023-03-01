@@ -34,6 +34,7 @@ window#waybar.solo {
   transition: 0.1s all ease;
   border-radius: 10px;
   color: #eae9f0;
+  background-color: unset;
   border: 2px solid #eae9f0;
   box-shadow: #eae9f0 0px 5px 0px 0px;
   margin-top: 0px;
@@ -68,6 +69,7 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
   transition: 0.1s all ease;
   border-radius: 10px;
   color: #eae9f0;
+  background-color: unset;
   opacity: 0.7;
 }
 
@@ -85,6 +87,7 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
   transition: 0.1s all ease;
   border-radius: 10px;
   color: #eae9f0;
+  background-color: unset;
   border: 2px solid #eae9f0;
   box-shadow: #eae9f0 0px 5px 0px 0px;
   margin-top: 0px;
@@ -188,6 +191,7 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
   transition: 0.1s all ease;
   border-radius: 10px;
   color: #eae9f0;
+  background-color: unset;
   border: 2px solid #eae9f0;
   box-shadow: #eae9f0 0px 5px 0px 0px;
   margin-top: 0px;
