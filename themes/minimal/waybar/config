@@ -10,7 +10,7 @@
     ],
     "modules-right": [
         "tray",
-        "custom/terminal",
+        "custom/dunst",
         "backlight",
         "pulseaudio",
         "bluetooth",
@@ -151,7 +151,6 @@
         "interval": "once",
         "signal": 9,
         "exec": "hyprctl activewindow -j | jq \"[.class,.title]\" | jq --raw-output 'join(\" ✦ \")' | cut -c -80"
-        // "exec": "hyprctl activewindow | sed -n '7,8 p' | cut -c -80 | cut -f 2- -d ' ' | tr '\n' ' '"
     }
     ,
     "backlight": {
@@ -167,5 +166,11 @@
     "tray": {
         "icon-size": 18,
         "spacing": 10
+    },
+    "custom/dunst": {
+        "format":"{}",
+        "exec": "~/.config/hypr/themes/minimal/waybar/modules/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "restart-interval": 1
     }
 }

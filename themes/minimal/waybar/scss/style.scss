@@ -160,6 +160,7 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
 #custom-terminal,
 #custom-spotify,
 #custom-weather,
+#custom-dunst,
 #custom-mail {
     margin: 5px 6px 0px 10px;
     padding-bottom: 3px;
@@ -175,8 +176,8 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
 }
 
 #bluetooth{
-    padding-right: 3px;
-    padding-left: 5px;
+    padding-right: 2px;
+    padding-left: 8px;
     margin-top: 2px;
 }
 
@@ -219,10 +220,11 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
     @include button-box-high;
 }
 
+
 #tray {
     font-size: 5px;
     padding: 0px 10px;
-    padding-right: 5px;
+    padding-right: 1px;
     border-radius: 5px 0px 0px 5px;
     background-color: $bg0;
 }
