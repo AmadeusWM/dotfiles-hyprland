@@ -150,7 +150,7 @@
         "format": "{}",
         "interval": "once",
         "signal": 9,
-        "exec": "hyprctl activewindow | sed -n '7,8 p' | cut -c -80 | cut -f 2- -d ' ' | tr '\n' ' '"
+        "exec": "hyprctl activewindow -j | jq \"[.class,.title]\" | jq --raw-output 'join(\" ✦ \")'"
     }
     ,
     "backlight": {
