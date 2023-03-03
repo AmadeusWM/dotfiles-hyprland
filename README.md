@@ -270,7 +270,7 @@ example:
 ```bash
 ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu
 ```
-- [ ] Disable and Enable notifications
+- [x] Disable and Enable notifications
 - [x] Pull request Dunst: rounded icons
 - [ ] Answer issue eww primary screen (first, try the command man): https://github.com/elkowar/eww/issues/382#issuecomment-1281693594
 
