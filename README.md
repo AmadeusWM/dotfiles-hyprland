@@ -70,10 +70,10 @@ instructions
 The themes of other applications are saved in the `dots` folder.
 `wofi`, `rofi`, `kitty` and `dunst` can be themed by copying the folders into `~/.config`
 ```bash
-cp  ./dots/dunst ~/.config
-cp  ./dots/wofi ~/.config
-cp  ./dots/rofi ~/.config
-cp  ./dots/kitty ~/.config
+cp -r  ./dots/dunst ~/.config
+cp -r ./dots/wofi ~/.config
+cp -r ./dots/rofi ~/.config
+cp -r ./dots/kitty ~/.config
 ```
 
 ### Spotify (Spicetify)
