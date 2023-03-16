@@ -33,7 +33,7 @@ These theme variants can be added to the `themes` folder.
 ## 📦 Required dependencies:
 Install these dependencies manually (Arch) 
 ```shell
-hyprland-git nerd-fonts-complete wofi dunst jq eww-wayland swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git bc pamixer light-git papirus-icon-theme playerctl cava kitty xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy cliphist hyprpicker nm-connection-editor dictd wl-clip-persist-git blueberry
+hyprland-git nerd-fonts-complete-starship wofi dunst jq eww-wayland swayidle swaylock-effects-git swaylockd sway-audio-idle-inhibit-git bc pamixer light-git papirus-icon-theme playerctl cava kitty xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy cliphist hyprpicker nm-connection-editor dictd wl-clip-persist-git blueberry
 ```
 Background utility:
 either `swww-git` or `azote`;
@@ -70,10 +70,10 @@ instructions
 The themes of other applications are saved in the `dots` folder.
 `wofi`, `rofi`, `kitty` and `dunst` can be themed by copying the folders into `~/.config`
 ```bash
-cp  ./dots/dunst ~/.config
-cp  ./dots/wofi ~/.config
-cp  ./dots/rofi ~/.config
-cp  ./dots/kitty ~/.config
+cp -r  ./dots/dunst ~/.config
+cp -r ./dots/wofi ~/.config
+cp -r ./dots/rofi ~/.config
+cp -r ./dots/kitty ~/.config
 ```
 
 ### Spotify (Spicetify)
