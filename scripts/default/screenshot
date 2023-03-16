@@ -1,5 +1,41 @@
 #!/usr/bin/bash
 
 # grim -g "$(slurp)" - | wl-copy
-grim -g "$(slurp)" - | swappy -f - -o ~/Pictures/Screenshots/screenshot$(date +%s).png
-# grim -g "0,0 2048x1280" - | swappy -f - -o ~/Pictures/Screenshots/screenshot$(date +%s).png
+function selection(){
+    grim -g "$(slurp)" - | swappy -f - -o ~/Pictures/Screenshots/screenshot$(date +%s).png
+}
+
+
+function full_screen(){
+    grim -g "$(slurp -o)" - | swappy -f - -o ~/Pictures/Screenshots/screenshot$(date +%s).png
+}
+
+function full_screen(){
+    grim - | swappy -f - -o ~/Pictures/Screenshots/screenshot$(date +%s).png
+}
+
+function delay(){
+    geo="$(slurp)"
+    sleep 3
+    grim -g "$geo" - | swappy -f - -o ~/Pictures/Screenshots/screenshot$(date +%s).png
+}
+
+
+doc() {
+    echo "Usage:
+    screenshot [Options]
+
+    Options:
+        selection       Screenshots the selected area
+        full_screen     Screenshots the focussed screen
+        all_screens     Screenshots all screens
+        delay           Takes a screenshot of the selected area after 3 second"
+}
+
+case $1 in 
+    selection) selection                ;;
+    full_screen) full_screen            ;;
+    all_screens) all_screens            ;;
+    delay) delay                        ;;
+    *) doc                              ;;
+esac

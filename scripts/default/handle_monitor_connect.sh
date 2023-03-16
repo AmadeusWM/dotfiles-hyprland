@@ -4,12 +4,12 @@
 
 function handle {
   if [[ ${1:0:12} == "monitoradded" ]]; then
-    # hyprctl dispatch moveworkspacetomonitor "1 1"
-    hyprctl dispatch moveworkspacetomonitor "2 2"
-    hyprctl dispatch moveworkspacetomonitor "3 2"
-    hyprctl dispatch moveworkspacetomonitor "4 2"
-    hyprctl dispatch moveworkspacetomonitor "5 2"
-    hyprctl dispatch moveworkspacetomonitor "6 2"
+    hyprctl dispatch moveworkspacetomonitor "1 eDP-1"
+    hyprctl dispatch moveworkspacetomonitor "2 HDMI-A-1"
+    hyprctl dispatch moveworkspacetomonitor "3 DP-1"
+    hyprctl dispatch moveworkspacetomonitor "4 DP-1"
+    hyprctl dispatch moveworkspacetomonitor "5 DP-1"
+    hyprctl dispatch moveworkspacetomonitor "6 DP-1"
   fi
 }
 
