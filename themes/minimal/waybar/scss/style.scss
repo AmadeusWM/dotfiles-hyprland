@@ -99,6 +99,7 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
 }
 
 #workspaces button {
+    min-width: 40px;
     @include button-box;
     opacity: 0.7;
 }

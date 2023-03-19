@@ -1,24 +1,56 @@
-#! /bin/bash
+#!/bin/sh
 
-monitors=/tmp/hypr/monitors_temp
-hyprctl monitors > $monitors
+cmd=$1
+workspaceId=$2
 
-if [[ -z $1 ]]; then
-  workspace=$(grep -B 4 "focused: no" "$monitors" | awk 'NR==1 {print $3}')
-else
-  workspace=$1
+focusedMonitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name') 
+focusedMonitorVal=0
+
+if [[ $focusedMonitor == "DP-1" ]]; then
+	focusedMonitorVal=1
+fi
+if [[ $focusedMonitor == "HDMI-A-1" ]]; then
+	focusedMonitorVal=2
 fi
 
+workspaceOnMonitor=$(($workspaceId+(10*$focusedMonitorVal)))
 
-activemonitor=$(grep -B 6 "focused: yes" "$monitors" | awk 'NR==1 {print $2}')
-passivemonitor=$(grep  -B 2 "($workspace)" "$monitors" | awk 'NR==1 {print $2}')
-#activews=$(grep -A 2 "$activemonitor" "$monitors" | awk 'NR==3 {print $1}' RS='(' FS=')')
-passivews=$(grep -A 2 "$passivemonitor" "$monitors" | awk 'NR==3 {print $1}' RS='(' FS=')')
+visit() {
+	hyprctl dispatch workspace $workspaceOnMonitor
+}
 
-if [[ $workspace -eq $passivews ]] && [[ $activemonitor != "$passivemonitor" ]]; then
-  hyprctl dispatch swapactiveworkspaces "$activemonitor" "$passivemonitor"
-else
-  hyprctl dispatch moveworkspacetomonitor "$workspace $activemonitor" && hyprctl dispatch workspace "$workspace"
-fi
+move() {
+	hyprctl dispatch movetoworkspace $workspaceOnMonitor
+}
 
-exit 0
+movesilent() {
+	hyprctl dispatch movetoworkspacesilent $workspaceOnMonitor
+}
+
+test(){
+	echo $workspaceOnMonitor
+}
+
+doc() {
+    echo """
+Usage:
+workspace [Command] [Workspace Id]
+This tool is used for multiple monitor setups, 
+it increments each workspace id with 10*(monitor_id).
+Such that each monitor can have its own set of workspaces.
+
+Command:
+	visit       Visits the workspace
+	move        Moves the active window to a workspace
+	movesilent	Moves the active window to a workspace silently.
+	test		Echo's the id of the workspace that will be used.
+"""
+}
+
+case $cmd in 
+  visit) 		visit ;;
+  move) 		move ;; 
+  movesilent) 	movesilent ;;
+  test) 		test ;;
+  *) doc;;
+esac

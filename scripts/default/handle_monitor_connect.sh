@@ -1,15 +1,29 @@
 #!/bin/sh
 
-# Moves workspaces (excep the first one) from first monitor to new monitor
-
 function handle {
+  DP1=$(hyprctl monitors -j | jq -r '.[] | select(.name == "DP-1") | .id') 
+  HDMI1=$(hyprctl monitors -j | jq -r '.[] | select(.name == "HDMI-A-1") | .id') 
   if [[ ${1:0:12} == "monitoradded" ]]; then
-    hyprctl dispatch moveworkspacetomonitor "1 eDP-1"
-    hyprctl dispatch moveworkspacetomonitor "2 HDMI-A-1"
-    hyprctl dispatch moveworkspacetomonitor "3 DP-1"
-    hyprctl dispatch moveworkspacetomonitor "4 DP-1"
-    hyprctl dispatch moveworkspacetomonitor "5 DP-1"
-    hyprctl dispatch moveworkspacetomonitor "6 DP-1"
+    for i in {1..10}
+    do
+      hyprctl dispatch moveworkspacetomonitor "$i eDP-1"
+    done
+    if [[ $DP1 ]]; then
+      START=$((1+10*1));
+      END=$((10+10*1));
+      for i in $(eval echo "{$START..$END}")
+      do
+        hyprctl dispatch moveworkspacetomonitor "$i DP-1"
+      done
+    fi
+    if [[ $HDMI1 ]]; then
+      START=$((1+10*2));
+      END=$((10+10*2));
+      for i in $(eval echo "{$START..$END}")
+      do
+        hyprctl dispatch moveworkspacetomonitor "$i HDMI-A-1"
+      done
+    fi
   fi
 }
 
