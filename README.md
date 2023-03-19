@@ -7,6 +7,12 @@
 
 <br/>
 
+## 🌙 Minimal
+
+https://user-images.githubusercontent.com/63149896/225556561-55357032-2115-4a97-9b6b-6558f8596d4a.mp4
+
+## 🌸 Apatheia
+
 ![screen_1](/assets/screenshots/ImagesShowcase.png)
 
 </div>
