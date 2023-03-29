@@ -155,7 +155,8 @@
         ))
       (button
         :onclick "~/.config/hypr/scripts/exec_wofi wifi"
-       (_network :strength WLAN_ICON :offline "󰤮" :excellent "󰤨" :good "󰤥" :okay "󰤢" :slow "󰤟"
+      ;  (_network :strength WLAN_ICON :offline "󰤮" :excellent "󰤨" :good "󰤥" :okay "󰤢" :slow "󰤟"
+       (_network :strength WLAN_ICON :offline "睊" :excellent "" :good "" :okay "" :slow ""
 )))))
 
 (defwidget _network [strength offline excellent good okay slow]
