@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# variables
+config=$HOME/.config/hypr/themes/minimal
+scripts=$config/scripts
+
+$config/waybar/waybar.sh
+# $scripts/waybar/tools/dynamic &
+
+# wallpaper
+~/.azotebg
+# $HOME/.config/hypr/scripts/wallpaper/wallpaper & 
+# swaybg -c "#eeeeee" & 
+# swaybg -i $config/wallpapers/old/foolforyou.gif &
+# $scripts/wall $config/wallpapers/old/DivineTouch.png &
