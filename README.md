@@ -17,7 +17,7 @@ https://user-images.githubusercontent.com/63149896/225556561-55357032-2115-4a97-
 
 ## 🍀 Poeisis
 
-![image](https://user-images.githubusercontent.com/63149896/232290274-61c8378f-4c1b-47e1-834f-f07a134a11ca.png)
+![image](https://user-images.githubusercontent.com/63149896/232291001-e818654f-8b3b-494f-91a0-d2f32f09887b.png)
 
 </div>
 
