@@ -15,6 +15,10 @@ https://user-images.githubusercontent.com/63149896/225556561-55357032-2115-4a97-
 
 ![screen_1](/assets/screenshots/ImagesShowcase.png)
 
+## 🍀 Poeisis
+
+![image](https://user-images.githubusercontent.com/63149896/232290274-61c8378f-4c1b-47e1-834f-f07a134a11ca.png)
+
 </div>
 
 # Details
