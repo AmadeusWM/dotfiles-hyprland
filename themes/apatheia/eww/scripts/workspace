@@ -51,21 +51,14 @@ fi
 }
 module() {
 #output eww widget
+wknames=(0 0$o1$f1 0$o2$f2 0$o3$f3 0$o4$f4 0$o5$f5 0$o6$f6 0$o7$f7 0$o8$f8 0$o9$f9 0$o10$f10)
 echo 	"(eventbox :onscroll \"echo {} | sed -e 's/up/-1/g' -e 's/down/+1/g' | xargs hyprctl dispatch workspace\" \
           (box	:class \"works\"	:orientation \"h\" :spacing 5 :space-evenly \"false\" :valign \"center\"	\
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 1\'\" :onrightclick \"hyprctl dispatch workspace 1 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\" :class \"ws-btn 0$o1$f1\" \"${ic[1]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 2\'\" :onrightclick \"hyprctl dispatch workspace 2 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\" :class \"ws-btn 0$o2$f2\" \"${ic[2]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 3\'\" :onrightclick \"hyprctl dispatch workspace 3 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\" :class \"ws-btn 0$o3$f3\" \"${ic[3]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 4\'\" :onrightclick \"hyprctl dispatch workspace 4 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\" :class \"ws-btn 0$o4$f4\" \"${ic[4]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 5\'\" :onrightclick \"hyprctl dispatch workspace 5 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\" :class \"ws-btn 0$o5$f5\" \"${ic[5]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 6\'\" :onrightclick \"hyprctl dispatch workspace 6 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\" :class \"ws-btn 0$o6$f6\" \"${ic[6]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 7\'\" :onrightclick \"hyprctl dispatch workspace 7 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\" :class \"ws-btn 0$o7$f7\" \"${ic[7]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 8\'\" :onrightclick \"hyprctl dispatch workspace 8 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\" :class \"ws-btn 0$o8$f8\" \"${ic[8]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 9\'\" :onrightclick \"hyprctl dispatch workspace 9 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\" :class \"ws-btn 0$o9$f9\" \"${ic[9]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace 10\'\" :onrightclick \"hyprctl dispatch workspace 10 && $HOME/.config/hypr/themes/apatheia/scripts/default_app\" :class \"ws-btn 0$o10$f10\" \"${ic[10]}\") \
+              "$(for i in {1..10}; do printf "(button :onclick \"hyprctl dispatch exec \'~/.config/hypr/themes/apatheia/scripts/workspace $i\'\" :onrightclick \"hyprctl dispatch workspace $i && $HOME/.config/hypr/themes/apatheia/scripts/default_app\" :class \"ws-btn ${wknames[i]}\" \"${ic[i]}\")"; done) " \
           )\
         )"
 }
+
 
 module
 

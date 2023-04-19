@@ -15,6 +15,12 @@ https://user-images.githubusercontent.com/63149896/225556561-55357032-2115-4a97-
 
 ![screen_1](/assets/screenshots/ImagesShowcase.png)
 
+## 🍀 Poeisis
+
+![image](https://user-images.githubusercontent.com/63149896/232291001-e818654f-8b3b-494f-91a0-d2f32f09887b.png)
+
+![image](https://user-images.githubusercontent.com/63149896/232291466-e7143862-8bf8-49ec-a9e2-0af41102ca9d.png)
+
 </div>
 
 # Details
@@ -249,7 +255,7 @@ All keybinds can be found in the `keybinds` folder
 - `SUPER+F` or `CTRL+ALT+F`: Firefox
 - `SUPER+O`: Obsidian
 - `SUPER+E`: Nautilus
-- `SUPER+A`: VS-code
+- `SUPER+W`: VS-code
 - `SUPER+C`: Color Picker (`hyprpicker`)
 - `PRINT`: Screenshot a part of your screen
 - `SUPER+PRINT`: Record a part of your screen
@@ -270,15 +276,6 @@ All keybinds can be found in the `keybinds` folder
 <br/>
 
 # 🔨 TO-DO
-- [x] Notifications (this maybe? https://www.reddit.com/r/unixporn/comments/sacxs3/oc_styled_notifications_using_dunst/)
-- [x] Swappable wallpaper with wofi
-example:
-```bash
-ls /home/amadeusw/.config/hypr/themes/apatheia/wallpapers | wofi --show dmenu
-```
-- [x] Disable and Enable notifications
-- [x] Pull request Dunst: rounded icons
-- [ ] Answer issue eww primary screen (first, try the command man): https://github.com/elkowar/eww/issues/382#issuecomment-1281693594
-
-## 💖 Support
+...
+# 💖 Support
 <a href="https://www.buymeacoffee.com/amadeusWM"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=amadeusWM&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>

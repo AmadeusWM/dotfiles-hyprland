@@ -1,0 +1,195 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+    "modules-left": [
+        "wlr/workspaces"
+    ],
+    "modules-center": [
+        "custom/appname"
+    ],
+    "modules-right": [
+        "tray",
+        "custom/dunst",
+        "backlight",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "battery",
+        "clock"
+    ],
+    "custom/launcher": {
+        "format": "",
+        "on-click": "wofi --show drun -o DP-3",
+        "on-click-right": "killall wofi"
+    },
+    "custom/apatheia": {
+        "format": "{}",
+        "exec": "python ~/.config/hypr/themes/minimal/waybar/modules/Apatheia/main.py"
+    },
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "sort-by-number": true,
+        "format-icons": {
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "6": "VI",
+            "7": "VII",
+            "8": "VIII",
+            "9": "IX",
+            "10": "X",
+            "11": "XI",
+            "12": "XII",
+            "13": "XIII",
+            "14": "XIV",
+            "15": "XV",
+            "16": "XVI",
+            "17": "XVII",
+            "18": "XVIII",
+            "19": "XIX",
+            "21": "XXI",
+            "22": "XXII",
+            "23": "XXIII",
+            "24": "XXIV",
+            "25": "XXV",
+            "26": "XXVI",
+            "27": "XXVII",
+            "28": "XXVIII",
+            "29": "XXIX",
+            "30": "XXX",
+            "urgent": ""
+        }
+    },
+    "wlr/window": {
+        "max-length": 80,
+        "tooltip": false
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%a %d %b - %H:%M:%S}",
+        "on-click": "morgen"
+    },
+    "battery": {
+        "format": "{icon}",
+        "format-alt": "{time} {icon} ",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "format-charging": "",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip-format": "At {capacity}%"
+    },
+    "network": {
+        "format": "{icon}",
+        "format-alt": "{bandwidthDownBytes} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "wifi": [
+                "",
+                "",
+                ""
+            ],
+            "ethernet": [
+                ""
+            ],
+            "disconnected": [
+                "睊"
+            ]
+        },
+        "on-click": "hyprctl dispatch exec '[float; size 600 600;move 100%-620 70] gnome-control-center wifi'",
+        "tooltip-format": "{ipaddr}/{cidr}"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "",
+        "format-connected": "",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueberry"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "婢",
+        "format-icons": {
+            "phone": [
+                " ",
+                " ",
+                " "
+            ],
+            "default": [
+                "奄",
+                "奔",
+                "墳"
+            ]
+        },
+        "scroll-step": 10,
+        "on-click": "myxer",
+        "tooltip-format": "At {volume}%"
+    },
+    "custom/spotify": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/hypr/themes/minimal/waybar/modules/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true
+    },
+    "custom/storage": {
+        "format": "{} ",
+        "format-alt": "{percentage}% ",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/hypr/themes/minimal/waybar/modules/storage.sh"
+    },
+    "custom/terminal": {
+        "format": "",
+        "on-click": "kitty --title=\"kitty-qalculate\" --hold qalc"
+    }
+    ,
+    "custom/appname": {
+        "width": "500",
+        "format": "{}",
+        "interval": "once",
+        "signal": 9,
+        "exec": "hyprctl activewindow -j | jq \"[.class,.title]\" | jq --raw-output 'join(\" ✦ \")' | cut -c -80"
+    }
+    ,
+    "backlight": {
+        "format": "{icon}",
+        "format-alt": "{percent}% {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": [
+            ""
+        ],
+        "on-scroll-down": "light -U 10",
+        "on-scroll-up": "light -A 10"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "custom/dunst": {
+        "format":"{}",
+        "exec": "~/.config/hypr/themes/minimal/waybar/modules/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "restart-interval": 1
+    }
+}
