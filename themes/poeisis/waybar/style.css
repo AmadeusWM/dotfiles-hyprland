@@ -123,6 +123,7 @@ more can be read here: https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
 
 #network {
   padding-left: 3px;
+  padding-right: 6px;
 }
 
 #bluetooth {
