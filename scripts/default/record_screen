@@ -24,7 +24,7 @@ Coords=$(slurp) || exit
 
 # Capture video using slup for screen area
 # timeout and exit after 10 minutes as user has almost certainly forgotten it's running
-timeout 600 wf-recorder -t -g "$Coords" -f "$TmpRecordPath" || exit
+timeout 600 wf-recorder --audio="alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.pro-output-0.monitor" -t -g "$Coords" -f "$TmpRecordPath" || exit
 
 # Get the filename from the user and honor cancel
 SavePath=$( zenity \

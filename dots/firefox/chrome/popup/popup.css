@@ -143,7 +143,8 @@ menupopup menu[disabled="true"],
 
 /* disable vertical menu scroll buttons and use a good ol' scrollbar */
 /* this is a shotgun approach, expect side effects */
-scrollbox[orient=vertical] /* >=71 */ {
+/* >=71 */ 
+scrollbox[orient=vertical] {
     overflow-y: auto !important;
 }
 
@@ -159,10 +160,11 @@ menupopup {
     --scrollbutton-display: none !important;
 }
 
-#scrollbutton-up[part],
+/* this is disabled to prevent glitchy jump effects  on very small screens */
+/* #scrollbutton-up[part],
 #scrollbutton-down[part] {
     display: var(--scrollbutton-display) !important;
-}
+} */
 
 .menuitem-iconic,
 .menu-iconic-icon /* .menu-iconic-icons not necessarily within a .menuitem-iconic (don't ask me why...) */ {
