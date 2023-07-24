@@ -1,3 +1,6 @@
+# ‼️‼️‼️ Disclaimer ‼️‼️‼️
+I moved to NixOS as of 2023/07/01, so this config will not be maintained anymore.
+
 <div align="center">
 
 # 🌸**Apatheia Dot Files**🌸
