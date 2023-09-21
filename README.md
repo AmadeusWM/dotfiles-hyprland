@@ -137,9 +137,10 @@ Follow the docs:
 First and foremost, go to about:addons in your firefox. And enable the `Dark` theme.
 #### Firefox Theme
 1. in Firefox go to about:config. Change `toolkit.legacyUserProfileCustomizations.stylesheets` to "True"
-2. Find your profile folder (go to the url `about:profiles` in firefox, and open the folder of your active profile)
-3. Copy the `chrome` folder from `dots/firefox` to the aforementioned profile folder.
-4. Restart firefox, you theme should be updated
+2. Also, to enable custom SVG icons, go to about:config and set `svg.context-properties.content.enabled` to "True"
+3. Find your profile folder (go to the url `about:profiles` in firefox, and open the folder of your active profile)
+4. Copy the `chrome` folder from `dots/firefox` to the aforementioned profile folder.
+5. Restart firefox, you theme should be updated
 
 <details>
 <summary>
